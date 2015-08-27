@@ -2,9 +2,9 @@
 title: API Reference
 
 language_tabs:
-  - shell
-  - ruby
-  - python
+  - cURL
+  - Node
+  - Ruby
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
@@ -16,13 +16,52 @@ includes:
 search: true
 ---
 
-# Introduction
+<h1 class="head-3 margin-top-large margin-bottom-medium" id="introduction">Introduction</h1>
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+<div class="text-2 contain">
+  <p>The VHX API provides a simple and secure HTTP REST interface to VHX. Registered applications can access customer, video, subscription, collection, and video resources.</p>
+  <p>Currently API application registration is private. Please email <a href="mailto:api@vhx.tv">api@vhx.tv</a> to register an application and provide your app name, description, url, and callback url.</p>
+</div>
 
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+<h2 class="text-2 text--navy text--bold margin-top-large margin-bottom-small" id="schema">Schema</h2>
 
-This example API documentation page was created with [Slate](http://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
+<div class="text-2 contain">
+All API access is over HTTPS and accessed via the api.vhx.tv domain. All data is sent and received as JSON. Blank fields are included as null and timestamps are in ISO 8601 format    YYYY-MM-DDTHH:MM:SSZ . Only the UTF-8 character encoding is supported for both requests and responses. We support JSONP (send a  ?callback  parameter) and Cross Origin Resource Sharing (CORS) for AJAX requests.
+</div>
+
+<h2 class="text-2 text--navy text--bold margin-top-large margin-bottom-small" id="schema">HTTP Verbs</h2>
+
+<table>
+  <thead class="padding-vertical-medium">
+    <tr class="text-2">
+      <th>Verb</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>HEAD</td>
+      <td>Can be issued against any resource to get just the HTTP header info.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>GET</td>
+      <td>Used for retrieving resources.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>POST</td>
+      <td>Used for creating resources, or performing custom action.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>PUT</td>
+      <td>Used for replacing or updating resources. For PUT requests with no body attribute, be sure to set the Content-Length header to zero.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>DELETE</td>
+      <td>Used for deleting resources.</td>
+    </tr>
+  </tbody>
+</table>
 
 # Authentication
 

@@ -70,7 +70,6 @@ html, body {
   width: $nav-width;
   background-color: $nav-bg;
   font-size: 13px;
-  font-weight: bold;
 
   // language selector for mobile devices
   .lang-selector {
@@ -162,7 +161,7 @@ html, body {
     list-style: none;
     margin: 0;
     padding: 0;
-    line-height: 28px;
+    line-height: 50px;
   }
 
   li {
@@ -174,9 +173,11 @@ html, body {
 
   // This is the currently selected ToC entry
   .tocify-focus {
-    box-shadow: 0px 1px 0px $nav-active-shadow;
     background-color: $nav-active-bg;
     color: $nav-active-text;
+    a:hover {
+      color: #fff;
+    }
   }
 
   // Subheaders are the submenus that slide open
@@ -187,13 +188,6 @@ html, body {
     font-weight: 500;
     .tocify-item>a {
       padding-left: $nav-padding + $nav-indent;
-      font-size: 12px;
-    }
-
-    // for embossed look:
-    @include embossed-bg;
-    &>li:last-child {
-      box-shadow: none; // otherwise it'll overflow out of the subheader
     }
   }
 
@@ -239,7 +233,6 @@ html, body {
   z-index: 100;
   color: #000;
   text-decoration: none;
-  font-weight: bold;
   opacity: 0.7;
   line-height: 16px;
   img {
@@ -284,31 +277,35 @@ html, body {
   .lang-selector {
     position: fixed;
     z-index: 50;
-    border-bottom: 5px solid $lang-select-active-bg;
+    top: 60px;
+    height: 60px;
   }
 }
 
 .lang-selector {
   background-color: $lang-select-bg;
+  padding: 10px 20px;
   width: 100%;
-  font-weight: bold;
+  // font-weight: bold;
   a {
     display: block;
     float:left;
-    color: $lang-select-text;
-    text-decoration: none;
-    padding: 0 10px;
-    line-height: 30px;
-    outline: 0;
+    // color: $lang-select-text;
+    // text-decoration: none;
+    // padding: 0 10px;
+    // line-height: 30px;
+    // outline: 0;
 
     &:active, &:focus {
-      background-color: $lang-select-pressed-bg;
-      color: $lang-select-pressed-text;
+      background-color: $teal-2;
+      color: $white;
+      // color: $lang-select-pressed-text;
     }
 
     &.active {
-      background-color: $lang-select-active-bg;
-      color: $lang-select-active-text;
+      background-color: $teal-2;
+      color: $white;
+      // color: $lang-select-active-text;
     }
   }
 
@@ -328,6 +325,7 @@ html, body {
   // to place content above the dark box
   position: relative;
   z-index: 30;
+  padding-top: 60px;
 
   &:after {
     content: '';
@@ -335,9 +333,9 @@ html, body {
     clear: both;
   }
 
-  &>h1, &>h2, &>h3, &>h4, &>h5, &>h6, &>p, &>table, &>ul, &>ol, &>aside, &>dl {
+  .text-2.text--bold, .text-2.contain, .head-3, table {
     margin-right: $examples-width;
-    padding: 0 $main-padding;
+    padding: 0 50px;
     box-sizing: border-box;
     display: block;
     @include text-shadow($main-embossed-text-shadow);
@@ -355,15 +353,15 @@ html, body {
   }
 
   h1 {
-    @extend %header-font;
-    font-size: 30px;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    border-bottom: 1px solid #ccc;
-    margin-bottom: $h1-margin-bottom;
-    margin-top: 2em;
-    border-top: 1px solid #ddd;
-    background-image: linear-gradient(to bottom, #fff, #f9f9f9);
+    // @extend %header-font;
+    // font-size: 30px;
+    // padding-top: 0.5em;
+    // padding-bottom: 0.5em;
+    // border-bottom: 1px solid #ccc;
+    // margin-bottom: $h1-margin-bottom;
+    // margin-top: 2em;
+    // border-top: 1px solid #ddd;
+    // background-image: linear-gradient(to bottom, #fff, #f9f9f9);
   }
 
   h1:first-child, div:first-child + h1 {
@@ -372,14 +370,14 @@ html, body {
   }
 
   h2 {
-    @extend %header-font;
-    font-size: 20px;
-    margin-top: 4em;
-    margin-bottom: 0;
-    border-top: 1px solid #ccc;
-    padding-top: 1.2em;
-    padding-bottom: 1.2em;
-    background-image: linear-gradient(to bottom, rgba(#fff, 0.4), rgba(#fff, 0));
+    // @extend %header-font;
+    // font-size: 20px;
+    // margin-top: 4em;
+    // margin-bottom: 0;
+    // border-top: 1px solid #ccc;
+    // padding-top: 1.2em;
+    // padding-bottom: 1.2em;
+    // background-image: linear-gradient(to bottom, rgba(#fff, 0.4), rgba(#fff, 0));
   }
 
   // h2s right after h1s should bump right up
@@ -412,30 +410,30 @@ html, body {
     th,td {
       text-align: left;
       vertical-align: top;
-      line-height: 1.6;
+      // line-height: 1.6;
     }
 
     th {
-      padding: 5px 10px;
-      border-bottom: 1px solid #ccc;
+      border-bottom: 1px solid $gray-2;
+      background: $gray-2;
       vertical-align: bottom;
     }
 
     td {
-      padding: 10px;
+      padding: 20px 10px;
     }
 
     tr:last-child {
-      border-bottom: 1px solid #ccc;
+      border-bottom: 1px solid $gray-2;
     }
 
-    tr:nth-child(odd)>td {
-      background-color: lighten($main-bg,4.2%);
-    }
+    // tr:nth-child(odd)>td {
+    //   background-color: lighten($main-bg,4.2%);
+    // }
 
-    tr:nth-child(even)>td {
-      background-color: lighten($main-bg,2.4%);
-    }
+    // tr:nth-child(even)>td {
+    //   background-color: lighten($main-bg,2.4%);
+    // }
   }
 
   dt {
@@ -589,6 +587,10 @@ html, body {
   .tocify-wrapper .tocify-item > a {
     padding-top: 0.3em;
     padding-bottom: 0.3em;
+    color: $gray-2;
+    &:hover {
+      color: $gray-4;
+    }
   }
 }
 
@@ -616,5 +618,16 @@ html, body {
 
   %right-col + %left-col {
     margin-top: $main-padding;
+  }
+}
+
+header {
+  z-index: 100;
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  i {
+    position: relative;
+    top: -3px;
   }
 }
