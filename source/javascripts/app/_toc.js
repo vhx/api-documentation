@@ -10,8 +10,26 @@
   };
 
   var makeToc = function() {
-    global.toc = $("#toc").tocify({
-      selectors: 'h1, h2',
+    global.toc = $("#toc-api").tocify({
+      content: '.main',
+      selectors: '.head-3.is-api, .text--bold.is-api',
+      extendPage: false,
+      theme: 'none',
+      smoothScroll: false,
+      showEffectSpeed: 0,
+      hideEffectSpeed: 180,
+      ignoreSelector: '.toc-ignore',
+      highlightOffset: 60,
+      scrollTo: -1,
+      scrollHistory: true,
+      hashGenerator: function (text, element) {
+        return element.prop('id');
+      }
+    }).data('toc-tocify');
+
+    var resources_toc = $("#toc-resources").tocify({
+      content: '.main',
+      selectors: '.head-3.is-resource, .text--bold.is-resource',
       extendPage: false,
       theme: 'none',
       smoothScroll: false,
