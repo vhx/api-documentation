@@ -335,7 +335,7 @@
                     elem.click();
 
                 }
-
+                $(document).trigger('toc:focus', [{el: elem}]);
             }
 
             else {
@@ -347,7 +347,7 @@
 
                     // Highlights the first TOC item if no other items are highlighted
                     self.element.find(itemClass).first().addClass(self.focusClass);
-
+                    $(document).trigger('toc:focus', [{el: self.element.find(itemClass).first()}]);
                 }
 
             }
@@ -551,7 +551,7 @@
 
                 // Highlights the current list item that was clicked
                 $(this).addClass(self.focusClass);
-
+                $(document).trigger('toc:focus', [{el: $(this)}]);
                 // If the showAndHide option is true
                 if(self.options.showAndHide) {
 
@@ -704,7 +704,7 @@
 
                             // Highlights the corresponding list item
                             elem.addClass(self.focusClass);
-
+                            $(document).trigger('toc:focus', [{el: elem}]);
                             // Scroll to highlighted element's header
                             var tocifyWrapper = self.tocifyWrapper;
                             var scrollToElem = $(elem).closest('.tocify-header');
