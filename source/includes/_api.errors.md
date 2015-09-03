@@ -1,46 +1,54 @@
 <!-- ERRORS -->
 <h2 class="head-3 is-api margin-top-large margin-bottom-medium" id="errors">Errors</h2>
 
-<div class="text-2 contain">
-All responses use standard HTTP status codes. This status code should solely be used to determine the success or failure of a request. If a failure, there additionally will be a message key in the JSON response with a detailed error message. Outline of all HTTP status codes are below:
-</div>
+<section class="text-2 contain margin-bottom-large">
+All responses use standard <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes">HTTP status codes</a>. This status code should solely be used to determine the success or failure of a request. If a failure, there additionally will be a message key in the <code>JSON</code> response with a detailed error message. Outline of all HTTP status codes are below.
+</section>
 
 <table>
   <thead>
     <tr class="text-2">
-      <th class="padding-vertical-medium">Status </th>
-      <th class="padding-vertical-medium">Code </th>
-      <th class="padding-vertical-medium">Description</th>
+      <th class="padding-medium nowrap">Status Code</th>
+      <th class="padding-medium">Description</th>
     </tr>
   </thead>
 
   <tbody>
     <tr class="text-2 border-bottom border--light-gray">
-      <td>200 OK</td>
+      <td>200</td>
+      <td>OK</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
-      <td>201 Created</td>
+      <td>201</td>
+      <td>Created</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
-      <td>304 Not Modified</td>
+      <td>304</td>
+      <td>Not Modified</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
-      <td>400 Bad Request (Client error)</td>
+      <td>400</td>
+      <td>Bad Request (Client error)</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
-      <td>401 Unauthorized (Invalid authentication)</td>
+      <td>401</td>
+      <td>Unauthorized (Invalid authentication)</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
-      <td>402 Payment Required (Premium video content)</td>
+      <td>402</td>
+      <td>Payment Required (Premium video content)</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
-      <td>404 Not Found</td>
+      <td>404</td>
+      <td>Not Found</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
-      <td>406 Not Acceptable</td>
+      <td>406</td>
+      <td>Not Acceptable</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
-      <td>500...505 Internal Server Error or Unavailable</td>
+      <td>500...505</td>
+      <td>Internal Server Error or Unavailable</td>
     </tr>
   </tbody>
 </table>

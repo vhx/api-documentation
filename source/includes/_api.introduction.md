@@ -12,7 +12,7 @@ https://api.vhx.tv
 ```
 <section class="text-2 contain">
   <p>The VHX API provides a simple and secure <a href="http://en.wikipedia.org/wiki/Representational_State_Transfer">REST</a> interface to VHX. Registered applications can access customer, video, subscription, collection, and video resources.</p>
-  <p>All API access is over <a href="http://en.wikipedia.org/wiki/HTTP_Secure">HTTPS</a> and accessed via the <a href="https://api.vhx.tv">api.vhx.tv</a> domain. All data is sent and received as <a href="https://en.wikipedia.org/wiki/JSON">JSONP</a>. Blank fields are included as <code>null</code> and timestamps are in ISO 8601 format <code>YYYY-MM-DDTHH:MM:SSZ</code>. Only the UTF-8 character encoding is supported for both requests and responses. We support <a href="https://en.wikipedia.org/wiki/JSONP">JSONP</a> (send a <code>?callback</code> parameter) and <a href="http://en.wikipedia.org/wiki/Cross-origin_resource_sharing">Cross Origin Resource Sharing</a> (CORS) for AJAX requests.
+  <p>All API access is over <a href="http://en.wikipedia.org/wiki/HTTP_Secure">HTTPS</a> and accessed via the <a href="https://api.vhx.tv">api.vhx.tv</a> domain. All data is sent and received as <a href="https://en.wikipedia.org/wiki/JSON">JSON</a>. Blank fields are included as <code>null</code> and timestamps are in ISO 8601 format <code>YYYY-MM-DDTHH:MM:SSZ</code>. Only the UTF-8 character encoding is supported for both requests and responses. We support <a href="https://en.wikipedia.org/wiki/JSONP">JSONP</a> (send a <code>?callback</code> parameter) and <a href="http://en.wikipedia.org/wiki/Cross-origin_resource_sharing">Cross Origin Resource Sharing</a> (CORS) for AJAX requests.
 </section>
 
 <!-- ___HTTP VERBS____________________________ -->

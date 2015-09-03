@@ -10,6 +10,7 @@ includes:
   - api.introduction
   - api.auth
   - api.rate_limits
+  - api.errors
 
 search: true
 ---
