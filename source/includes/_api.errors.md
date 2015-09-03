@@ -5,7 +5,7 @@
 All responses use standard <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes">HTTP status codes</a>. This status code should solely be used to determine the success or failure of a request. If a failure, there additionally will be a message key in the <code>JSON</code> response with a detailed error message. Outline of all HTTP status codes are below.
 </section>
 
-<table>
+<table class="margin-bottom-xlarge padding-bottom-xlarge border-bottom border--light-gray">
   <thead>
     <tr class="text-2">
       <th class="padding-medium nowrap">Status Code</th>

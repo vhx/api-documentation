@@ -11,6 +11,11 @@ includes:
   - api.auth
   - api.rate_limits
   - api.errors
+  - resource.customers
+  - resource.videos
+  - resource.collections
+  - resource.subscriptions
+  - resource.packages
 
 search: true
 ---
