@@ -9,6 +9,14 @@
     $("#nav-button").removeClass('open');
   };
 
+  $(document).on('toc:focus', function(event, data) {
+    var sub_header = data.el.parent('.tocify-subheader');
+
+    if (sub_header.length) {
+      sub_header.prev('.tocify-item').addClass('tocify-focus');
+    }
+  });
+
   var makeToc = function() {
     global.toc = $("#toc-api").tocify({
       content: '.main',
@@ -19,7 +27,7 @@
       showEffectSpeed: 0,
       hideEffectSpeed: 180,
       ignoreSelector: '.toc-ignore',
-      highlightOffset: 60,
+      highlightOffset: 160,
       scrollTo: -1,
       scrollHistory: true,
       hashGenerator: function (text, element) {

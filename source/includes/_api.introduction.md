@@ -1,23 +1,19 @@
 <!-- ___INTRODUCTION____________________________ -->
 <h2 class="head-3 is-api margin-top-large margin-bottom-medium" id="introduction">Introduction</h2>
+<h3 class="text-2 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="introduction"></h3>
+> <h5 class="head-5 text--white margin-top-large margin-bottom-medium">Libraries</h5>
 
-<div class="text-2 contain">
-  <p>The VHX API provides a simple and secure HTTP REST interface to VHX. Registered applications can access customer, video, subscription, collection, and video resources.</p>
-  <p>Currently API application registration is private. Please email <a href="mailto:api@vhx.tv">api@vhx.tv</a> to register an application and provide your app name, description, url, and callback url.</p>
-</div>
+> <p class="margin-bottom-xlarge">We're working on adding client libraries in other languages. <a href="#">Get notified</a>.</p>
 
-<!-- ___SCHEMA____________________________ -->
-<h3 class="text-2 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="schema">Schema</h3>
+> <h5 class="head-5 text--white">API Endpoint</h5>
 
-<div class="text-2 contain">
-All API access is over HTTPS and accessed via the api.vhx.tv domain. All data is sent and received as JSON. Blank fields are included as null and timestamps are in ISO 8601 format    YYYY-MM-DDTHH:MM:SSZ . Only the UTF-8 character encoding is supported for both requests and responses. We support JSONP (send a  ?callback  parameter) and Cross Origin Resource Sharing (CORS) for AJAX requests.
-</div>
-
-> To authorize, use this code:
-
-```ruby
-require 'kittn'
+```shell
+https://api.vhx.tv
 ```
+<section class="text-2 contain">
+  <p>The VHX API provides a simple and secure <a href="http://en.wikipedia.org/wiki/Representational_State_Transfer">REST</a> interface to VHX. Registered applications can access customer, video, subscription, collection, and video resources.</p>
+  <p>All API access is over <a href="http://en.wikipedia.org/wiki/HTTP_Secure">HTTPS</a> and accessed via the <a href="https://api.vhx.tv">api.vhx.tv</a> domain. All data is sent and received as <a href="https://en.wikipedia.org/wiki/JSON">JSONP</a>. Blank fields are included as <code>null</code> and timestamps are in ISO 8601 format <code>YYYY-MM-DDTHH:MM:SSZ</code>. Only the UTF-8 character encoding is supported for both requests and responses. We support <a href="https://en.wikipedia.org/wiki/JSONP">JSONP</a> (send a <code>?callback</code> parameter) and <a href="http://en.wikipedia.org/wiki/Cross-origin_resource_sharing">Cross Origin Resource Sharing</a> (CORS) for AJAX requests.
+</section>
 
 <!-- ___HTTP VERBS____________________________ -->
 <h3 class="text-2 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="http-verbs">HTTP Verbs</h3>
@@ -54,14 +50,22 @@ require 'kittn'
   </tbody>
 </table>
 
-<!-- ................................................ -->
-
-<!-- HYPERMEDIA -->
+<!-- ___HYPERMEDIA____________________________ -->
 <h3 class="text-2 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="hypermedia">Hypermedia</h3>
 
-<div class="text-2 contain">
-The API implements the HAL - Hypertext Application Lanaguge protocol. All resources have _links and _embedded properties. _links are explicit and permanent URIs that API clients should use for navigational and resource UUID purposes. _embedded contains other resources that may be embedded in the current resource, saving you API requests to explicitly fetch that data.
-</div>
+> Example HAL response properties
 
-<!-- ................................................ -->
+```json
+{
+  "_links": {
+    "property": "http://api.vhx.tv/uuid"
+  },
+  "_embedded": {
+    "property": "embed"
+  }
+}
+```
 
+<section class="text-2 contain">
+The API implements the HAL (<a href="https://en.wikipedia.org/wiki/Hypertext_Application_Language">Hypertext Application Lanaguge</a>) protocol. All resources have <code>_links</code> and <code>_embedded</code> properties. The <code>_links</code> object includes explicit and permanent URIs that API clients should use for navigational and resource <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">UUID</a> purposes. The <code>_embedded</code> object contains other resources that may be embedded in the current resource, saving you API requests to explicitly fetch that data.
+</section>
