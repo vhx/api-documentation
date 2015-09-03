@@ -56,7 +56,7 @@
         highlight.call(this);
       } else {
         searchResults.html('<li></li>');
-        $('.search-results li').text('No Results Found for "' + this.value + '"');
+        $('.search-results li').html('<span class="is-block padding-medium">No Results Found for "' + this.value + '"</span>');
       }
     } else {
       unhighlight();
