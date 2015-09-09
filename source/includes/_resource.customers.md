@@ -187,6 +187,39 @@ $ curl -X GET -G "https://api.vhx.tv/customers" \
 }
 ```
 
-<section class="text-2 contain">
+<section class="text-2 contain margin-bottom-medium">
 Customers can be listed for a given subscription, package, or site. A paginated result is returned.
 </section>
+
+<table>
+  <thead>
+    <tr class="text-2">
+      <th class="padding-medium nowrap">Arguments</th>
+      <th class="padding-medium" width="100%">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">subscription</strong>
+        <span class="text--transparent text-3">optional, default is null</span>
+      </td>
+      <td>The UUID of the subscription.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td class="nowrap">
+        <strong class="is-block text--navy">package</strong>
+        <span class="text--transparent text-3">optional, default is null</span>
+      </td>
+      <td>The UUID of the package.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td class="nowrap">
+        <strong class="is-block text--navy">site</strong>
+        <span class="text--transparent text-3">optional, default is null</span>
+      </td>
+      <td>The UUID of the site.</td>
+    </tr>
+  </tbody>
+</table>

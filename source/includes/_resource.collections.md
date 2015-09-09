@@ -49,6 +49,30 @@ $ curl -X GET "https://api.vhx.tv/collections/:id" \
 }
 ```
 
+<section class="text-2 contain">
+  <p>Retrieves an existing collection. You only need to request or supply the UUID that was returned upon collection creation.</p>
+</section>
+
+<table>
+  <thead>
+    <tr class="text-2">
+      <th class="padding-medium nowrap">Arguments</th>
+      <th class="padding-medium" width="100%">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td class="nowrap">
+        <strong class="is-block text--navy">collection</strong>
+        <span class="text--yellow text-3">REQUIRED</span>
+      </td>
+      <td>The UUID for the collection.</td>
+    </tr>
+  </tbody>
+</table>
+
+
 <h3 class="text-2 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="collections-list">List all Collections</h3>
 
 > <h5 class="head-5 text--white margin-bottom-medium">List all Collections</h5>
@@ -92,7 +116,32 @@ $ curl -X GET -G "https://api.vhx.tv/collections" \
 }
 ```
 
-<section class="text-2 contain">
+<section class="text-2 contain margin-bottom-medium">
 Collections can be listed for a given subscription or site. The result can be filtered to 1 or many type's' and a paginated result is returned.
-List all Collections
 </section>
+
+<table>
+  <thead>
+    <tr class="text-2">
+      <th class="padding-medium nowrap">Arguments</th>
+      <th class="padding-medium" width="100%">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">subscription</strong>
+        <span class="text--transparent text-3">optional, default is null</span>
+      </td>
+      <td>The UUID of the subscription.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td class="nowrap">
+        <strong class="is-block text--navy">site</strong>
+        <span class="text--transparent text-3">optional, default is null</span>
+      </td>
+      <td>The UUID of the site.</td>
+    </tr>
+  </tbody>
+</table>

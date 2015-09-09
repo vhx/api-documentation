@@ -1,4 +1,4 @@
-<!-- ___PACAKAGES____________________________ -->
+<!-- ___PACKAGES____________________________ -->
 <h2 class="is-api head-3 margin-top-large margin-bottom-medium" id="packages">Packages</h2>
 
 <section class="text-2 contain">
@@ -69,12 +69,51 @@ $ curl -X POST "https://api.vhx.tv/packages" \
 }
 ```
 
-<section class="text-2 contain">
+
+<section class="text-2 contain margin-bottom-medium">
+
 </section>
+
+
+<table>
+  <thead>
+    <tr class="text-2">
+      <th class="padding-medium nowrap">Arguments</th>
+      <th class="padding-medium" width="100%">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">title</strong>
+        <span class="text--yellow text-3">REQUIRED</span>
+        <span class="text--transparent text-3">string</span>
+      </td>
+      <td>The package title.</td>
+    </tr>
+    <!-- TODO this should be optional / pricing not always necessary via api -->
+    <tr class="text-2 border-bottom border--light-gray">
+      <td class="nowrap">
+        <strong class="is-block text--navy">price_cents</strong>
+        <span class="text--yellow text-3">REQUIRED</span>
+        <span class="text--transparent text-3">integer</span>
+      </td>
+      <td>The price of the package in USD cents.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td class="nowrap">
+        <strong class="is-block text--navy">trailer_url</strong>
+        <span class="text--transparent text-3">optional string, default is null</span>
+      </td>
+      <td>A YouTube or Vimeo video url.</td>
+    </tr>
+  </tbody>
+</table>
 
 <h3 class="text-2 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="packages-retrieve">Retrieve a Package</h3>
 
-> <h5 class="head-5 text--white margin-bottom-medium">Create a customer</h5>
+> <h5 class="head-5 text--white margin-bottom-medium">Retrieve a Package</h5>
 
 > Definiton
 
@@ -141,10 +180,29 @@ $ curl -X GET "https://api.vhx.tv/packages/:id" \
 }
 ```
 <section class="text-2 contain">
-  <p>Information for a package and the videos included in it.</p>
+  <p>Retrieves an existing package. Returns information for a package and the videos included in it. You only need to request or supply the UUID that was returned upon package creation.</p>
 </section>
 
-<h3 class="text-2 text--navy text--bold margin-top-large margin-bottom-medium" id="packages-add">Add a Video to a Package</h3>
+<table>
+  <thead>
+    <tr class="text-2">
+      <th class="padding-medium nowrap">Arguments</th>
+      <th class="padding-medium" width="100%">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td class="nowrap">
+        <strong class="is-block text--navy">package</strong>
+        <span class="text--yellow text-3">REQUIRED</span>
+      </td>
+      <td>The UUID for the package.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 class="text-2 text--navy text--bold margin-top-large margin-bottom-medium" id="packages-add">Add a Video</h3>
 
 > <h5 class="head-5 text--white margin-bottom-medium">Add a Video to a Package</h5>
 
@@ -171,7 +229,34 @@ Status: 204 No Content
 <section class="text-2 contain">
 </section>
 
-<h3 class="text-2 text--navy text--bold margin-top-large margin-bottom-medium" id="packages-delete">Remove a Video from a Package</h3>
+<table>
+  <thead>
+    <tr class="text-2">
+      <th class="padding-medium nowrap">Arguments</th>
+      <th class="padding-medium" width="100%">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">package</strong>
+        <span class="text--yellow text-3">REQUIRED</span>
+      </td>
+      <td>The UUID for the package.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td class="nowrap">
+        <strong class="is-block text--navy">video</strong>
+        <span class="text--yellow text-3">REQUIRED</span>
+      </td>
+      <td>The UUID for the video to add.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h3 class="text-2 text--navy text--bold margin-top-large margin-bottom-medium" id="packages-delete">Remove a Video</h3>
 
 > <h5 class="head-5 text--white margin-bottom-medium">Remove a Video from a Package</h5>
 
@@ -197,3 +282,29 @@ Status: 204 No Content
 
 <section class="text-2 contain">
 </section>
+
+<table>
+  <thead>
+    <tr class="text-2">
+      <th class="padding-medium nowrap">Arguments</th>
+      <th class="padding-medium" width="100%">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">package</strong>
+        <span class="text--yellow text-3">REQUIRED</span>
+      </td>
+      <td>The UUID for the package.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td class="nowrap">
+        <strong class="is-block text--navy">video</strong>
+        <span class="text--yellow text-3">REQUIRED</span>
+      </td>
+      <td>The UUID for the video to remove.</td>
+    </tr>
+  </tbody>
+</table>

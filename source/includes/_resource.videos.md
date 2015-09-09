@@ -2,9 +2,7 @@
 <h2 class="is-api head-3 margin-top-large margin-bottom-medium" id="videos">Videos</h2>
 
 <section class="text-2 contain">
-  <p>A video is a playable resource. In addition to it's core properties, a video also has tracks (subtitles or chapters) and a set of files available to stream or download.</p>
-  <p>A subtitle track is a sidecar WebVTT or SRT file.</p>
-  <p>A video has many file renditions. A particular file has a specific quality, format, method, and mime type:</p>
+  <p>A video is a playable resource. In addition to it's core properties, a video has a set of files available to stream or download, each with many file renditions. A particular file has a specific quality, format, method, and mime type:</p>
 </section>
 
 <table>
@@ -34,6 +32,10 @@
     </tr>
   </tbody>
 </table>
+
+<section class="text-2 contain margin-bottom-large">
+  <p>Video objects also have tracks. This includes subtitles or chapters tracks. A subtitle track is a sidecar WebVTT or SRT file.</p>
+</section>
 
 <h3 class="text-2 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="videos-create">Create a Video</h3>
 
@@ -95,8 +97,42 @@ $ curl -X POST "https://api.vhx.tv/videos" \
 ```
 
 <section class="text-2 contain">
-  <p>A video can be created via the API with an optional source_url. This source_url should be an accessible master video file per our compression settings. To grant us permission to download the video source_url from your S3 bucket, see our S3 policy.</p>
+  <p>A video can be created via the API and subsequently organized by adding it to a collection (<a href="#collections">see below</a>).</p>
 </section>
+
+<table>
+  <thead>
+    <tr class="text-2">
+      <th class="padding-medium nowrap">Arguments</th>
+      <th class="padding-medium" width="100%">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">title</strong>
+        <span class="text--yellow text-3">REQUIRED</span>
+        <span class="text--transparent text-3">string</span>
+      </td>
+      <td>A title for the video.</p></td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">source_url</strong>
+        <span class="text--transparent text-3">optional string, default is null</span>
+      </td>
+      <td>An accessible master video file per our compression settings. To grant us permission to download the video source_url from your S3 bucket, see our S3 policy.</p></td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">description</strong>
+        <span class="text--transparent text-3">optional string, default is null</span>
+      </td>
+      <td>A description for the video.</p></td>
+    </tr>
+  </tbody>
+</table>
 
 <h3 class="text-2 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="videos-get">Retrieve a Video</h3>
 
@@ -126,19 +162,21 @@ $ curl -X GET "https://api.vhx.tv/videos/:id" \
   },
   "_embedded": {
     "site": {},
-    "files": [{
-      "_links": {
-        "self":  { "href": "https://api.vhx.tv/videos/1/files?quality=adaptive&format=m3u8" }
-      },
-      "quality": "adaptive",
-      "format": "m3u8",
-      "method": "hls",
-      "size": {
-        "bytes": 1073741824,
-        "formatted": "1 GB"
-      },
-      "mime_type": "application/x-mpegURL"
-    }],
+    "files": [
+      {
+        "_links": {
+          "self":  { "href": "https://api.vhx.tv/videos/1/files?quality=adaptive&format=m3u8" }
+        },
+        "quality": "adaptive",
+        "format": "m3u8",
+        "method": "hls",
+        "size": {
+          "bytes": 1073741824,
+          "formatted": "1 GB"
+        },
+        "mime_type": "application/x-mpegURL"
+      }
+    ]
   },
   "id": 1,
   "title": "My Video",
@@ -173,7 +211,28 @@ $ curl -X GET "https://api.vhx.tv/videos/:id" \
 ```
 
 <section class="text-2 contain">
+  <p>Retrieves an existing video. You only need to request or supply the UUID that was returned upon video creation.</p>
 </section>
+
+<table>
+  <thead>
+    <tr class="text-2">
+      <th class="padding-medium nowrap">Arguments</th>
+      <th class="padding-medium" width="100%">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td class="nowrap">
+        <strong class="is-block text--navy">video</strong>
+        <span class="text--yellow text-3">REQUIRED</span>
+      </td>
+      <td>The UUID for the video.</td>
+    </tr>
+  </tbody>
+</table>
+
 
 <h3 class="text-2 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="videos-list">List all Videos</h3>
 
@@ -216,6 +275,38 @@ $ curl -X GET -G "https://api.vhx.tv/videos" \
   <p>Videos can be listed for a given subscription, package, or site. A paginated result is returned.</p>
 </section>
 
+<table>
+  <thead>
+    <tr class="text-2">
+      <th class="padding-medium nowrap">Arguments</th>
+      <th class="padding-medium" width="100%">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">subscription</strong>
+        <span class="text--transparent text-3">optional, default is null</span>
+      </td>
+      <td>The UUID of the subscription.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td class="nowrap">
+        <strong class="is-block text--navy">package</strong>
+        <span class="text--transparent text-3">optional, default is null</span>
+      </td>
+      <td>The UUID of the package.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td class="nowrap">
+        <strong class="is-block text--navy">site</strong>
+        <span class="text--transparent text-3">optional, default is null</span>
+      </td>
+      <td>The UUID of the site.</td>
+    </tr>
+  </tbody>
+</table>
 
 <h3 class="text-2 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="videos-list-files">List all Video Files</h3>
 

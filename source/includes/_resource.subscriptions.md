@@ -1,11 +1,11 @@
-<!-- ___AUTHENTICATION____________________________ -->
+<!-- ___SUBSCRIPTIONS____________________________ -->
 <h2 class="is-api head-3 margin-top-large margin-bottom-medium" id="subscriptions">Subscriptions</h2>
 
 <section class="text-2 contain">
   <p>A subscription let's customers purchase monthly or yearly reocurring access to a sellers content. A subscription has many videos organized via playlists.</p>
 </section>
 
-<h3 class="text-2 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="subscriptions-create">Create a Subscription</h3>
+<h3 class="text-2 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="subscriptions-get">Get a Subscription</h3>
 
 > <h5 class="head-5 text--white margin-bottom-medium">Create a subscription</h5>
 
@@ -69,6 +69,25 @@ $ curl -X GET "https://api.vhx.tv/subscriptions/:id" \
 }
 ```
 
-<section class="text-2 contain">
-  Information for a subscription and the playlists/videos included in it.
+<section class="text-2 contain margin-bottom-medium">
+  <p>Retrieves an existing subscription and its associated collections (videos tied to it). <!-- You only need to request or supply the UUID that was returned upon subscription creation. --></p>
 </section>
+
+<table>
+  <thead>
+    <tr class="text-2">
+      <th class="padding-medium nowrap">Arguments</th>
+      <th class="padding-medium" width="100%">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td class="nowrap">
+        <strong class="is-block text--navy">subscription</strong>
+        <span class="text--yellow text-3">REQUIRED</span>
+      </td>
+      <td>The UUID for the subscription.</td>
+    </tr>
+  </tbody>
+</table>
