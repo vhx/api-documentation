@@ -1,5 +1,5 @@
 <!-- RATE LIMITS -->
-<h2 class="head-3 is-api margin-top-xlarge margin-bottom-medium" id="rate-limits">Rate Limits</h2>
+<h2 class="head-3 margin-top-xlarge padding-top-xlarge border-top margin-bottom-medium" id="rate-limits">Rate Limits</h2>
 
 > <h5 class="head-5 text--white margin-bottom-medium">Request Headers</h5>
 
