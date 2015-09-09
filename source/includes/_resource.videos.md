@@ -173,7 +173,6 @@ $ curl -X GET "https://api.vhx.tv/videos/:id" \
 ```
 
 <section class="text-2 contain">
-  Copy.
 </section>
 
 <h3 class="text-2 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="videos-list">List all Videos</h3>

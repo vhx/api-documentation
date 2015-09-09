@@ -70,7 +70,6 @@ $ curl -X POST "https://api.vhx.tv/packages" \
 ```
 
 <section class="text-2 contain">
-  Copy.
 </section>
 
 <h3 class="text-2 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="packages-retrieve">Retrieve a Package</h3>
@@ -170,7 +169,6 @@ Status: 204 No Content
 ```
 
 <section class="text-2 contain">
-  Copy.
 </section>
 
 <h3 class="text-2 text--navy text--bold margin-top-large margin-bottom-medium" id="packages-delete">Remove a Video from a Package</h3>
@@ -198,5 +196,4 @@ Status: 204 No Content
 ```
 
 <section class="text-2 contain">
-  Copy.
 </section>

@@ -3,7 +3,7 @@
 <h3 class="text-2 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="introduction"></h3>
 > <h5 class="head-5 text--white margin-top-large margin-bottom-medium">Libraries</h5>
 
-> <p class="margin-bottom-xlarge">We're working on adding client libraries in other languages. <a href="#">Get notified</a>.</p>
+> <p class="margin-bottom-xlarge">We're working on adding client libraries in other languages. <a href="/docs/signup">Get notified</a>.</p>
 
 > <h5 class="head-5 text--white">API Endpoint</h5>
 
