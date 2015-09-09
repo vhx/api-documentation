@@ -149,7 +149,6 @@
   background: #2e064a; }
 
 .bg-image {
-  background: image-url("home/bg-footer.jpg") top center repeat #000c1d;
   position: relative; }
   .bg-image.bg-only:before {
     background: none; }
@@ -12320,7 +12319,7 @@ a.badge:hover, a.badge:active {
     .table thead th {
       padding: 15px 15px 15px 20px;
       border: none;
-      background: url(image-path("admin/table-tick.png")) no-repeat 0 100%; }
+      }
       .table thead th:first-child {
         background: none; }
     .table thead.no-tick {
