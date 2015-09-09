@@ -9,7 +9,6 @@
 
 ```shell
 https://api.vhx.tv
-<script src="https://cdn.vhx.tv/assets/api.js" data-vhx-site="yoursubdomain.vhx.tv"></script>
 ```
 <section class="text-2 contain">
   <p>The VHX API provides a simple and secure <a href="http://en.wikipedia.org/wiki/Representational_State_Transfer">REST</a> interface to VHX. Registered applications can access customer, video, subscription, collection, and video resources.</p>
