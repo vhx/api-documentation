@@ -1,5 +1,5 @@
 <!-- ___PACAKAGES____________________________ -->
-<h2 class="is-api head-3 margin-top-large margin-bottom-medium" id="packages">Pacakages</h2>
+<h2 class="is-api head-3 margin-top-large margin-bottom-medium" id="packages">Packages</h2>
 
 <section class="text-2 contain">
   <p>A package is the unit for sale via a site. A package has a price tag and has videos and bonus materials inside of it.</p>
