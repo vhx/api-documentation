@@ -36,7 +36,7 @@ $ curl -X GET "https://api.vhx.tv/collections/:id" \
   "id": 1,
   "title": "Romantic Comedy",
   "description": "All our favorite romantic comedies.",
-  "slug": "romantic-comedy"
+  "slug": "romantic-comedy",
   "thumbnail": {
     "small": "https://cdn.vhx.tv/assets/thumbnails/default-small.png",
     "medium": "https://cdn.vhx.tv/assets/thumbnails/default-medium.png",
