@@ -47,7 +47,7 @@ $ curl -X POST "https://api.vhx.tv/customers" \
 ```
 
 <section class="text-2 contain margin-bottom-medium">
-A customer can be created (or added) to a given subscription, package, or site. For a subscription customer, you are billed per customer / per month. Please <a href="https://vhx.tv/pricing">see our pricing</a> for details.
+  A customer can be created (or added) to a given product. For a subscription customer, you are billed per customer / per month. Please <a href="https://vhx.tv/pricing">see our pricing</a> for more details.
 </section>
 
 <table>
@@ -62,14 +62,15 @@ A customer can be created (or added) to a given subscription, package, or site. 
     <tr class="text-2 border-bottom border--light-gray">
       <td>
         <strong class="is-block text--navy">name</strong>
-        <span class="text--yellow text-3">REQUIRED</span>
+        <span class="text--transparent text-3">string</span>
       </td>
-      <td>The customer's name.</td>
+      <td>The customer's full name (first and last).</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td class="nowrap">
         <strong class="is-block text--navy">email</strong>
-        <span class="text--transparent text-3">string</span>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--yellow text-3">REQUIRED</span>
       </td>
       <td>The customer's email.</td>
     </tr>

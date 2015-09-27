@@ -50,7 +50,7 @@
   function animate() {
     setTimeout(function() {
       toc.setOption('showEffectSpeed', 180);
-      $('#tocify-header4').before('<h5 class="margin-top-medium padding-medium head-5 text--gray">Resources</h5>');
+      $('#tocify-header5').before('<h5 class="margin-top-medium padding-medium head-5 text--gray">Resources</h5>');
     }, 50);
   }
 

@@ -9,7 +9,8 @@ toc_footers:
 includes:
   - api.introduction
   - api.auth
-  - api.rate_limits
+  - api.httpverbs
+  - api.hypermedia
   - api.errors
   - resource.customers
   - resource.videos
