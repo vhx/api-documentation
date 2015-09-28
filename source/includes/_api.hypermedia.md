@@ -19,6 +19,6 @@
 
 <section class="text-2 contain">
   <p>The VHX API implements the HAL (<a href="https://en.wikipedia.org/wiki/Hypertext_Application_Language" target="_blank">Hypertext Application Lanaguge</a>) protocol. All resources have <code>_links</code> and <code>_embedded</code> properties.</p>
-  <p>The <code>_links</code> object includes explicit and permanent URIs that API clients should use for navigational purposes. The <code>_links.self.href</code> propery, in particular, should be utilized as the resource <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier" target="_blank">UUID</a>.</p>
+  <p>The <code>_links</code> object includes explicit and permanent URIs that API clients should use for navigational purposes. The <code>_links.self.href</code> propery, in particular, should be utilized as the resource universal unique identifier (<a href="https://en.wikipedia.org/wiki/Universally_unique_identifier" target="_blank">UUID</a>).</p>
   <p>The <code>_embedded</code> object may contain other resources (objects or associations) that may be included with the current resource, saving you API requests to explicitly fetch that data.</p>
 </section>

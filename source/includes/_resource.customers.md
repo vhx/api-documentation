@@ -2,7 +2,7 @@
 <h2 class="head-3 margin-top-xlarge padding-top-xlarge border-top margin-bottom-medium" id="customers">Customers</h2>
 
 <section class="text-2 contain">
-A customer is a person who has subscribed, purchased, or been given access to your content (collections and/or videos).
+A customer is a person who has been subscribed, purchased, or been given access to your content (collections and/or videos) via a product.
 </section>
 
 <h3 class="text-2 text--navy text--bold margin-top-xlarge margin-bottom-medium" id="customer-create">Create a Customer</h3>
@@ -36,18 +36,13 @@ $ curl -X POST "https://api.vhx.tv/customers" \
   "id": 1,
   "name": "Space Cat",
   "email": "spacecat@vhx.tv",
-  "thumbnail": {
-    "small": "https://cdn.vhx.tv/assets/thumbnails/default-small.png",
-    "medium": "https://cdn.vhx.tv/assets/thumbnails/default-medium.png",
-    "large": "https://cdn.vhx.tv/assets/thumbnails/default-large.png"
-  },
   "created_at": "2014-02-25T20:19:30Z",
   "updated_at": "2014-02-25T20:19:30Z"
 }
 ```
 
 <section class="text-2 contain margin-bottom-medium">
-  A customer can be created (or added) to a given product. For a subscription customer, you are billed per customer / per month. Please <a href="https://vhx.tv/pricing">see our pricing</a> for more details.
+  A customer can be created (or added) for a given product. For a subscription customer, you are billed per customer / per month. Please <a href="https://vhx.tv/pricing">see our pricing</a> for more details.
 </section>
 
 <table>
@@ -119,17 +114,12 @@ $ curl -X GET "https://api.vhx.tv/customers/:id" \
   "id": 1,
   "name": "Space Cat",
   "email": "spacecat@vhx.tv",
-  "thumbnail": {
-    "small": "https://cdn.vhx.tv/assets/thumbnails/default-small.png",
-    "medium": "https://cdn.vhx.tv/assets/thumbnails/default-medium.png",
-    "large": "https://cdn.vhx.tv/assets/thumbnails/default-large.png"
-  },
   "created_at": "2014-02-25T20:19:30Z",
   "updated_at": "2014-02-25T20:19:30Z"
 }
 ```
 <section class="text-2 contain">
-  <p>Retrieves an existing customer. You only need to request or supply the UUID that was returned upon customer creation.</p>
+  <p>Retrieves an existing customer. You should specify the context (subscription or package) when retrieving a customer.</p>
 </section>
 
 <table>
@@ -142,11 +132,26 @@ $ curl -X GET "https://api.vhx.tv/customers/:id" \
 
   <tbody>
     <tr class="text-2 border-bottom border--light-gray">
-      <td class="nowrap">
-        <strong class="is-block text--navy">customer</strong>
+      <td>
+        <strong class="is-block text--navy">id</strong>
+        <span class="is-block text--transparent text-3">integer</span>
         <span class="text--yellow text-3">REQUIRED</span>
       </td>
-      <td>The UUID for the customer.</td>
+      <td>The id of customer being retrieved.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">subscription</strong>
+        <span class="text--transparent text-3">optional, default is null</span>
+      </td>
+      <td>The UUID of the subscription.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td class="nowrap">
+        <strong class="is-block text--navy">package</strong>
+        <span class="text--transparent text-3">optional, default is null</span>
+      </td>
+      <td>The UUID of the package.</td>
     </tr>
   </tbody>
 </table>
@@ -174,11 +179,11 @@ $ curl -X GET -G "https://api.vhx.tv/customers" \
 ```json
 {
   "_links": {
-    "self":  { "href": "https://api.vhx.tv/customers?page=1" },
-    "first": { "href": "https://api.vhx.tv/customers" },
+    "self":  { "href": "https://api.vhx.tv/customers?page=1&subscription=:href" },
+    "first": { "href": "https://api.vhx.tv/customers&subscription=:href" },
     "prev":  { "href": null },
-    "next":  { "href": "https://api.vhx.tv/customers?page=2" },
-    "last":  { "href": "https://api.vhx.tv/customers?page=5" }
+    "next":  { "href": "https://api.vhx.tv/customers?page=2&subscription=:href" },
+    "last":  { "href": "https://api.vhx.tv/customers?page=5&subscription=:href" }
   },
   "count": 100,
   "total": 500,
@@ -189,7 +194,7 @@ $ curl -X GET -G "https://api.vhx.tv/customers" \
 ```
 
 <section class="text-2 contain margin-bottom-medium">
-Customers can be listed for a given subscription, package, or site. A paginated result is returned.
+Customers can be listed for a given context (subscription or package). A paginated result is returned.
 </section>
 
 <table>
@@ -216,11 +221,20 @@ Customers can be listed for a given subscription, package, or site. A paginated 
       <td>The UUID of the package.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
-      <td class="nowrap">
-        <strong class="is-block text--navy">site</strong>
-        <span class="text--transparent text-3">optional, default is null</span>
+      <td>
+        <strong class="is-block text--navy">page</strong>
+        <span class="is-block text--transparent text-3">integer</span>
+        <span class="text--transparent text-3">optional, default is 1</span>
       </td>
-      <td>The UUID of the site.</td>
+      <td>The page number of the paginated result.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">per_page</strong>
+        <span class="is-block text--transparent text-3">integer</span>
+        <span class="text--transparent text-3">optional, default is 50</span>
+      </td>
+      <td>The page size of the paginated result.</td>
     </tr>
   </tbody>
 </table>
