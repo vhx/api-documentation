@@ -2,7 +2,7 @@
 <h2 class="is-api head-3 margin-top-large margin-bottom-medium" id="collections">Collections</h2>
 
 <section class="text-2 contain">
-  A collection is the way to organize and add metadata to your videos. There are 5 types of collections: category, series, season, movie, and playlist. Each collection has many items which can reference a video, an extra (file download), or another collection. An example of this: a series collection could have 5 items (3 seasons and 2 video extras). Each season would have several videos as their items.
+  A collection is the way to organize and add metadata to your videos. There are 5 types of collections: category, series, season, movie, and playlist. Each collection has many items which can be a video, an extra, or another collection. An example of this is a series collection could have 5 items (3 seasons and 2 videos/trailers). Each season would have several videos as it's items.
 </section>
 
 <h3 class="text-2 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="collections-retrieve">Retrieve a Collection</h3>
@@ -229,7 +229,7 @@ $ curl -X GET -G "https://api.vhx.tv/collections/1/items?page=1" \
 ```
 
 <section class="text-2 contain margin-bottom-medium">
-  Collections  can be listed for a given subscription or site. The result can be filtered to 1 or many type's' and a paginated result is returned.
+  Each collection has many items which can be a video, an extra, or another collection. An example of this is a series collection could have 5 items (3 seasons and 2 videos/trailers). Each season would have several videos as it's items.
 </section>
 
 <table>
@@ -242,6 +242,14 @@ $ curl -X GET -G "https://api.vhx.tv/collections/1/items?page=1" \
 
   <tbody>
     <tr class="text-2 border-bottom border--light-gray">
+      <tr class="text-2 border-bottom border--light-gray">
+        <td>
+          <strong class="is-block text--navy">id</strong>
+          <span class="is-block text--transparent text-3">integer</span>
+          <span class="text--yellow text-3">REQUIRED</span>
+        </td>
+        <td>The id of collection being retrieved.</td>
+      </tr>
       <td>
         <strong class="is-block text--navy">page</strong>
         <span class="is-block text--transparent text-3">integer</span>
