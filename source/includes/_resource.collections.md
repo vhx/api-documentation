@@ -28,19 +28,10 @@ $ curl -X GET "https://api.vhx.tv/collections/:id" \
 {
   "_links": {
     "self":  { "href": "https://api.vhx.tv/collections/1" },
-    "items": {
-      "href": "https://api.vhx.tv/collections/1/items",
-      "next": {
-        "href": "https://api.vhx.tv/collections/1/items?page=2&per_page=5"
-      }
-    }
-  },
-  "_embedded": {
-    "trailer": {},
-    "items": []
+    "items": { "href": "https://api.vhx.tv/collections/1/items" }
   },
   "id": 1,
-  "title": "Romantic Comedy",
+  "name": "Romantic Comedy",
   "description": "All our favorite romantic comedies.",
   "slug": "romantic-comedy",
   "thumbnail": {
@@ -57,7 +48,6 @@ $ curl -X GET "https://api.vhx.tv/collections/:id" \
 
 <section class="text-2 contain">
   <p>Retrieves an existing collection.</p>
-  <p>The first page of collection items will be embedded in the <code>_embedded</code> property. The size of this page can be customized via <code>?per_page=</code>. See <code>_links.items.next.href</code> for the next page of items.</p>
 </section>
 
 <table>
@@ -83,14 +73,6 @@ $ curl -X GET "https://api.vhx.tv/collections/:id" \
         <span class="text--transparent text-3">optional, default is null</span>
       </td>
       <td>The UUID of the subscription.</td>
-    </tr>
-    <tr class="text-2 border-bottom border--light-gray">
-      <td>
-        <strong class="is-block text--navy">per_page</strong>
-        <span class="is-block text--transparent text-3">integer</span>
-        <span class="text--transparent text-3">optional, default is 50</span>
-      </td>
-      <td>The page size of the embedded items. Only page 1 is returned in <code>_embedded.items</code>.</td>
     </tr>
   </tbody>
 </table>
