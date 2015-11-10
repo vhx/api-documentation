@@ -22,6 +22,10 @@ $ curl -X GET "https://api.vhx.tv/collections/:id" \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
+```ruby
+  customer = Vhx::Customer.find(1)
+```
+
 > Example Response
 
 ```json
@@ -101,7 +105,14 @@ $ curl -X GET -G "https://api.vhx.tv/collections" \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
+```ruby
+Vhx::Collection.list(subscription: 'https://api.vhx.tv/subscriptions/1')
+```
+
 > Example Response
+```ruby
+
+```
 
 ```json
 {
@@ -189,6 +200,10 @@ GET /collections/:id/items
 ```shell
 $ curl -X GET -G "https://api.vhx.tv/collections/1/items?page=1" \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
+```
+
+```ruby
+items = Vhx::CollectionItem.list({collection: https://api.vhx.tv/collections/1, page: 1})
 ```
 
 > Example Response

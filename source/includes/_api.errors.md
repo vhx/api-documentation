@@ -52,3 +52,25 @@
     </tr>
   </tbody>
 </table>
+
+
+
+```ruby
+# For example, rescuing a Unauthorized Error
+
+begin
+  Vhx::Customer.find(1)
+rescue Vhx::UnauthorizedError
+  # Handle Exception
+end
+
+# Mapping of error codes and the ruby exception that is thrown
+{
+  400 => Vhx::BadRequestError,
+  401 => Vhx::UnauthorizedError,
+  402 => Vhx::PaymentRequiredError,
+  404 => Vhx::NotFoundError,
+  406 => Vhx::NotAcceptableError,
+  500...505 => Vhx::ServerError
+}
+```

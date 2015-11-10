@@ -9,6 +9,11 @@
 $ curl -X GET "https://api.vhx.tv/customers" \
 -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
+
+```ruby
+Vhx.setup(api_key: 'o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM')
+```
+
 > <p>cURL uses the -u flag to pass basic auth credentials.</p>
 > <p>Adding a colon after your API key will prevent it from asking you for a password.</p>
 
