@@ -662,7 +662,10 @@ header {
   text-shadow: transparent;
   font-family: 'Andale Mono', Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif;
 }
-
+.highlight.javascript,
+.highlight.ruby {
+  display: none !important;
+}
 .highlight .w {
   background: #2F3A40;
 }
