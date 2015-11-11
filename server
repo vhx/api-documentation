@@ -1,0 +1,3 @@
+touch ~/.pow/docs && echo 4567 > ~/.pow/docs
+echo "Server booting up: http://docs.dev"
+bundle exec middleman server
