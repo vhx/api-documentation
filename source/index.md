@@ -2,7 +2,7 @@
 title: API Reference
 
 language_tabs:
-  - cURL
+  - shell
 
 toc_footers:
 
@@ -14,9 +14,9 @@ includes:
   - api.errors
   - resource.customers
   - resource.videos
+  - resource.authorizations
   - resource.collections
   - resource.subscriptions
-  - resource.packages
 
 search: true
 ---

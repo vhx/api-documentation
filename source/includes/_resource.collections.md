@@ -23,7 +23,19 @@ $ curl -X GET "https://api.vhx.tv/collections/:id" \
 ```
 
 ```ruby
-  customer = Vhx::Customer.find(1)
+collection = Vhx::Collection.find(1)
+```
+
+```node
+vhx.collections.retrieve({
+  id: '1'
+}, function(err, collection) {
+  if (!err) {
+    // callback
+  } else {
+    // see http://dev.vhx.tv/docs/api#errors for handling errors
+  }
+};
 ```
 
 > Example Response

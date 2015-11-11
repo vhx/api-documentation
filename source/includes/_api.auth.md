@@ -11,7 +11,12 @@ $ curl -X GET "https://api.vhx.tv/customers" \
 ```
 
 ```ruby
+require 'vhx-ruby'
 Vhx.setup(api_key: 'o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM')
+```
+
+```javascript
+var vhx = require('vhx')('o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM');
 ```
 
 > <p>cURL uses the -u flag to pass basic auth credentials.</p>

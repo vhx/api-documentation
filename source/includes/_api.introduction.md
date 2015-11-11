@@ -6,7 +6,7 @@
 
 > <h5 class="head-5 text--white">API Endpoint</h5>
 
-```shell
+```plaintext
 https://api.vhx.tv
 ```
 <section class="text-2 contain">
