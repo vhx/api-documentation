@@ -64,10 +64,18 @@ under the License.
           <div class="lang-selector">
             <% language_tabs.each do |lang| %>
               <% if lang.is_a? Hash %>
-                <a class="btn btn--small" href="#" data-language-name="<%= lang.keys.first %>"><%= lang.values.first %></a>
-              <% else %>
-                <a class="btn btn--small" href="#" data-language-name="<%= lang %>"><%= lang %></a>
+                <% lang = lang.values.first %>
               <% end %>
+
+              <% if lang === 'shell'
+                  display_lang = 'cURL'
+                elsif lang === 'javascript'
+                  display_lang = 'node'
+                else
+                  display_lang = lang
+                end
+              %>
+              <a class="btn btn--small text--white" href="#" data-language-name="<%= lang %>"><%= display_lang %></a>
             <% end %>
           </div>
         <% end %>
@@ -101,10 +109,18 @@ under the License.
             <div class="lang-selector">
               <% language_tabs.each do |lang| %>
                 <% if lang.is_a? Hash %>
-                  <a class="btn btn--small text--white" href="#" data-language-name="<%= lang.keys.first %>"><%= lang.values.first %></a>
-                <% else %>
-                  <a class="btn btn--small text--white" href="#" data-language-name="<%= lang %>"><%= lang %></a>
+                  <% lang = lang.values.first %>
                 <% end %>
+
+                <% if lang === 'shell'
+                    display_lang = 'cURL'
+                  elsif lang === 'javascript'
+                    display_lang = 'node'
+                  else
+                    display_lang = lang
+                  end
+                %>
+                <a class="btn btn--small text--white" href="#" data-language-name="<%= lang %>"><%= display_lang %></a>
               <% end %>
             </div>
           <% end %>
