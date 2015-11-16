@@ -14,8 +14,8 @@ includes:
   - api.errors
   - resource.customers
   - resource.videos
-  - resource.authorizations
   - resource.collections
+  - resource.authorizations
   - resource.subscriptions
 
 search: true

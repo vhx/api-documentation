@@ -305,6 +305,30 @@ $ curl -X GET -G "https://api.vhx.tv/videos" \
       </td>
       <td>The UUID of the site.</td>
     </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">query</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--transparent text-3">optional, default is null</span>
+      </td>
+      <td>The query to search and filter the paginated results.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">page</strong>
+        <span class="is-block text--transparent text-3">integer</span>
+        <span class="text--transparent text-3">optional, default is 1</span>
+      </td>
+      <td>The page number of the paginated result.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">per_page</strong>
+        <span class="is-block text--transparent text-3">integer</span>
+        <span class="text--transparent text-3">optional, default is 50</span>
+      </td>
+      <td>The page size of the paginated result.</td>
+    </tr>
   </tbody>
 </table>
 
