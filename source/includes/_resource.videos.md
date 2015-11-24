@@ -43,8 +43,20 @@
 
 > Definiton
 
-```
+```shell
 POST /videos
+```
+
+```ruby
+Vhx::Video.create()
+```
+
+```javascript
+vhx.videos.create();
+```
+
+```php
+<?php\VHX\Videos::create();
 ```
 
 > Example Request
@@ -58,6 +70,34 @@ $ curl -X POST "https://api.vhx.tv/videos" \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
+```ruby
+customer = Vhx::Video.create({
+  title: 'My Video',
+  description: 'My video description.',
+  source_url: 's3:://YOUR_BUCKET_NAME/FILE.mp4'
+  site: 'https://api.vhx.tv/sites/1'
+})
+```
+
+```javascript
+vhx.videos.create({
+  title: 'My Video',
+  description: 'My video description.',
+  source_url: 's3:://YOUR_BUCKET_NAME/FILE.mp4'
+  site: 'https://api.vhx.tv/sites/1'
+}, function(err, video) {
+   // asynchronously called
+});
+```
+
+```php
+$video = \VHX\Videos::create(array(
+  title => 'My Video',
+  description => 'My video description.',
+  source_url => 's3:://YOUR_BUCKET_NAME/FILE.mp4'
+  site => 'https://api.vhx.tv/sites/1'
+));
+```
 > Example Response
 
 ```json
@@ -140,15 +180,42 @@ $ curl -X POST "https://api.vhx.tv/videos" \
 
 > Definiton
 
-```
+```shell
 GET /videos/:id
 ```
 
+```ruby
+Vhx::Videos.find()
+```
+
+```javascript
+vhx.videos.retrieve();
+```
+
+```php
+<?php\VHX\Videos::retrieve();
+```
 > Example Request
 
 ```shell
 $ curl -X GET "https://api.vhx.tv/videos/:id" \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
+```
+
+```ruby
+customer = Vhx::Video.find(125)
+```
+
+```javascript
+vhx.videos.retrieve({
+  id: 125
+}, function(err, video) {
+  // asynchronously called
+});
+```
+
+```php
+$video = \VHX\Videos::retrieve(125);
 ```
 
 > Example Response
@@ -240,16 +307,47 @@ $ curl -X GET "https://api.vhx.tv/videos/:id" \
 
 > Definiton
 
-```
+```shell
 GET /videos
 ```
 
+```ruby
+Vhx::Video.list()
+```
+
+```javascript
+vhx.videos.list();
+```
+
+```php
+<?php\VHX\Videos::list();
+```
 > Example Request
 
 ```shell
 $ curl -X GET -G "https://api.vhx.tv/videos" \
   -d subscription=https://api.vhx.tv/subscriptions/1 \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
+```
+
+```ruby
+customer = Vhx::Video.list({
+  subscription: 'https://api.vhx.tv/subscriptions/1'
+})
+```
+
+```javascript
+vhx.videos.list({
+  subscription: 'https://api.vhx.tv/subscriptions/1'
+}, function(err, videos) {
+   // asynchronously called
+});
+```
+
+```php
+$videos = \VHX\Videos::list(array(
+  subscription => 'https://api.vhx.tv/subscriptions/1'
+));
 ```
 
 > Example Response
@@ -338,13 +436,20 @@ $ curl -X GET -G "https://api.vhx.tv/videos" \
 
 > Definiton
 
-```
+```shell
 GET /videos/:id/files
 ```
-> Query by type
 
+```ruby
+Vhx::Video.files()
 ```
-GET /videos/:id/files?quality=adaptive&format=m3u8
+
+```javascript
+vhx.videos.files();
+```
+
+```php
+<?php\VHX\Videos::files();
 ```
 
 > Example Request
@@ -352,6 +457,29 @@ GET /videos/:id/files?quality=adaptive&format=m3u8
 ```shell
 $ curl -X GET "https://api.vhx.tv/videos/:id/files?quality=adaptive&format=m3u8" \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
+```
+
+```ruby
+files = Vhx::Video.files(465, {
+  quality: 'adaptive',
+  format: 'm3u8'
+})
+```
+
+```javascript
+vhx.videos.files({
+  quality: 'adaptive',
+  format: 'm3u8'
+}, function(err, files) {
+   // asynchronously called
+});
+```
+
+```php
+$files = \VHX\Videos::files(array(
+  quality => 'adaptive',
+  format => 'm3u8'
+));
 ```
 
 > Example Response

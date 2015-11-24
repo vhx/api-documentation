@@ -11,8 +11,20 @@
 
 > Definition
 
-```
+```shell
 GET /collections/:id
+```
+
+```ruby
+Vhx::Collection.retrieve()
+```
+
+```javascript
+vhx.collections.retrieve();
+```
+
+```php
+<?php\VHX\Collections::retrieve();
 ```
 
 > Example Request
@@ -23,19 +35,19 @@ $ curl -X GET "https://api.vhx.tv/collections/:id" \
 ```
 
 ```ruby
-collection = Vhx::Collection.find(1)
+collection = Vhx::Collection.find(375)
 ```
 
-```node
+```javascript
 vhx.collections.retrieve({
-  id: '1'
+  id : 375
 }, function(err, collection) {
-  if (!err) {
-    // callback
-  } else {
-    // see http://dev.vhx.tv/docs/api#errors for handling errors
-  }
-};
+  // asynchronously called
+});
+```
+
+```php
+<?php$collection = \VHX\Collections::retrieve(375);
 ```
 
 > Example Response
@@ -99,14 +111,20 @@ vhx.collections.retrieve({
 
 > Definition
 
-```
+```shell
 GET /collections
 ```
 
-> Query by Type
-
+```ruby
+Vhx::Collection.list()
 ```
-GET /collections?type=series,movie
+
+```javascript
+vhx.collections.list();
+```
+
+```php
+<?php\VHX\Collections::list();
 ```
 
 > Example Request
@@ -118,13 +136,26 @@ $ curl -X GET -G "https://api.vhx.tv/collections" \
 ```
 
 ```ruby
-Vhx::Collection.list(subscription: 'https://api.vhx.tv/subscriptions/1')
+collections = Vhx::Collection.list({
+  subscription: 'https://api.vhx.tv/subscriptions/1'
+})
+```
+
+```javascript
+vhx.collections.list({
+  subscription: 'https://api.vhx.tv/subscriptions/1'
+}, function(err, collections) {
+  // asynchronously called
+});
+```
+
+```php
+<?php$collections = \VHX\Collections::list(array(
+  subscription => 'https://api.vhx.tv/subscriptions/1'
+));
 ```
 
 > Example Response
-```ruby
-
-```
 
 ```json
 {
@@ -203,8 +234,20 @@ Vhx::Collection.list(subscription: 'https://api.vhx.tv/subscriptions/1')
 
 > Definition
 
-```
+```shell
 GET /collections/:id/items
+```
+
+```ruby
+Vhx::CollectionItem.list()
+```
+
+```javascript
+vhx.collections.items();
+```
+
+```php
+<?php \VHX\Collections::items();
 ```
 
 > Example Request
@@ -215,7 +258,26 @@ $ curl -X GET -G "https://api.vhx.tv/collections/1/items?page=1" \
 ```
 
 ```ruby
-items = Vhx::CollectionItem.list({collection: https://api.vhx.tv/collections/1, page: 1})
+collections = Vhx::CollectionItem.list({
+  collection: 'https://api.vhx.tv/collections/1',
+  page: 1
+})
+```
+
+```javascript
+vhx.collections.items({
+  collection: 'https://api.vhx.tv/collections/1',
+  page: 1
+}, function(err, items) {
+  // asynchronously called
+});
+```
+
+```php
+<?php$collections = \VHX\Collections::items(array(
+  collection => 'https://api.vhx.tv/collection/1',
+  page => 1
+));
 ```
 
 > Example Response

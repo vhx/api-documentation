@@ -11,18 +11,56 @@ A customer is a person who has been subscribed, purchased, or been given access 
 
 > Definiton
 
-```
+```shell
 POST /customers
+```
+
+```ruby
+Vhx::Customer.create()
+```
+
+```javascript
+vhx.customers.create();
+```
+
+```php
+<?php$customer = \VHX\Customer::create();
 ```
 
 > Example Request
 
 ```shell
 $ curl -X POST "https://api.vhx.tv/customers" \
-  -d name="Space Cat" \
-  -d email="spacecat@vhx.tv" \
-  -d subscription=https://api.vhx.tv/subscriptions/1 \
+  -d name="Customer Name" \
+  -d email="customer@email.com" \
+  -d subscription="https://api.vhx.tv/subscriptions/1" \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
+```
+
+```ruby
+customer = Vhx::Customer.create({
+  name: 'Customer Name',
+  email: 'customer@email.com'
+  subscription: 'https://api.vhx.tv/subscriptions/1'
+})
+```
+
+```javascript
+vhx.customers.create({
+  name: 'Customer Name',
+  email: 'customer@email.com'
+  subscription: 'https://api.vhx.tv/subscriptions/1'
+}, function(err, customer) {
+  // asynchronously called
+});
+```
+
+```php
+<?php$customer = \VHX\Customer::create(array(
+  name => 'Customer Name',
+  email => 'customer@email.com'
+  subscription => 'https://api.vhx.tv/subscriptions/1'
+));
 ```
 
 > Example Response
@@ -92,8 +130,20 @@ $ curl -X POST "https://api.vhx.tv/customers" \
 
 > Definiton
 
-```
+```shell
 GET /customers/:id
+```
+
+```ruby
+Vhx::Customer.find()
+```
+
+```javascript
+vhx.customers.retrieve();
+```
+
+```php
+<?php$customer = \VHX\Customer::retrieve();
 ```
 
 > Example Request
@@ -101,6 +151,22 @@ GET /customers/:id
 ```shell
 $ curl -X GET "https://api.vhx.tv/customers/:id" \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
+```
+
+```ruby
+customer = Vhx::Customer.find(15)
+```
+
+```javascript
+vhx.customers.retrieve({
+  id: 15
+}, function(err, customer) {
+  // asynchronously called
+});
+```
+
+```php
+<?php$customer = \VHX\Customer::retrieve(15);
 ```
 
 > Example Response
@@ -162,16 +228,53 @@ $ curl -X GET "https://api.vhx.tv/customers/:id" \
 
 > Definiton
 
+
+```shell
+GET /customers/
 ```
-GET /customers
+
+```ruby
+Vhx::Customer.list()
+```
+
+```javascript
+vhx.customers.list();
+```
+
+```php
+<?php$customer = \VHX\Customer::list();
 ```
 
 > Example Request
 
 ```shell
 $ curl -X GET -G "https://api.vhx.tv/customers" \
-  -d subscription=https://api.vhx.tv/subscriptions/1 \
+  -d query="search_term" \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
+```
+
+```shell
+GET /customers/
+```
+
+```ruby
+Vhx::Customer.list({
+  query: 'search_term'
+})
+```
+
+```javascript
+vhx.customers.list({
+  query: 'search_term'
+}, function(err, collections) {
+   // asynchronously called
+});
+```
+
+```php
+<?php$customers = \VHX\Customers::list({
+  query: 'search_term'
+});
 ```
 
 > Example Response

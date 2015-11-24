@@ -2,7 +2,10 @@
 title: API Reference
 
 language_tabs:
-  - shell
+  - shell: cURL
+  - ruby: Ruby  
+  - javascript: Node
+  - php: PHP
 
 toc_footers:
 

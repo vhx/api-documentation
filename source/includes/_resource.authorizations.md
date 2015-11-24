@@ -11,8 +11,20 @@
 
 > Definition
 
-```
+```shell
 POST /authorizations
+```
+
+```ruby
+Vhx::Authorizaton.create()
+```
+
+```javascript
+vhx.authorizations.create();
+```
+
+```php
+<?php\VHX\Authorizations::create();
 ```
 
 > Example Request
@@ -23,6 +35,30 @@ $ curl -X POST "https://api.vhx.tv/authorizations" \
   -d video=https://api.vhx.tv/videos/1 \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
+
+```ruby
+authorization = Vhx::Authorization.create({
+  customer: 'https://api.vhx.tv/customers/1',
+  video: 'https://api.vhx.tv/videos/1'
+})
+```
+
+```javascript
+vhx.authorizations.create({
+  customer: 'https://api.vhx.tv/customers/1',
+  video: 'https://api.vhx.tv/videos/1'
+}, function(err, authorization) {
+  // asynchronously called
+});
+```
+
+```php
+<?php$customer = \VHX\Authorizations::create(array(
+  customer => 'https://api.vhx.tv/customers/1',
+  video => 'https://api.vhx.tv/videos/1'
+});
+```
+
 
 > Example Response
 

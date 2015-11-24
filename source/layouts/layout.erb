@@ -63,19 +63,7 @@ under the License.
         <% if language_tabs %>
           <div class="lang-selector">
             <% language_tabs.each do |lang| %>
-              <% if lang.is_a? Hash %>
-                <% lang = lang.values.first %>
-              <% end %>
-
-              <% if lang === 'shell'
-                  display_lang = 'cURL'
-                elsif lang === 'javascript'
-                  display_lang = 'node'
-                else
-                  display_lang = lang
-                end
-              %>
-              <a class="btn btn--small text--white" href="#" data-language-name="<%= lang %>"><%= display_lang %></a>
+              <a class="btn btn--small text--white" href="#" data-language-name="<%= lang.keys.first %>"><%= lang.values.first %></a>
             <% end %>
           </div>
         <% end %>
@@ -108,19 +96,7 @@ under the License.
           <% if language_tabs %>
             <div class="lang-selector">
               <% language_tabs.each do |lang| %>
-                <% if lang.is_a? Hash %>
-                  <% lang = lang.values.first %>
-                <% end %>
-
-                <% if lang === 'shell'
-                    display_lang = 'cURL'
-                  elsif lang === 'javascript'
-                    display_lang = 'node'
-                  else
-                    display_lang = lang
-                  end
-                %>
-                <a class="btn btn--small text--white" href="#" data-language-name="<%= lang %>"><%= display_lang %></a>
+                <a class="btn btn--small text--white" href="#" data-language-name="<%= lang.keys.first %>"><%= lang.values.first %></a>
               <% end %>
             </div>
           <% end %>
