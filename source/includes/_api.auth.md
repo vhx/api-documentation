@@ -12,7 +12,10 @@ $ curl -X GET "https://api.vhx.tv/customers" \
 
 ```ruby
 require 'vhx-ruby'
-Vhx.setup(api_key: 'YOUR_API_KEY')
+
+Vhx.setup({
+  api_key: 'YOUR_API_KEY'
+})
 ```
 
 ```javascript
@@ -20,11 +23,10 @@ var vhx = require('vhx')('YOUR_API_KEY');
 ```
 
 ```php
-\VHX\API::setKey('your VHX API key');
+<?php\VHX\API::setKey('your VHX API key');
 ```
 
-> <p>cURL uses the -u flag to pass basic auth credentials.</p>
-> <p>Adding a colon after your API key will prevent it from asking you for a password.</p>
+> <div class="highlight shell text"><p>cURL uses the -u flag to pass basic auth credentials. <br>Adding a colon after your API key will prevent it from asking you for a password.</p></div>
 
 <section class="text-2 contain">
   <p>Currently API application registration is private. Please email <a href="mailto:api@vhx.tv">api@vhx.tv</a> to register an application and provide your application name, description, url, and callback url.</p>

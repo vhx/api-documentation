@@ -672,6 +672,12 @@ header {
 .highlight.php .cp {
   display: none;
 }
+.highlight.text {
+  p {
+    padding: 0 13px;
+    color: #fff !important;
+  }
+}
 .highlight .o {
   color: #F099A6;
 }

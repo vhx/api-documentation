@@ -5,6 +5,287 @@
   A collection is the way to organize and add metadata to your videos. There are 5 types of collections: category, series, season, movie, and playlist. Each collection has many items which can be a video, an extra, or another collection. An example of this is a series collection could have 5 items (3 seasons and 2 videos/trailers). Each season would have several videos as it's items.
 </section>
 
+<h3 class="text-2 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="collections-create">Create a Collection</h3>
+
+> <h5 class="head-5 text--white margin-bottom-medium">Create a Collection</h5>
+
+> Definition
+
+```shell
+POST /collections/
+```
+
+```ruby
+Vhx::Collection.create()
+```
+
+```javascript
+vhx.collections.create();
+```
+
+```php
+<?php\VHX\Collections::create();
+```
+
+> Example Request
+
+```shell
+$ curl -X POST "https://api.vhx.tv/collections" \
+  -d name="Collection Name" \
+  -d type="series" \
+  -d site=1
+  -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
+```
+
+```ruby
+collection = Vhx::Collection.create({
+  name: 'Collection Name',
+  type: 'series',
+  site: 1
+})
+```
+
+```javascript
+vhx.collections.create({
+  name: 'Collection Name',
+  type: 'series',
+  site: 1
+}, function(err, collection) {
+  // asynchronously called
+});
+```
+
+```php
+<?php$collection = \VHX\Collections::create(array(
+  name => 'Collection Name',
+  type => 'series',
+  site => 1
+));
+```
+
+> Example Response
+
+```json
+{
+  "_links": {
+    "self": {
+      "href": "http://api.vhx.tv/collections/75"
+    },
+    "items": {
+      "href": "http://api.vhx.tv/collections/75/items"
+    },
+    "collection_page": {
+      "href": "http://site.vhx.tv/collection-name-1"
+    }
+  },
+  "_embedded": {
+    "trailer": null
+  },
+  "id": 75,
+  "name": "Collection Name",
+  "description": null,
+  "slug": "collection-name",
+  "thumbnail": {},
+  "banner": {},
+  "type": "series",
+  "seasons_count": 0,
+  "items_count": 0,
+  "files_count": 0,
+  "created_at": "2015-11-25T01:30:33Z",
+  "updated_at": "2015-11-25T01:30:33Z"
+}
+```
+
+<section class="text-2 contain">
+  <p>When creating a collection, you need to provide a collection <code>type</code>, <code>site</code> id, and <code>name</code>. See below for the required and optional arguments.</p>
+</section>
+
+<table>
+  <thead>
+    <tr class="text-2">
+      <th class="padding-medium nowrap">Arguments</th>
+      <th class="padding-medium" width="100%">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">type</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--yellow text-3">REQUIRED</span>
+      </td>
+      <td>The type of collection. Either <code>category</code>, <code>series</code>, <code>season</code>, <code>movie</code>, and <code>playlist</code>.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">name</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--yellow text-3">REQUIRED</span>
+      </td>
+      <td>The name of the collection.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">site</strong>
+        <span class="is-block text--transparent text-3">integer</span>
+        <span class="text--yellow text-3">REQUIRED</span>
+      </td>
+      <td>The UUID of the site.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">description</strong>
+        <span class="text--transparent text-3">optional, default is null</span>
+      </td>
+      <td>The collection description.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">thumbnail_url</strong>
+        <span class="text--transparent text-3">optional, default is null</span>
+      </td>
+      <td>A publicly accessible image URL. If you prefer you can upload images directly to a collection in the VHX Publisher Admin.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">banner_url</strong>
+        <span class="text--transparent text-3">optional, default is null</span>
+      </td>
+      <td>A publicly accessible image URL. If you prefer you can upload images directly to a collection in the VHX Publisher Admin.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 class="text-2 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="collections-update">Update a Collection</h3>
+
+> <h5 class="head-5 text--white margin-bottom-medium">Update a Collection</h5>
+
+> Definition
+
+```shell
+POST /collections/:id
+```
+
+```ruby
+Vhx::Collection.update()
+```
+
+```javascript
+vhx.collections.update();
+```
+
+```php
+<?php\VHX\Collections::update();
+```
+
+> Example Request
+
+```shell
+$ curl -X POST "https://api.vhx.tv/collections/75" \
+  -d description="A new description" \
+  -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
+```
+
+```ruby
+collection = Vhx::Collection.find(75).update({
+  description: 'A new description'
+})
+```
+
+```javascript
+vhx.collections.create(75, {
+  description: 'A new description'
+}, function(err, collection) {
+  // asynchronously called
+});
+```
+
+```php
+<?php$collection = \VHX\Collections::update(75, array(
+  name => 'A new description'
+));
+```
+
+> Example Response
+
+```json
+{
+  "_links": {
+    "self": {
+      "href": "http://api.vhx.tv/collections/75"
+    },
+    "items": {
+      "href": "http://api.vhx.tv/collections/75/items"
+    },
+    "collection_page": {
+      "href": "http://site.vhx.tv/collection-name-1"
+    }
+  },
+  "_embedded": {
+    "trailer": null
+  },
+  "id": 75,
+  "name": "Collection Name",
+  "description": "A new description",
+  "slug": "collection-name",
+  "thumbnail": {},
+  "banner": {},
+  "type": "series",
+  "seasons_count": 0,
+  "items_count": 0,
+  "files_count": 0,
+  "created_at": "2015-11-25T01:30:33Z",
+  "updated_at": "2015-11-25T01:30:33Z"
+}
+```
+
+<section class="text-2 contain">
+  <p>No fields are required when updating a collection, however you cannot update a collection's type (e.g. series, season, movie, category, playlist) once it has already been created.</p>
+</section>
+
+<table>
+  <thead>
+    <tr class="text-2">
+      <th class="padding-medium nowrap">Arguments</th>
+      <th class="padding-medium" width="100%">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">name</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>The name of the collection.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">description</strong>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>The collection description.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">thumbnail_url</strong>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>A publicly accessible image URL. If you prefer you can upload images directly to a collection in the VHX Publisher Admin.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">banner_url</strong>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>A publicly accessible image URL. If you prefer you can upload images directly to a collection in the VHX Publisher Admin.</td>
+    </tr>
+  </tbody>
+</table>
+
+
 <h3 class="text-2 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="collections-retrieve">Retrieve a Collection</h3>
 
 > <h5 class="head-5 text--white margin-bottom-medium">Retrieve a Collection</h5>

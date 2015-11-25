@@ -1,8 +1,5 @@
 <!-- ___INTRODUCTION____________________________ -->
 <h2 class="head-3 margin-top-large margin-bottom-medium" id="introduction">Introduction</h2>
-> <h5 class="head-5 text--white margin-top-medium margin-bottom-medium">Libraries</h5>
-
-> <p class="margin-bottom-large">We're working on adding client libraries in other languages. <a href="/docs/signup">Get notified</a>.</p>
 
 > <h5 class="head-5 text--white">API Endpoint</h5>
 
