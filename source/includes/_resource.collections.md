@@ -16,11 +16,11 @@
   <tbody>
     <tr class="text-2 border-bottom border--light-gray">
       <td><strong>section</strong></td>
-      <td>A high level grouping of categories. An example of this is simply "Genres".</td>
+      <td>A high level grouping of categories. "Genres" is an example.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td><strong>category</strong></td>
-      <td>A way to group other primary collections (series, movie's, and playlist's). An example of this is "Drama" or "Comedy".</td>
+      <td>A way to group other primary collections (series, movies, and playlists). An example of this is "Drama" or "Comedy".</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td><strong>series</strong></td>
