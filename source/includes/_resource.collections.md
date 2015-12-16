@@ -2,8 +2,44 @@
 <h2 class="is-api head-3 margin-top-large margin-bottom-medium" id="collections">Collections</h2>
 
 <section class="text-2 contain">
-  A collection is the way to organize and add metadata to your videos. There are 5 types of collections: category, series, season, movie, and playlist. Each collection has many items which can be a video, an extra, or another collection. An example of this is a series collection could have 5 items (3 seasons and 2 videos/trailers). Each season would have several videos as it's items.
+  <p>A collection is the way to organize and add metadata around your videos. There are 6 types of collections:</p>
 </section>
+
+<table>
+  <thead>
+    <tr class="text-2">
+      <th class="padding-medium">Type</th>
+      <th class="padding-medium">Definition</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td><strong>section</strong></td>
+      <td>A high level grouping of categories. An example of this is simply "Genres".</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td><strong>category</strong></td>
+      <td>A way to group other primary collections (series, movie's, and playlist's). An example of this is "Drama" or "Comedy".</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td><strong>series</strong></td>
+      <td>A representation of a show with one or many seasons as its items.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td><strong>season</strong></td>
+      <td>A representation of a season within a series. A season has one or many episodes.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td><strong>movie</strong></td>
+      <td>A collection that gives emphasis to a featured video with support for additional extras.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td><strong>playlist</strong></td>
+      <td>A loose grouping of related videos that can be manually positioned for display.</td>
+    </tr>
+  </tbody>
+</table>
 
 <h3 class="text-2 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="collections-create">Create a Collection</h3>
 
@@ -12,7 +48,7 @@
 > Definition
 
 ```shell
-POST /collections/
+POST /collections
 ```
 
 ```ruby
@@ -33,15 +69,13 @@ vhx.collections.create();
 $ curl -X POST "https://api.vhx.tv/collections" \
   -d name="Collection Name" \
   -d type="series" \
-  -d site=1
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
 ```ruby
 collection = Vhx::Collection.create({
   name: 'Collection Name',
-  type: 'series',
-  site: 1
+  type: 'series'
 })
 ```
 
@@ -49,7 +83,6 @@ collection = Vhx::Collection.create({
 vhx.collections.create({
   name: 'Collection Name',
   type: 'series',
-  site: 1
 }, function(err, collection) {
   // asynchronously called
 });
@@ -58,8 +91,7 @@ vhx.collections.create({
 ```php
 <?php$collection = \VHX\Collections::create(array(
   name => 'Collection Name',
-  type => 'series',
-  site => 1
+  type => 'series'
 ));
 ```
 
@@ -75,7 +107,7 @@ vhx.collections.create({
       "href": "http://api.vhx.tv/collections/75/items"
     },
     "collection_page": {
-      "href": "http://site.vhx.tv/collection-name-1"
+      "href": "http://mynetwork.com/collection-name-1"
     }
   },
   "_embedded": {
@@ -97,7 +129,7 @@ vhx.collections.create({
 ```
 
 <section class="text-2 contain">
-  <p>When creating a collection, you need to provide a collection <code>type</code>, <code>site</code> id, and <code>name</code>. See below for the required and optional arguments.</p>
+  <p>When creating a collection, you need to provide a collection <code>type</code> and <code>name</code>. See below for the required and optional arguments:</p>
 </section>
 
 <table>
@@ -115,7 +147,7 @@ vhx.collections.create({
         <span class="is-block text--transparent text-3">string</span>
         <span class="text--yellow text-3">REQUIRED</span>
       </td>
-      <td>The type of collection. Either <code>category</code>, <code>series</code>, <code>season</code>, <code>movie</code>, and <code>playlist</code>.</td>
+      <td>The type of collection: <code>section</code>, <code>category</code>, <code>series</code>, <code>season</code>, <code>movie</code>, or <code>playlist</code>.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
@@ -124,14 +156,6 @@ vhx.collections.create({
         <span class="text--yellow text-3">REQUIRED</span>
       </td>
       <td>The name of the collection.</td>
-    </tr>
-    <tr class="text-2 border-bottom border--light-gray">
-      <td>
-        <strong class="is-block text--navy">site</strong>
-        <span class="is-block text--transparent text-3">integer</span>
-        <span class="text--yellow text-3">REQUIRED</span>
-      </td>
-      <td>The UUID of the site.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
@@ -219,7 +243,7 @@ vhx.collections.create(75, {
       "href": "http://api.vhx.tv/collections/75/items"
     },
     "collection_page": {
-      "href": "http://site.vhx.tv/collection-name-1"
+      "href": "http://mynetwork.com/collection-name-1"
     }
   },
   "_embedded": {
@@ -241,7 +265,7 @@ vhx.collections.create(75, {
 ```
 
 <section class="text-2 contain">
-  <p>No fields are required when updating a collection, however you cannot update a collection's type (e.g. series, season, movie, category, playlist) once it has already been created.</p>
+  <p>No fields are required when updating a collection, however; you cannot update a collection's type once it has already been created.</p>
 </section>
 
 <table>
@@ -340,9 +364,9 @@ vhx.collections.retrieve({
     "items": { "href": "https://api.vhx.tv/collections/1/items" }
   },
   "id": 1,
-  "name": "Romantic Comedy",
-  "description": "All our favorite romantic comedies.",
-  "slug": "romantic-comedy",
+  "name": "Comedy",
+  "description": "Comedy series and movies.",
+  "slug": "comedy",
   "thumbnail": {
     "small": "https://cdn.vhx.tv/assets/thumbnails/default-small.png",
     "medium": "https://cdn.vhx.tv/assets/thumbnails/default-medium.png",
@@ -356,7 +380,7 @@ vhx.collections.retrieve({
 ```
 
 <section class="text-2 contain">
-  <p>Retrieves an existing collection.</p>
+  <p>Retrieves an existing collection. You can optionally specify a product parameter to scope the collection retrieval to it.</p>
 </section>
 
 <table>
@@ -378,10 +402,11 @@ vhx.collections.retrieve({
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
-        <strong class="is-block text--navy">subscription</strong>
+        <strong class="is-block text--navy">product</strong>
+        <span class="is-block text--transparent text-3">string</span>
         <span class="text--transparent text-3">optional, default is null</span>
       </td>
-      <td>The UUID of the subscription.</td>
+      <td>The UUID of a product.</td>
     </tr>
   </tbody>
 </table>
@@ -412,19 +437,19 @@ vhx.collections.list();
 
 ```shell
 $ curl -X GET -G "https://api.vhx.tv/collections" \
-  -d subscription=https://api.vhx.tv/subscriptions/1 \
+  -d product=https://api.vhx.tv/products/1 \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
 ```ruby
 collections = Vhx::Collection.list({
-  subscription: 'https://api.vhx.tv/subscriptions/1'
+  product: 'https://api.vhx.tv/products/1'
 })
 ```
 
 ```javascript
 vhx.collections.list({
-  subscription: 'https://api.vhx.tv/subscriptions/1'
+  product: 'https://api.vhx.tv/products/1'
 }, function(err, collections) {
   // asynchronously called
 });
@@ -432,7 +457,7 @@ vhx.collections.list({
 
 ```php
 <?php$collections = \VHX\Collections::list(array(
-  subscription => 'https://api.vhx.tv/subscriptions/1'
+  product => 'https://api.vhx.tv/products/1'
 ));
 ```
 
@@ -441,11 +466,11 @@ vhx.collections.list({
 ```json
 {
   "_links": {
-    "self":  { "href": "https://api.vhx.tv/collections?page=1" },
-    "first": { "href": "https://api.vhx.tv/collections" },
+    "self":  { "href": "https://api.vhx.tv/collections?page=1&product=:href" },
+    "first": { "href": "https://api.vhx.tv/collections?product=:href" },
     "prev":  { "href": null },
-    "next":  { "href": "https://api.vhx.tv/collections?page=2" },
-    "last":  { "href": "https://api.vhx.tv/collections?page=5" }
+    "next":  { "href": "https://api.vhx.tv/collections?page=2&product=:href" },
+    "last":  { "href": "https://api.vhx.tv/collections?page=5&product=:href" }
   },
   "count": 100,
   "total": 500,
@@ -456,7 +481,7 @@ vhx.collections.list({
 ```
 
 <section class="text-2 contain margin-bottom-medium">
-  Collections can be listed for a given subscription or site. The result can be filtered to one or many type's (category, series, season, movie, or playlist). A paginated result is returned.
+  <p>Collections can be listed for your account or for a given product. A paginated result is returned.</p>
 </section>
 
 <table>
@@ -470,17 +495,19 @@ vhx.collections.list({
   <tbody>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
-        <strong class="is-block text--navy">subscription</strong>
+        <strong class="is-block text--navy">type</strong>
+        <span class="is-block text--transparent text-3">string</span>
         <span class="text--transparent text-3">optional, default is null</span>
       </td>
-      <td>The UUID of the subscription.</td>
+      <td>A comma separated list of types to filter the results to. To list all collections that are of the series or movie type: <code>?type=series,movie</code>. HTTP-based arrays are also supported.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
-        <strong class="is-block text--navy">type</strong>
+        <strong class="is-block text--navy">product</strong>
+        <span class="is-block text--transparent text-3">string</span>
         <span class="text--transparent text-3">optional, default is null</span>
       </td>
-      <td>A comma separated list of types to filter the results to. To list all collections that are of the series or movie type: <code>?type=series,movie</code></td>
+      <td>The UUID of a product.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
@@ -581,7 +608,7 @@ vhx.collections.items({
 ```
 
 <section class="text-2 contain margin-bottom-medium">
-  Each collection has many items which can be a video, an extra, or another collection. An example of this is a series collection could have 5 items (3 seasons and 2 videos/trailers). Each season would have several videos as it's items.
+  <p>Each collection has many items which can be a video or another collection. A paginated result is returned.</p>
 </section>
 
 <table>

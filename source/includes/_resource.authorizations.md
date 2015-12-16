@@ -2,7 +2,8 @@
 <h2 class="is-api head-3 margin-top-large margin-bottom-medium" id="authorizations">Authorizations</h2>
 
 <section class="text-2 contain">
-  An authorization returns an expiring token that is used to authenticate the VHX Player for playback when loading your videos. This enables a customer-to-video playback session which feeds into video analytics.
+  <p>An authorization grants playback access for a given customer and video.</p>
+  <p>The response includes an expiring token that is used to authenticate the VHX player on the customers behalf. This enables a customer-to-video playback session which feeds into video analytics.</p>
 </section>
 
 <h3 class="text-2 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="authorizations-create">Create an Authorization</h3>
@@ -85,7 +86,7 @@ vhx.authorizations.create({
 ```
 
 <section class="text-2 contain">
-  <p>Creates an Authorization for authenticating video playback. You need to supply the UUID for your customer and video.</p>
+  <p>Creates an Authorization for authenticating video playback.</p>
 </section>
 
 <table>

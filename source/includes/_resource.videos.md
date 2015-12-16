@@ -2,7 +2,7 @@
 <h2 class="is-api head-3 margin-top-large margin-bottom-medium" id="videos">Videos</h2>
 
 <section class="text-2 contain">
-  <p>A video is a playable resource. In addition to it's core properties, a video has a set of files available to stream or download, each with many file renditions. A particular file has a specific quality, format, method, and mime type:</p>
+  <p>A video represents a playable resource. In addition to it's core properties, a video has a set of files (each with multiple renditions) available to stream. A particular file has a specific quality, format, method, and mime type:</p>
 </section>
 
 <table>
@@ -15,26 +15,27 @@
 
   <tbody>
     <tr class="text-2 border-bottom border--light-gray">
-      <td>quality</td>
+      <td><strong>quality</strong></td>
       <td>1080p, 720p, 540p, 480p, 360p, adaptive</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
-      <td>format</td>
+      <td><strong>format</strong></td>
       <td>m3u8, mpd, mp4, webm, ogg</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
-      <td>method</td>
+      <td><strong>method</strong></td>
       <td>hls, dash, progressive</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
-      <td>mime_type</td>
+      <td><strong>mime_type</strong></td>
       <td>application/x-mpegURL, application/dash+xml, video/mp4</td>
     </tr>
   </tbody>
 </table>
 
 <section class="text-2 contain margin-bottom-large">
-  <p>Video objects also have tracks. This includes subtitles or chapters tracks. A subtitle track is a sidecar WebVTT or SRT file.</p>
+  <p>A video object has a tracks property. This includes subtitles or chapters tracks. A subtitle track is a sidecar WebVTT or SRT file.</p>
+  <p>DRM (Digital Rights Management) is available, per request, for an additional cost. We support Google Widevine, Adobe Access, and OMA.</p>
 </section>
 
 <h3 class="text-2 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="videos-create">Create a Video</h3>
@@ -66,7 +67,6 @@ $ curl -X POST "https://api.vhx.tv/videos" \
   -d title="My Video" \
   -d description="My video description." \
   -d source_url=s3:://YOUR_BUCKET_NAME/FILE.mp4 \
-  -d site=https://api.vhx.tv/sites/1 \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
@@ -75,7 +75,6 @@ customer = Vhx::Video.create({
   title: 'My Video',
   description: 'My video description.',
   source_url: 's3:://YOUR_BUCKET_NAME/FILE.mp4'
-  site: 'https://api.vhx.tv/sites/1'
 })
 ```
 
@@ -84,7 +83,6 @@ vhx.videos.create({
   title: 'My Video',
   description: 'My video description.',
   source_url: 's3:://YOUR_BUCKET_NAME/FILE.mp4'
-  site: 'https://api.vhx.tv/sites/1'
 }, function(err, video) {
    // asynchronously called
 });
@@ -95,7 +93,6 @@ $video = \VHX\Videos::create(array(
   title => 'My Video',
   description => 'My video description.',
   source_url => 's3:://YOUR_BUCKET_NAME/FILE.mp4'
-  site => 'https://api.vhx.tv/sites/1'
 ));
 ```
 > Example Response
@@ -104,11 +101,9 @@ $video = \VHX\Videos::create(array(
 {
   "_links": {
     "self":  { "href": "https://api.vhx.tv/videos/1" },
-    "site":  { "href": "https://api.vhx.tv/sites/1" },
     "files": { "href": "https://api.vhx.tv/videos/1/files" }
   },
   "_embedded": {
-    "site": {},
     "files": [],
     "transcode": {
       "progress": 0
@@ -162,7 +157,7 @@ $video = \VHX\Videos::create(array(
         <strong class="is-block text--navy">source_url</strong>
         <span class="text--transparent text-3">optional string, default is null</span>
       </td>
-      <td>An accessible master video file per our compression settings. To grant us permission to download the video source_url from your S3 bucket, see our S3 policy.</p></td>
+      <td>An accessible master video file per our compression settings. To grant us permission to download the video source_url from your S3 bucket, see our <a href="https://gist.github.com/ksheurs/d57e4d1857c7ef9465fb" target="_blank">S3 policy</a>.</p></td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
@@ -224,11 +219,9 @@ $video = \VHX\Videos::retrieve(125);
 {
   "_links": {
     "self":  { "href": "https://api.vhx.tv/videos/1" },
-    "site":  { "href": "https://api.vhx.tv/sites/1" },
     "files": { "href": "https://api.vhx.tv/videos/1/files" }
   },
   "_embedded": {
-    "site": {},
     "files": [
       {
         "_links": {
@@ -278,7 +271,7 @@ $video = \VHX\Videos::retrieve(125);
 ```
 
 <section class="text-2 contain">
-  <p>Retrieves an existing video. You only need to request or supply the UUID that was returned upon video creation.</p>
+  <p>Retrieves an existing video.</p>
 </section>
 
 <table>
@@ -291,11 +284,12 @@ $video = \VHX\Videos::retrieve(125);
 
   <tbody>
     <tr class="text-2 border-bottom border--light-gray">
-      <td class="nowrap">
-        <strong class="is-block text--navy">video</strong>
+      <td>
+        <strong class="is-block text--navy">id</strong>
+        <span class="is-block text--transparent text-3">integer</span>
         <span class="text--yellow text-3">REQUIRED</span>
       </td>
-      <td>The UUID for the video.</td>
+      <td>The id of the video being retrieved.</td>
     </tr>
   </tbody>
 </table>
@@ -326,19 +320,19 @@ vhx.videos.list();
 
 ```shell
 $ curl -X GET -G "https://api.vhx.tv/videos" \
-  -d subscription=https://api.vhx.tv/subscriptions/1 \
+  -d query="term" \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
 ```ruby
-customer = Vhx::Video.list({
-  subscription: 'https://api.vhx.tv/subscriptions/1'
+video = Vhx::Video.list({
+  query: 'term'
 })
 ```
 
 ```javascript
 vhx.videos.list({
-  subscription: 'https://api.vhx.tv/subscriptions/1'
+  query: 'term'
 }, function(err, videos) {
    // asynchronously called
 });
@@ -346,7 +340,7 @@ vhx.videos.list({
 
 ```php
 $videos = \VHX\Videos::list(array(
-  subscription => 'https://api.vhx.tv/subscriptions/1'
+  query => 'term'
 ));
 ```
 
@@ -355,11 +349,11 @@ $videos = \VHX\Videos::list(array(
 ```json
 {
   "_links": {
-    "self":  { "href": "https://api.vhx.tv/videos?page=1" },
-    "first": { "href": "https://api.vhx.tv/videos" },
+    "self":  { "href": "https://api.vhx.tv/videos?page=1&query=term" },
+    "first": { "href": "https://api.vhx.tv/videos?query=term" },
     "prev":  { "href": null },
-    "next":  { "href": "https://api.vhx.tv/videos?page=2" },
-    "last":  { "href": "https://api.vhx.tv/videos?page=5" }
+    "next":  { "href": "https://api.vhx.tv/videos?page=2&query=term" },
+    "last":  { "href": "https://api.vhx.tv/videos?page=5&query=term" }
   },
   "count": 100,
   "total": 500,
@@ -370,7 +364,7 @@ $videos = \VHX\Videos::list(array(
 ```
 
 <section class="text-2 contain">
-  <p>Videos can be listed for a given subscription, package, or site. A paginated result is returned.</p>
+  <p>Videos can be listed. A paginated result is returned.</p>
 </section>
 
 <table>
@@ -382,27 +376,6 @@ $videos = \VHX\Videos::list(array(
   </thead>
 
   <tbody>
-    <tr class="text-2 border-bottom border--light-gray">
-      <td>
-        <strong class="is-block text--navy">subscription</strong>
-        <span class="text--transparent text-3">optional, default is null</span>
-      </td>
-      <td>The UUID of the subscription.</td>
-    </tr>
-    <tr class="text-2 border-bottom border--light-gray">
-      <td class="nowrap">
-        <strong class="is-block text--navy">package</strong>
-        <span class="text--transparent text-3">optional, default is null</span>
-      </td>
-      <td>The UUID of the package.</td>
-    </tr>
-    <tr class="text-2 border-bottom border--light-gray">
-      <td class="nowrap">
-        <strong class="is-block text--navy">site</strong>
-        <span class="text--transparent text-3">optional, default is null</span>
-      </td>
-      <td>The UUID of the site.</td>
-    </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
         <strong class="is-block text--navy">query</strong>
@@ -504,5 +477,7 @@ $files = \VHX\Videos::files(array(
 ```
 
 <section class="text-2 contain">
-  <p>Video files are private and can be accessed by the account owner or viewing customer. If building a customer-based application, authorizations or Oauth2 must be used so our player can properly authenticate and record analytics. The returned source href has a TTL / expiration, so it is advised that the files API call happens just prior to a stream or download action.</p>
+  <p>Video files are private and protected by default. They can only be accessed by the account owner or an authorized customer.</p>
+  <p>If building a customer-based application, <code>Authorizations</code> must be used so our player can properly authenticate and record analytics for the viewing customer.</p>
+  <p>The returned source href has a TTL / expiration, so it is advised that the files API call happens just prior to a stream action.</p>
 </section>

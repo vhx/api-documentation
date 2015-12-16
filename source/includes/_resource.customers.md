@@ -2,7 +2,7 @@
 <h2 class="head-3 margin-top-xlarge padding-top-xlarge border-top margin-bottom-medium" id="customers">Customers</h2>
 
 <section class="text-2 contain">
-A customer is a person who has been subscribed, purchased, or been given access to your content (collections and/or videos) via a product.
+  <p>A customer is a person who has been given access to a product. By having access to the product, they inherently have access to all of its content (videos / collections).</p>
 </section>
 
 <h3 class="text-2 text--navy text--bold margin-top-xlarge margin-bottom-medium" id="customer-create">Create a Customer</h3>
@@ -33,7 +33,7 @@ vhx.customers.create();
 $ curl -X POST "https://api.vhx.tv/customers" \
   -d name="Customer Name" \
   -d email="customer@email.com" \
-  -d subscription="https://api.vhx.tv/subscriptions/1" \
+  -d product="https://api.vhx.tv/products/1" \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
@@ -41,7 +41,7 @@ $ curl -X POST "https://api.vhx.tv/customers" \
 customer = Vhx::Customer.create({
   name: 'Customer Name',
   email: 'customer@email.com'
-  subscription: 'https://api.vhx.tv/subscriptions/1'
+  product: 'https://api.vhx.tv/products/1'
 })
 ```
 
@@ -49,7 +49,7 @@ customer = Vhx::Customer.create({
 vhx.customers.create({
   name: 'Customer Name',
   email: 'customer@email.com'
-  subscription: 'https://api.vhx.tv/subscriptions/1'
+  product: 'https://api.vhx.tv/products/1'
 }, function(err, customer) {
   // asynchronously called
 });
@@ -59,7 +59,7 @@ vhx.customers.create({
 <?php$customer = \VHX\Customer::create(array(
   name => 'Customer Name',
   email => 'customer@email.com'
-  subscription => 'https://api.vhx.tv/subscriptions/1'
+  product => 'https://api.vhx.tv/products/1'
 ));
 ```
 
@@ -80,7 +80,7 @@ vhx.customers.create({
 ```
 
 <section class="text-2 contain margin-bottom-medium">
-  A customer can be created (or added) for a given product. For a subscription customer, you are billed per customer / per month. Please <a href="https://vhx.tv/pricing">see our pricing</a> for more details.
+  A customer can be created (or added) for a given product. For a subscription customer, you are billed per customer / per month. Please <a href="https://www.vhx.tv/pricing">see our pricing</a> for more details.
 </section>
 
 <table>
@@ -109,17 +109,11 @@ vhx.customers.create({
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td class="nowrap">
-        <strong class="is-block text--navy">subscription</strong>
-        <span class="text--transparent text-3">optional, default is null</span>
+        <strong class="is-block text--navy">product</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--yellow text-3">REQUIRED</span>
       </td>
-      <td>The UUID of the subscription you'd like to subscribe the customer to.</td>
-    </tr>
-    <tr class="text-2 border-bottom border--light-gray">
-      <td class="nowrap">
-        <strong class="is-block text--navy">package</strong>
-        <span class="text--transparent text-3">options, default is null</span>
-      </td>
-      <td>The UUID of the packaged you'd like to give the customer access to.</td>
+      <td>The UUID of the product you'd like to give the customer access to.</td>
     </tr>
   </tbody>
 </table>
@@ -185,7 +179,7 @@ vhx.customers.retrieve({
 }
 ```
 <section class="text-2 contain">
-  <p>Retrieves an existing customer. You should specify the context (subscription or package) when retrieving a customer.</p>
+  <p>Retrieves an existing customer. You can optionally specify a product parameter to scope the customer retrieval to it.</p>
 </section>
 
 <table>
@@ -203,21 +197,15 @@ vhx.customers.retrieve({
         <span class="is-block text--transparent text-3">integer</span>
         <span class="text--yellow text-3">REQUIRED</span>
       </td>
-      <td>The id of customer being retrieved.</td>
+      <td>The id of the customer being retrieved.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
-        <strong class="is-block text--navy">subscription</strong>
+        <strong class="is-block text--navy">product</strong>
+        <span class="is-block text--transparent text-3">string</span>
         <span class="text--transparent text-3">optional, default is null</span>
       </td>
-      <td>The UUID of the subscription.</td>
-    </tr>
-    <tr class="text-2 border-bottom border--light-gray">
-      <td class="nowrap">
-        <strong class="is-block text--navy">package</strong>
-        <span class="text--transparent text-3">optional, default is null</span>
-      </td>
-      <td>The UUID of the package.</td>
+      <td>The UUID of a product.</td>
     </tr>
   </tbody>
 </table>
@@ -230,7 +218,7 @@ vhx.customers.retrieve({
 
 
 ```shell
-GET /customers/
+GET /customers
 ```
 
 ```ruby
@@ -249,23 +237,19 @@ vhx.customers.list();
 
 ```shell
 $ curl -X GET -G "https://api.vhx.tv/customers" \
-  -d query="search_term" \
+  -d query="term" \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
-```
-
-```shell
-GET /customers/
 ```
 
 ```ruby
 Vhx::Customer.list({
-  query: 'search_term'
+  query: 'term'
 })
 ```
 
 ```javascript
 vhx.customers.list({
-  query: 'search_term'
+  query: 'term'
 }, function(err, collections) {
    // asynchronously called
 });
@@ -273,7 +257,7 @@ vhx.customers.list({
 
 ```php
 <?php$customers = \VHX\Customers::list({
-  query: 'search_term'
+  query: 'term'
 });
 ```
 
@@ -282,11 +266,11 @@ vhx.customers.list({
 ```json
 {
   "_links": {
-    "self":  { "href": "https://api.vhx.tv/customers?page=1&subscription=:href" },
-    "first": { "href": "https://api.vhx.tv/customers&subscription=:href" },
+    "self":  { "href": "https://api.vhx.tv/customers?page=1&query=term" },
+    "first": { "href": "https://api.vhx.tv/customers?query=term" },
     "prev":  { "href": null },
-    "next":  { "href": "https://api.vhx.tv/customers?page=2&subscription=:href" },
-    "last":  { "href": "https://api.vhx.tv/customers?page=5&subscription=:href" }
+    "next":  { "href": "https://api.vhx.tv/customers?page=2&query=term" },
+    "last":  { "href": "https://api.vhx.tv/customers?page=5&query=term" }
   },
   "count": 100,
   "total": 500,
@@ -297,7 +281,7 @@ vhx.customers.list({
 ```
 
 <section class="text-2 contain margin-bottom-medium">
-Customers can be listed for a given context (subscription or package). A paginated result is returned.
+  <p>Customers can be listed for your account or for a given product. A paginated result is returned.</p>
 </section>
 
 <table>
@@ -311,17 +295,19 @@ Customers can be listed for a given context (subscription or package). A paginat
   <tbody>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
-        <strong class="is-block text--navy">subscription</strong>
+        <strong class="is-block text--navy">product</strong>
+        <span class="is-block text--transparent text-3">string</span>
         <span class="text--transparent text-3">optional, default is null</span>
       </td>
-      <td>The UUID of the subscription.</td>
+      <td>The UUID of a product.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
-      <td class="nowrap">
-        <strong class="is-block text--navy">package</strong>
+      <td>
+        <strong class="is-block text--navy">query</strong>
+        <span class="is-block text--transparent text-3">string</span>
         <span class="text--transparent text-3">optional, default is null</span>
       </td>
-      <td>The UUID of the package.</td>
+      <td>The query to search and filter the paginated results.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td>

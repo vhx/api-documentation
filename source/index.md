@@ -3,7 +3,7 @@ title: API Reference
 
 language_tabs:
   - shell: cURL
-  - ruby: Ruby  
+  - ruby: Ruby
   - javascript: Node
   - php: PHP
 
@@ -15,10 +15,12 @@ includes:
   - api.httpverbs
   - api.hypermedia
   - api.errors
+  - resource.products
   - resource.customers
   - resource.videos
   - resource.collections
   - resource.authorizations
+  - resource.analytics
 
 search: true
 ---
