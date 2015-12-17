@@ -230,7 +230,7 @@ vhx.customers.list();
 ```
 
 ```php
-<?php$customer = \VHX\Customers::list();
+<?php$customer = \VHX\Customers::all();
 ```
 
 > Example Request
@@ -256,9 +256,9 @@ vhx.customers.list({
 ```
 
 ```php
-<?php$customers = \VHX\Customers::list({
-  query: 'term'
-});
+<?php$customers = \VHX\Customers::all(array(
+  'query': 'term'
+));
 ```
 
 > Example Response
