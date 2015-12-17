@@ -90,9 +90,9 @@ vhx.videos.create({
 
 ```php
 $video = \VHX\Videos::create(array(
-  title => 'My Video',
-  description => 'My video description.',
-  source_url => 's3:://YOUR_BUCKET_NAME/FILE.mp4'
+  'title' => 'My Video',
+  'description' => 'My video description.',
+  'source_url' => 's3:://YOUR_BUCKET_NAME/FILE.mp4'
 ));
 ```
 > Example Response
