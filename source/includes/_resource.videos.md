@@ -314,7 +314,7 @@ vhx.videos.list();
 ```
 
 ```php
-<?php\VHX\Videos::list();
+<?php\VHX\Videos::all();
 ```
 > Example Request
 
@@ -339,8 +339,8 @@ vhx.videos.list({
 ```
 
 ```php
-$videos = \VHX\Videos::list(array(
-  query => 'term'
+$videos = \VHX\Videos::all(array(
+  'query' => 'term'
 ));
 ```
 
