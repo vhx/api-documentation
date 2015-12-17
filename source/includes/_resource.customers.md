@@ -24,7 +24,7 @@ vhx.customers.create();
 ```
 
 ```php
-<?php$customer = \VHX\Customer::create();
+<?php$customer = \VHX\Customers::create();
 ```
 
 > Example Request
@@ -56,7 +56,7 @@ vhx.customers.create({
 ```
 
 ```php
-<?php$customer = \VHX\Customer::create(array(
+<?php$customer = \VHX\Customers::create(array(
   name => 'Customer Name',
   email => 'customer@email.com'
   product => 'https://api.vhx.tv/products/1'
@@ -137,7 +137,7 @@ vhx.customers.retrieve();
 ```
 
 ```php
-<?php$customer = \VHX\Customer::retrieve();
+<?php$customer = \VHX\Customers::retrieve();
 ```
 
 > Example Request
@@ -160,7 +160,7 @@ vhx.customers.retrieve({
 ```
 
 ```php
-<?php$customer = \VHX\Customer::retrieve(15);
+<?php$customer = \VHX\Customers::retrieve(15);
 ```
 
 > Example Response
@@ -230,7 +230,7 @@ vhx.customers.list();
 ```
 
 ```php
-<?php$customer = \VHX\Customer::list();
+<?php$customer = \VHX\Customers::list();
 ```
 
 > Example Request
