@@ -57,9 +57,8 @@ vhx.customers.create({
 
 ```php
 <?php$customer = \VHX\Customers::create(array(
-  name => 'Customer Name',
-  email => 'customer@email.com'
-  product => 'https://api.vhx.tv/products/1'
+  'name' => 'Customer Name',
+  'email' => 'customer@email.com'
 ));
 ```
 
@@ -230,7 +229,7 @@ vhx.customers.list();
 ```
 
 ```php
-<?php$customer = \VHX\Customers::list();
+<?php$customer = \VHX\Customers::all();
 ```
 
 > Example Request
@@ -256,9 +255,9 @@ vhx.customers.list({
 ```
 
 ```php
-<?php$customers = \VHX\Customers::list({
-  query: 'term'
-});
+<?php$customers = \VHX\Customers::all(array(
+  'query': 'term'
+));
 ```
 
 > Example Response

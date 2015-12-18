@@ -55,8 +55,8 @@ vhx.authorizations.create({
 
 ```php
 <?php$customer = \VHX\Authorizations::create(array(
-  customer => 'https://api.vhx.tv/customers/1',
-  video => 'https://api.vhx.tv/videos/1'
+  'customer' => 'https://api.vhx.tv/customers/1',
+  'video' => 'https://api.vhx.tv/videos/1'
 });
 ```
 

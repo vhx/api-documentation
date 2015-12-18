@@ -90,9 +90,9 @@ vhx.videos.create({
 
 ```php
 $video = \VHX\Videos::create(array(
-  title => 'My Video',
-  description => 'My video description.',
-  source_url => 's3:://YOUR_BUCKET_NAME/FILE.mp4'
+  'title' => 'My Video',
+  'description' => 'My video description.',
+  'source_url' => 's3:://YOUR_BUCKET_NAME/FILE.mp4'
 ));
 ```
 > Example Response
@@ -314,7 +314,7 @@ vhx.videos.list();
 ```
 
 ```php
-<?php\VHX\Videos::list();
+<?php\VHX\Videos::all();
 ```
 > Example Request
 
@@ -339,8 +339,8 @@ vhx.videos.list({
 ```
 
 ```php
-$videos = \VHX\Videos::list(array(
-  query => 'term'
+$videos = \VHX\Videos::all(array(
+  'query' => 'term'
 ));
 ```
 

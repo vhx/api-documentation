@@ -90,8 +90,8 @@ vhx.collections.create({
 
 ```php
 <?php$collection = \VHX\Collections::create(array(
-  name => 'Collection Name',
-  type => 'series'
+  'name' => 'Collection Name',
+  'type' => 'series'
 ));
 ```
 
@@ -430,7 +430,7 @@ vhx.collections.list();
 ```
 
 ```php
-<?php\VHX\Collections::list();
+<?php\VHX\Collections::all();
 ```
 
 > Example Request
@@ -456,7 +456,7 @@ vhx.collections.list({
 ```
 
 ```php
-<?php$collections = \VHX\Collections::list(array(
+<?php$collections = \VHX\Collections::all(array(
   product => 'https://api.vhx.tv/products/1'
 ));
 ```
