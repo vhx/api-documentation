@@ -104,7 +104,7 @@ vhx.authorizations.create({
         <span class="is-block text--transparent text-3">string</span>
         <span class="text--yellow text-3">REQUIRED</span>
       </td>
-      <td>The UUID of the customer.</td>
+      <td>The <code>href</code> of the customer.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
@@ -112,7 +112,7 @@ vhx.authorizations.create({
         <span class="is-block text--transparent text-3">string</span>
         <span class="text--yellow text-3">REQUIRED</span>
       </td>
-      <td>The UUID of the video.</td>
+      <td>The <code>href</code> of the video.</td>
     </tr>
   </tbody>
 </table>

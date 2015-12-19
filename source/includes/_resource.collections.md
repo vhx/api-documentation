@@ -406,7 +406,7 @@ vhx.collections.retrieve({
         <span class="is-block text--transparent text-3">string</span>
         <span class="text--transparent text-3">optional, default is null</span>
       </td>
-      <td>The UUID of a product.</td>
+      <td>The <code>href</code> of a product.</td>
     </tr>
   </tbody>
 </table>
@@ -507,7 +507,7 @@ vhx.collections.list({
         <span class="is-block text--transparent text-3">string</span>
         <span class="text--transparent text-3">optional, default is null</span>
       </td>
-      <td>The UUID of a product.</td>
+      <td>The <code>href</code> of a product.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td>

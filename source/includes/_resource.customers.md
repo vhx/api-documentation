@@ -112,7 +112,7 @@ vhx.customers.create({
         <span class="is-block text--transparent text-3">string</span>
         <span class="text--yellow text-3">REQUIRED</span>
       </td>
-      <td>The UUID of the product you'd like to give the customer access to.</td>
+      <td>The <code>href</code> of the product you'd like to give the customer access to.</td>
     </tr>
   </tbody>
 </table>
@@ -204,7 +204,7 @@ vhx.customers.retrieve({
         <span class="is-block text--transparent text-3">string</span>
         <span class="text--transparent text-3">optional, default is null</span>
       </td>
-      <td>The UUID of a product.</td>
+      <td>The <code>href</code> of a product.</td>
     </tr>
   </tbody>
 </table>
@@ -298,7 +298,7 @@ vhx.customers.list({
         <span class="is-block text--transparent text-3">string</span>
         <span class="text--transparent text-3">optional, default is null</span>
       </td>
-      <td>The UUID of a product.</td>
+      <td>The <code>href</code> of a product.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
