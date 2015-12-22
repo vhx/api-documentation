@@ -84,7 +84,7 @@ catch (\VHX\Error\InvalidRequest $e) {
 
   // each error you can get the following
   echo $e->getHttpStatus();
-  print($e->getErrorResponse());
+  echo $e->getErrorResponse()['message'];
   echo $e->getErrorJSONResponse();
 }
 catch (\VHX\Error\ResourceNotFound $e) {
