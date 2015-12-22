@@ -5,6 +5,53 @@
   All responses use standard <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes">HTTP status codes</a>. This status code should solely be used to determine the success or failure of a request. If a failure, there additionally will be a message key in the <code>JSON</code> response with a detailed error message. Below is an outline of all HTTP status codes.
 </section>
 
+
+```ruby
+# For example, rescuing a Unauthorized Error
+
+begin
+  Vhx::Customer.find(1)
+rescue Vhx::UnauthorizedError
+  # Handle Exception
+end
+
+# Mapping of error codes and the ruby exception that is thrown
+{
+  400 => Vhx::BadRequestError,
+  401 => Vhx::UnauthorizedError,
+  402 => Vhx::PaymentRequiredError,
+  404 => Vhx::NotFoundError,
+  406 => Vhx::NotAcceptableError,
+  500...505 => Vhx::ServerError
+}
+```
+
+```php
+<?phptry {
+  // Use VHX library to make requests...
+}
+catch (\VHX\Error\InvalidRequest $e) {
+  // invalid parameters were supplied
+
+  // each error you can get the following
+  echo $e->getHttpStatus();
+  echo $e->getErrorResponse()['message'];
+  echo $e->getErrorJSONResponse();
+}
+catch (\VHX\Error\ResourceNotFound $e) {
+  // particular resource was not found
+}
+catch (\VHX\Error\Api $e) {
+  // network communication with VHX API failed
+}
+catch (\VHX\Error\Authentication $e) {
+  // authentication with VHX API failed
+}
+catch (Exception $e) {
+  // Something else happened, unrelated to VHX
+}
+```
+
 <table class="margin-bottom-xlarge padding-bottom-xlarge">
   <thead>
     <tr class="text-2">
@@ -52,51 +99,3 @@
     </tr>
   </tbody>
 </table>
-
-
-
-```ruby
-# For example, rescuing a Unauthorized Error
-
-begin
-  Vhx::Customer.find(1)
-rescue Vhx::UnauthorizedError
-  # Handle Exception
-end
-
-# Mapping of error codes and the ruby exception that is thrown
-{
-  400 => Vhx::BadRequestError,
-  401 => Vhx::UnauthorizedError,
-  402 => Vhx::PaymentRequiredError,
-  404 => Vhx::NotFoundError,
-  406 => Vhx::NotAcceptableError,
-  500...505 => Vhx::ServerError
-}
-```
-
-```php
-try {
-  // Use VHX library to make requests...
-}
-catch (\VHX\Error\InvalidRequest $e) {
-  // invalid parameters were supplied
-
-  // each error you can get the following
-  echo $e->getHttpStatus();
-  echo $e->getErrorResponse()['message'];
-  echo $e->getErrorJSONResponse();
-}
-catch (\VHX\Error\ResourceNotFound $e) {
-  // particular resource was not found
-}
-catch (\VHX\Error\Api $e) {
-  // network communication with VHX API failed
-}
-catch (\VHX\Error\Authentication $e) {
-  // authentication with VHX API failed
-}
-catch (Exception $e) {
-  // Something else happened, unrelated to VHX
-}
-```
