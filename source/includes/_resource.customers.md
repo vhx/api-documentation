@@ -72,8 +72,8 @@ vhx.customers.create({
   },
   "_embedded": {},
   "id": 1,
-  "name": "Space Cat",
-  "email": "spacecat@vhx.tv",
+  "name": "Customer Name",
+  "email": "customer@email.com",
   "created_at": "2014-02-25T20:19:30Z",
   "updated_at": "2014-02-25T20:19:30Z"
 }
@@ -172,8 +172,8 @@ vhx.customers.retrieve({
   },
   "_embedded": {},
   "id": 1,
-  "name": "Space Cat",
-  "email": "spacecat@vhx.tv",
+  "name": "Customer Name",
+  "email": "customer@email.com",
   "created_at": "2014-02-25T20:19:30Z",
   "updated_at": "2014-02-25T20:19:30Z"
 }
