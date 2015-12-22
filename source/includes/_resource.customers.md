@@ -58,7 +58,8 @@ vhx.customers.create({
 ```php
 <?php$customer = \VHX\Customers::create(array(
   'name' => 'Customer Name',
-  'email' => 'customer@email.com'
+  'email' => 'customer@email.com',
+  'product' => 'https://api.vhx.tv/products/1'
 ));
 ```
 
