@@ -74,3 +74,29 @@ end
   500...505 => Vhx::ServerError
 }
 ```
+
+```php
+try {
+  // Use VHX library to make requests...
+}
+catch (\VHX\Error\InvalidRequest $e) {
+  // invalid parameters were supplied
+
+  // each error you can get the following
+  echo $e->getHttpStatus();
+  print($e->getErrorResponse());
+  echo $e->getErrorJSONResponse();
+}
+catch (\VHX\Error\ResourceNotFound $e) {
+  // particular resource was not found
+}
+catch (\VHX\Error\Api $e) {
+  // network communication with VHX API failed
+}
+catch (\VHX\Error\Authentication $e) {
+  // authentication with VHX API failed
+}
+catch (Exception $e) {
+  // Something else happened, unrelated to VHX
+}
+```
