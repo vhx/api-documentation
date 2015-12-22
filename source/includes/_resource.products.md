@@ -47,7 +47,7 @@ vhx.products.retrieve({
 ```
 
 ```php
-<?php$product = \VHX\Product::retrieve(15);
+<?php$product = \VHX\Products::retrieve(15);
 ```
 
 > Example Response
@@ -108,7 +108,7 @@ vhx.products.list();
 ```
 
 ```php
-<?php$product = \VHX\Product::all();
+<?php$product = \VHX\Products::all();
 ```
 
 > Example Request
