@@ -227,7 +227,7 @@ vhx.collections.create(75, {
 
 ```php
 <?php$collection = \VHX\Collections::update(75, array(
-  name => 'A new description'
+  'name' => 'A new description'
 ));
 ```
 
