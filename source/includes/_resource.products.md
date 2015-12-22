@@ -108,7 +108,7 @@ vhx.products.list();
 ```
 
 ```php
-<?php$product = \VHX\Product::list();
+<?php$product = \VHX\Product::all();
 ```
 
 > Example Request
@@ -134,7 +134,7 @@ vhx.products.list({
 ```
 
 ```php
-<?php$products = \VHX\Products::list({
+<?php$products = \VHX\Products::all({
   query: 'term'
 });
 ```

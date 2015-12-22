@@ -89,7 +89,7 @@ vhx.videos.create({
 ```
 
 ```php
-$video = \VHX\Videos::create(array(
+<?php$video = \VHX\Videos::create(array(
   'title' => 'My Video',
   'description' => 'My video description.',
   'source_url' => 's3:://YOUR_BUCKET_NAME/FILE.mp4'
@@ -210,7 +210,7 @@ vhx.videos.retrieve({
 ```
 
 ```php
-$video = \VHX\Videos::retrieve(125);
+<?php$video = \VHX\Videos::retrieve(125);
 ```
 
 > Example Response
@@ -339,7 +339,7 @@ vhx.videos.list({
 ```
 
 ```php
-$videos = \VHX\Videos::all(array(
+<?php$videos = \VHX\Videos::all(array(
   'query' => 'term'
 ));
 ```

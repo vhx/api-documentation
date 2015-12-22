@@ -256,7 +256,7 @@ vhx.customers.list({
 
 ```php
 <?php$customers = \VHX\Customers::all(array(
-  'query': 'term'
+  'query' => 'term'
 ));
 ```
 
