@@ -55,11 +55,27 @@ vhx.products.retrieve({
 ```json
 {
   "_links": {
-    "self":  { "href": "https://api.vhx.tv/products/1" }
+    "self":        { "href": "https://api.vhx.tv/products/1" },
+    "collections": { "href": "https://api.vhx.tv/collections?product=:href" },
+    "customers":   { "href": "https://api.vhx.tv/customers?product=:href" }
   },
   "_embedded": {},
   "id": 1,
-  "title": "Subscription NOW",
+  "name": "Subscription NOW",
+  "description": "Subscribe to Subscription NOW today!",
+  "thumbnail": {},
+  "price": {
+    "monthly": {
+      "cents": 800,
+      "currency": "USD",
+      "formatted": "$8"
+    },
+    "yearly": {
+      "cents": 6500,
+      "currency": "USD",
+      "formatted": "$65"
+    }
+  },
   "created_at": "2014-02-25T20:19:30Z",
   "updated_at": "2014-02-25T20:19:30Z"
 }
