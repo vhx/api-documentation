@@ -306,7 +306,7 @@ GET /videos
 ```
 
 ```ruby
-Vhx::Video.list()
+Vhx::Video.all()
 ```
 
 ```javascript
@@ -325,7 +325,7 @@ $ curl -X GET -G "https://api.vhx.tv/videos" \
 ```
 
 ```ruby
-video = Vhx::Video.list({
+video = Vhx::Video.all({
   query: 'term'
 })
 ```

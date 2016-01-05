@@ -422,7 +422,7 @@ GET /collections
 ```
 
 ```ruby
-Vhx::Collection.list()
+Vhx::Collection.all()
 ```
 
 ```javascript
@@ -442,7 +442,7 @@ $ curl -X GET -G "https://api.vhx.tv/collections" \
 ```
 
 ```ruby
-collections = Vhx::Collection.list({
+collections = Vhx::Collection.all({
   product: 'https://api.vhx.tv/products/1'
 })
 ```
