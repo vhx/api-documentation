@@ -69,7 +69,7 @@ vhx.collections.create();
 $ curl -X POST "https://api.vhx.tv/collections" \
   -d name="Collection Name" \
   -d type="series" \
-  -d site="http://api.vhx.tv/sites/:id"
+  -d product="http://api.vhx.tv/products/:id"
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
@@ -77,7 +77,7 @@ $ curl -X POST "https://api.vhx.tv/collections" \
 collection = Vhx::Collection.create({
   name: 'Collection Name',
   type: 'series',
-  site: 'http://api.vhx.tv/sites/:id'
+  product: 'http://api.vhx.tv/products/:id'
 })
 ```
 
@@ -161,11 +161,11 @@ vhx.collections.create({
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td class="nowrap">
-        <strong class="is-block text--navy">site</strong>
+        <strong class="is-block text--navy">product</strong>
         <span class="is-block text--transparent text-3">string</span>
         <span class="text--yellow text-3">REQUIRED</span>
       </td>
-      <td>The collection's site.</td>
+      <td>The collection's product.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
