@@ -414,7 +414,7 @@ GET /videos/:id/files
 ```
 
 ```ruby
-Vhx::File.all()
+Vhx::Video#files()
 ```
 
 ```javascript
@@ -433,11 +433,8 @@ $ curl -X GET "https://api.vhx.tv/videos/:id/files?quality=adaptive&format=m3u8"
 ```
 
 ```ruby
-files = Vhx::File.all({
-  video: 'https://api.vhx.tv/videos/:id',
-  quality: 'adaptive',
-  format: 'm3u8'
-})
+video = Vhx::Video.find(1)
+video.files({quality: 'adaptive', format: 'm3u8'})
 ```
 
 ```javascript
