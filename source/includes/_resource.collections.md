@@ -557,7 +557,7 @@ GET /collections/:id/items
 ```
 
 ```ruby
-Vhx::CollectionItem.list()
+Vhx::Item.all()
 ```
 
 ```javascript
@@ -576,7 +576,7 @@ $ curl -X GET -G "https://api.vhx.tv/collections/1/items?page=1" \
 ```
 
 ```ruby
-collections = Vhx::CollectionItem.list({
+collections = Vhx::Item.all({
   collection: 'https://api.vhx.tv/collections/1',
   page: 1
 })
