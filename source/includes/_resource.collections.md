@@ -69,13 +69,15 @@ vhx.collections.create();
 $ curl -X POST "https://api.vhx.tv/collections" \
   -d name="Collection Name" \
   -d type="series" \
+  -d site="http://api.vhx.tv/sites/:id"
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
 ```ruby
 collection = Vhx::Collection.create({
   name: 'Collection Name',
-  type: 'series'
+  type: 'series',
+  site: 'http://api.vhx.tv/sites/:id'
 })
 ```
 
@@ -156,6 +158,14 @@ vhx.collections.create({
         <span class="text--yellow text-3">REQUIRED</span>
       </td>
       <td>The name of the collection.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td class="nowrap">
+        <strong class="is-block text--navy">site</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--yellow text-3">REQUIRED</span>
+      </td>
+      <td>The collection's site.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
