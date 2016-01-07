@@ -220,7 +220,7 @@ GET /customers
 ```
 
 ```ruby
-Vhx::Customer.list()
+Vhx::Customer.all()
 ```
 
 ```javascript
@@ -240,7 +240,7 @@ $ curl -X GET -G "https://api.vhx.tv/customers" \
 ```
 
 ```ruby
-Vhx::Customer.list({
+Vhx::Customer.all({
   query: 'term'
 })
 ```
@@ -322,6 +322,77 @@ vhx.customers.list({
         <span class="text--transparent text-3">optional, default is 50</span>
       </td>
       <td>The page size of the paginated result.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 class="text-2 text--navy text--bold margin-top-large margin-bottom-medium" id="customer-delete">Delete a Customer</h3>
+
+> <h5 class="head-5 text--white margin-bottom-medium">Delete a customer</h5>
+
+> Definiton
+
+
+```shell
+DELETE /customers/:id
+```
+
+```ruby
+Vhx::Customer.delete()
+```
+
+```javascript
+```
+
+```php
+```
+
+> Example Request
+
+```shell
+$ curl -X DELETE -G "https://api.vhx.tv/customers/:id" \
+  -d product=https://api.vhx.tv/products/:id \
+  -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
+```
+
+```ruby
+Vhx::Customer.delete(15)
+```
+
+```javascript
+```
+
+```php
+```
+
+<section class="text-2 contain">
+  <p>Deletes an existing customer.</p>
+</section>
+
+<table>
+  <thead>
+    <tr class="text-2">
+      <th class="padding-medium nowrap">Arguments</th>
+      <th class="padding-medium" width="100%">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">id</strong>
+        <span class="is-block text--transparent text-3">integer</span>
+        <span class="text--yellow text-3">REQUIRED</span>
+      </td>
+      <td>The id of the customer being deleted.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">product</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--yellow text-3">REQUIRED</span>
+      </td>
+      <td>The <code>href</code> of a product.</td>
     </tr>
   </tbody>
 </table>
