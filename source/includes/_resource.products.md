@@ -16,15 +16,15 @@ GET /products/:id
 ```
 
 ```ruby
-Vhx::Product.find()
+Vhx::Product.find({PRODUCT_ID})
 ```
 
 ```javascript
-vhx.products.retrieve();
+vhx.products.retrieve({PRODUCT_ID});
 ```
 
 ```php
-<?php$product = \VHX\Product::retrieve();
+<?php$product = \VHX\Product::retrieve({PRODUCT_ID});
 ```
 
 > Example Request
@@ -39,9 +39,7 @@ product = Vhx::Product.find(15)
 ```
 
 ```javascript
-vhx.products.retrieve({
-  id: 15
-}, function(err, product) {
+vhx.products.retrieve(15, function(err, product) {
   // asynchronously called
 });
 ```

@@ -354,9 +354,7 @@ collection = Vhx::Collection.find(375)
 ```
 
 ```javascript
-vhx.collections.retrieve({
-  id : 375
-}, function(err, collection) {
+vhx.collections.retrieve(375, function(err, collection) {
   // asynchronously called
 });
 ```
@@ -561,17 +559,17 @@ Vhx::Collection#items()
 ```
 
 ```javascript
-vhx.collections.items();
+vhx.collections.listItems({COLLECTION_ID});
 ```
 
 ```php
-<?php \VHX\Collections::items();
+<?php \VHX\Collections::allItems({COLLECTION_ID});
 ```
 
 > Example Request
 
 ```shell
-$ curl -X GET -G "https://api.vhx.tv/collections/1/items?page=1" \
+$ curl -X GET -G "https://api.vhx.tv/collections/375/items?page=1" \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
@@ -581,8 +579,7 @@ collection.items({page: 1})
 ```
 
 ```javascript
-vhx.collections.items({
-  collection: 'https://api.vhx.tv/collections/1',
+vhx.collections.listItems(375, {
   page: 1
 }, function(err, items) {
   // asynchronously called
@@ -590,8 +587,7 @@ vhx.collections.items({
 ```
 
 ```php
-<?php$collections = \VHX\Collections::items(array(
-  collection => 'https://api.vhx.tv/collection/1',
+<?php$collections = \VHX\Collections::allItems(375, array(
   page => 1
 ));
 ```
