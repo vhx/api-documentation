@@ -152,9 +152,7 @@ customer = Vhx::Customer.find(15)
 ```
 
 ```javascript
-vhx.customers.retrieve({
-  id: 15
-}, function(err, customer) {
+vhx.customers.retrieve(15, function(err, customer) {
   // asynchronously called
 });
 ```

@@ -39,9 +39,7 @@ product = Vhx::Product.find(15)
 ```
 
 ```javascript
-vhx.products.retrieve({
-  id: 15
-}, function(err, product) {
+vhx.products.retrieve(15, function(err, product) {
   // asynchronously called
 });
 ```

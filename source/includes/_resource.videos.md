@@ -202,9 +202,7 @@ customer = Vhx::Video.find(125)
 ```
 
 ```javascript
-vhx.videos.retrieve({
-  id: 125
-}, function(err, video) {
+vhx.videos.retrieve(125, function(err, video) {
   // asynchronously called
 });
 ```
@@ -440,7 +438,7 @@ files = Vhx::Video.files(465, {
 ```
 
 ```javascript
-vhx.videos.files({
+vhx.videos.files(465, {
   quality: 'adaptive',
   format: 'm3u8'
 }, function(err, files) {
@@ -449,7 +447,7 @@ vhx.videos.files({
 ```
 
 ```php
-$files = \VHX\Videos::files(array(
+$files = \VHX\Videos::files(465, array(
   quality => 'adaptive',
   format => 'm3u8'
 ));
