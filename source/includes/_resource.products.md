@@ -116,7 +116,7 @@ GET /products
 ```
 
 ```ruby
-Vhx::Product.list()
+Vhx::Product.all()
 ```
 
 ```javascript
@@ -136,7 +136,7 @@ $ curl -X GET -G "https://api.vhx.tv/products" \
 ```
 
 ```ruby
-Vhx::Product.list({
+Vhx::Product.all({
   query: 'term'
 })
 ```

@@ -69,13 +69,15 @@ vhx.collections.create();
 $ curl -X POST "https://api.vhx.tv/collections" \
   -d name="Collection Name" \
   -d type="series" \
+  -d product="http://api.vhx.tv/products/:id"
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
 ```ruby
 collection = Vhx::Collection.create({
   name: 'Collection Name',
-  type: 'series'
+  type: 'series',
+  product: 'http://api.vhx.tv/products/:id'
 })
 ```
 
@@ -156,6 +158,14 @@ vhx.collections.create({
         <span class="text--yellow text-3">REQUIRED</span>
       </td>
       <td>The name of the collection.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td class="nowrap">
+        <strong class="is-block text--navy">product</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--yellow text-3">REQUIRED</span>
+      </td>
+      <td>The collection's product.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
@@ -422,7 +432,7 @@ GET /collections
 ```
 
 ```ruby
-Vhx::Collection.list()
+Vhx::Collection.all()
 ```
 
 ```javascript
@@ -442,7 +452,7 @@ $ curl -X GET -G "https://api.vhx.tv/collections" \
 ```
 
 ```ruby
-collections = Vhx::Collection.list({
+collections = Vhx::Collection.all({
   product: 'https://api.vhx.tv/products/1'
 })
 ```
@@ -547,7 +557,7 @@ GET /collections/:id/items
 ```
 
 ```ruby
-Vhx::CollectionItem.list()
+Vhx::Collection#items()
 ```
 
 ```javascript
@@ -566,10 +576,8 @@ $ curl -X GET -G "https://api.vhx.tv/collections/1/items?page=1" \
 ```
 
 ```ruby
-collections = Vhx::CollectionItem.list({
-  collection: 'https://api.vhx.tv/collections/1',
-  page: 1
-})
+collection = Vhx::Collection.find(1)
+collection.items({page: 1})
 ```
 
 ```javascript
