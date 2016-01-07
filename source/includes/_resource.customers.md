@@ -129,15 +129,15 @@ GET /customers/:id
 ```
 
 ```ruby
-Vhx::Customer.find()
+Vhx::Customer.find({CUSTOMER_ID})
 ```
 
 ```javascript
-vhx.customers.retrieve();
+vhx.customers.retrieve({CUSTOMER_ID});
 ```
 
 ```php
-<?php$customer = \VHX\Customers::retrieve();
+<?php$customer = \VHX\Customers::retrieve({CUSTOMER_ID});
 ```
 
 > Example Request
@@ -342,9 +342,11 @@ Vhx::Customer.delete()
 ```
 
 ```javascript
+vhx.customers.del({CUSTOMER_ID});
 ```
 
 ```php
+<?php\VHX\Customers::delete({CUSTOMER_ID});
 ```
 
 > Example Request
@@ -360,9 +362,13 @@ Vhx::Customer.delete(15)
 ```
 
 ```javascript
+vhx.customers.del(15, function(err, response) {
+  // asynchronously called
+});
 ```
 
 ```php
+<?php\VHX\Customers::delete(15);
 ```
 
 <section class="text-2 contain">

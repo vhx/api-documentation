@@ -559,11 +559,11 @@ Vhx::Collection#items()
 ```
 
 ```javascript
-vhx.collections.items();
+vhx.collections.listItems({COLLECTION_ID});
 ```
 
 ```php
-<?php \VHX\Collections::items();
+<?php \VHX\Collections::allItems({COLLECTION_ID});
 ```
 
 > Example Request
@@ -579,7 +579,7 @@ collection.items({page: 1})
 ```
 
 ```javascript
-vhx.collections.items(375, {
+vhx.collections.listItems(375, {
   page: 1
 }, function(err, items) {
   // asynchronously called
@@ -587,7 +587,7 @@ vhx.collections.items(375, {
 ```
 
 ```php
-<?php$collections = \VHX\Collections::items(375, array(
+<?php$collections = \VHX\Collections::allItems(375, array(
   page => 1
 ));
 ```

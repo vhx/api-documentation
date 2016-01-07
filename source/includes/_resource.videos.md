@@ -416,11 +416,11 @@ Vhx::Video#files({VIDEO_ID})
 ```
 
 ```javascript
-vhx.videos.files({VIDEO_ID});
+vhx.videos.listFiles({VIDEO_ID});
 ```
 
 ```php
-<?php\VHX\Videos::files({VIDEO_ID});
+<?php\VHX\Videos::allFiles({VIDEO_ID});
 ```
 
 > Example Request
@@ -436,7 +436,7 @@ video.files({quality: 'adaptive', format: 'm3u8'})
 ```
 
 ```javascript
-vhx.videos.files(465, {
+vhx.videos.listFiles(465, {
   quality: 'adaptive',
   format: 'm3u8'
 }, function(err, files) {
@@ -445,7 +445,7 @@ vhx.videos.files(465, {
 ```
 
 ```php
-$files = \VHX\Videos::files(465, array(
+$files = \VHX\Videos::allFiles(465, array(
   quality => 'adaptive',
   format => 'm3u8'
 ));

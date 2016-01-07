@@ -16,15 +16,15 @@ GET /products/:id
 ```
 
 ```ruby
-Vhx::Product.find()
+Vhx::Product.find({PRODUCT_ID})
 ```
 
 ```javascript
-vhx.products.retrieve();
+vhx.products.retrieve({PRODUCT_ID});
 ```
 
 ```php
-<?php$product = \VHX\Product::retrieve();
+<?php$product = \VHX\Product::retrieve({PRODUCT_ID});
 ```
 
 > Example Request
