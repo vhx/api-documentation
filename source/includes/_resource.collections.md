@@ -559,11 +559,11 @@ Vhx::Collection#items()
 ```
 
 ```javascript
-vhx.collections.listItems({COLLECTION_ID});
+vhx.collections.listItems();
 ```
 
 ```php
-<?php \VHX\Collections::allItems({COLLECTION_ID});
+<?php \VHX\Collections::items();
 ```
 
 > Example Request
@@ -574,12 +574,13 @@ $ curl -X GET -G "https://api.vhx.tv/collections/375/items?page=1" \
 ```
 
 ```ruby
-collection = Vhx::Collection.find(1)
+collection = Vhx::Collection.find(375)
 collection.items({page: 1})
 ```
 
 ```javascript
-vhx.collections.listItems(375, {
+vhx.collections.listItems({
+  collection: 'https://api.vhx.tv/collections/375',
   page: 1
 }, function(err, items) {
   // asynchronously called
@@ -587,7 +588,7 @@ vhx.collections.listItems(375, {
 ```
 
 ```php
-<?php$collections = \VHX\Collections::allItems(375, array(
+<?php$collections = \VHX\Collections::items(375, array(
   page => 1
 ));
 ```
@@ -597,11 +598,11 @@ vhx.collections.listItems(375, {
 ```json
 {
   "_links": {
-    "self":  { "href": "https://api.vhx.tv/collections/1/items?page=1" },
-    "first": { "href": "https://api.vhx.tv/collections/1/items" },
+    "self":  { "href": "https://api.vhx.tv/collections/375/items?page=1" },
+    "first": { "href": "https://api.vhx.tv/collections/375/items" },
     "prev":  { "href": null },
-    "next":  { "href": "https://api.vhx.tv/collections/1/items?page=2" },
-    "last":  { "href": "https://api.vhx.tv/collections/1/items?page=5" }
+    "next":  { "href": "https://api.vhx.tv/collections/375/items?page=2" },
+    "last":  { "href": "https://api.vhx.tv/collections/375/items?page=5" }
   },
   "count": 100,
   "total": 500,

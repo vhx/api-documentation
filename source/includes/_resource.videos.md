@@ -412,15 +412,15 @@ GET /videos/:id/files
 ```
 
 ```ruby
-Vhx::Video#files({VIDEO_ID})
+Vhx::Video#files()
 ```
 
 ```javascript
-vhx.videos.listFiles({VIDEO_ID});
+vhx.videos.listFiles();
 ```
 
 ```php
-<?php\VHX\Videos::allFiles({VIDEO_ID});
+<?php\VHX\Videos::files();
 ```
 
 > Example Request
@@ -431,12 +431,13 @@ $ curl -X GET "https://api.vhx.tv/videos/:id/files?quality=adaptive&format=m3u8"
 ```
 
 ```ruby
-video = Vhx::Video.find(1)
+video = Vhx::Video.find(465)
 video.files({quality: 'adaptive', format: 'm3u8'})
 ```
 
 ```javascript
-vhx.videos.listFiles(465, {
+vhx.videos.listFiles({
+  video: 'https://api.vhx.tv/video/465'
   quality: 'adaptive',
   format: 'm3u8'
 }, function(err, files) {
@@ -445,7 +446,7 @@ vhx.videos.listFiles(465, {
 ```
 
 ```php
-$files = \VHX\Videos::allFiles(465, array(
+$files = \VHX\Videos::files(465, array(
   quality => 'adaptive',
   format => 'm3u8'
 ));
