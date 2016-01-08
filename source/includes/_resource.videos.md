@@ -1,5 +1,5 @@
 <!-- ___VIDEOS____________________________ -->
-<h2 class="is-api head-3 margin-top-large margin-bottom-medium" id="videos">Videos</h2>
+<h2 class="head-3 margin-top-xlarge padding-top-xlarge border-top margin-bottom-medium" id="videos">Videos</h2>
 
 <section class="text-2 contain">
   <p>A video represents a playable resource. In addition to it's core properties, a video has a set of files (each with multiple renditions) available to stream. A particular file has a specific quality, format, method, and mime type:</p>

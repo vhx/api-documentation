@@ -176,7 +176,7 @@ vhx.customers.retrieve(15, function(err, customer) {
   "updated_at": "2014-02-25T20:19:30Z"
 }
 ```
-<section class="text-2 contain">
+<section class="text-2 contain margin-bottom-medium">
   <p>Retrieves an existing customer. You can optionally specify a product parameter to scope the customer retrieval to it.</p>
 </section>
 
@@ -371,7 +371,7 @@ vhx.customers.del(15, function(err, response) {
 <?php\VHX\Customers::delete(15);
 ```
 
-<section class="text-2 contain">
+<section class="text-2 contain margin-bottom-medium">
   <p>Deletes an existing customer.</p>
 </section>
 
