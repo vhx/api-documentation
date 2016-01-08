@@ -228,7 +228,7 @@ collection = Vhx::Collection.find(75).update({
 ```
 
 ```javascript
-vhx.collections.create(75, {
+vhx.collections.update(75, {
   description: 'A new description'
 }, function(err, collection) {
   // asynchronously called
