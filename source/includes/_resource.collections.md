@@ -206,11 +206,11 @@ Vhx::Collection.update()
 ```
 
 ```javascript
-vhx.collections.update();
+vhx.collections.update({COLLECTION_ID});
 ```
 
 ```php
-<?php\VHX\Collections::update();
+<?php\VHX\Collections::update({COLLECTION_ID});
 ```
 
 > Example Request
@@ -331,15 +331,15 @@ GET /collections/:id
 ```
 
 ```ruby
-Vhx::Collection.retrieve()
+Vhx::Collection.retrieve({COLLECTION_ID})
 ```
 
 ```javascript
-vhx.collections.retrieve();
+vhx.collections.retrieve({COLLECTION_ID});
 ```
 
 ```php
-<?php\VHX\Collections::retrieve();
+<?php\VHX\Collections::retrieve({COLLECTION_ID});
 ```
 
 > Example Request
@@ -465,7 +465,7 @@ vhx.collections.list({
 
 ```php
 <?php$collections = \VHX\Collections::all(array(
-  product => 'https://api.vhx.tv/products/1'
+  'product' => 'https://api.vhx.tv/products/1'
 ));
 ```
 
@@ -563,7 +563,7 @@ vhx.collections.listItems();
 ```
 
 ```php
-<?php \VHX\Collections::items();
+<?php \VHX\Collections::allItems();
 ```
 
 > Example Request
@@ -588,8 +588,9 @@ vhx.collections.listItems({
 ```
 
 ```php
-<?php$collections = \VHX\Collections::items(375, array(
-  page => 1
+<?php$collections = \VHX\Collections::allItems(array(
+  'collection' => 'https://api.vhx.tv/collections/375'
+  'page' => 1
 ));
 ```
 

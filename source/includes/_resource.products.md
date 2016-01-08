@@ -149,7 +149,7 @@ vhx.products.list({
 
 ```php
 <?php$products = \VHX\Products::all({
-  query: 'term'
+  'query' => 'term'
 });
 ```
 

@@ -446,9 +446,10 @@ vhx.videos.listFiles({
 ```
 
 ```php
-<?php$files = \VHX\Videos::files(465, array(
-  quality => 'adaptive',
-  format => 'm3u8'
+<?php$files = \VHX\Videos::allFiles(array(
+  'video' => 'https://api.vhx.tv/videos/465'
+  'quality' => 'adaptive',
+  'format' => 'm3u8'
 ));
 ```
 
