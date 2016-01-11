@@ -71,7 +71,7 @@ $ curl -X POST "https://api.vhx.tv/videos" \
 ```
 
 ```ruby
-customer = Vhx::Video.create({
+video = Vhx::Video.create({
   title: 'My Video',
   description: 'My video description.',
   source_url: 's3:://YOUR_BUCKET_NAME/FILE.mp4'
@@ -198,7 +198,7 @@ $ curl -X GET "https://api.vhx.tv/videos/:id" \
 ```
 
 ```ruby
-customer = Vhx::Video.find(125)
+video = Vhx::Video.find(125)
 ```
 
 ```javascript
