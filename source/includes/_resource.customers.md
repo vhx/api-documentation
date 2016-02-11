@@ -309,6 +309,14 @@ vhx.customers.list({
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
+        <strong class="is-block text--navy">email</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--transparent text-3">optional, default is null</span>
+      </td>
+      <td>The email address to search the paginated results.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
         <strong class="is-block text--navy">page</strong>
         <span class="is-block text--transparent text-3">integer</span>
         <span class="text--transparent text-3">optional, default is 1</span>
