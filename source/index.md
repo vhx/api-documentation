@@ -1,5 +1,5 @@
 ---
-title: API Reference
+title: VHX API Reference
 
 language_tabs:
   - shell: cURL
