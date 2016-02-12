@@ -2,7 +2,7 @@
 <h2 class="head-3 margin-top-xlarge padding-top-xlarge border-top margin-bottom-medium" id="products">Products</h2>
 
 <section class="text-2 contain">
-  <p>A product is what holds your premium video content. Access to a product can be given to a customer on a recurring basis (a subscription), expiring (a rental), or indefinite (full purchase).</p>
+  <p>A product is what represents the premium (subscription or transactional) access to your video content. Access to a product can be given to a customer on a recurring basis (a subscription), expiring (a rental), or indefinite (full purchase).</p>
 </section>
 
 <h3 class="text-2 text--navy text--bold margin-top-large margin-bottom-medium" id="product-retrieve">Retrieve a Product</h3>
@@ -16,7 +16,7 @@ GET /products/:id
 ```
 
 ```ruby
-Vhx::Product.find({PRODUCT_ID})
+Vhx::Product.retrieve({PRODUCT_ID})
 ```
 
 ```javascript
@@ -35,7 +35,7 @@ $ curl -X GET "https://api.vhx.tv/products/:id" \
 ```
 
 ```ruby
-product = Vhx::Product.find(15)
+product = Vhx::Product.retrieve(15)
 ```
 
 ```javascript
@@ -74,6 +74,10 @@ vhx.products.retrieve(15, function(err, product) {
       "formatted": "$65"
     }
   },
+  "is_active": true,
+  "series_count": 100,
+  "movies_count": 100,
+  "playlists_count": 100,
   "created_at": "2014-02-25T20:19:30Z",
   "updated_at": "2014-02-25T20:19:30Z"
 }
@@ -118,7 +122,7 @@ Vhx::Product.all()
 ```
 
 ```javascript
-vhx.products.list();
+vhx.products.all();
 ```
 
 ```php
@@ -140,7 +144,7 @@ Vhx::Product.all({
 ```
 
 ```javascript
-vhx.products.list({
+vhx.products.all({
   query: 'term'
 }, function(err, products) {
    // asynchronously called
@@ -189,9 +193,17 @@ vhx.products.list({
       <td>
         <strong class="is-block text--navy">query</strong>
         <span class="is-block text--transparent text-3">string</span>
-        <span class="text--transparent text-3">optional, default is null</span>
+        <span class="text--transparent text-3">optional</span>
       </td>
-      <td>The query to search and filter the paginated results.</td>
+      <td>The query to search and filter the results.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">sort</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>The sort to order the results. Options are <code>alphabetical</code>, <code>newest</code>, or <code>oldest</code>.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td>

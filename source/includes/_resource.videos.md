@@ -378,7 +378,7 @@ vhx.videos.list({
       <td>
         <strong class="is-block text--navy">query</strong>
         <span class="is-block text--transparent text-3">string</span>
-        <span class="text--transparent text-3">optional, default is null</span>
+        <span class="text--transparent text-3">optional</span>
       </td>
       <td>The query to search and filter the paginated results.</td>
     </tr>

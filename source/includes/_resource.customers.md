@@ -2,7 +2,7 @@
 <h2 class="head-3 margin-top-xlarge padding-top-xlarge border-top margin-bottom-medium" id="customers">Customers</h2>
 
 <section class="text-2 contain">
-  <p>A customer is a person who has been given access to a product. By having access to the product, they inherently have access to all of its content (videos / collections).</p>
+  <p>A customer is a person who has been granted access to a product. By having access to the product, they inherently have access to all of its content (videos / collections).</p>
 </section>
 
 <h3 class="text-2 text--navy text--bold margin-top-xlarge margin-bottom-medium" id="customer-create">Create a Customer</h3>
@@ -31,7 +31,7 @@ vhx.customers.create();
 
 ```shell
 $ curl -X POST "https://api.vhx.tv/customers" \
-  -d name="Customer Name" \
+  -d name="First Last" \
   -d email="customer@email.com" \
   -d product="https://api.vhx.tv/products/1" \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
@@ -39,7 +39,7 @@ $ curl -X POST "https://api.vhx.tv/customers" \
 
 ```ruby
 customer = Vhx::Customer.create({
-  name: 'Customer Name',
+  name: 'First Last',
   email: 'customer@email.com'
   product: 'https://api.vhx.tv/products/1'
 })
@@ -47,7 +47,7 @@ customer = Vhx::Customer.create({
 
 ```javascript
 vhx.customers.create({
-  name: 'Customer Name',
+  name: 'First Last',
   email: 'customer@email.com'
   product: 'https://api.vhx.tv/products/1'
 }, function(err, customer) {
@@ -57,7 +57,7 @@ vhx.customers.create({
 
 ```php
 <?php$customer = \VHX\Customers::create(array(
-  'name' => 'Customer Name',
+  'name' => 'First Last',
   'email' => 'customer@email.com',
   'product' => 'https://api.vhx.tv/products/1'
 ));
@@ -72,7 +72,7 @@ vhx.customers.create({
   },
   "_embedded": {},
   "id": 1,
-  "name": "Customer Name",
+  "name": "First Last",
   "email": "customer@email.com",
   "created_at": "2014-02-25T20:19:30Z",
   "updated_at": "2014-02-25T20:19:30Z"
@@ -80,7 +80,7 @@ vhx.customers.create({
 ```
 
 <section class="text-2 contain margin-bottom-medium">
-  A customer can be created (or added) for a given product. For a subscription customer, you are billed per customer / per month. Please <a href="https://www.vhx.tv/pricing">see our pricing</a> for more details.
+  A customer can be created (or added) for a given product. For a subscription customer, you are billed per customer / per month. Please <a href="https://www.vhx.tv/pricing" target="_blank">see our pricing</a> for more details.
 </section>
 
 <table>
@@ -95,7 +95,8 @@ vhx.customers.create({
     <tr class="text-2 border-bottom border--light-gray">
       <td>
         <strong class="is-block text--navy">name</strong>
-        <span class="text--transparent text-3">string</span>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--transparent text-3">optional</span>
       </td>
       <td>The customer's full name (first and last).</td>
     </tr>
@@ -105,7 +106,7 @@ vhx.customers.create({
         <span class="is-block text--transparent text-3">string</span>
         <span class="text--yellow text-3">REQUIRED</span>
       </td>
-      <td>The customer's email.</td>
+      <td>The customer's email address.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td class="nowrap">
@@ -129,7 +130,7 @@ GET /customers/:id
 ```
 
 ```ruby
-Vhx::Customer.find({CUSTOMER_ID})
+Vhx::Customer.retrieve({CUSTOMER_ID})
 ```
 
 ```javascript
@@ -148,7 +149,7 @@ $ curl -X GET "https://api.vhx.tv/customers/:id" \
 ```
 
 ```ruby
-customer = Vhx::Customer.find(15)
+customer = Vhx::Customer.retrieve(15)
 ```
 
 ```javascript
@@ -170,14 +171,14 @@ vhx.customers.retrieve(15, function(err, customer) {
   },
   "_embedded": {},
   "id": 1,
-  "name": "Customer Name",
+  "name": "First Last",
   "email": "customer@email.com",
   "created_at": "2014-02-25T20:19:30Z",
   "updated_at": "2014-02-25T20:19:30Z"
 }
 ```
 <section class="text-2 contain margin-bottom-medium">
-  <p>Retrieves an existing customer. You can optionally specify a product parameter to scope the customer retrieval to it.</p>
+  <p>Retrieves an existing customer. You can optionally specify a product parameter to scope the customer retrieval to it (ie. "Is this customer subscribed to this product?").</p>
 </section>
 
 <table>
@@ -201,7 +202,7 @@ vhx.customers.retrieve(15, function(err, customer) {
       <td>
         <strong class="is-block text--navy">product</strong>
         <span class="is-block text--transparent text-3">string</span>
-        <span class="text--transparent text-3">optional, default is null</span>
+        <span class="text--transparent text-3">optional</span>
       </td>
       <td>The <code>href</code> of a product.</td>
     </tr>
@@ -224,7 +225,7 @@ Vhx::Customer.all()
 ```
 
 ```javascript
-vhx.customers.list();
+vhx.customers.all();
 ```
 
 ```php
@@ -246,7 +247,7 @@ Vhx::Customer.all({
 ```
 
 ```javascript
-vhx.customers.list({
+vhx.customers.all({
   query: 'term'
 }, function(err, collections) {
    // asynchronously called
@@ -295,25 +296,33 @@ vhx.customers.list({
       <td>
         <strong class="is-block text--navy">product</strong>
         <span class="is-block text--transparent text-3">string</span>
-        <span class="text--transparent text-3">optional, default is null</span>
+        <span class="text--transparent text-3">optional</span>
       </td>
       <td>The <code>href</code> of a product.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
+        <strong class="is-block text--navy">email</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>The email address to find in the paginated results.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
         <strong class="is-block text--navy">query</strong>
         <span class="is-block text--transparent text-3">string</span>
-        <span class="text--transparent text-3">optional, default is null</span>
+        <span class="text--transparent text-3">optional</span>
       </td>
       <td>The query to search and filter the paginated results.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
-        <strong class="is-block text--navy">email</strong>
+        <strong class="is-block text--navy">sort</strong>
         <span class="is-block text--transparent text-3">string</span>
-        <span class="text--transparent text-3">optional, default is null</span>
+        <span class="text--transparent text-3">optional</span>
       </td>
-      <td>The email address to search the paginated results.</td>
+      <td>The sort to order the results. Options are <code>alphabetical</code>, <code>newest</code>, <code>oldest</code>, or <code>latest</code>.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
@@ -330,6 +339,105 @@ vhx.customers.list({
         <span class="text--transparent text-3">optional, default is 50</span>
       </td>
       <td>The page size of the paginated result.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 class="text-2 text--navy text--bold margin-top-large margin-bottom-medium" id="customer-update">Update a Customer</h3>
+
+> <h5 class="head-5 text--white margin-bottom-medium">Update a customer</h5>
+
+> Definiton
+
+
+```shell
+PUT /customers/:id
+```
+
+```ruby
+Vhx::Customer.update()
+```
+
+```javascript
+vhx.customers.update();
+```
+
+```php
+<?php$customer = \VHX\Customers::update();
+```
+
+> Example Request
+
+```shell
+$ curl -X PUT "https://api.vhx.tv/customers/:id" \
+  -d name="First Last" \
+  -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
+```
+
+```ruby
+Vhx::Customer.update(15, {
+  name: 'First Last'
+})
+```
+
+```javascript
+vhx.customers.update(15, {
+  name: 'First Last'
+}, function(err, customer) {
+   // asynchronously called
+});
+```
+
+```php
+<?php$customers = \VHX\Customers::update(15, array(
+  'name' => 'First Last'
+));
+```
+
+> Example Response
+
+```json
+{
+  "_links": {
+    "self":  { "href": "https://api.vhx.tv/customers/1" }
+  },
+  "_embedded": {},
+  "id": 1,
+  "name": "First Last",
+  "email": "customer@email.com",
+  "created_at": "2014-02-25T20:19:30Z",
+  "updated_at": "2014-02-25T20:19:30Z"
+}
+```
+
+<section class="text-2 contain margin-bottom-medium">
+  <p>Updates an existing customer.</p>
+</section>
+
+<table>
+  <thead>
+    <tr class="text-2">
+      <th class="padding-medium nowrap">Arguments</th>
+      <th class="padding-medium" width="100%">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">name</strong>
+        <span class="text--transparent text-3">string</span>
+        <span class="is-block text--transparent text-3">optional</span>
+      </td>
+      <td>The customer's full name (first and last).</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td class="nowrap">
+        <strong class="is-block text--navy">email</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>The customer's email address.</td>
     </tr>
   </tbody>
 </table>

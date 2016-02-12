@@ -170,21 +170,21 @@ vhx.collections.create({
     <tr class="text-2 border-bottom border--light-gray">
       <td>
         <strong class="is-block text--navy">description</strong>
-        <span class="text--transparent text-3">optional, default is null</span>
+        <span class="text--transparent text-3">optional</span>
       </td>
       <td>The collection description.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
         <strong class="is-block text--navy">thumbnail_url</strong>
-        <span class="text--transparent text-3">optional, default is null</span>
+        <span class="text--transparent text-3">optional</span>
       </td>
       <td>A publicly accessible image URL. If you prefer you can upload images directly to a collection in the VHX Publisher Admin.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
         <strong class="is-block text--navy">banner_url</strong>
-        <span class="text--transparent text-3">optional, default is null</span>
+        <span class="text--transparent text-3">optional</span>
       </td>
       <td>A publicly accessible image URL. If you prefer you can upload images directly to a collection in the VHX Publisher Admin.</td>
     </tr>
@@ -412,7 +412,7 @@ vhx.collections.retrieve(375, function(err, collection) {
       <td>
         <strong class="is-block text--navy">product</strong>
         <span class="is-block text--transparent text-3">string</span>
-        <span class="text--transparent text-3">optional, default is null</span>
+        <span class="text--transparent text-3">optional</span>
       </td>
       <td>The <code>href</code> of a product.</td>
     </tr>
@@ -505,7 +505,7 @@ vhx.collections.list({
       <td>
         <strong class="is-block text--navy">type</strong>
         <span class="is-block text--transparent text-3">string</span>
-        <span class="text--transparent text-3">optional, default is null</span>
+        <span class="text--transparent text-3">optional</span>
       </td>
       <td>A comma separated list of types to filter the results to. To list all collections that are of the series or movie type: <code>?type=series,movie</code>. HTTP-based arrays are also supported.</td>
     </tr>
@@ -513,7 +513,7 @@ vhx.collections.list({
       <td>
         <strong class="is-block text--navy">product</strong>
         <span class="is-block text--transparent text-3">string</span>
-        <span class="text--transparent text-3">optional, default is null</span>
+        <span class="text--transparent text-3">optional</span>
       </td>
       <td>The <code>href</code> of a product.</td>
     </tr>
@@ -521,7 +521,7 @@ vhx.collections.list({
       <td>
         <strong class="is-block text--navy">query</strong>
         <span class="is-block text--transparent text-3">string</span>
-        <span class="text--transparent text-3">optional, default is null</span>
+        <span class="text--transparent text-3">optional</span>
       </td>
       <td>The query to search and filter the paginated results.</td>
     </tr>
