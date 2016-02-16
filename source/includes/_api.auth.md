@@ -30,5 +30,5 @@ var vhx = require('vhx')('YOUR_API_KEY');
 
 <section class="text-2 contain">
   <p>API applications can be created in the VHX admin or by emailing <a href="mailto:api@vhx.tv">api@vhx.tv</a>.</p>
-  <p>Once your application is created, you will recieve an <code>API Key</code>. All resources require authentication with this <code>API Key</code> over <a href="https://en.wikipedia.org/wiki/Basic_access_authentication" target="_blank">HTTP Basic Auth</a>. Your <code>API Key</code> acts as the basic auth username. You do not need to provide a password (but do notice the trailing <code>:</code>).</p>
+  <p>Once your application is created, you will receive an <code>API Key</code>. All resources require authentication with this <code>API Key</code> over <a href="https://en.wikipedia.org/wiki/Basic_access_authentication" target="_blank">HTTP Basic Auth</a>. Your <code>API Key</code> acts as the basic auth username. You do not need to provide a password (but do notice the trailing <code>:</code>).</p>
 </section>
