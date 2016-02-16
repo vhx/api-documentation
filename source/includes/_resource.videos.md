@@ -308,7 +308,7 @@ Vhx::Video.all()
 ```
 
 ```javascript
-vhx.videos.list();
+vhx.videos.all();
 ```
 
 ```php
@@ -329,7 +329,7 @@ video = Vhx::Video.all({
 ```
 
 ```javascript
-vhx.videos.list({
+vhx.videos.all({
   query: 'term'
 }, function(err, videos) {
    // asynchronously called
@@ -416,7 +416,7 @@ Vhx::Video.files()
 ```
 
 ```javascript
-vhx.videos.listFiles();
+vhx.videos.files();
 ```
 
 ```php
@@ -436,7 +436,7 @@ video.files({ quality: 'adaptive', format: 'm3u8' })
 ```
 
 ```javascript
-vhx.videos.listFiles({
+vhx.videos.files({
   video: 'https://api.vhx.tv/video/1'
   quality: 'adaptive',
   format: 'm3u8'
@@ -446,7 +446,7 @@ vhx.videos.listFiles({
 ```
 
 ```php
-<?php$files = \VHX\Videos::allFiles(array(
+<?php$files = \VHX\Videos::files(array(
   'video' => 'https://api.vhx.tv/videos/1'
   'quality' => 'adaptive',
   'format' => 'm3u8'

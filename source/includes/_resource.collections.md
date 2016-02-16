@@ -305,7 +305,7 @@ Vhx::Collection.all()
 ```
 
 ```javascript
-vhx.collections.list();
+vhx.collections.all();
 ```
 
 ```php
@@ -327,7 +327,7 @@ collections = Vhx::Collection.all({
 ```
 
 ```javascript
-vhx.collections.list({
+vhx.collections.all({
   product: 'https://api.vhx.tv/products/1'
 }, function(err, collections) {
   // asynchronously called
@@ -558,11 +558,11 @@ Vhx::Collection.items()
 ```
 
 ```javascript
-vhx.collections.listItems();
+vhx.collections.items();
 ```
 
 ```php
-<?php \VHX\Collections::allItems();
+<?php \VHX\Collections::items();
 ```
 
 > Example Request
@@ -578,7 +578,7 @@ collection.items({ page: 1 })
 ```
 
 ```javascript
-vhx.collections.listItems({
+vhx.collections.items({
   collection: 'https://api.vhx.tv/collections/1',
   page: 1
 }, function(err, items) {
@@ -587,7 +587,7 @@ vhx.collections.listItems({
 ```
 
 ```php
-<?php$collections = \VHX\Collections::allItems(array(
+<?php$collections = \VHX\Collections::items(array(
   'collection' => 'https://api.vhx.tv/collections/1'
   'page' => 1
 ));
