@@ -16,36 +16,36 @@ GET /products/:id
 ```
 
 ```ruby
-Vhx::Product.retrieve({PRODUCT_ID})
+Vhx::Product.retrieve()
 ```
 
 ```javascript
-vhx.products.retrieve({PRODUCT_ID});
+vhx.products.retrieve();
 ```
 
 ```php
-<?php$product = \VHX\Product::retrieve({PRODUCT_ID});
+<?php$product = \VHX\Product::retrieve();
 ```
 
 > Example Request
 
 ```shell
-$ curl -X GET "https://api.vhx.tv/products/:id" \
+$ curl -X GET "https://api.vhx.tv/products/1" \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
 ```ruby
-product = Vhx::Product.retrieve(15)
+product = Vhx::Product.retrieve("https://api.vhx.tv/products/1")
 ```
 
 ```javascript
-vhx.products.retrieve(15, function(err, product) {
+vhx.products.retrieve("https://api.vhx.tv/products/1", function(err, product) {
   // asynchronously called
 });
 ```
 
 ```php
-<?php$product = \VHX\Products::retrieve(15);
+<?php$product = \VHX\Products::retrieve("https://api.vhx.tv/products/1");
 ```
 
 > Example Response
@@ -97,11 +97,11 @@ vhx.products.retrieve(15, function(err, product) {
   <tbody>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
-        <strong class="is-block text--navy">id</strong>
-        <span class="is-block text--transparent text-3">integer</span>
+        <strong class="is-block text--navy">href</strong>
+        <span class="is-block text--transparent text-3">string</span>
         <span class="text--yellow text-3">REQUIRED</span>
       </td>
-      <td>The id of the product being retrieved.</td>
+      <td>The <code>href</code> of the product being retrieved.</td>
     </tr>
   </tbody>
 </table>

@@ -69,7 +69,7 @@ vhx.collections.create();
 $ curl -X POST "https://api.vhx.tv/collections" \
   -d name="Collection Name" \
   -d type="series" \
-  -d product="http://api.vhx.tv/products/:id"
+  -d product="http://api.vhx.tv/products/1"
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
@@ -77,7 +77,7 @@ $ curl -X POST "https://api.vhx.tv/collections" \
 collection = Vhx::Collection.create({
   name: 'Collection Name',
   type: 'series',
-  product: 'http://api.vhx.tv/products/:id'
+  product: 'http://api.vhx.tv/products/1'
 })
 ```
 
@@ -103,10 +103,10 @@ vhx.collections.create({
 {
   "_links": {
     "self": {
-      "href": "http://api.vhx.tv/collections/75"
+      "href": "http://api.vhx.tv/collections/1"
     },
     "items": {
-      "href": "http://api.vhx.tv/collections/75/items"
+      "href": "http://api.vhx.tv/collections/1/items"
     },
     "collection_page": {
       "href": "http://mynetwork.com/collection-name-1"
@@ -115,7 +115,7 @@ vhx.collections.create({
   "_embedded": {
     "trailer": null
   },
-  "id": 75,
+  "id": 1,
   "name": "Collection Name",
   "description": null,
   "slug": "collection-name",
@@ -191,135 +191,6 @@ vhx.collections.create({
   </tbody>
 </table>
 
-<h3 class="text-2 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="collections-update">Update a Collection</h3>
-
-> <h5 class="head-5 text--white margin-bottom-medium">Update a Collection</h5>
-
-> Definition
-
-```shell
-POST /collections/:id
-```
-
-```ruby
-Vhx::Collection.update()
-```
-
-```javascript
-vhx.collections.update({COLLECTION_ID});
-```
-
-```php
-<?php\VHX\Collections::update({COLLECTION_ID});
-```
-
-> Example Request
-
-```shell
-$ curl -X POST "https://api.vhx.tv/collections/75" \
-  -d description="A new description" \
-  -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
-```
-
-```ruby
-collection = Vhx::Collection.find(75).update({
-  description: 'A new description'
-})
-```
-
-```javascript
-vhx.collections.update(75, {
-  description: 'A new description'
-}, function(err, collection) {
-  // asynchronously called
-});
-```
-
-```php
-<?php$collection = \VHX\Collections::update(75, array(
-  'name' => 'A new description'
-));
-```
-
-> Example Response
-
-```json
-{
-  "_links": {
-    "self": {
-      "href": "http://api.vhx.tv/collections/75"
-    },
-    "items": {
-      "href": "http://api.vhx.tv/collections/75/items"
-    },
-    "collection_page": {
-      "href": "http://mynetwork.com/collection-name-1"
-    }
-  },
-  "_embedded": {
-    "trailer": null
-  },
-  "id": 75,
-  "name": "Collection Name",
-  "description": "A new description",
-  "slug": "collection-name",
-  "thumbnail": {},
-  "banner": {},
-  "type": "series",
-  "seasons_count": 0,
-  "items_count": 0,
-  "files_count": 0,
-  "created_at": "2015-11-25T01:30:33Z",
-  "updated_at": "2015-11-25T01:30:33Z"
-}
-```
-
-<section class="text-2 contain">
-  <p>No fields are required when updating a collection, however; you cannot update a collection's type once it has already been created.</p>
-</section>
-
-<table>
-  <thead>
-    <tr class="text-2">
-      <th class="padding-medium nowrap">Arguments</th>
-      <th class="padding-medium" width="100%">Description</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr class="text-2 border-bottom border--light-gray">
-      <td>
-        <strong class="is-block text--navy">name</strong>
-        <span class="is-block text--transparent text-3">string</span>
-        <span class="text--transparent text-3">optional</span>
-      </td>
-      <td>The name of the collection.</td>
-    </tr>
-    <tr class="text-2 border-bottom border--light-gray">
-      <td>
-        <strong class="is-block text--navy">description</strong>
-        <span class="text--transparent text-3">optional</span>
-      </td>
-      <td>The collection description.</td>
-    </tr>
-    <tr class="text-2 border-bottom border--light-gray">
-      <td>
-        <strong class="is-block text--navy">thumbnail_url</strong>
-        <span class="text--transparent text-3">optional</span>
-      </td>
-      <td>A publicly accessible image URL. If you prefer you can upload images directly to a collection in the VHX Publisher Admin.</td>
-    </tr>
-    <tr class="text-2 border-bottom border--light-gray">
-      <td>
-        <strong class="is-block text--navy">banner_url</strong>
-        <span class="text--transparent text-3">optional</span>
-      </td>
-      <td>A publicly accessible image URL. If you prefer you can upload images directly to a collection in the VHX Publisher Admin.</td>
-    </tr>
-  </tbody>
-</table>
-
-
 <h3 class="text-2 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="collections-retrieve">Retrieve a Collection</h3>
 
 > <h5 class="head-5 text--white margin-bottom-medium">Retrieve a Collection</h5>
@@ -331,36 +202,36 @@ GET /collections/:id
 ```
 
 ```ruby
-Vhx::Collection.retrieve({COLLECTION_ID})
+Vhx::Collection.retrieve()
 ```
 
 ```javascript
-vhx.collections.retrieve({COLLECTION_ID});
+vhx.collections.retrieve();
 ```
 
 ```php
-<?php\VHX\Collections::retrieve({COLLECTION_ID});
+<?php\VHX\Collections::retrieve();
 ```
 
 > Example Request
 
 ```shell
-$ curl -X GET "https://api.vhx.tv/collections/:id" \
+$ curl -X GET "https://api.vhx.tv/collections/1" \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
 ```ruby
-collection = Vhx::Collection.find(375)
+collection = Vhx::Collection.retrieve("https://api.vhx.tv/collections/1")
 ```
 
 ```javascript
-vhx.collections.retrieve(375, function(err, collection) {
+vhx.collections.retrieve("https://api.vhx.tv/collections/1", function(err, collection) {
   // asynchronously called
 });
 ```
 
 ```php
-<?php$collection = \VHX\Collections::retrieve(375);
+<?php$collection = \VHX\Collections::retrieve("https://api.vhx.tv/collections/1");
 ```
 
 > Example Response
@@ -544,6 +415,134 @@ vhx.collections.list({
   </tbody>
 </table>
 
+<h3 class="text-2 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="collections-update">Update a Collection</h3>
+
+> <h5 class="head-5 text--white margin-bottom-medium">Update a Collection</h5>
+
+> Definition
+
+```shell
+POST /collections/:id
+```
+
+```ruby
+Vhx::Collection.update()
+```
+
+```javascript
+vhx.collections.update();
+```
+
+```php
+<?php\VHX\Collections::update();
+```
+
+> Example Request
+
+```shell
+$ curl -X POST "https://api.vhx.tv/collections/1" \
+  -d description="A new description" \
+  -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
+```
+
+```ruby
+collection = Vhx::Collection.retrieve("https://api.vhx.tv/collections/1").update({
+  description: 'A new description'
+})
+```
+
+```javascript
+vhx.collections.update("https://api.vhx.tv/collections/1", {
+  description: 'A new description'
+}, function(err, collection) {
+  // asynchronously called
+});
+```
+
+```php
+<?php$collection = \VHX\Collections::update("https://api.vhx.tv/collections/1", array(
+  'name' => 'A new description'
+));
+```
+
+> Example Response
+
+```json
+{
+  "_links": {
+    "self": {
+      "href": "http://api.vhx.tv/collections/1"
+    },
+    "items": {
+      "href": "http://api.vhx.tv/collections/1/items"
+    },
+    "collection_page": {
+      "href": "http://mynetwork.com/collection-name-1"
+    }
+  },
+  "_embedded": {
+    "trailer": null
+  },
+  "id": 1,
+  "name": "Collection Name",
+  "description": "A new description",
+  "slug": "collection-name",
+  "thumbnail": {},
+  "banner": {},
+  "type": "series",
+  "seasons_count": 0,
+  "items_count": 0,
+  "files_count": 0,
+  "created_at": "2015-11-25T01:30:33Z",
+  "updated_at": "2015-11-25T01:30:33Z"
+}
+```
+
+<section class="text-2 contain">
+  <p>No fields are required when updating a collection, however; you cannot update a collection's type once it has already been created.</p>
+</section>
+
+<table>
+  <thead>
+    <tr class="text-2">
+      <th class="padding-medium nowrap">Arguments</th>
+      <th class="padding-medium" width="100%">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">name</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>The name of the collection.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">description</strong>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>The collection description.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">thumbnail_url</strong>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>A publicly accessible image URL. If you prefer you can upload images directly to a collection in the VHX Publisher Admin.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">banner_url</strong>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>A publicly accessible image URL. If you prefer you can upload images directly to a collection in the VHX Publisher Admin.</td>
+    </tr>
+  </tbody>
+</table>
+
 <h3 class="text-2 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="collection-items-list">List all Items</h3>
 
 > <h5 class="head-5 text--white margin-bottom-medium">List all Items</h5>
@@ -569,18 +568,18 @@ vhx.collections.listItems();
 > Example Request
 
 ```shell
-$ curl -X GET -G "https://api.vhx.tv/collections/375/items?page=1" \
+$ curl -X GET -G "https://api.vhx.tv/collections/1/items?page=1" \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
 ```ruby
-collection = Vhx::Collection.find(375)
-collection.items({page: 1})
+collection = Vhx::Collection.retrieve("https://api.vhx.tv/collections/1")
+collection.items({ page: 1 })
 ```
 
 ```javascript
 vhx.collections.listItems({
-  collection: 'https://api.vhx.tv/collections/375',
+  collection: 'https://api.vhx.tv/collections/1',
   page: 1
 }, function(err, items) {
   // asynchronously called
@@ -589,7 +588,7 @@ vhx.collections.listItems({
 
 ```php
 <?php$collections = \VHX\Collections::allItems(array(
-  'collection' => 'https://api.vhx.tv/collections/375'
+  'collection' => 'https://api.vhx.tv/collections/1'
   'page' => 1
 ));
 ```
@@ -599,11 +598,11 @@ vhx.collections.listItems({
 ```json
 {
   "_links": {
-    "self":  { "href": "https://api.vhx.tv/collections/375/items?page=1" },
-    "first": { "href": "https://api.vhx.tv/collections/375/items" },
+    "self":  { "href": "https://api.vhx.tv/collections/1/items?page=1" },
+    "first": { "href": "https://api.vhx.tv/collections/1/items" },
     "prev":  { "href": null },
-    "next":  { "href": "https://api.vhx.tv/collections/375/items?page=2" },
-    "last":  { "href": "https://api.vhx.tv/collections/375/items?page=5" }
+    "next":  { "href": "https://api.vhx.tv/collections/1/items?page=2" },
+    "last":  { "href": "https://api.vhx.tv/collections/1/items?page=5" }
   },
   "count": 100,
   "total": 500,

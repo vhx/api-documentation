@@ -10,7 +10,7 @@
 # For example, rescuing a Unauthorized Error
 
 begin
-  Vhx::Customer.find(1)
+  Vhx::Customer.retrieve("https://api.vhx.tv/customers/1")
 rescue Vhx::UnauthorizedError
   # Handle Exception
 end

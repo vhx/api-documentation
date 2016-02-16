@@ -180,35 +180,35 @@ GET /videos/:id
 ```
 
 ```ruby
-Vhx::Videos.find({VIDEO_ID})
+Vhx::Videos.retrieve()
 ```
 
 ```javascript
-vhx.videos.retrieve({VIDEO_ID});
+vhx.videos.retrieve();
 ```
 
 ```php
-<?php\VHX\Videos::retrieve({VIDEO_ID});
+<?php\VHX\Videos::retrieve();
 ```
 > Example Request
 
 ```shell
-$ curl -X GET "https://api.vhx.tv/videos/:id" \
+$ curl -X GET "https://api.vhx.tv/videos/1" \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
 ```ruby
-video = Vhx::Video.find(125)
+video = Vhx::Video.retrieve("https://api.vhx.tv/videos/1")
 ```
 
 ```javascript
-vhx.videos.retrieve(125, function(err, video) {
+vhx.videos.retrieve("https://api.vhx.tv/videos/1", function(err, video) {
   // asynchronously called
 });
 ```
 
 ```php
-<?php$video = \VHX\Videos::retrieve(125);
+<?php$video = \VHX\Videos::retrieve("https://api.vhx.tv/videos/1");
 ```
 
 > Example Response
@@ -216,14 +216,14 @@ vhx.videos.retrieve(125, function(err, video) {
 ```json
 {
   "_links": {
-    "self":  { "href": "https://api.vhx.tv/videos/125" },
-    "files": { "href": "https://api.vhx.tv/videos/125/files" }
+    "self":  { "href": "https://api.vhx.tv/videos/1" },
+    "files": { "href": "https://api.vhx.tv/videos/1/files" }
   },
   "_embedded": {
     "files": [
       {
         "_links": {
-          "self":  { "href": "https://api.vhx.tv/videos/125/files?quality=adaptive&format=m3u8" }
+          "self":  { "href": "https://api.vhx.tv/videos/1/files?quality=adaptive&format=m3u8" }
         },
         "quality": "adaptive",
         "format": "m3u8",
@@ -283,11 +283,11 @@ vhx.videos.retrieve(125, function(err, video) {
   <tbody>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
-        <strong class="is-block text--navy">id</strong>
-        <span class="is-block text--transparent text-3">integer</span>
+        <strong class="is-block text--navy">href</strong>
+        <span class="is-block text--transparent text-3">string</span>
         <span class="text--yellow text-3">REQUIRED</span>
       </td>
-      <td>The id of the video being retrieved.</td>
+      <td>The <code>href</code> of the video being retrieved.</td>
     </tr>
   </tbody>
 </table>
@@ -426,18 +426,18 @@ vhx.videos.listFiles();
 > Example Request
 
 ```shell
-$ curl -X GET "https://api.vhx.tv/videos/:id/files?quality=adaptive&format=m3u8" \
+$ curl -X GET "https://api.vhx.tv/videos/1/files?quality=adaptive&format=m3u8" \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
 ```ruby
-video = Vhx::Video.find(465)
-video.files({quality: 'adaptive', format: 'm3u8'})
+video = Vhx::Video.retrieve("https://api.vhx.tv/videos/1")
+video.files({ quality: 'adaptive', format: 'm3u8' })
 ```
 
 ```javascript
 vhx.videos.listFiles({
-  video: 'https://api.vhx.tv/video/465'
+  video: 'https://api.vhx.tv/video/1'
   quality: 'adaptive',
   format: 'm3u8'
 }, function(err, files) {
@@ -447,7 +447,7 @@ vhx.videos.listFiles({
 
 ```php
 <?php$files = \VHX\Videos::allFiles(array(
-  'video' => 'https://api.vhx.tv/videos/465'
+  'video' => 'https://api.vhx.tv/videos/1'
   'quality' => 'adaptive',
   'format' => 'm3u8'
 ));
@@ -458,7 +458,7 @@ vhx.videos.listFiles({
 ```json
 [{
   "_links": {
-    "self":   { "href": "https://api.vhx.tv/videos/465/files?quality=adaptive&format=m3u8" },
+    "self":   { "href": "https://api.vhx.tv/videos/1/files?quality=adaptive&format=m3u8" },
     "source": { "href": "https://video.vhx.tv/mymovie/adaptive.m3u8?token=f4v3v3i4c2o209_3" }
   },
   "quality": "adaptive",

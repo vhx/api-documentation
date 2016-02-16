@@ -130,36 +130,36 @@ GET /customers/:id
 ```
 
 ```ruby
-Vhx::Customer.retrieve({CUSTOMER_ID})
+Vhx::Customer.retrieve()
 ```
 
 ```javascript
-vhx.customers.retrieve({CUSTOMER_ID});
+vhx.customers.retrieve();
 ```
 
 ```php
-<?php$customer = \VHX\Customers::retrieve({CUSTOMER_ID});
+<?php$customer = \VHX\Customers::retrieve();
 ```
 
 > Example Request
 
 ```shell
-$ curl -X GET "https://api.vhx.tv/customers/:id" \
+$ curl -X GET "https://api.vhx.tv/customers/1" \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
 ```ruby
-customer = Vhx::Customer.retrieve(15)
+customer = Vhx::Customer.retrieve("https://api.vhx.tv/customers/1")
 ```
 
 ```javascript
-vhx.customers.retrieve(15, function(err, customer) {
+vhx.customers.retrieve("https://api.vhx.tv/customers/1", function(err, customer) {
   // asynchronously called
 });
 ```
 
 ```php
-<?php$customer = \VHX\Customers::retrieve(15);
+<?php$customer = \VHX\Customers::retrieve("https://api.vhx.tv/customers/1");
 ```
 
 > Example Response
@@ -192,11 +192,11 @@ vhx.customers.retrieve(15, function(err, customer) {
   <tbody>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
-        <strong class="is-block text--navy">id</strong>
-        <span class="is-block text--transparent text-3">integer</span>
+        <strong class="is-block text--navy">href</strong>
+        <span class="is-block text--transparent text-3">string</span>
         <span class="text--yellow text-3">REQUIRED</span>
       </td>
-      <td>The id of the customer being retrieved.</td>
+      <td>The <code>href</code> of the customer being retrieved.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
@@ -369,19 +369,19 @@ vhx.customers.update();
 > Example Request
 
 ```shell
-$ curl -X PUT "https://api.vhx.tv/customers/:id" \
+$ curl -X PUT "https://api.vhx.tv/customers/1" \
   -d name="First Last" \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
 ```ruby
-Vhx::Customer.update(15, {
+Vhx::Customer.update("https://api.vhx.tv/customers/1", {
   name: 'First Last'
 })
 ```
 
 ```javascript
-vhx.customers.update(15, {
+vhx.customers.update("https://api.vhx.tv/customers/1", {
   name: 'First Last'
 }, function(err, customer) {
    // asynchronously called
@@ -389,7 +389,7 @@ vhx.customers.update(15, {
 ```
 
 ```php
-<?php$customers = \VHX\Customers::update(15, array(
+<?php$customers = \VHX\Customers::update("https://api.vhx.tv/customers/1", array(
   'name' => 'First Last'
 ));
 ```
@@ -458,33 +458,33 @@ Vhx::Customer.delete()
 ```
 
 ```javascript
-vhx.customers.del({CUSTOMER_ID});
+vhx.customers.del();
 ```
 
 ```php
-<?php\VHX\Customers::delete({CUSTOMER_ID});
+<?php\VHX\Customers::delete();
 ```
 
 > Example Request
 
 ```shell
-$ curl -X DELETE -G "https://api.vhx.tv/customers/:id" \
-  -d product=https://api.vhx.tv/products/:id \
+$ curl -X DELETE -G "https://api.vhx.tv/customers/1" \
+  -d product=https://api.vhx.tv/products/1 \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
 ```ruby
-Vhx::Customer.delete(15)
+Vhx::Customer.delete("https://api.vhx.tv/customers/1")
 ```
 
 ```javascript
-vhx.customers.del(15, function(err, response) {
+vhx.customers.del("https://api.vhx.tv/customers/1", function(err, response) {
   // asynchronously called
 });
 ```
 
 ```php
-<?php\VHX\Customers::delete(15);
+<?php\VHX\Customers::delete("https://api.vhx.tv/customers/1");
 ```
 
 <section class="text-2 contain margin-bottom-medium">
@@ -502,11 +502,11 @@ vhx.customers.del(15, function(err, response) {
   <tbody>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
-        <strong class="is-block text--navy">id</strong>
-        <span class="is-block text--transparent text-3">integer</span>
+        <strong class="is-block text--navy">href</strong>
+        <span class="is-block text--transparent text-3">string</span>
         <span class="text--yellow text-3">REQUIRED</span>
       </td>
-      <td>The id of the customer being deleted.</td>
+      <td>The <code>href</code> of the customer being deleted.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
@@ -521,8 +521,8 @@ vhx.customers.del(15, function(err, response) {
 
 <h3 class="text-2 text--navy text--bold margin-top-large margin-bottom-medium" id="customer-add-product">Add a Product</h3>
 
-> <h5 class="head-5 text--white margin-bottom-medium">Update a customer</h5>
+> <h5 class="head-5 text--white margin-bottom-medium">Add a product</h5>
 
 <h3 class="text-2 text--navy text--bold margin-top-large margin-bottom-medium" id="customer-remove-product">Remove a Product</h3>
 
-> <h5 class="head-5 text--white margin-bottom-medium">Update a customer</h5>
+> <h5 class="head-5 text--white margin-bottom-medium">Remove a product</h5>
