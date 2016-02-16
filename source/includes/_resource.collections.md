@@ -544,9 +544,9 @@ vhx.collections.list({
   </tbody>
 </table>
 
-<h3 class="text-2 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="collection-items-list">List all Collection Items</h3>
+<h3 class="text-2 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="collection-items-list">List all Items</h3>
 
-> <h5 class="head-5 text--white margin-bottom-medium">List all Collection Items</h5>
+> <h5 class="head-5 text--white margin-bottom-medium">List all Items</h5>
 
 > Definition
 
@@ -555,7 +555,7 @@ GET /collections/:id/items
 ```
 
 ```ruby
-Vhx::Collection#items()
+Vhx::Collection.items()
 ```
 
 ```javascript

@@ -518,3 +518,11 @@ vhx.customers.del(15, function(err, response) {
     </tr>
   </tbody>
 </table>
+
+<h3 class="text-2 text--navy text--bold margin-top-large margin-bottom-medium" id="customer-add-product">Add a Product</h3>
+
+> <h5 class="head-5 text--white margin-bottom-medium">Update a customer</h5>
+
+<h3 class="text-2 text--navy text--bold margin-top-large margin-bottom-medium" id="customer-remove-product">Remove a Product</h3>
+
+> <h5 class="head-5 text--white margin-bottom-medium">Update a customer</h5>

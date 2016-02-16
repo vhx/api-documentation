@@ -401,9 +401,9 @@ vhx.videos.list({
   </tbody>
 </table>
 
-<h3 class="text-2 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="videos-list-files">List all Video Files</h3>
+<h3 class="text-2 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="videos-list-files">List all Files</h3>
 
-> <h5 class="head-5 text--white margin-bottom-medium">List all Video Files</h5>
+> <h5 class="head-5 text--white margin-bottom-medium">List all Files</h5>
 
 > Definiton
 
@@ -412,7 +412,7 @@ GET /videos/:id/files
 ```
 
 ```ruby
-Vhx::Video#files()
+Vhx::Video.files()
 ```
 
 ```javascript
