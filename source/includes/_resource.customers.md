@@ -468,7 +468,7 @@ vhx.customers.del();
 > Example Request
 
 ```shell
-$ curl -X DELETE -G "https://api.vhx.tv/customers/1" \
+$ curl -X DELETE "https://api.vhx.tv/customers/1" \
   -d product=https://api.vhx.tv/products/1 \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
@@ -506,7 +506,7 @@ vhx.customers.del("https://api.vhx.tv/customers/1", function(err, response) {
         <span class="is-block text--transparent text-3">string</span>
         <span class="text--yellow text-3">REQUIRED</span>
       </td>
-      <td>The <code>href</code> of the customer being deleted.</td>
+      <td>The <code>href</code> of the customer.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
@@ -514,7 +514,7 @@ vhx.customers.del("https://api.vhx.tv/customers/1", function(err, response) {
         <span class="is-block text--transparent text-3">string</span>
         <span class="text--yellow text-3">REQUIRED</span>
       </td>
-      <td>The <code>href</code> of a product.</td>
+      <td>The <code>href</code> of the product.</td>
     </tr>
   </tbody>
 </table>
@@ -523,6 +523,100 @@ vhx.customers.del("https://api.vhx.tv/customers/1", function(err, response) {
 
 > <h5 class="head-5 text--white margin-bottom-medium">Add a product</h5>
 
+> Definiton
+
+
+```shell
+PUT /customers/:id/products
+```
+
+> Example Request
+
+```shell
+$ curl -X PUT "https://api.vhx.tv/customers/1/products" \
+  -d product=https://api.vhx.tv/products/1 \
+  -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
+```
+
+<section class="text-2 contain margin-bottom-medium">
+  <p>Adds a product to an existing customer. By adding a product, he or she now has access to all of its contents.</p>
+</section>
+
+<table>
+  <thead>
+    <tr class="text-2">
+      <th class="padding-medium nowrap">Arguments</th>
+      <th class="padding-medium" width="100%">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">href</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--yellow text-3">REQUIRED</span>
+      </td>
+      <td>The <code>href</code> of the customer.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">product</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--yellow text-3">REQUIRED</span>
+      </td>
+      <td>The <code>href</code> of the product.</td>
+    </tr>
+  </tbody>
+</table>
+
 <h3 class="text-2 text--navy text--bold margin-top-large margin-bottom-medium" id="customer-remove-product">Remove a Product</h3>
 
 > <h5 class="head-5 text--white margin-bottom-medium">Remove a product</h5>
+
+> Definiton
+
+
+```shell
+DELETE /customers/:id/products
+```
+
+> Example Request
+
+```shell
+$ curl -X DELETE "https://api.vhx.tv/customers/1/products" \
+  -d product=https://api.vhx.tv/products/1 \
+  -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
+```
+
+<section class="text-2 contain margin-bottom-medium">
+  <p>Removes a product to an existing customer. By removing a product, the customer will no longer have access to its contents.</p>
+</section>
+
+<table>
+  <thead>
+    <tr class="text-2">
+      <th class="padding-medium nowrap">Arguments</th>
+      <th class="padding-medium" width="100%">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">href</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--yellow text-3">REQUIRED</span>
+      </td>
+      <td>The <code>href</code> of the customer.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">product</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--yellow text-3">REQUIRED</span>
+      </td>
+      <td>The <code>href</code> of the product.</td>
+    </tr>
+  </tbody>
+</table>
