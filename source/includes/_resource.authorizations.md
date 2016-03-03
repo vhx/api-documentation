@@ -37,51 +37,28 @@ $ curl -X POST "https://api.vhx.tv/authorizations" \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
-```ruby
-authorization = Vhx::Authorization.create({
-  customer: 'https://api.vhx.tv/customers/1',
-  video: 'https://api.vhx.tv/videos/1'
-})
-```
-
-```javascript
-vhx.authorizations.create({
-  customer: 'https://api.vhx.tv/customers/1',
-  video: 'https://api.vhx.tv/videos/1'
-}, function(err, authorization) {
-  // asynchronously called
-});
-```
-
-```php
-<?php$authorization = \VHX\Authorizations::create(array(
-  'customer' => 'https://api.vhx.tv/customers/1',
-  'video' => 'https://api.vhx.tv/videos/1'
-));
-```
-
-
 > Example Response
 
 ```json
 {
   "_links": {
-    "customer": {
-      "href": "https://api.vhx.tv/customers/1"
+    "self": {
+      "href": "http://api.crystal.dev/analytics?action=index&analytic%5Bsite_id%5D=11758&analytic%5Btype%5D=video&analytic%5Bvideo_id%5D=26642&by=&controller=api%2Fanalytics&format=json&from=2016-02-25+12%3A07%3A30+-0500&site_id=11758&to=2016-03-03+12%3A07%3A30+-0500&type=video&video_id=26642"
     },
     "video": {
-      "href": "https://api.vhx.tv/videos/1"
+      "href": "http://api.crystal.dev/videos/26642"
     }
   },
-  "token": "QVJ-cavyvwSX6JpafMCX7zsd1wKg2XfDuZnN",
-  "expires_at": "2015-11-10T23:46:46Z",
-  "player": {
-    "host": "https://embed.vhx.tv",
-    "path": "/videos/1",
-    "html": "<iframe src=\"https://embed.vhx.tv/videos/1?authorization=QVJ-cavyvwSX6JpafMCX7zsd1wKg2XfDuZnN\" width=\"640\" height=\"360\" frameborder=\"0\" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>"
-  },
-  "created_at": "2015-11-10T22:46:46Z",
-  "updated_at": "2015-11-10T22:46:46Z"
+  "to": "2016-03-03",
+  "from": "2016-02-25",
+  "data": [
+    {
+      "video_id": "26642",
+      "plays": "48",
+      "seconds": "39990",
+      "finishes": "24"
+    }
+  ]
 }
 ```
 
