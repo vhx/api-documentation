@@ -388,6 +388,14 @@ vhx.collections.all({
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
+        <strong class="is-block text--navy">sort</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>The sort to order the results. Options are <code>alphabetical</code>, <code>newest</code>, <code>oldest</code>, or <code>latest</code>.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
         <strong class="is-block text--navy">page</strong>
         <span class="is-block text--transparent text-3">integer</span>
         <span class="text--transparent text-3">optional, default is 1</span>
@@ -623,6 +631,14 @@ vhx.collections.items({
           <span class="text--yellow text-3">REQUIRED</span>
         </td>
         <td>The id of collection being retrieved.</td>
+      </tr>
+      <tr class="text-2 border-bottom border--light-gray">
+        <td>
+          <strong class="is-block text--navy">sort</strong>
+          <span class="is-block text--transparent text-3">string</span>
+          <span class="text--transparent text-3">optional</span>
+        </td>
+        <td>The sort to order the results. Options are <code>newest</code>, <code>oldest</code>, or <code>position</code>.</td>
       </tr>
       <td>
         <strong class="is-block text--navy">page</strong>
