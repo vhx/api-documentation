@@ -322,7 +322,7 @@ vhx.customers.all({
         <span class="is-block text--transparent text-3">string</span>
         <span class="text--transparent text-3">optional</span>
       </td>
-      <td>The sort to order the results. Options are <code>alphabetical</code>, <code>newest</code>, <code>oldest</code>, or <code>latest</code>.</td>
+      <td>The sort to order the results. Options are <code>newest</code>, <code>oldest</code>, or <code>latest</code>.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
