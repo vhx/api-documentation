@@ -104,10 +104,7 @@ vhx.videos.create({
     "files": { "href": "https://api.vhx.tv/videos/1/files" }
   },
   "_embedded": {
-    "files": [],
-    "transcode": {
-      "progress": 0
-    }
+    "files": []
   },
   "id": 1,
   "title": "My Video",
