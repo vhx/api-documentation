@@ -243,7 +243,7 @@ vhx.collections.retrieve("https://api.vhx.tv/collections/1", function(err, colle
   },
   "type": "category",
   "items_count": 10,
-  "created_at": "201ff4-02-25T20:19:30Z",
+  "created_at": "2014-02-25T20:19:30Z",
   "updated_at": "2014-02-25T20:19:30Z"
 }
 ```
