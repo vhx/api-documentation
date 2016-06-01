@@ -34,12 +34,13 @@ $ curl -X GET "https://api.vhx.tv/analytics" \
 {
   "_links": {
     "self": { 
-      "href": "determine correct link format!" 
+      "href": "https://api.vhx.tv/analytics?type=video&video_id=1&by=day&from=2016-05-24T00:00:00Z&to=2016-06-01T23:59:59Z"
     }
   },
-  "to": "2016-05-31T23:59:59Z",
+  "to": "2016-06-01T23:59:59Z",
   "from": "2016-05-24T00:00:00Z",
   "by": "day",
+  "type": "video",
   "data": 
   [ 
     {
@@ -177,11 +178,12 @@ $ curl -X GET "https://api.vhx.tv/analytics" \
 {
   "_links": {
     "self": {
-      "href": "determine correct link structure!"
+      "href": "https://api.vhx.tv/analytics?type=video.platforms&from=2016-05-24T00:00:00Z&to=2016-06-01T23:59:59Z"
     }
   },
   "to": "2016-06-01T23:59:59Z",
-  "from": "2016-05-07T00:00:00Z",
+  "from": "2016-05-24T00:00:00Z",
+  "type": "video.platforms",
   "data": [
     {
       "video_id": "69771",
@@ -319,11 +321,12 @@ $ curl -X GET "https://api.vhx.tv/analytics" \
 {
   "_links": {
     "self": {
-      "href": "determine correct link format!"
+      "href": "https://api.vhx.tv/analytics?type=video.geography&from=2016-05-24T00:00:00Z&to=2016-06-01T23:59:59Z"
     }
   },
   "to": "2016-06-01T23:59:59Z",
-  "from": "2016-05-14T00:00:00Z",
+  "from": "2016-05-24T00:00:00Z",
+  "type": "video.geography",
   "data": [
     {
       "video_id": "70917",
@@ -445,11 +448,12 @@ $ curl -X GET "https://api.vhx.tv/analytics" \
 {
   "_links": {
     "self": {
-      "href": "determine correct link structure!"
+      "href": "https://api.vhx.tv/analytics?type=video.subtitles&from=2016-05-24T00:00:00Z&to=2016-06-01T23:59:59Z"
     }
   },
   "to": "2016-06-01T23:59:59Z",
-  "from": "2016-05-14T00:00:00Z",
+  "from": "2016-05-24T00:00:00Z",
+  "type": "video.subtitles",
   "data": [
     {
       "video_id": "70917",
