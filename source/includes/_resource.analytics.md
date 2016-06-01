@@ -37,55 +37,55 @@ $ curl -X GET "https://api.vhx.tv/analytics" \
       "href": "determine correct link format!" 
     }
   },
-  "to": "2016-05-31",
-  "from": "2016-05-24",
+  "to": "2016-05-31T23:59:59Z",
+  "from": "2016-05-24T00:00:00Z",
   "by": "day",
   "data": 
   [ 
     {
-      "interval_timestamp": "2016-05-24 00:00:00",
+      "interval_timestamp": "2016-05-24T00:00:00Z",
       "plays": "3",
       "seconds": "3640",
       "finishes": "2"
     },
     {
-      "interval_timestamp": "2016-05-25 00:00:00",
+      "interval_timestamp": "2016-05-25T00:00:00Z",
       "plays": "39",
       "seconds": "52170",
       "finishes": "24"
     },
     {
-      "interval_timestamp": "2016-05-26 00:00:00",
+      "interval_timestamp": "2016-05-26T00:00:00Z",
       "plays": "21",
       "seconds": "30660",
       "finishes": "15"
     },
     {
-      "interval_timestamp": "2016-05-27 00:00:00",
+      "interval_timestamp": "2016-05-27T00:00:00Z",
       "plays": "20",
       "seconds": "19730",
       "finishes": "15"
     },
     {
-      "interval_timestamp": "2016-05-28 00:00:00",
+      "interval_timestamp": "2016-05-28T00:00:00Z",
       "plays": "30",
       "seconds": "84130",
       "finishes": "32"
     },
     {
-      "interval_timestamp": "2016-05-29 00:00:00",
+      "interval_timestamp": "2016-05-29T00:00:00Z",
       "plays": "39",
       "seconds": "111390",
       "finishes": "37"
     },
     {
-      "interval_timestamp": "2016-05-30 00:00:00",
+      "interval_timestamp": "2016-05-30T00:00:00Z",
       "plays": "81",
       "seconds": "89150",
       "finishes": "62"
     },
     {
-      "interval_timestamp": "2016-05-31 00:00:00",
+      "interval_timestamp": "2016-05-31T00:00:00Z",
       "plays": "56",
       "seconds": "108200",
       "finishes": "45"
@@ -137,7 +137,7 @@ $ curl -X GET "https://api.vhx.tv/analytics" \
         <span class="is-block text--transparent text-3">string</span>
         <span class="text--transparent text-3">optional</span>
       </td>
-      <td>The start date or time of the dataset. Defaults to the creation time of the video. Can be sent as <code>YYYY-MM-DD HH:MM:SS</code> (timezone defaults to EST), <code>YYYY-MM-DD</code> (time defaults to midnight EST on that date) or as <code>1-day-ago</code>, <code>3-weeks-ago</code>, <code>2-months-ago</code>, etc.</td>
+      <td>The start date or time of the dataset. Defaults to the creation time of the video. Can be sent as <code>YYYY-MM-DDTHH:MM:SSZ</code> (timezone defaults to EST), <code>YYYY-MM-DD</code> (time defaults to midnight EST on that date) or as <code>1-day-ago</code>, <code>3-weeks-ago</code>, <code>2-months-ago</code>, etc.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td class="nowrap">
@@ -145,7 +145,7 @@ $ curl -X GET "https://api.vhx.tv/analytics" \
         <span class="is-block text--transparent text-3">string</span>
         <span class="text--transparent text-3">optional</span>
       </td>
-      <td>The end date or time of the dataset. Defaults to the current time (EST). Can be sent as <code>YYYY-MM-DD HH:MM:SS</code> (timezone defaults to EST), <code>YYYY-MM-DD</code> (time defaults to midnight EST on that date) or as <code>1-day-ago</code>, <code>3-weeks-ago</code>, <code>2-months-ago</code>, etc.</td>
+      <td>The end date or time of the dataset. Defaults to the current time (EST). Can be sent as <code>YYYY-MM-DDTHH:MM:SSZ</code> (timezone defaults to EST), <code>YYYY-MM-DD</code> (time defaults to midnight EST on that date) or as <code>1-day-ago</code>, <code>3-weeks-ago</code>, <code>2-months-ago</code>, etc.</td>
     </tr>
   </tbody>
 </table>
@@ -180,8 +180,8 @@ $ curl -X GET "https://api.vhx.tv/analytics" \
       "href": "determine correct link structure!"
     }
   },
-  "to": "2016-06-01",
-  "from": "2016-05-07",
+  "to": "2016-06-01T23:59:59Z",
+  "from": "2016-05-07T00:00:00Z",
   "data": [
     {
       "video_id": "69771",
@@ -279,7 +279,7 @@ $ curl -X GET "https://api.vhx.tv/analytics" \
         <span class="is-block text--transparent text-3">string</span>
         <span class="text--transparent text-3">optional</span>
       </td>
-      <td>The start date or time of the dataset. Defaults to the creation time of the video. Can be sent as <code>YYYY-MM-DD HH:MM:SS</code> (timezone defaults to EST), <code>YYYY-MM-DD</code> (time defaults to midnight EST on that date) or as <code>1-day-ago</code>, <code>3-weeks-ago</code>, <code>2-months-ago</code>, etc.</td>
+      <td>The start date or time of the dataset. Defaults to the creation time of the video. Can be sent as <code>YYYY-MM-DDTHH:MM:SSZ</code> (timezone defaults to EST), <code>YYYY-MM-DD</code> (time defaults to midnight EST on that date) or as <code>1-day-ago</code>, <code>3-weeks-ago</code>, <code>2-months-ago</code>, etc.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td class="nowrap">
@@ -287,7 +287,7 @@ $ curl -X GET "https://api.vhx.tv/analytics" \
         <span class="is-block text--transparent text-3">string</span>
         <span class="text--transparent text-3">optional</span>
       </td>
-      <td>The end date or time of the dataset. Defaults to the current time (EST). Can be sent as <code>YYYY-MM-DD HH:MM:SS</code> (timezone defaults to EST), <code>YYYY-MM-DD</code> (time defaults to midnight EST on that date) or as <code>1-day-ago</code>, <code>3-weeks-ago</code>, <code>2-months-ago</code>, etc.</td>
+      <td>The end date or time of the dataset. Defaults to the current time (EST). Can be sent as <code>YYYY-MM-DDTHH:MM:SSZ</code> (timezone defaults to EST), <code>YYYY-MM-DD</code> (time defaults to midnight EST on that date) or as <code>1-day-ago</code>, <code>3-weeks-ago</code>, <code>2-months-ago</code>, etc.</td>
     </tr>
   </tbody>
 </table>
@@ -319,11 +319,11 @@ $ curl -X GET "https://api.vhx.tv/analytics" \
 {
   "_links": {
     "self": {
-      "href": "determine correct link structure!"
+      "href": "determine correct link format!"
     }
   },
-  "to": "2016-06-01",
-  "from": "2016-05-14",
+  "to": "2016-06-01T23:59:59Z",
+  "from": "2016-05-14T00:00:00Z",
   "data": [
     {
       "video_id": "70917",
@@ -404,7 +404,7 @@ $ curl -X GET "https://api.vhx.tv/analytics" \
         <span class="is-block text--transparent text-3">string</span>
         <span class="text--transparent text-3">optional</span>
       </td>
-      <td>The start date or time of the dataset. Defaults to the creation time of the video. Can be sent as <code>YYYY-MM-DD HH:MM:SS</code> (timezone defaults to EST), <code>YYYY-MM-DD</code> (time defaults to midnight EST on that date) or as <code>1-day-ago</code>, <code>3-weeks-ago</code>, <code>2-months-ago</code>, etc.</td>
+      <td>The start date or time of the dataset. Defaults to the creation time of the video. Can be sent as <code>YYYY-MM-DDTHH:MM:SSZ</code> (timezone defaults to EST), <code>YYYY-MM-DD</code> (time defaults to midnight EST on that date) or as <code>1-day-ago</code>, <code>3-weeks-ago</code>, <code>2-months-ago</code>, etc.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td class="nowrap">
@@ -412,7 +412,7 @@ $ curl -X GET "https://api.vhx.tv/analytics" \
         <span class="is-block text--transparent text-3">string</span>
         <span class="text--transparent text-3">optional</span>
       </td>
-      <td>The end date or time of the dataset. Defaults to the current time (EST). Can be sent as <code>YYYY-MM-DD HH:MM:SS</code> (timezone defaults to EST), <code>YYYY-MM-DD</code> (time defaults to midnight EST on that date) or as <code>1-day-ago</code>, <code>3-weeks-ago</code>, <code>2-months-ago</code>, etc.</td>
+      <td>The end date or time of the dataset. Defaults to the current time (EST). Can be sent as <code>YYYY-MM-DDTHH:MM:SSZ</code> (timezone defaults to EST), <code>YYYY-MM-DD</code> (time defaults to midnight EST on that date) or as <code>1-day-ago</code>, <code>3-weeks-ago</code>, <code>2-months-ago</code>, etc.</td>
     </tr>
   </tbody>
 </table>
@@ -448,8 +448,8 @@ $ curl -X GET "https://api.vhx.tv/analytics" \
       "href": "determine correct link structure!"
     }
   },
-  "to": "2016-06-01",
-  "from": "2016-05-14",
+  "to": "2016-06-01T23:59:59Z",
+  "from": "2016-05-14T00:00:00Z",
   "data": [
     {
       "video_id": "70917",
@@ -530,7 +530,7 @@ $ curl -X GET "https://api.vhx.tv/analytics" \
         <span class="is-block text--transparent text-3">string</span>
         <span class="text--transparent text-3">optional</span>
       </td>
-      <td>The start date or time of the dataset. Defaults to the creation time of the video. Can be sent as <code>YYYY-MM-DD HH:MM:SS</code> (timezone defaults to EST), <code>YYYY-MM-DD</code> (time defaults to midnight EST on that date) or as <code>1-day-ago</code>, <code>3-weeks-ago</code>, <code>2-months-ago</code>, etc.</td>
+      <td>The start date or time of the dataset. Defaults to the creation time of the video. Can be sent as <code>YYYY-MM-DDTHH:MM:SSZ</code> (timezone defaults to EST), <code>YYYY-MM-DD</code> (time defaults to midnight EST on that date) or as <code>1-day-ago</code>, <code>3-weeks-ago</code>, <code>2-months-ago</code>, etc.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td class="nowrap">
@@ -538,7 +538,7 @@ $ curl -X GET "https://api.vhx.tv/analytics" \
         <span class="is-block text--transparent text-3">string</span>
         <span class="text--transparent text-3">optional</span>
       </td>
-      <td>The end date or time of the dataset. Defaults to the current time (EST). Can be sent as <code>YYYY-MM-DD HH:MM:SS</code> (timezone defaults to EST), <code>YYYY-MM-DD</code> (time defaults to midnight EST on that date) or as <code>1-day-ago</code>, <code>3-weeks-ago</code>, <code>2-months-ago</code>, etc.</td>
+      <td>The end date or time of the dataset. Defaults to the current time (EST). Can be sent as <code>YYYY-MM-DDTHH:MM:SSZ</code> (timezone defaults to EST), <code>YYYY-MM-DD</code> (time defaults to midnight EST on that date) or as <code>1-day-ago</code>, <code>3-weeks-ago</code>, <code>2-months-ago</code>, etc.</td>
     </tr>
   </tbody>
 </table>
