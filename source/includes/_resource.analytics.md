@@ -17,6 +17,18 @@
 GET /analytics
 ```
 
+```ruby
+Vhx::Analytics.retrieve()
+```
+
+```javascript
+vhx.analytics.report();
+```
+
+```php
+\VHX\Analytics::report();
+```
+
 > Example Request
 
 ```shell
@@ -26,6 +38,30 @@ $ curl -X GET "https://api.vhx.tv/analytics" \
   -d from=2-weeks-ago \
   -d by=day \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
+```
+
+```ruby
+video = Vhx::Analytics.retrieve("https://api.vhx.tv/videos/1")
+```
+
+```javascript
+vhx.analytics.report({
+  type: 'video',
+  by: 'month',
+  from: 'today',
+  to: '1-year-ago'
+}, function(err, report) {
+  // asynchronously called
+});
+```
+
+```php
+$report = \VHX\Analytics::report(array(
+  'type' => 'video',
+  'by' => 'month',
+  'from' => 'today',
+  'to' => '1-year-ago'
+));
 ```
 
 > Example Response
