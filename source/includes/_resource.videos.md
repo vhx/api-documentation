@@ -117,7 +117,8 @@ vhx.videos.create({
   "thumbnail": {
     "small": "https://cdn.vhx.tv/assets/thumbnails/default-small.png",
     "medium": "https://cdn.vhx.tv/assets/thumbnails/default-medium.png",
-    "large": "https://cdn.vhx.tv/assets/thumbnails/default-large.png"
+    "large": "https://cdn.vhx.tv/assets/thumbnails/default-large.png",
+    "source": "https://cdn.vhx.tv/assets/thumbnails/original.jpg"
   },
   "tracks": {
     "subtitles": []
@@ -244,7 +245,8 @@ vhx.videos.retrieve("https://api.vhx.tv/videos/1", function(err, video) {
   "thumbnail": {
     "small": "https://cdn.vhx.tv/assets/thumbnails/default-small.png",
     "medium": "https://cdn.vhx.tv/assets/thumbnails/default-medium.png",
-    "large": "https://cdn.vhx.tv/assets/thumbnails/default-large.png"
+    "large": "https://cdn.vhx.tv/assets/thumbnails/default-large.png",
+    "source": "https://cdn.vhx.tv/assets/thumbnails/original.jpg"
   },
   "tracks": {
     "subtitles": [
