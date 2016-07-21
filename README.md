@@ -10,7 +10,7 @@ View the docs at [http://dev.vhx.tv/docs/api](http://dev.vhx.tv/docs/api).
 **Initial Setup**
 
 **1)** Clone the repo  
-**2)** Install all dependencies: `bundle install`
+**2)** Install all dependencies: `bundle install`<br>
 **3)** Done.
 
 **Starting the server**
