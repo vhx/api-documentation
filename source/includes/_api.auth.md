@@ -18,8 +18,12 @@ Vhx.setup({
 })
 ```
 
-```javascript
+```node
 var vhx = require('vhx')('YOUR_API_KEY');
+```
+
+```javascript
+var vhxjs = new vhx('YOUR_API_KEY');
 ```
 
 ```php

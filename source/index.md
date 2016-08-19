@@ -4,8 +4,9 @@ title: VHX API Reference
 language_tabs:
   - shell: cURL
   - ruby: Ruby
-  - javascript: Node
+  - node: Node
   - php: PHP
+  - javascript: Javascript
 
 toc_footers:
 

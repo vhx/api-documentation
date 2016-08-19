@@ -52,8 +52,12 @@ POST /videos
 Vhx::Video.create()
 ```
 
-```javascript
+```node
 vhx.videos.create();
+```
+
+```javascript
+// Not available for client-side requests.
 ```
 
 ```php
@@ -78,7 +82,7 @@ video = Vhx::Video.create({
 })
 ```
 
-```javascript
+```node
 vhx.videos.create({
   title: 'My Video',
   description: 'My video description.',
@@ -86,6 +90,10 @@ vhx.videos.create({
 }, function(err, video) {
    // asynchronously called
 });
+```
+
+```javascript
+// Not available for client-side requests.
 ```
 
 ```php
@@ -181,8 +189,12 @@ GET /videos/:id
 Vhx::Videos.retrieve()
 ```
 
-```javascript
+```node
 vhx.videos.retrieve();
+```
+
+```javascript
+vhxjs.videos.retrieve();
 ```
 
 ```php
@@ -199,8 +211,14 @@ $ curl -X GET "https://api.vhx.tv/videos/1" \
 video = Vhx::Video.retrieve("https://api.vhx.tv/videos/1")
 ```
 
-```javascript
+```node
 vhx.videos.retrieve("https://api.vhx.tv/videos/1", function(err, video) {
+  // asynchronously called
+});
+```
+
+```javascript
+vhxjs.videos.retrieve("https://api.vhx.tv/videos/1", function(err, video) {
   // asynchronously called
 });
 ```
@@ -306,8 +324,12 @@ GET /videos
 Vhx::Video.all()
 ```
 
-```javascript
+```node
 vhx.videos.all();
+```
+
+```javascript
+vhxjs.videos.all();
 ```
 
 ```php
@@ -327,8 +349,16 @@ video = Vhx::Video.all({
 })
 ```
 
-```javascript
+```node
 vhx.videos.all({
+  query: 'term'
+}, function(err, videos) {
+   // asynchronously called
+});
+```
+
+```javascript
+vhxjs.videos.all({
   query: 'term'
 }, function(err, videos) {
    // asynchronously called
@@ -422,8 +452,12 @@ GET /videos/:id/files
 Vhx::Video.files()
 ```
 
-```javascript
+```node
 vhx.videos.files();
+```
+
+```javascript
+// Not available for client-side requests.
 ```
 
 ```php
@@ -442,7 +476,7 @@ video = Vhx::Video.retrieve("https://api.vhx.tv/videos/1")
 video.files({ quality: 'adaptive', format: 'm3u8' })
 ```
 
-```javascript
+```node
 vhx.videos.files({
   video: 'https://api.vhx.tv/video/1'
   quality: 'adaptive',
@@ -450,6 +484,10 @@ vhx.videos.files({
 }, function(err, files) {
    // asynchronously called
 });
+```
+
+```javascript
+// Not available for client-side requests.
 ```
 
 ```php

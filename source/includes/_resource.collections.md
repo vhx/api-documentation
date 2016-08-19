@@ -55,8 +55,12 @@ POST /collections
 Vhx::Collection.create()
 ```
 
-```javascript
+```node
 vhx.collections.create();
+```
+
+```javascript
+// Not available for client-side requests.
 ```
 
 ```php
@@ -79,13 +83,17 @@ collection = Vhx::Collection.create({
 })
 ```
 
-```javascript
+```node
 vhx.collections.create({
   name: 'Collection Name',
   type: 'series',
 }, function(err, collection) {
   // asynchronously called
 });
+```
+
+```javascript
+// Not available for client-side requests.
 ```
 
 ```php
@@ -192,8 +200,12 @@ GET /collections/:id
 Vhx::Collection.retrieve()
 ```
 
-```javascript
+```node
 vhx.collections.retrieve();
+```
+
+```javascript
+vhxjs.collections.retrieve();
 ```
 
 ```php
@@ -211,8 +223,15 @@ $ curl -X GET "https://api.vhx.tv/collections/1" \
 collection = Vhx::Collection.retrieve("https://api.vhx.tv/collections/1")
 ```
 
+```node
+vhx.collections.retrieve("https://api.vhx.tv/collections/1",
+ function(err, collection) {
+  // asynchronously called
+ });
+```
+
 ```javascript
-vhx.collections.retrieve("https://api.vhx.tv/collections/1", function(err, collection) {
+vhxjs.collections.retrieve("https://api.vhx.tv/collections/1", function(err, collection) {
   // asynchronously called
 });
 ```
@@ -292,8 +311,12 @@ GET /collections
 Vhx::Collection.all()
 ```
 
-```javascript
+```node
 vhx.collections.all();
+```
+
+```javascript
+vhxjs.collections.all();
 ```
 
 ```php
@@ -314,8 +337,16 @@ collections = Vhx::Collection.all({
 })
 ```
 
-```javascript
+```node
 vhx.collections.all({
+  product: 'https://api.vhx.tv/products/1'
+}, function(err, collections) {
+  // asynchronously called
+});
+```
+
+```javascript
+vhxjs.collections.all({
   product: 'https://api.vhx.tv/products/1'
 }, function(err, collections) {
   // asynchronously called
@@ -425,8 +456,12 @@ POST /collections/:id
 Vhx::Collection.update()
 ```
 
-```javascript
+```node
 vhx.collections.update();
+```
+
+```javascript
+// Not available for client-side requests.
 ```
 
 ```php
@@ -447,12 +482,16 @@ collection = Vhx::Collection.retrieve("https://api.vhx.tv/collections/1").update
 })
 ```
 
-```javascript
+```node
 vhx.collections.update("https://api.vhx.tv/collections/1", {
   description: 'A new description'
 }, function(err, collection) {
   // asynchronously called
 });
+```
+
+```javascript
+// Not available for client-side requests.
 ```
 
 ```php
@@ -550,8 +589,12 @@ GET /collections/:id/items
 Vhx::Collection.items()
 ```
 
-```javascript
+```node
 vhx.collections.items();
+```
+
+```javascript
+vhxjs.collections.items();
 ```
 
 ```php
@@ -570,8 +613,17 @@ collection = Vhx::Collection.retrieve("https://api.vhx.tv/collections/1")
 collection.items({ page: 1 })
 ```
 
-```javascript
+```node
 vhx.collections.items({
+  collection: 'https://api.vhx.tv/collections/1',
+  page: 1
+}, function(err, items) {
+  // asynchronously called
+});
+```
+
+```javascript
+vhxjs.collections.items({
   collection: 'https://api.vhx.tv/collections/1',
   page: 1
 }, function(err, items) {

@@ -20,8 +20,12 @@ POST /authorizations
 Vhx::Authorizaton.create()
 ```
 
-```javascript
+```node
 vhx.authorizations.create();
+```
+
+```javascript
+// Not available for client-side requests.
 ```
 
 ```php
@@ -44,13 +48,17 @@ authorization = Vhx::Authorization.create({
 })
 ```
 
-```javascript
+```node
 vhx.authorizations.create({
   customer: 'https://api.vhx.tv/customers/1',
   video: 'https://api.vhx.tv/videos/1'
 }, function(err, authorization) {
   // asynchronously called
 });
+```
+
+```javascript
+// Not available for client-side requests.
 ```
 
 ```php

@@ -26,7 +26,7 @@ end
 }
 ```
 
-```javascript
+```node
 /*
 The Node Client Library does not throw exceptions, and instead uses
 an asynchronous style of error handling.
@@ -36,6 +36,36 @@ of any method's callback:
 */
 
 vhx.customers.create({
+  // params
+}, function(err, result) {
+  // if err is null, no errors occurred
+});
+
+
+/*
+When there's an error, the first argument (err) will
+be an object, with the following properties:
+*/
+
+err.message
+err.documentation_url
+err.status
+err.type
+
+// See the error codes to your left for error status/type reference
+
+```
+
+```javascript
+/*
+The Javascript Client Library does not throw exceptions, and instead uses
+an asynchronous style of error handling.
+
+An error from the VHX API will be available as the first argument
+of any method's callback:
+*/
+
+vhxjs.collections.all({
   // params
 }, function(err, result) {
   // if err is null, no errors occurred
