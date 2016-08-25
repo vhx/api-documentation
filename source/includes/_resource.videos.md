@@ -34,7 +34,7 @@
 </table>
 
 <section class="text-2 contain margin-bottom-large">
-  <p>A video object has a tracks property. This includes subtitles or chapters tracks. A subtitle track is a sidecar WebVTT or SRT file.</p>
+  <p>A video object has a tracks property. This includes subtitles. A subtitle track is a sidecar WebVTT or SRT file.</p>
   <p>DRM (Digital Rights Management) is available, per request, for an additional cost. We support Google Widevine, Adobe Access, and OMA.</p>
 </section>
 
