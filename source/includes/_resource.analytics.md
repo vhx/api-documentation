@@ -2,7 +2,7 @@
 <h2 class="head-3 margin-top-xlarge padding-top-xlarge border-top margin-bottom-medium" id="analytics">Analytics</h2>
 
 <section class="text-2 contain">
-  <p>Analytics give you access to data around your videos, customers, traffic, and income on the VHX platform. You can gain insights on what your customers are watching, how many people are visiting your properties, the number of units you are selling, how many customers are subscribing or subscribing, and more.</p>
+  <p>Analytics give you access to data around your videos, customers, traffic, and platform income. You can gain insights on what your customers are watching, how many people are visiting your sites, the number of units you are selling, how many customers are subscribing and unsubscribing, and more via reports that can be easily retrieved from the VHX API.</p>
 
   <p>There are several different types of analytics reports that you can request. These types are outlined below.</p>
 </section>
@@ -18,7 +18,7 @@
   <tbody>
     <tr class="text-2 border-bottom border--light-gray">
       <td><strong>traffic</strong></td>
-      <td>Web traffic to your a VHX site across various devices and browsers. This report is for web traffic only including mobile browsers, but does not include App activity.</td>
+      <td>Web traffic to your VHX site across various devices and browsers. This report is for web traffic only. It includes mobile browsers but does not include Branded App activity.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td><strong>income_statement</strong></td>
@@ -26,15 +26,15 @@
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td><strong>units</strong></td>
-      <td>Units are the amount of TVOD (transactional video on demand) products you have sold or have been redeemed (gifts, coupons). Units represents products that have been bought or rented.</td>
+      <td>Units are the amount of TVOD (transactional video on demand) products you have sold or have been redeemed (gifts, coupons) per unit of time. Units represent products that have been bought or rented.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td><strong>subscribers</strong></td>
-      <td>Subscribers are the number of customers you have for your SVOD (subscription on demand) product at any given time.</td>
+      <td>Subscribers are the number of customers that are subscribed to your SVOD (subscription on demand) product per given time.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td><strong>churn</strong></td>
-      <td>Churn reports gives you data around how many customers have unsubscribed in a given time period and their reasons (if provided) for doing so.</td>
+      <td>Churn gives you data around how many customers have unsubscribed in a given time period and their reasons (if provided) for doing so.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td><strong>video</strong></td>
@@ -68,6 +68,17 @@ vhx.analytics.report();
 ```
 
 > Example Video Report Request
+<p class="response-examples">
+<select>
+  <option>Traffic</option>
+  <option>Income</option>
+  <option>Units</option>
+  <option>Subscribers</option>
+  <option>Churn</option>
+  <option>Video</option>
+</select>
+</p>
+
 
 ```shell
 $ curl -X GET "https://api.vhx.tv/analytics" \
