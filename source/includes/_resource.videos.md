@@ -34,7 +34,7 @@
 </table>
 
 <section class="text-2 contain margin-bottom-large">
-  <p>A video object has a tracks property. This includes subtitles or chapters tracks. A subtitle track is a sidecar WebVTT or SRT file.</p>
+  <p>A video object has a tracks property. This includes subtitles. A subtitle track is a sidecar WebVTT or SRT file.</p>
   <p>DRM (Digital Rights Management) is available, per request, for an additional cost. We support Google Widevine, Adobe Access, and OMA.</p>
 </section>
 
@@ -52,8 +52,12 @@ POST /videos
 Vhx::Video.create()
 ```
 
-```javascript
+```node
 vhx.videos.create();
+```
+
+```javascript
+// Not available for client-side requests.
 ```
 
 ```php
@@ -78,7 +82,7 @@ video = Vhx::Video.create({
 })
 ```
 
-```javascript
+```node
 vhx.videos.create({
   title: 'My Video',
   description: 'My video description.',
@@ -86,6 +90,10 @@ vhx.videos.create({
 }, function(err, video) {
    // asynchronously called
 });
+```
+
+```javascript
+// Not available for client-side requests.
 ```
 
 ```php
@@ -117,7 +125,8 @@ vhx.videos.create({
   "thumbnail": {
     "small": "https://cdn.vhx.tv/assets/thumbnails/default-small.png",
     "medium": "https://cdn.vhx.tv/assets/thumbnails/default-medium.png",
-    "large": "https://cdn.vhx.tv/assets/thumbnails/default-large.png"
+    "large": "https://cdn.vhx.tv/assets/thumbnails/default-large.png",
+    "source": "https://cdn.vhx.tv/assets/thumbnails/original.jpg"
   },
   "tracks": {
     "subtitles": []
@@ -180,8 +189,12 @@ GET /videos/:id
 Vhx::Videos.retrieve()
 ```
 
-```javascript
+```node
 vhx.videos.retrieve();
+```
+
+```javascript
+vhxjs.videos.retrieve();
 ```
 
 ```php
@@ -198,8 +211,14 @@ $ curl -X GET "https://api.vhx.tv/videos/1" \
 video = Vhx::Video.retrieve("https://api.vhx.tv/videos/1")
 ```
 
-```javascript
+```node
 vhx.videos.retrieve("https://api.vhx.tv/videos/1", function(err, video) {
+  // asynchronously called
+});
+```
+
+```javascript
+vhxjs.videos.retrieve("https://api.vhx.tv/videos/1", function(err, video) {
   // asynchronously called
 });
 ```
@@ -244,7 +263,8 @@ vhx.videos.retrieve("https://api.vhx.tv/videos/1", function(err, video) {
   "thumbnail": {
     "small": "https://cdn.vhx.tv/assets/thumbnails/default-small.png",
     "medium": "https://cdn.vhx.tv/assets/thumbnails/default-medium.png",
-    "large": "https://cdn.vhx.tv/assets/thumbnails/default-large.png"
+    "large": "https://cdn.vhx.tv/assets/thumbnails/default-large.png",
+    "source": "https://cdn.vhx.tv/assets/thumbnails/original.jpg"
   },
   "tracks": {
     "subtitles": [
@@ -304,8 +324,12 @@ GET /videos
 Vhx::Video.all()
 ```
 
-```javascript
+```node
 vhx.videos.all();
+```
+
+```javascript
+vhxjs.videos.all();
 ```
 
 ```php
@@ -325,8 +349,16 @@ video = Vhx::Video.all({
 })
 ```
 
-```javascript
+```node
 vhx.videos.all({
+  query: 'term'
+}, function(err, videos) {
+   // asynchronously called
+});
+```
+
+```javascript
+vhxjs.videos.all({
   query: 'term'
 }, function(err, videos) {
    // asynchronously called
@@ -420,8 +452,12 @@ GET /videos/:id/files
 Vhx::Video.files()
 ```
 
-```javascript
+```node
 vhx.videos.files();
+```
+
+```javascript
+// Not available for client-side requests.
 ```
 
 ```php
@@ -440,7 +476,7 @@ video = Vhx::Video.retrieve("https://api.vhx.tv/videos/1")
 video.files({ quality: 'adaptive', format: 'm3u8' })
 ```
 
-```javascript
+```node
 vhx.videos.files({
   video: 'https://api.vhx.tv/video/1'
   quality: 'adaptive',
@@ -448,6 +484,10 @@ vhx.videos.files({
 }, function(err, files) {
    // asynchronously called
 });
+```
+
+```javascript
+// Not available for client-side requests.
 ```
 
 ```php

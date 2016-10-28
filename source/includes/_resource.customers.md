@@ -9,7 +9,7 @@
 
 > <h5 class="head-5 text--white margin-bottom-medium">Create a customer</h5>
 
-> Definiton
+> Definition
 
 ```shell
 POST /customers
@@ -19,8 +19,12 @@ POST /customers
 Vhx::Customer.create()
 ```
 
-```javascript
+```node
 vhx.customers.create();
+```
+
+```javascript
+// Not available for client-side requests.
 ```
 
 ```php
@@ -45,7 +49,7 @@ customer = Vhx::Customer.create({
 })
 ```
 
-```javascript
+```node
 vhx.customers.create({
   name: 'First Last',
   email: 'customer@email.com'
@@ -53,6 +57,10 @@ vhx.customers.create({
 }, function(err, customer) {
   // asynchronously called
 });
+```
+
+```javascript
+// Not available for client-side requests.
 ```
 
 ```php
@@ -123,7 +131,7 @@ vhx.customers.create({
 
 > <h5 class="head-5 text--white margin-bottom-medium">Retrieve a customer</h5>
 
-> Definiton
+> Definition
 
 ```shell
 GET /customers/:id
@@ -133,8 +141,12 @@ GET /customers/:id
 Vhx::Customer.retrieve()
 ```
 
-```javascript
+```node
 vhx.customers.retrieve();
+```
+
+```javascript
+vhxjs.customers.retrieve();
 ```
 
 ```php
@@ -152,8 +164,14 @@ $ curl -X GET "https://api.vhx.tv/customers/1" \
 customer = Vhx::Customer.retrieve("https://api.vhx.tv/customers/1")
 ```
 
-```javascript
+```node
 vhx.customers.retrieve("https://api.vhx.tv/customers/1", function(err, customer) {
+  // asynchronously called
+});
+```
+
+```javascript
+vhxjs.customers.retrieve("https://api.vhx.tv/customers/1", function(err, customer) {
   // asynchronously called
 });
 ```
@@ -213,7 +231,7 @@ vhx.customers.retrieve("https://api.vhx.tv/customers/1", function(err, customer)
 
 > <h5 class="head-5 text--white margin-bottom-medium">List all customers</h5>
 
-> Definiton
+> Definition
 
 
 ```shell
@@ -224,8 +242,12 @@ GET /customers
 Vhx::Customer.all()
 ```
 
-```javascript
+```node
 vhx.customers.all();
+```
+
+```javascript
+vhxjs.customers.all();
 ```
 
 ```php
@@ -246,8 +268,16 @@ Vhx::Customer.all({
 })
 ```
 
-```javascript
+```node
 vhx.customers.all({
+  query: 'term'
+}, function(err, collections) {
+   // asynchronously called
+});
+```
+
+```javascript
+vhxjs.customers.all({
   query: 'term'
 }, function(err, collections) {
    // asynchronously called
@@ -347,7 +377,7 @@ vhx.customers.all({
 
 > <h5 class="head-5 text--white margin-bottom-medium">Update a customer</h5>
 
-> Definiton
+> Definition
 
 
 ```shell
@@ -358,8 +388,12 @@ PUT /customers/:id
 Vhx::Customer.update()
 ```
 
-```javascript
+```node
 vhx.customers.update();
+```
+
+```javascript
+// Not available for client-side requests.
 ```
 
 ```php
@@ -380,12 +414,16 @@ Vhx::Customer.update("https://api.vhx.tv/customers/1", {
 })
 ```
 
-```javascript
+```node
 vhx.customers.update("https://api.vhx.tv/customers/1", {
   name: 'First Last'
 }, function(err, customer) {
    // asynchronously called
 });
+```
+
+```javascript
+// Not available for client-side requests.
 ```
 
 ```php
@@ -446,7 +484,7 @@ vhx.customers.update("https://api.vhx.tv/customers/1", {
 
 > <h5 class="head-5 text--white margin-bottom-medium">Delete a customer</h5>
 
-> Definiton
+> Definition
 
 
 ```shell
@@ -457,8 +495,12 @@ DELETE /customers/:id
 Vhx::Customer.delete()
 ```
 
-```javascript
+```node
 vhx.customers.del();
+```
+
+```javascript
+// Not available for client-side requests.
 ```
 
 ```php
@@ -477,10 +519,14 @@ $ curl -X DELETE "https://api.vhx.tv/customers/1" \
 Vhx::Customer.delete("https://api.vhx.tv/customers/1")
 ```
 
-```javascript
+```node
 vhx.customers.del("https://api.vhx.tv/customers/1", function(err, response) {
   // asynchronously called
 });
+```
+
+```javascript
+// Not available for client-side requests.
 ```
 
 ```php
@@ -523,11 +569,26 @@ vhx.customers.del("https://api.vhx.tv/customers/1", function(err, response) {
 
 > <h5 class="head-5 text--white margin-bottom-medium">Add a product</h5>
 
-> Definiton
-
+> Definition
 
 ```shell
 PUT /customers/:id/products
+```
+
+```ruby
+Vhx::Customer.addProduct()
+```
+
+```node
+vhx.customers.addProduct();
+```
+
+```javascript
+// Not available for client-side requests.
+```
+
+```php
+<?php\VHX\Customers::addProduct();
 ```
 
 > Example Request
@@ -536,6 +597,31 @@ PUT /customers/:id/products
 $ curl -X PUT "https://api.vhx.tv/customers/1/products" \
   -d product=https://api.vhx.tv/products/1 \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
+```
+
+```ruby
+Vhx::Customer.addProduct('https://api.vhx.tv/customers/1', {
+  product: 'https://api.vhx.tv/products/1'
+})
+```
+
+```node
+vhx.customers.addProduct('https://api.vhx.tv/customers/1', {
+  product: 'https://api.vhx.tv/products/1'
+}, function(err, customer) {
+   // asynchronously called
+});
+```
+
+```javascript
+// Not available for client-side requests.
+```
+
+```php
+<?php$customer = \VHX\Customers::addProduct("https://api.vhx.tv/customers/1",
+ array(
+  'product' => 'https://api.vhx.tv/products/1'
+));
 ```
 
 <section class="text-2 contain margin-bottom-medium">
@@ -574,11 +660,26 @@ $ curl -X PUT "https://api.vhx.tv/customers/1/products" \
 
 > <h5 class="head-5 text--white margin-bottom-medium">Remove a product</h5>
 
-> Definiton
-
+> Definition
 
 ```shell
 DELETE /customers/:id/products
+```
+
+```ruby
+Vhx::Customer.removeProduct()
+```
+
+```node
+vhx.customers.removeProduct();
+```
+
+```javascript
+// Not available for client-side requests.
+```
+
+```php
+<?php$customer = \VHX\Customers::removeProduct();
 ```
 
 > Example Request
@@ -587,6 +688,32 @@ DELETE /customers/:id/products
 $ curl -X DELETE "https://api.vhx.tv/customers/1/products" \
   -d product=https://api.vhx.tv/products/1 \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
+```
+
+```ruby
+Vhx::Customer.removeProduct('https://api.vhx.tv/customers/1', {
+  product: 'https://api.vhx.tv/products/1'
+})
+```
+
+```node
+vhx.customers.removeProduct('https://api.vhx.tv/customers/1', {
+  product: 'https://api.vhx.tv/products/1'
+}, function(err, customer) {
+   // asynchronously called
+});
+```
+
+```javascript
+// Not available for client-side requests.
+```
+
+
+```php
+<?php$customer = \VHX\Customers::removeProduct("https://api.vhx.tv/customers/1",
+ array(
+  'product' => 'https://api.vhx.tv/products/1'
+));
 ```
 
 <section class="text-2 contain margin-bottom-medium">

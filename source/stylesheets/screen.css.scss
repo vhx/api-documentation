@@ -460,6 +460,7 @@ html, body {
     border-radius: 3px;
     @extend %break-words;
     @extend %code-font;
+    overflow-x: auto;
   }
 
   pre>code {
@@ -670,8 +671,21 @@ header {
     color: #fff !important;
   }
 }
+.highlight .k {
+  color: #aa759f;
+}
+.highlight .mi {
+  color: #bf8bbd;
+}
+.highlight .na {
+  color: #6a9fb5;
+}
 .highlight .o {
   color: #F099A6;
+}
+.highlight .s2,
+.highlight .s1 {
+  color: #90a959;
 }
 h4 {
   font-weight: normal;

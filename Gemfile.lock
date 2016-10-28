@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/vhx/rouge.git
+  revision: 472160bbbd96547bde6024d28d9d7f0d71e2a48f
+  branch: v1.11.1-vhx
+  specs:
+    rouge (1.11.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -97,7 +104,6 @@ GEM
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
     redcarpet (3.3.2)
-    rouge (1.9.0)
     sass (3.4.14)
     sprockets (2.12.3)
       hike (~> 1.2)
@@ -131,7 +137,7 @@ DEPENDENCIES
   middleman-syntax (~> 2.0.0)
   rake (~> 10.4.2)
   redcarpet (~> 3.3.2)
-  rouge (~> 1.9.0)
+  rouge!
 
 BUNDLED WITH
-   1.10.6
+   1.12.5

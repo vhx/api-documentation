@@ -55,8 +55,12 @@ POST /collections
 Vhx::Collection.create()
 ```
 
-```javascript
+```node
 vhx.collections.create();
+```
+
+```javascript
+// Not available for client-side requests.
 ```
 
 ```php
@@ -79,13 +83,17 @@ collection = Vhx::Collection.create({
 })
 ```
 
-```javascript
+```node
 vhx.collections.create({
   name: 'Collection Name',
   type: 'series',
 }, function(err, collection) {
   // asynchronously called
 });
+```
+
+```javascript
+// Not available for client-side requests.
 ```
 
 ```php
@@ -117,8 +125,12 @@ vhx.collections.create({
   "name": "Collection Name",
   "description": null,
   "slug": "collection-name",
-  "thumbnail": {},
-  "banner": {},
+  "thumbnail": {
+    "small": "https://cdn.vhx.tv/assets/thumbnails/default-small.png",
+    "medium": "https://cdn.vhx.tv/assets/thumbnails/default-medium.png",
+    "large": "https://cdn.vhx.tv/assets/thumbnails/default-large.png",
+    "source": "https://cdn.vhx.tv/assets/thumbnails/original.jpg"
+  },
   "type": "series",
   "seasons_count": 0,
   "items_count": 0,
@@ -170,14 +182,7 @@ vhx.collections.create({
         <span class="text--transparent text-3">optional</span>
       </td>
       <td>A publicly accessible image URL. If you prefer you can upload images directly to a collection in the VHX Publisher Admin.</td>
-    </tr>
-    <tr class="text-2 border-bottom border--light-gray">
-      <td>
-        <strong class="is-block text--navy">banner_url</strong>
-        <span class="text--transparent text-3">optional</span>
-      </td>
-      <td>A publicly accessible image URL. If you prefer you can upload images directly to a collection in the VHX Publisher Admin.</td>
-    </tr>
+    </tr>    
   </tbody>
 </table>
 
@@ -195,8 +200,12 @@ GET /collections/:id
 Vhx::Collection.retrieve()
 ```
 
-```javascript
+```node
 vhx.collections.retrieve();
+```
+
+```javascript
+vhxjs.collections.retrieve();
 ```
 
 ```php
@@ -214,8 +223,15 @@ $ curl -X GET "https://api.vhx.tv/collections/1" \
 collection = Vhx::Collection.retrieve("https://api.vhx.tv/collections/1")
 ```
 
+```node
+vhx.collections.retrieve("https://api.vhx.tv/collections/1",
+ function(err, collection) {
+  // asynchronously called
+ });
+```
+
 ```javascript
-vhx.collections.retrieve("https://api.vhx.tv/collections/1", function(err, collection) {
+vhxjs.collections.retrieve("https://api.vhx.tv/collections/1", function(err, collection) {
   // asynchronously called
 });
 ```
@@ -239,7 +255,8 @@ vhx.collections.retrieve("https://api.vhx.tv/collections/1", function(err, colle
   "thumbnail": {
     "small": "https://cdn.vhx.tv/assets/thumbnails/default-small.png",
     "medium": "https://cdn.vhx.tv/assets/thumbnails/default-medium.png",
-    "large": "https://cdn.vhx.tv/assets/thumbnails/default-large.png"
+    "large": "https://cdn.vhx.tv/assets/thumbnails/default-large.png",
+    "source": "https://cdn.vhx.tv/assets/thumbnails/original.jpg"
   },
   "type": "category",
   "items_count": 10,
@@ -294,8 +311,12 @@ GET /collections
 Vhx::Collection.all()
 ```
 
-```javascript
+```node
 vhx.collections.all();
+```
+
+```javascript
+vhxjs.collections.all();
 ```
 
 ```php
@@ -316,8 +337,16 @@ collections = Vhx::Collection.all({
 })
 ```
 
-```javascript
+```node
 vhx.collections.all({
+  product: 'https://api.vhx.tv/products/1'
+}, function(err, collections) {
+  // asynchronously called
+});
+```
+
+```javascript
+vhxjs.collections.all({
   product: 'https://api.vhx.tv/products/1'
 }, function(err, collections) {
   // asynchronously called
@@ -427,8 +456,12 @@ POST /collections/:id
 Vhx::Collection.update()
 ```
 
-```javascript
+```node
 vhx.collections.update();
+```
+
+```javascript
+// Not available for client-side requests.
 ```
 
 ```php
@@ -449,12 +482,16 @@ collection = Vhx::Collection.retrieve("https://api.vhx.tv/collections/1").update
 })
 ```
 
-```javascript
+```node
 vhx.collections.update("https://api.vhx.tv/collections/1", {
   description: 'A new description'
 }, function(err, collection) {
   // asynchronously called
 });
+```
+
+```javascript
+// Not available for client-side requests.
 ```
 
 ```php
@@ -485,8 +522,12 @@ vhx.collections.update("https://api.vhx.tv/collections/1", {
   "name": "Collection Name",
   "description": "A new description",
   "slug": "collection-name",
-  "thumbnail": {},
-  "banner": {},
+  "thumbnail": {
+    "small": "https://cdn.vhx.tv/assets/thumbnails/default-small.png",
+    "medium": "https://cdn.vhx.tv/assets/thumbnails/default-medium.png",
+    "large": "https://cdn.vhx.tv/assets/thumbnails/default-large.png",
+    "source": "https://cdn.vhx.tv/assets/thumbnails/original.jpg"
+  },
   "type": "series",
   "seasons_count": 0,
   "items_count": 0,
@@ -531,13 +572,6 @@ vhx.collections.update("https://api.vhx.tv/collections/1", {
       </td>
       <td>A publicly accessible image URL. If you prefer you can upload images directly to a collection in the VHX Publisher Admin.</td>
     </tr>
-    <tr class="text-2 border-bottom border--light-gray">
-      <td>
-        <strong class="is-block text--navy">banner_url</strong>
-        <span class="text--transparent text-3">optional</span>
-      </td>
-      <td>A publicly accessible image URL. If you prefer you can upload images directly to a collection in the VHX Publisher Admin.</td>
-    </tr>
   </tbody>
 </table>
 
@@ -555,8 +589,12 @@ GET /collections/:id/items
 Vhx::Collection.items()
 ```
 
-```javascript
+```node
 vhx.collections.items();
+```
+
+```javascript
+vhxjs.collections.items();
 ```
 
 ```php
@@ -575,8 +613,17 @@ collection = Vhx::Collection.retrieve("https://api.vhx.tv/collections/1")
 collection.items({ page: 1 })
 ```
 
-```javascript
+```node
 vhx.collections.items({
+  collection: 'https://api.vhx.tv/collections/1',
+  page: 1
+}, function(err, items) {
+  // asynchronously called
+});
+```
+
+```javascript
+vhxjs.collections.items({
   collection: 'https://api.vhx.tv/collections/1',
   page: 1
 }, function(err, items) {

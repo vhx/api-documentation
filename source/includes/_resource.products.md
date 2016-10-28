@@ -19,8 +19,12 @@ GET /products/:id
 Vhx::Product.retrieve()
 ```
 
-```javascript
+```node
 vhx.products.retrieve();
+```
+
+```javascript
+vhxjs.products.retrieve();
 ```
 
 ```php
@@ -38,8 +42,14 @@ $ curl -X GET "https://api.vhx.tv/products/1" \
 product = Vhx::Product.retrieve("https://api.vhx.tv/products/1")
 ```
 
-```javascript
+```node
 vhx.products.retrieve("https://api.vhx.tv/products/1", function(err, product) {
+  // asynchronously called
+});
+```
+
+```javascript
+vhxjs.products.retrieve("https://api.vhx.tv/products/1", function(err, product) {
   // asynchronously called
 });
 ```
@@ -121,8 +131,12 @@ GET /products
 Vhx::Product.all()
 ```
 
-```javascript
+```node
 vhx.products.all();
+```
+
+```javascript
+vhxjs.products.all();
 ```
 
 ```php
@@ -143,8 +157,16 @@ Vhx::Product.all({
 })
 ```
 
-```javascript
+```node
 vhx.products.all({
+  query: 'term'
+}, function(err, products) {
+   // asynchronously called
+});
+```
+
+```javascript
+vhxjs.products.all({
   query: 'term'
 }, function(err, products) {
    // asynchronously called

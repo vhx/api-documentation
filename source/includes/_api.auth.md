@@ -18,8 +18,12 @@ Vhx.setup({
 })
 ```
 
-```javascript
+```node
 var vhx = require('vhx')('YOUR_API_KEY');
+```
+
+```javascript
+var vhxjs = new vhx('YOUR_API_KEY');
 ```
 
 ```php
@@ -31,4 +35,5 @@ var vhx = require('vhx')('YOUR_API_KEY');
 <section class="text-2 contain">
   <p>API applications can be created in the <a href="https://www.vhx.tv/admin/platforms" target="_blank">VHX admin</a> or by emailing <a href="mailto:api@vhx.tv">api@vhx.tv</a>.</p>
   <p>Once your application is created, you will receive an <code>API Key</code>. All resources require authentication with this <code>API Key</code> over <a href="https://en.wikipedia.org/wiki/Basic_access_authentication" target="_blank">HTTP Basic Auth</a>. Your <code>API Key</code> acts as the basic auth username. You do not need to provide a password (but do notice the trailing <code>:</code>).</p>
+  <p>When making API calls on behalf of a customer, the <code>X-Customer</code> header with the customer <code>href</code> should be sent as part of the request. This let's the API respond with relevant information for that particular customer (like continue watching, resuming, etc).
 </section>
