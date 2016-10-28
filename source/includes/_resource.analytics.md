@@ -2,7 +2,7 @@
 <h2 class="head-3 margin-top-xlarge padding-top-xlarge border-top margin-bottom-medium" id="analytics">Analytics</h2>
 
 <section class="text-2 contain">
-  <p>Analytics give you access to data around your videos, customers, traffic, and platform income. You can gain insights on what your customers are watching, how many people are visiting your sites, the number of units you are selling, how many customers are subscribing and unsubscribing, and more via reports that can be easily retrieved from the VHX API.</p>
+  <p>Analytics give you access to data around your videos, customers, traffic, and platform income. You can gain insights on what your customers are watching, how many people are visiting your channel, the number of units you are selling, how many customers are subscribing and unsubscribing, and more via reports that can be easily retrieved from the VHX API.</p>
 
   <p>There are several different types of analytics reports that you can request. These types are outlined below.</p>
 </section>
@@ -83,38 +83,20 @@ vhx.analytics.report();
 </select>
 </p>
 
-
+<p id="analytics_curl"></p>
 ```shell
-$ curl -X GET "https://api.vhx.tv/analytics" \
-  -d type=video \
-  -d video_id=1
-  -d from=2-weeks-ago \
-  -d by=day \
-  -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
+<p id="analytics_ruby"></p>
 ```ruby
-video = Vhx::Analytics.retrieve("https://api.vhx.tv/videos/1")
 ```
 
+<p id="analytics_js"></p>
 ```javascript
-vhx.analytics.report({
-  type: 'video',
-  by: 'month',
-  from: 'today',
-  to: '1-year-ago'
-}, function(err, report) {
-  // asynchronously called
-});
 ```
 
+<p id="analytics_php"></p>
 ```php
-$report = \VHX\Analytics::report(array(
-  'type' => 'video',
-  'by' => 'month',
-  'from' => 'today',
-  'to' => '1-year-ago'
-));
 ```
 
 > Example Response
