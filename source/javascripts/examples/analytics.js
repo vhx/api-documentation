@@ -115,46 +115,6 @@
               "units": 0,
               "amount_cents": 0,
               "conversion": 0
-            },
-            {
-              "country": {
-                "code": "au",
-                "name": "Australia"
-              },
-              "visits": 357,
-              "units": 0,
-              "amount_cents": 0,
-              "conversion": 0
-            },
-            {
-              "country": {
-                "code": "fr",
-                "name": "France"
-              },
-              "visits": 217,
-              "units": 0,
-              "amount_cents": 0,
-              "conversion": 0
-            },
-            {
-              "country": {
-                "code": "in",
-                "name": "India"
-              },
-              "visits": 137,
-              "units": 0,
-              "amount_cents": 0,
-              "conversion": 0
-            },
-            {
-              "country": {
-                "code": "nz",
-                "name": "New Zealand"
-              },
-              "visits": 118,
-              "units": 0,
-              "amount_cents": 0,
-              "conversion": 0
             }
           ],
           "referrers": [
@@ -178,28 +138,7 @@
               "units": 0,
               "amount_cents": 0,
               "conversion": 0
-            },
-            {
-              "referrer": "bing.com",
-              "visits": 624,
-              "units": 0,
-              "amount_cents": 0,
-              "conversion": 0
-            },
-            {
-              "referrer": "yahoo.com",
-              "visits": 155,
-              "units": 0,
-              "amount_cents": 0,
-              "conversion": 0
-            },
-            {
-              "referrer": "twitter.com",
-              "visits": 80,
-              "units": 0,
-              "amount_cents": 0,
-              "conversion": 0
-            },
+            }
           ],
           "devices": [
             {
@@ -261,443 +200,13 @@
       timeSeries: {
         "_links": {
           "self": {
-            "href": "https://api.vhx.tv/analytics?by=day&from=2013-07-16&to=2013-07-20"
+            "href": "https://api.vhx.tv/analytics?by=day&from=2013-07-19&to=2013-07-20"
           }
         },
         "to": "2013-07-20",
-        "from": "2013-07-16",
+        "from": "2013-07-19",
         "by": "day",
         "data": [
-          {
-            "timestamp": "2013-07-16 00:00:00",
-            "products": [
-              {
-                "product_id": 1,
-                "product_name": "My Movie",
-                "fulfillment_method": {
-                  "vhx_payments": {
-                    "units": 1,
-                    "amount_cents": 999
-                  },
-                  "shopify_api": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "bigcommerce_api": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "ios_api": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "tvos_api": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "roku_api": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "android_api": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "other_api": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "free_coupons": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "free_copies": {
-                    "units": 0,
-                    "amount_cents": 0
-                  }
-                },
-                "totals": {
-                  "fulfillment": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "paid": {
-                    "units": 1,
-                    "amount_cents": 999
-                  },
-                  "total": {
-                    "units": 1,
-                    "amount_cents": 999
-                  }
-                },
-                "total_units": 1
-              }
-            ],
-            "fulfillment_method": {
-              "vhx_payments": {
-                "units": 1,
-                "amount_cents": 999
-              },
-              "shopify_api": {
-                "units": 0,
-                "amount_cents": 0
-              },
-              "bigcommerce_api": {
-                "units": 0,
-                "amount_cents": 0
-              },
-              "ios_api": {
-                "units": 0,
-                "amount_cents": 0
-              },
-              "tvos_api": {
-                "units": 0,
-                "amount_cents": 0
-              },
-              "roku_api": {
-                "units": 0,
-                "amount_cents": 0
-              },
-              "android_api": {
-                "units": 0,
-                "amount_cents": 0
-              },
-              "other_api": {
-                "units": 0,
-                "amount_cents": 0
-              },
-              "free_coupons": {
-                "units": 0,
-                "amount_cents": 0
-              },
-              "free_copies": {
-                "units": 0,
-                "amount_cents": 0
-              }
-            },
-            "totals": {
-              "fulfillment": {
-                "units": 0,
-                "amount_cents": 0
-              },
-              "paid": {
-                "units": 1,
-                "amount_cents": 999
-              },
-              "total": {
-                "units": 1,
-                "amount_cents": 999
-              }
-            },
-            "total_units": 1
-          },
-          {
-            "timestamp": "2013-07-17 00:00:00",
-            "products": [
-              {
-                "product_id": 1,
-                "product_name": "Another Movie",
-                "fulfillment_method": {
-                  "vhx_payments": {
-                    "units": 331,
-                    "amount_cents": 165169
-                  },
-                  "shopify_api": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "bigcommerce_api": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "ios_api": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "tvos_api": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "roku_api": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "android_api": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "other_api": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "free_coupons": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "free_copies": {
-                    "units": 0,
-                    "amount_cents": 0
-                  }
-                },
-                "totals": {
-                  "fulfillment": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "paid": {
-                    "units": 331,
-                    "amount_cents": 165169
-                  },
-                  "total": {
-                    "units": 331,
-                    "amount_cents": 165169
-                  }
-                },
-                "total_units": 331
-              }
-            ],
-            "fulfillment_method": {
-              "vhx_payments": {
-                "units": 357,
-                "amount_cents": 203643
-              },
-              "shopify_api": {
-                "units": 0,
-                "amount_cents": 0
-              },
-              "bigcommerce_api": {
-                "units": 0,
-                "amount_cents": 0
-              },
-              "ios_api": {
-                "units": 0,
-                "amount_cents": 0
-              },
-              "tvos_api": {
-                "units": 0,
-                "amount_cents": 0
-              },
-              "roku_api": {
-                "units": 0,
-                "amount_cents": 0
-              },
-              "android_api": {
-                "units": 0,
-                "amount_cents": 0
-              },
-              "other_api": {
-                "units": 0,
-                "amount_cents": 0
-              },
-              "free_coupons": {
-                "units": 1,
-                "amount_cents": 0
-              },
-              "free_copies": {
-                "units": 0,
-                "amount_cents": 0
-              }
-            },
-            "totals": {
-              "fulfillment": {
-                "units": 1,
-                "amount_cents": 0
-              },
-              "paid": {
-                "units": 357,
-                "amount_cents": 203643
-              },
-              "total": {
-                "units": 358,
-                "amount_cents": 203643
-              }
-            },
-            "total_units": 358
-          },
-          {
-            "timestamp": "2013-07-18 00:00:00",
-            "products": [
-              {
-                "product_id": 1,
-                "product_name": "My Movie",
-                "fulfillment_method": {
-                  "vhx_payments": {
-                    "units": 258,
-                    "amount_cents": 128742
-                  },
-                  "shopify_api": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "bigcommerce_api": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "ios_api": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "tvos_api": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "roku_api": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "android_api": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "other_api": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "free_coupons": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "free_copies": {
-                    "units": 0,
-                    "amount_cents": 0
-                  }
-                },
-                "totals": {
-                  "fulfillment": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "paid": {
-                    "units": 258,
-                    "amount_cents": 128742
-                  },
-                  "total": {
-                    "units": 258,
-                    "amount_cents": 128742
-                  }
-                },
-                "total_units": 258
-              },
-              {
-                "product_id": 2,
-                "product_name": "Another Movie",
-                "fulfillment_method": {
-                  "vhx_payments": {
-                    "units": 32,
-                    "amount_cents": 47968
-                  },
-                  "shopify_api": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "bigcommerce_api": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "ios_api": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "tvos_api": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "roku_api": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "android_api": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "other_api": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "free_coupons": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "free_copies": {
-                    "units": 0,
-                    "amount_cents": 0
-                  }
-                },
-                "totals": {
-                  "fulfillment": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "paid": {
-                    "units": 32,
-                    "amount_cents": 47968
-                  },
-                  "total": {
-                    "units": 32,
-                    "amount_cents": 47968
-                  }
-                },
-                "total_units": 32
-              },
-            ],
-            "fulfillment_method": {
-              "vhx_payments": {
-                "units": 293,
-                "amount_cents": 179707
-              },
-              "shopify_api": {
-                "units": 0,
-                "amount_cents": 0
-              },
-              "bigcommerce_api": {
-                "units": 0,
-                "amount_cents": 0
-              },
-              "ios_api": {
-                "units": 0,
-                "amount_cents": 0
-              },
-              "tvos_api": {
-                "units": 0,
-                "amount_cents": 0
-              },
-              "roku_api": {
-                "units": 0,
-                "amount_cents": 0
-              },
-              "android_api": {
-                "units": 0,
-                "amount_cents": 0
-              },
-              "other_api": {
-                "units": 0,
-                "amount_cents": 0
-              },
-              "free_coupons": {
-                "units": 0,
-                "amount_cents": 0
-              },
-              "free_copies": {
-                "units": 0,
-                "amount_cents": 0
-              }
-            },
-            "totals": {
-              "fulfillment": {
-                "units": 0,
-                "amount_cents": 0
-              },
-              "paid": {
-                "units": 293,
-                "amount_cents": 179707
-              },
-              "total": {
-                "units": 293,
-                "amount_cents": 179707
-              }
-            },
-            "total_units": 293
-          },
           {
             "timestamp": "2013-07-19 00:00:00",
             "products": [
@@ -761,67 +270,6 @@
                   }
                 },
                 "total_units": 66
-              },
-              {
-                "product_id": 2,
-                "product_name": "Another Movie",
-                "fulfillment_method": {
-                  "vhx_payments": {
-                    "units": 9,
-                    "amount_cents": 13491
-                  },
-                  "shopify_api": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "bigcommerce_api": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "ios_api": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "tvos_api": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "roku_api": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "android_api": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "other_api": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "free_coupons": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "free_copies": {
-                    "units": 0,
-                    "amount_cents": 0
-                  }
-                },
-                "totals": {
-                  "fulfillment": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "paid": {
-                    "units": 9,
-                    "amount_cents": 13491
-                  },
-                  "total": {
-                    "units": 9,
-                    "amount_cents": 13491
-                  }
-                },
-                "total_units": 9
               }
             ],
             "fulfillment_method": {
@@ -945,67 +393,6 @@
                   }
                 },
                 "total_units": 58
-              },
-              {
-                "product_id": 2,
-                "product_name": "Another Movie",
-                "fulfillment_method": {
-                  "vhx_payments": {
-                    "units": 4,
-                    "amount_cents": 5996
-                  },
-                  "shopify_api": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "bigcommerce_api": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "ios_api": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "tvos_api": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "roku_api": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "android_api": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "other_api": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "free_coupons": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "free_copies": {
-                    "units": 0,
-                    "amount_cents": 0
-                  }
-                },
-                "totals": {
-                  "fulfillment": {
-                    "units": 0,
-                    "amount_cents": 0
-                  },
-                  "paid": {
-                    "units": 4,
-                    "amount_cents": 5996
-                  },
-                  "total": {
-                    "units": 4,
-                    "amount_cents": 5996
-                  }
-                },
-                "total_units": 4
               }
             ],
             "fulfillment_method": {
@@ -1140,67 +527,6 @@
               },
               "total_units": 845
             },
-            {
-              "product_id": 2,
-              "product_name": "Another Movie",
-              "fulfillment_method": {
-                "vhx_payments": {
-                  "units": 440,
-                  "amount_cents": 658560
-                },
-                "shopify_api": {
-                  "units": 0,
-                  "amount_cents": 0
-                },
-                "bigcommerce_api": {
-                  "units": 0,
-                  "amount_cents": 0
-                },
-                "ios_api": {
-                  "units": 0,
-                  "amount_cents": 0
-                },
-                "tvos_api": {
-                  "units": 0,
-                  "amount_cents": 0
-                },
-                "roku_api": {
-                  "units": 0,
-                  "amount_cents": 0
-                },
-                "android_api": {
-                  "units": 0,
-                  "amount_cents": 0
-                },
-                "other_api": {
-                  "units": 0,
-                  "amount_cents": 0
-                },
-                "free_coupons": {
-                  "units": 123,
-                  "amount_cents": 0
-                },
-                "free_copies": {
-                  "units": 0,
-                  "amount_cents": 0
-                }
-              },
-              "totals": {
-                "fulfillment": {
-                  "units": 123,
-                  "amount_cents": 0
-                },
-                "paid": {
-                  "units": 440,
-                  "amount_cents": 658560
-                },
-                "total": {
-                  "units": 563,
-                  "amount_cents": 658560
-                }
-              },
-              "total_units": 563
-            }
           ],
           "fulfillment_method": {
             "vhx_payments": {
@@ -1287,11 +613,11 @@
       timeSeries: {
         "_links": {
           "self": {
-            "href": "https://api.vhx.tv/analytics?by=month&from=2015-08-28&to=2015-11-28"
+            "href": "https://api.vhx.tv/analytics?by=month&from=2015-07-01&to=2015-09-30"
           }
         },
-        "to": "2015-11-28",
-        "from": "2015-08-28",
+        "to": "2015-07-01",
+        "from": "2015-09-30",
         "by": "month",
         "data": [
           {
@@ -1353,26 +679,6 @@
               "free_trial_growth": -0.168,
               "churn": 0.136
             }
-          },
-          {
-            "free_trial_created": 251,
-            "free_trial_churn": 113,
-            "free_trial_converted": 188,
-            "paying_created": 116,
-            "paying_churn": 485,
-            "paused_created": 67,
-            "paused_ended": 35,
-            "timestamp": "2016-10-01 00:00:00",
-            "existing_paying": 9962,
-            "total_paying": 9781,
-            "existing_free_trials": 422,
-            "total_free_trials": 372,
-            "trend_metrics": {
-              "free_trial_conversion": 0.749,
-              "subscriber_growth": -0.018,
-              "free_trial_growth": -0.773,
-              "churn": 0.05
-            }
           }
         ],
         "page": 1
@@ -1425,13 +731,6 @@
                 "user_email": "customer@yahoo.com",
                 "user_name": null,
                 "occurred_at": "2016-10-08 12:26:03.19079"
-              },
-              {
-                "message": "I can't afford it for now",
-                "customer_id": 10,
-                "user_email": "customer@hotmail.com",
-                "user_name": null,
-                "occurred_at": "2016-10-07 21:05:44.910633"
               }
             ],
             "high_price": 773,
@@ -1445,74 +744,13 @@
       timeSeries: {
         "_links": {
           "self": {
-            "href": "https://api.vhx.tv/analytics?by=month&from=2016-07-28&to=2016-10-28"
+            "href": "https://api.vhx.tv/analytics?by=month&from=2016-09-28&to=2016-10-28"
           }
         },
         "to": "2016-10-28",
-        "from": "2016-07-28",
+        "from": "2016-09-28",
         "by": "month",
         "data": [
-          {
-            "timestamp": "2016-07-01 00:00:00",
-            "pause_reasons": {
-              "reasons": [],
-              "vacation": 2,
-              "wait_content": 2,
-              "save_money": 12,
-              "other": 1
-            },
-            "cancellation_reasons": {
-              "reasons": [
-                {
-                  "message": "My card is no longer valid",
-                  "customer_id": 15,
-                  "user_email": "customer@msn.com",
-                  "user_name": null,
-                  "occurred_at": "2016-07-31 23:08:15.219747"
-                },
-                {
-                  "message": "I have another account",
-                  "customer_id": 25,
-                  "user_email": "customer@hotmail.co.uk",
-                  "user_name": null,
-                  "occurred_at": "2016-07-31 12:44:59.557358"
-                }
-              ],
-              "high_price": 45,
-              "other": 43
-            }
-          },
-          {
-            "timestamp": "2016-08-01 00:00:00",
-            "pause_reasons": {
-              "reasons": [
-                {
-                  "message": "Don't have time to watch episodes",
-                  "customer_id": 30,
-                  "user_email": "customer@college.edu",
-                  "user_name": null,
-                  "occurred_at": "2016-07-30 03:42:20.160249"
-                }
-              ],
-              "wait_content": 63,
-              "other": 15,
-              "vacation": 26,
-              "save_money": 126
-            },
-            "cancellation_reasons": {
-              "reasons": [
-                {
-                  "message": "I'm poor now.",
-                  "customer_id": 2512431,
-                  "user_email": "customer@mac.com",
-                  "user_name": null,
-                  "occurred_at": "2016-08-31 21:27:57.399463"
-                }
-              ],
-              "high_price": 348,
-              "other": 386
-            }
-          },
           {
             "timestamp": "2016-09-01 00:00:00",
             "pause_reasons": {
@@ -1609,45 +847,15 @@
       timeSeries: {
         "_links": {
           "self": {
-            "href": "https://api.vhx.tv/analytics?by=day&from=2016-10-21&to=2016-10-28&type=video&video_id=1"
+            "href": "https://api.vhx.tv/analytics?by=day&from=2016-10-26&to=2016-10-28&type=video&video_id=1"
           }
         },
         "to": "2016-10-28",
-        "from": "2016-10-21",
+        "from": "2016-10-26",
         "by": "day",
         "type": "video",
-        "video_id": 175,
+        "video_id": 1,
         "data": [
-          {
-            "interval_timestamp": "2016-10-21 00:00:00",
-            "plays": "6",
-            "seconds": "2350",
-            "finishes": "3"
-          },
-          {
-            "interval_timestamp": "2016-10-22 00:00:00",
-            "plays": "4",
-            "seconds": "3140",
-            "finishes": "2"
-          },
-          {
-            "interval_timestamp": "2016-10-23 00:00:00",
-            "plays": "6",
-            "seconds": "910",
-            "finishes": "0"
-          },
-          {
-            "interval_timestamp": "2016-10-24 00:00:00",
-            "plays": "6",
-            "seconds": "4320",
-            "finishes": "3"
-          },
-          {
-            "interval_timestamp": "2016-10-25 00:00:00",
-            "plays": "39",
-            "seconds": "20860",
-            "finishes": "9"
-          },
           {
             "interval_timestamp": "2016-10-26 00:00:00",
             "plays": "2",
