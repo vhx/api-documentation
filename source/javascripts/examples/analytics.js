@@ -1,5 +1,6 @@
 (function() {
-  window.analytics = {
+  window.data = {};
+  window.data.analytics = {
     income: {
       statement: {
         "_links": {

@@ -755,5 +755,16 @@ header {
 .response-examples {
   position: absolute;
   right: 18px;
-  margin-top: -22px;
+  margin-top: -22px !important
+}
+.highlight {
+  .nv, .nt, .key {
+    color: #FFD18E;
+  }
+  .null {
+    color: #fd971f;
+  }
+  .s2 {
+    color: #90a959;
+  }
 }

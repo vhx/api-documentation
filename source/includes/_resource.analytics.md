@@ -67,15 +67,19 @@ vhx.analytics.report();
 \VHX\Analytics::report();
 ```
 
-> Example Video Report Request
-<p class="response-examples">
+> Example Report Request
+<p class="response-examples" data-report="analytics">
 <select>
-  <option>Traffic</option>
-  <option>Income</option>
-  <option>Units</option>
-  <option>Subscribers</option>
-  <option>Churn</option>
-  <option>Video</option>
+  <option value="traffic_aggregate">Traffic</option>
+  <option value="income_statement">Income</option>
+  <option value="units_aggregate">Units (Aggregate)</option>
+  <option value="units_timeSeries">Units (Time Series)</option>
+  <option value="subscribers_aggregate">Subscribers (Aggregate)</option>
+  <option value="subscribers_timeSeries">Subscribers (Time Series)</option>
+  <option value="churn_aggregate">Churn (Aggregate)</option>
+  <option value="churn_timeSeries">Churn (Time Series)</option>
+  <option value="video_aggregate">Video (Aggregate)</option>
+  <option value="video_timeSeries">Video (Time Series)</option>
 </select>
 </p>
 
@@ -115,69 +119,8 @@ $report = \VHX\Analytics::report(array(
 
 > Example Response
 
+<p id="analytics_response"></p>
 ```json
-{
-  "_links": {
-    "self": {
-      "href": "https://api.vhx.tv/analytics?type=video&video_id=1&by=day&from=2-weeks-ago"
-    }
-  },
-  "to": "2016-07-01T23:59:59Z",
-  "from": "2016-05-24T00:00:00Z",
-  "by": "day",
-  "type": "video",
-  "data":
-  [
-    {
-      "interval_timestamp": "2016-05-24T00:00:00Z",
-      "plays": "3",
-      "seconds": "3640",
-      "finishes": "2"
-    },
-    {
-      "interval_timestamp": "2016-05-25T00:00:00Z",
-      "plays": "39",
-      "seconds": "52170",
-      "finishes": "24"
-    },
-    {
-      "interval_timestamp": "2016-05-26T00:00:00Z",
-      "plays": "21",
-      "seconds": "30660",
-      "finishes": "15"
-    },
-    {
-      "interval_timestamp": "2016-05-27T00:00:00Z",
-      "plays": "20",
-      "seconds": "19730",
-      "finishes": "15"
-    },
-    {
-      "interval_timestamp": "2016-05-28T00:00:00Z",
-      "plays": "30",
-      "seconds": "84130",
-      "finishes": "32"
-    },
-    {
-      "interval_timestamp": "2016-05-29T00:00:00Z",
-      "plays": "39",
-      "seconds": "111390",
-      "finishes": "37"
-    },
-    {
-      "interval_timestamp": "2016-05-30T00:00:00Z",
-      "plays": "81",
-      "seconds": "89150",
-      "finishes": "62"
-    },
-    {
-      "interval_timestamp": "2016-05-31T00:00:00Z",
-      "plays": "56",
-      "seconds": "108200",
-      "finishes": "45"
-    }
-  ]
-}
 ```
 
 <table>
@@ -240,6 +183,32 @@ $report = \VHX\Analytics::report(array(
   </tbody>
 </table>
 
-<section>
-Dates can be in the following formats(a) <code>YYYY-MM-DD</code>, e.g. <strong>2015-12-31</strong>, where the time defaults to midnight EST on that date, or (b) <code>YYYY-MM-DDTHH:MM:SSZ</code> e.g. 2016-09-29T18:46:19Z, where the timezone defaults to EST, or (c) <code>[1..10]-[day|week|month|year]-ago</code>, e.g. <strong>1-day-ago</strong>, <strong>3-weeks-ago</strong>, <strong>2-months-ago</strong>, etc.</td>
+<h3 class="text-2 text--navy text--bold margin-top-xlarge margin-bottom-medium" id="analytics-by-video">Date Formatting</h3>
+
+<section class="text-2 contain margin-bottom-medium">
+ See below for acceptable date formats for use with the <code>to</code>, <code>from</code> parameters.
 </section>
+
+<table>
+  <thead>
+    <tr class="text-2">
+      <th class="padding-medium">Format</th>
+      <th class="padding-medium">Definition</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td><code style="white-space: nowrap;">YYYY-MM-DD</code></td>
+      <td>e.g. <strong>2015-12-31</strong>, where the time defaults to midnight EST on that date</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td><code style="white-space: nowrap;">YYYY-MM-DDTHH:MM:SSZ</code></td>
+      <td>e.g. 2016-09-29T18:46:19Z, where the timezone defaults to EST</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td><code style="white-space: nowrap;">[number]-[interval]-ago</code></td>
+      <td><code>number</code> can be any number between 1 and 10. <code>interval</code> can be any of the following: <strong>day</strong>, <strong>week</strong>, <strong>month</strong>, <strong>year</strong>. Examples include <strong>1-day-ago</strong>, <strong>3-weeks-ago</strong>, <strong>2-months-ago</strong>, etc.</td>
+    </tr>
+  </tbody>
+</table>    
