@@ -5,10 +5,19 @@
     select.on('change', function() {
       var container = $(this).closest('.response-examples');
       var type = container.data('report');
-      var val = $(this).val().split('_');
-      var output = window.jsonHighlight(window.data[type][val[0]][val[1]]);
+      var sub = $(this).val().split('_');
+      var arr = ['response', 'curl', 'node', 'javascript', 'php'];
 
-      $('#' + type + '_response').next().find('code').html(output);
+      $.each(['response', 'curl', 'node', 'javascript', 'php'], function(index, item) {
+        var val;
+
+        if (item === 'response') {
+          markup = window.jsonHighlight(window.data[type][sub[0]][sub[1]]);
+        } else {
+          markup = window.data[type][sub[0]][item];
+        }
+        $('#' + type + '_' + item).next().find('code').html(markup);
+      });
     });
 
     select.trigger('change');
