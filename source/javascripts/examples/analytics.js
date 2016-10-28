@@ -2,6 +2,10 @@
   window.data = {};
   window.data.analytics = {
     income: {
+      curl: '$ curl -X GET "https://api.vhx.tv/analytics" \\\n  -d type=income_statement\n  -d from=2016-09-28 \\\n  -d to=1-month-ago\\\n -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:',
+      ruby: "video = Vhx::Analytics.report()",
+      node: "vhx.analytics.report({\n  type: 'income_statment',\n  from: '2016-09-28',\n  to: '1-month-ago'\n}, function(err, report) {\n  // asynchronously called\n});",
+      php: "$report = \VHX\Analytics::report(array(\n  'type' => 'income_statement',\n  'from' => '2016-09-28',\n  'to' => '1-month-ago'\n));",
       statement: {
         "_links": {
           "self": {
@@ -77,6 +81,10 @@
       }
     },
     traffic: {
+      curl: '$ curl -X GET "https://api.vhx.tv/analytics" \\\n  -d type=icon\n  -d from=2-weeks-ago \\\n  -d by=day \\\n  -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:',
+      ruby: "video = Vhx::Analytics.retrieve('https://api.vhx.tv/videos/1')",
+      node: "vhx.analytics.report({\n  type: 'income_statment',\n  from: '2016-09-28',\n  to: '1-month-ago'\n}, function(err, report) {\n  // asynchronously called\n});",
+      php: "$report = \VHX\Analytics::report(array(\n  'type' => 'income_statement',\n  'by' => 'month',\n  'from' => 'today',\n  'to' => '1-year-ago'\n));",
       aggregate: {
         "_links": {
           "self": {
@@ -881,3 +889,7 @@
     }
   };
 })(window);
+
+
+
+
