@@ -56,7 +56,7 @@ GET /analytics
 ```
 
 ```ruby
-Vhx::Analytics.retrieve()
+Vhx::Analytics.report()
 ```
 
 ```javascript
