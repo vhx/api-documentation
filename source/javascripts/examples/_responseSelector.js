@@ -14,7 +14,7 @@
         if (item === 'response') {
           markup = window.jsonHighlight(window.data[type][sub[0]][sub[1]]);
         } else {
-          markup = window.data[type][sub[0]][item];
+          markup = window.data[type][sub[0]]['client_' + sub[1]][item];
         }
         $('#' + type + '_' + item).next().find('code').html(markup);
       });
