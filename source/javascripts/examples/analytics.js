@@ -4,7 +4,7 @@
     income: {
       client_statement: {
         curl: '$ curl -X GET "https://api.vhx.tv/analytics" \\\n  -d type=income_statement\n  -d from=2016-10-01 \\\n  -d to=today\\\n -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:',
-        ruby: "video = Vhx::Analytics.report()",
+        ruby: "video = Vhx::Analytics.report({\n  type: 'income_statment',\n  from: '2016-10-01',\n  to: 'today'\n})",
         node: "vhx.analytics.report({\n  type: 'income_statment',\n  from: '2016-10-01',\n  to: 'today'\n}, function(err, report) {\n  // asynchronously called\n});",
         php: "$report = \\VHX\\Analytics::report(array(\n  'type' => 'income_statement',\n  'from' => '2016-10-01',\n  'to' => 'today'\n));",
       },
@@ -85,7 +85,7 @@
     traffic: {
       client_aggregate: {
         curl: '$ curl -X GET "https://api.vhx.tv/analytics" \\\n  -d type=traffic\n  -d from=1-month-ago \\\n  -d to=today \\\n  -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:',
-        ruby: "video = Vhx::Analytics.report()",
+        ruby: "video = Vhx::Analytics.report({\n  type: 'traffic',\n  from: '1-month-ago',\n  to: 'today'\n})",
         node: "vhx.analytics.report({\n  type: 'traffic',\n  from: '1-month-ago',\n  to: 'today'\n}, function(err, report) {\n  // asynchronously called\n});",
         php: "$report = \\VHX\\Analytics::report(array(\n  'type' => 'traffic',\n  'from' => '1-month-ago',\n  'to' => 'today'\n));",
       },
@@ -212,7 +212,7 @@
     units: {
       client_timeSeries: {
         curl: '$ curl -X GET "https://api.vhx.tv/analytics" \\\n  -d type=units\n  -d from=2013-07-19 \\\n  -d to=2013-07-20 \\\n  -d by=day \\\n  -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:',
-        ruby: "video = Vhx::Analytics.report()",
+        ruby: "video = Vhx::Analytics.report({\n  type: 'units',\n  from: '2013-07-19',\n  to: '2013-07-20'\n  by: 'day'\n})",
         node: "vhx.analytics.report({\n  type: 'units',\n  from: '2013-07-19',\n  to: '2013-07-20'\n  by: 'day'\n}, function(err, report) {\n  // asynchronously called\n});",
         php: "$report = \\VHX\\Analytics::report(array(\n  'type' => 'units',\n  'from' => '2013-07-19',\n  'to' => '2013-07-20'\n  'by' => 'day'\n));",
       },
@@ -477,7 +477,7 @@
       },
       client_aggregate: {
         curl: '$ curl -X GET "https://api.vhx.tv/analytics" \\\n  -d type=units\n  -d from=2013-07-19 \\\n  -d to=2013-07-20 \\\n  -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:',
-        ruby: "video = Vhx::Analytics.report()",
+        ruby: "video = Vhx::Analytics.report({\n  type: 'units',\n  from: '2013-07-19',\n  to: '2013-07-20'\n})",
         node: "vhx.analytics.report({\n  type: 'units',\n  from: '2013-07-19',\n  to: '2013-07-20'\n}, function(err, report) {\n  // asynchronously called\n});",
         php: "$report = \\VHX\\Analytics::report(array(\n  'type' => 'units',\n  'from' => '2013-07-19',\n  'to' => '2013-07-20'\n));",
       },
@@ -619,7 +619,7 @@
     subscribers: {
       client_aggregate: {
         curl: '$ curl -X GET "https://api.vhx.tv/analytics" \\\n  -d type=subscribers\n  -d from=2015-08-28 \\\n  -d to=2015-11-28 \\\n  -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:',
-        ruby: "video = Vhx::Analytics.report()",
+        ruby: "video = Vhx::Analytics.report({\n  type: 'subscribers',\n  from: '2015-08-28',\n  to: '2015-11-28'\n})",
         node: "vhx.analytics.report({\n  type: 'subscribers',\n  from: '2015-08-28',\n  to: '2015-11-28'\n}, function(err, report) {\n  // asynchronously called\n});",
         php: "$report = \\VHX\\Analytics::report(array(\n  'type' => 'subscribers',\n  'from' => '2015-08-28',\n  'to' => '2015-11-28'\n));",
       },
@@ -643,7 +643,7 @@
       },
       client_timeSeries: {
         curl: '$ curl -X GET "https://api.vhx.tv/analytics" \\\n  -d type=units\n  -d from=2015-07-01 \\\n  -d to=2015-09-30 \\\n  -d by=month \\\n  -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:',
-        ruby: "video = Vhx::Analytics.report()",
+        ruby: "video = Vhx::Analytics.report({\n  type: 'units',\n  from: '2015-07-01',\n  to: '2015-09-30'\n  by: 'month'\n})",
         node: "vhx.analytics.report({\n  type: 'units',\n  from: '2015-07-01',\n  to: '2015-09-30'\n  by: 'month'\n}, function(err, report) {\n  // asynchronously called\n});",
         php: "$report = \\VHX\\Analytics::report(array(\n  'type' => 'units',\n  'from' => '2015-07-01',\n  'to' => '2015-09-30'\n  'by' => 'month'\n));",
       },
@@ -724,7 +724,7 @@
     churn: {
       client_aggregate: {
         curl: '$ curl -X GET "https://api.vhx.tv/analytics" \\\n  -d type=churn\n  -d from=2016-07-28 \\\n  -d to=2016-10-28 \\\n  -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:',
-        ruby: "video = Vhx::Analytics.report()",
+        ruby: "video = Vhx::Analytics.report({\n  type: 'churn',\n  from: '2016-07-28',\n  to: '2016-10-28'\n})",
         node: "vhx.analytics.report({\n  type: 'churn',\n  from: '2016-07-28',\n  to: '2016-10-28'\n}, function(err, report) {\n  // asynchronously called\n});",
         php: "$report = \\VHX\\Analytics::report(array(\n  'type' => 'churn',\n  'from' => '2016-07-28',\n  'to' => '2016-10-28'\n));",
       },
@@ -786,7 +786,7 @@
       },
       client_timeSeries: {
         curl: '$ curl -X GET "https://api.vhx.tv/analytics" \\\n  -d type=churn\n  -d from=2016-09-28 \\\n  -d to=2016-10-28 \\\n  -d by=month \\\n  -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:',
-        ruby: "video = Vhx::Analytics.report()",
+        ruby: "video = Vhx::Analytics.report({\n  type: 'churn',\n  from: '2016-09-28',\n  to: '2016-10-28'\n  by: 'month'\n})",
         node: "vhx.analytics.report({\n  type: 'churn',\n  from: '2016-09-28',\n  to: '2016-10-28'\n  by: 'month'\n}, function(err, report) {\n  // asynchronously called\n});",
         php: "$report = \\VHX\\Analytics::report(array(\n  'type' => 'churn',\n  'from' => '2016-09-28',\n  'to' => '2016-10-28'\n  'by' => 'month'\n));",
       },
@@ -876,7 +876,7 @@
     video: {
       client_aggregate: {
         curl: '$ curl -X GET "https://api.vhx.tv/analytics" \\\n  -d type=video\n  -d video_id=1 \\\n  -d from=2013-03-05 \\\n  -d to=2016-10-28 \\\n  -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:',
-        ruby: "video = Vhx::Analytics.report()",
+        ruby: "video = Vhx::Analytics.report({\n  type: 'video',\n  video_id: '1',\n  from: '2013-03-05',\n  to: '2016-10-28'\n})",
         node: "vhx.analytics.report({\n  type: 'video',\n  video_id: '1',\n  from: '2013-03-05',\n  to: '2016-10-28'\n}, function(err, report) {\n  // asynchronously called\n});",
         php: "$report = \\VHX\\Analytics::report(array(\n  'type' => 'video',\n  'videos_id' => '1',\n  'from' => '2013-03-05',\n  'to' => '2016-10-28'\n));",
       },
@@ -901,7 +901,7 @@
       },
       client_timeSeries: {
         curl: '$ curl -X GET "https://api.vhx.tv/analytics" \\\n  -d type=video\n  -d video_id=1 \\\n  -d from=2013-03-05 \\\n  -d to=2016-10-28 \\\n  -d by=day \\\n  -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:',
-        ruby: "video = Vhx::Analytics.report()",
+        ruby: "video = Vhx::Analytics.report({\n  type: 'video',\n  video_id: '1',\n  from: '2013-03-05',\n  to: '2016-10-28'\n  by: 'day'\n})",
         node: "vhx.analytics.report({\n  type: 'video',\n  video_id: '1',\n  from: '2013-03-05',\n  to: '2016-10-28'\n  by: 'day'\n}, function(err, report) {\n  // asynchronously called\n});",
         php: "$report = \\VHX\\Analytics::report(array(\n  'type' => 'video',\n  'videos_id' => '1',\n  'from' => '2013-03-05',\n  'to' => '2016-10-28',\n  'by' => 'day'\n));",
       },

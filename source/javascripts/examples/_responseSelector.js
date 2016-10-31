@@ -6,9 +6,9 @@
       var container = $(this).closest('.response-examples');
       var type = container.data('report');
       var sub = $(this).val().split('_');
-      var arr = ['response', 'curl', 'node', 'javascript', 'php'];
+      var arr = ['response', 'curl', 'node', 'javascript', 'php', 'ruby'];
 
-      $.each(['response', 'curl', 'node', 'javascript', 'php'], function(index, item) {
+      $.each(['response', 'curl', 'node', 'javascript', 'php', 'ruby'], function(index, item) {
         var val;
 
         if (item === 'response') {
