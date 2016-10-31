@@ -91,8 +91,12 @@ vhx.analytics.report();
 ```ruby
 ```
 
-<p id="analytics_js"></p>
+<p id="analytics_node"></p>
+```node
+```
+
 ```javascript
+// Not available for client-side requests.
 ```
 
 <p id="analytics_php"></p>
@@ -165,10 +169,9 @@ vhx.analytics.report();
   </tbody>
 </table>
 
-<h3 class="text-2 text--navy text--bold margin-top-xlarge margin-bottom-medium" id="analytics-by-video">Date Formatting</h3>
-
 <section class="text-2 contain margin-bottom-medium">
- See below for acceptable date formats for use with the <code>to</code>, <code>from</code> parameters.
+<span class="text-2 text--navy margin-top-xlarge margin-bottom-medium" style="display: block; font-weight: bold;">Date Formatting</span>
+ See below for acceptable date formats for use with the <code>to</code> and <code>from</code> parameters.
 </section>
 
 <table>
@@ -182,11 +185,11 @@ vhx.analytics.report();
   <tbody>
     <tr class="text-2 border-bottom border--light-gray">
       <td><code style="white-space: nowrap;">YYYY-MM-DD</code></td>
-      <td>e.g. <strong>2015-12-31</strong>, where the time defaults to midnight EST on that date</td>
+      <td>e.g. <strong>2015-12-31</strong>, where the time defaults to midnight EST on that date.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td><code style="white-space: nowrap;">YYYY-MM-DDTHH:MM:SSZ</code></td>
-      <td>e.g. 2016-09-29T18:46:19Z, where the timezone defaults to EST</td>
+      <td>e.g. <strong>2016-09-29T18:46:19Z</strong>, where the timezone defaults to EST.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td><code style="white-space: nowrap;">[number]-[interval]-ago</code></td>
