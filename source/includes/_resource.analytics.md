@@ -26,15 +26,15 @@
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td><strong>units</strong></td>
-      <td>Units are the amount of TVOD (transactional video on demand) products you have sold or have been redeemed (gifts, coupons) per unit of time. Units represent products that have been bought or rented.</td>
+      <td>Units are the amount of TVOD (transactional video on demand) products you have sold or have been redeemed (gifts or coupons) per given period of time. Units represent products that have been bought or rented.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td><strong>subscribers</strong></td>
-      <td>Subscribers are the number of customers that are subscribed to your SVOD (subscription on demand) product per given time.</td>
+      <td>Subscribers are the number of customers that are subscribed to your SVOD (subscription on demand) product per given period of time.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td><strong>churn</strong></td>
-      <td>Churn gives you data around how many customers have unsubscribed in a given time period and their reasons (if provided) for doing so.</td>
+      <td>Churn gives you data around how many customers have unsubscribed (either pausing or cancelling their subscription) per given time period and their reasons (if provided) for doing so.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td><strong>video</strong></td>
@@ -130,9 +130,9 @@ vhx.analytics.report();
       <td class="nowrap">
         <strong class="is-block text--navy">by</strong>
         <span class="is-block text--transparent text-3">string</span>
-        <span class="text--transparent text-3">optional, defaults is by</span>
+        <span class="text--transparent text-3">optional, defaults is null</span>
       </td>
-      <td>Presence of the <code>by</code> parameter implies a request for a <strong>Time Series</strong> report. If not <code>by</code> parameter is supplied an <strong>Aggregate Report</strong> will be returned. Acceptable values include <code>hour</code>, <code>day</code>, <code>week</code>, <code>month</code> or <code>year</code>.</td>
+      <td>Presence of the <code>by</code> parameter implies a request for a <strong>Time Series</strong> report. If no <code>by</code> parameter is supplied an <strong>Aggregate Report</strong> will be returned. Acceptable values include <code>hour</code>, <code>day</code>, <code>week</code>, <code>month</code> or <code>year</code>.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td class="nowrap">
