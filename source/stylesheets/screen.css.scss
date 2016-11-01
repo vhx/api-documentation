@@ -765,3 +765,17 @@ header {
     }
   }
 }
+
+.response-examples {
+  position: absolute;
+  right: 18px;
+  margin-top: -22px !important
+}
+.highlight {
+  .key {
+    color: #FFD18E;
+  }
+  .null {
+    color: #fd971f;
+  }
+}
