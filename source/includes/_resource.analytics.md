@@ -56,11 +56,15 @@ GET /analytics
 ```
 
 ```ruby
-Vhx::Analytics.report()
+# Currently not available in the Ruby client.
+```
+
+```node
+vhx.analytics.report();
 ```
 
 ```javascript
-vhx.analytics.report();
+// Not available for client-side requests.
 ```
 
 ```php
@@ -87,8 +91,8 @@ vhx.analytics.report();
 ```shell
 ```
 
-<p id="analytics_ruby"></p>
 ```ruby
+# Currently not available in the Ruby client.
 ```
 
 <p id="analytics_node"></p>
