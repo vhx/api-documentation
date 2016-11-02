@@ -769,7 +769,12 @@ header {
 .response-examples {
   position: absolute;
   right: 18px;
-  margin-top: -22px !important
+  margin-top: -28px !important
+}
+.response-examples {
+  .btn-gray {
+    height: 30px;
+  }
 }
 .highlight {
   .key {
@@ -779,3 +784,4 @@ header {
     color: #fd971f;
   }
 }
+

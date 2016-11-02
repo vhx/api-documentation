@@ -73,7 +73,7 @@ vhx.analytics.report();
 
 > Example Report Request
 <p class="response-examples" data-report="analytics">
-<select>
+<select class="btn btn-gray">
   <option value="traffic_aggregate">Traffic</option>
   <option value="income_statement">Income</option>
   <option value="units_aggregate">Units (Aggregate)</option>
