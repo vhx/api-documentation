@@ -4,4 +4,4 @@
 //= require ./app/_toc
 //= require ./examples/_jsonHighlight
 //= require ./examples/_responseSelector
-//= require ./examples/analytics
+//= require ./examples/_analytics
