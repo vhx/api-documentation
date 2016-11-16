@@ -6,7 +6,7 @@
   <p>The response includes an expiring token that is used to authenticate the VHX player on the customers behalf. This enables a customer-to-video playback session which feeds into video analytics.</p>
 </section>
 
-<h3 class="text-2 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="authorizations-create">Create an Authorization</h3>
+<h3 class="text-2 head-4 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="authorizations-create">Create an Authorization</h3>
 
 > <h5 class="head-5 text--white margin-bottom-medium">Create an Authorization</h5>
 

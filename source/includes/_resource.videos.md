@@ -38,7 +38,7 @@
   <p>DRM (Digital Rights Management) is available, per request, for an additional cost. We support Google Widevine, Adobe Access, and OMA.</p>
 </section>
 
-<h3 class="text-2 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="videos-create">Create a Video</h3>
+<h3 class="text-2 head-4 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="videos-create">Create a Video</h3>
 
 > <h5 class="head-5 text--white margin-bottom-medium">Create a Video</h5>
 
@@ -175,7 +175,7 @@ vhx.videos.create({
   </tbody>
 </table>
 
-<h3 class="text-2 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="videos-get">Retrieve a Video</h3>
+<h3 class="text-2 head-4 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="videos-get">Retrieve a Video</h3>
 
 > <h5 class="head-5 text--white margin-bottom-medium">Retrieve a Video</h5>
 
@@ -310,7 +310,7 @@ vhxjs.videos.retrieve("https://api.vhx.tv/videos/1", function(err, video) {
 </table>
 
 
-<h3 class="text-2 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="videos-list">List all Videos</h3>
+<h3 class="text-2 head-4 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="videos-list">List all Videos</h3>
 
 > <h5 class="head-5 text--white margin-bottom-medium">List all Videos</h5>
 
@@ -438,7 +438,7 @@ vhxjs.videos.all({
   </tbody>
 </table>
 
-<h3 class="text-2 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="videos-list-files">List all Files</h3>
+<h3 class="text-2 head-4 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="videos-list-files">List all Files</h3>
 
 > <h5 class="head-5 text--white margin-bottom-medium">List all Files</h5>
 
