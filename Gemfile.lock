@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/vhx/rouge.git
-  revision: 472160bbbd96547bde6024d28d9d7f0d71e2a48f
+  revision: d963768915e7df8a8d07b79f81b0cfd61f7cd142
   branch: v1.11.1-vhx
   specs:
     rouge (1.11.1)
