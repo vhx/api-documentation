@@ -784,4 +784,21 @@ header {
     color: #fd971f;
   }
 }
+.head-4.text-2 {
+  font-size: 16px !important;
+}
 
+.is-internal,
+.jsinternal,
+.plaintextinternal,
+[data-unique="analytics-create"] {
+  display: none !important;
+}
+.show-internal {
+  .is-internal,
+  .jsinternal,
+  .plaintextinternal,
+  [data-unique="analytics-create"] {
+    display: block !important;
+  }
+}

@@ -5,7 +5,7 @@
   <p>A customer is a person who has been granted access to a product. By having access to the product, they inherently have access to all of its content (videos / collections).</p>
 </section>
 
-<h3 class="text-2 text--navy text--bold margin-top-xlarge margin-bottom-medium" id="customer-create">Create a Customer</h3>
+<h3 class="text-2 head-4 text--navy text--bold margin-top-xlarge margin-bottom-medium" id="customer-create">Create a Customer</h3>
 
 > <h5 class="head-5 text--white margin-bottom-medium">Create a customer</h5>
 
@@ -127,7 +127,7 @@ vhx.customers.create({
   </tbody>
 </table>
 
-<h3 class="text-2 text--navy text--bold margin-top-large margin-bottom-medium" id="customer-retrieve">Retrieve a Customer</h3>
+<h3 class="text-2 head-4 text--navy text--bold margin-top-large margin-bottom-medium" id="customer-retrieve">Retrieve a Customer</h3>
 
 > <h5 class="head-5 text--white margin-bottom-medium">Retrieve a customer</h5>
 
@@ -227,7 +227,7 @@ vhxjs.customers.retrieve("https://api.vhx.tv/customers/1", function(err, custome
   </tbody>
 </table>
 
-<h3 class="text-2 text--navy text--bold margin-top-large margin-bottom-medium" id="customer-list">List all Customers</h3>
+<h3 class="text-2 head-4 text--navy text--bold margin-top-large margin-bottom-medium" id="customer-list">List all Customers</h3>
 
 > <h5 class="head-5 text--white margin-bottom-medium">List all customers</h5>
 
@@ -373,7 +373,7 @@ vhxjs.customers.all({
   </tbody>
 </table>
 
-<h3 class="text-2 text--navy text--bold margin-top-large margin-bottom-medium" id="customer-update">Update a Customer</h3>
+<h3 class="text-2 head-4 text--navy text--bold margin-top-large margin-bottom-medium" id="customer-update">Update a Customer</h3>
 
 > <h5 class="head-5 text--white margin-bottom-medium">Update a customer</h5>
 
@@ -480,7 +480,7 @@ vhx.customers.update("https://api.vhx.tv/customers/1", {
   </tbody>
 </table>
 
-<h3 class="text-2 text--navy text--bold margin-top-large margin-bottom-medium" id="customer-delete">Delete a Customer</h3>
+<h3 class="text-2 head-4 text--navy text--bold margin-top-large margin-bottom-medium" id="customer-delete">Delete a Customer</h3>
 
 > <h5 class="head-5 text--white margin-bottom-medium">Delete a customer</h5>
 
@@ -565,7 +565,7 @@ vhx.customers.del("https://api.vhx.tv/customers/1", function(err, response) {
   </tbody>
 </table>
 
-<h3 class="text-2 text--navy text--bold margin-top-large margin-bottom-medium" id="customer-add-product">Add a Product</h3>
+<h3 class="text-2 head-4 text--navy text--bold margin-top-large margin-bottom-medium" id="customer-add-product">Add a Product</h3>
 
 > <h5 class="head-5 text--white margin-bottom-medium">Add a product</h5>
 
@@ -656,7 +656,7 @@ vhx.customers.addProduct('https://api.vhx.tv/customers/1', {
   </tbody>
 </table>
 
-<h3 class="text-2 text--navy text--bold margin-top-large margin-bottom-medium" id="customer-remove-product">Remove a Product</h3>
+<h3 class="text-2 head-4 text--navy text--bold margin-top-large margin-bottom-medium" id="customer-remove-product">Remove a Product</h3>
 
 > <h5 class="head-5 text--white margin-bottom-medium">Remove a product</h5>
 

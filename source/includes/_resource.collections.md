@@ -41,7 +41,7 @@
   </tbody>
 </table>
 
-<h3 class="text-2 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="collections-create">Create a Collection</h3>
+<h3 class="text-2 head-4 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="collections-create">Create a Collection</h3>
 
 > <h5 class="head-5 text--white margin-bottom-medium">Create a Collection</h5>
 
@@ -186,7 +186,7 @@ vhx.collections.create({
   </tbody>
 </table>
 
-<h3 class="text-2 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="collections-retrieve">Retrieve a Collection</h3>
+<h3 class="text-2 head-4 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="collections-retrieve">Retrieve a Collection</h3>
 
 > <h5 class="head-5 text--white margin-bottom-medium">Retrieve a Collection</h5>
 
@@ -297,7 +297,7 @@ vhxjs.collections.retrieve("https://api.vhx.tv/collections/1", function(err, col
   </tbody>
 </table>
 
-<h3 class="text-2 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="collections-list">List all Collections</h3>
+<h3 class="text-2 head-4 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="collections-list">List all Collections</h3>
 
 > <h5 class="head-5 text--white margin-bottom-medium">List all Collections</h5>
 
@@ -442,7 +442,7 @@ vhxjs.collections.all({
   </tbody>
 </table>
 
-<h3 class="text-2 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="collections-update">Update a Collection</h3>
+<h3 class="text-2 head-4 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="collections-update">Update a Collection</h3>
 
 > <h5 class="head-5 text--white margin-bottom-medium">Update a Collection</h5>
 
@@ -575,7 +575,7 @@ vhx.collections.update("https://api.vhx.tv/collections/1", {
   </tbody>
 </table>
 
-<h3 class="text-2 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="collection-items-list">List all Items</h3>
+<h3 class="text-2 head-4 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="collection-items-list">List all Items</h3>
 
 > <h5 class="head-5 text--white margin-bottom-medium">List all Items</h5>
 

@@ -5,7 +5,7 @@
   <p>A product is what represents the premium (subscription or transactional) access to your video content. Access to a product can be given to a customer on a recurring basis (a subscription), expiring (a rental), or indefinite (full purchase).</p>
 </section>
 
-<h3 class="text-2 text--navy text--bold margin-top-large margin-bottom-medium" id="product-retrieve">Retrieve a Product</h3>
+<h3 class="text-2 head-4 text--navy text--bold margin-top-large margin-bottom-medium" id="product-retrieve">Retrieve a Product</h3>
 
 > <h5 class="head-5 text--white margin-bottom-medium">Retrieve a product</h5>
 
@@ -116,7 +116,7 @@ vhxjs.products.retrieve("https://api.vhx.tv/products/1", function(err, product) 
   </tbody>
 </table>
 
-<h3 class="text-2 text--navy text--bold margin-top-large margin-bottom-medium" id="product-list">List all Products</h3>
+<h3 class="text-2 head-4 text--navy text--bold margin-top-large margin-bottom-medium" id="product-list">List all Products</h3>
 
 > <h5 class="head-5 text--white margin-bottom-medium">List all products</h5>
 
