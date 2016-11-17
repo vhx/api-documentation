@@ -32,12 +32,12 @@ https://collector.vhx.tv/events.gif
 ```
 
 <section class="text-2 contain is-internal">
-Analytics usage and engagement data stems from from specific events that are tracked based on user activity. These events can be tracked by making a <code>GET</code> request with a series of query parameters (for events properties) to our collector endpoint, shown to the right. The endpoint is a publicly accessible <code>events.gif</code> to work around cross domain issues of making post requests.
+Analytics usage and engagement data stems from specific events that are tracked based on customer activity. These events can be tracked by making a <code>GET</code> request with a series of query parameters (for events properties) to our collector endpoint, shown to the right. The endpoint is a publicly accessible <code>events.gif</code> to work around cross domain issues of making post requests.
 </section>
 
 <section class="text-2 contain margin-bottom-medium is-internal">
 <span class="is-internal block padding-top-xlarge margin-top-xlarge margin-bottom-medium border-top border--gray-light text--navy" style="font-weight: bold;">Video Playback Events</span>  
-  Players across all platforms (web, iOS, Android, Roku, and Apple TV) should fire and send the below events to the collector. These are based on the HTML5 media events. The event name should be passed in via the <code>name</code> query paramter (e.g. <code>?type=video&name=firstplay</code>, <code>?type=video&name=play</code>, <code>?type=video&name=pause</code>, etc.).
+  Players across all platforms (web, iOS, Android, Roku, and Apple TV) should fire and send the below events to the collector. These are based on the HTML5 media events. The event type should be <code>type=video</code> and the event name should be passed in via the <code>name</code> query paramter (e.g. <code>?type=video&name=firstplay</code>, <code>?type=video&name=play</code>, <code>?type=video&name=pause</code>, etc.).
 </section>
 
 <table class="is-internal">
@@ -85,7 +85,7 @@ Analytics usage and engagement data stems from from specific events that are tra
 </table>
 
 <section class="text-2 contain is-internal margin-bottom-medium padding-top-large">
-In addition, video playback triggered events should be sent with the follow properties as query parameters in the <code>GET</code> request.
+See below for the full list of properties that should be sent as query parameters for trigged video playback events.
 </section>
 
 <table class="is-internal">
@@ -108,14 +108,14 @@ In addition, video playback triggered events should be sent with the follow prop
         <strong class="is-block text--navy">name</strong>
         <span class="is-block text--transparent text-3">string</span>
       </td>
-      <td>Name of event, as outline in the above table.</td>
+      <td>Name of event, as outlined in the above table.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
         <strong class="is-block text--navy">seconds</strong>
         <span class="is-block text--transparent text-3">integer</span>
       </td>
-      <td>Value of <code>timeupdate</code> interval. Sent with <code>timeupdate</code> events to determine total time viewed per customer / video. Otherwise, <code>0</code>.</td>
+      <td>Value of <code>timeupdate</code> interval. Sent with <code>timeupdate</code> events to determine total time viewed per customer / video. Otherwise <code>0</code>.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
@@ -172,7 +172,7 @@ In addition, video playback triggered events should be sent with the follow prop
         <strong class="is-block text--navy">platform</strong>
         <span class="is-block text--transparent text-3">string</span>
       </td>
-      <td><code>iphone</code>, <code>ipad</code>, <code>appletv</code>, <code>roku</code>, <code>android</code>, <code>web</code></td>
+      <td>Can be one of the following: <code>iphone</code>, <code>ipad</code>, <code>appletv</code>, <code>roku</code>, <code>android</code>, or <code>web</code></td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
@@ -214,7 +214,7 @@ In addition, video playback triggered events should be sent with the follow prop
         <strong class="is-block text--navy">current_subtitle</strong>
         <span class="is-block text--transparent text-3">string</span>
       </td>
-      <td>Label of current selected subtitle. "English" or "Spanish, for example. If no current subtitle, this is <code>null</code> or omitted.</td>
+      <td>Label of current selected subtitle. "English" or "Spanish, for example. If no current subtitle, this can be <code>null</code> or omitted.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
@@ -265,20 +265,6 @@ In addition, video playback triggered events should be sent with the follow prop
       </td>
       <td>Playback is currently casting via Apple Airplay.</td>
     </tr>
-    <tr class="text-2 border-bottom border--light-gray">
-      <td>
-        <strong class="is-block text--navy">timestamp</strong>
-        <span class="is-block text--transparent text-3">integer</span>
-      </td>
-      <td>Epoch timestamp of event.</td>
-    </tr>
-    <tr class="text-2 border-bottom border--light-gray">
-      <td>
-        <strong class="is-block text--navy">created_at</strong>
-        <span class="is-block text--transparent text-3">timestamp</span>
-      </td>
-      <td>Timestamp of event.</td>
-    </tr>
   </tbody>
 </table>
 
@@ -317,7 +303,7 @@ In addition, video playback triggered events should be sent with the follow prop
 </table>
 
 <section class="text-2 contain is-internal margin-bottom-medium padding-top-large">
-In addition, platform usage triggered events should be sent with the follow properties as query parameters in the <code>GET</code> request.
+See below for the full list of properties that should be sent as query parameters for trigged platform usage events.
 </section>
 
 <table class="is-internal">
@@ -340,7 +326,7 @@ In addition, platform usage triggered events should be sent with the follow prop
         <strong class="is-block text--navy">name</strong>
         <span class="is-block text--transparent text-3">string</span>
       </td>
-      <td>Name of event, as outline in the above table.</td>
+      <td>Name of event, as outlined in the above table.</td>
     </td>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
@@ -390,7 +376,7 @@ In addition, platform usage triggered events should be sent with the follow prop
         <strong class="is-block text--navy">campaign</strong>
         <span class="is-block text--transparent text-3">string</span>
       </td>
-      <td>String to represent a campaign, targeted effort, or push notification. Opening the app via a push notification, use this property and set it to "notification".</td>
+      <td>String to represent a campaign, targeted effort, or push notification. Opening the app via a push notification, use this property and set it to <code>notification</code>.</td>
     </td>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
