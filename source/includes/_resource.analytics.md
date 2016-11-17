@@ -21,7 +21,7 @@ https://collector.vhx.tv/events.gif
 ```jsinternal
   var trackEvent = function() {
     var image  = new Image();
-    image.src = 'https://collector.vhx.tv/events.gif?type=video&name=play&poperty=value';  
+    image.src = 'https://collector.vhx.tv/events.gif?type=video&name=play&property=value';  
   }
 
   // fire when the event happens
@@ -37,7 +37,7 @@ Analytics usage and engagement data stems from specific events that are tracked 
 
 <section class="text-2 contain margin-bottom-medium is-internal">
 <span class="is-internal block padding-top-xlarge margin-top-xlarge margin-bottom-medium border-top border--gray-light text--navy" style="font-weight: bold;">Video Playback Events</span>  
-  Players across all platforms (web, iOS, Android, Roku, and Apple TV) should fire and send the below events to the collector. These are based on the HTML5 media events. The event type should be <code>type=video</code> and the event name should be passed in via the <code>name</code> query paramter (e.g. <code>?type=video&name=firstplay</code>, <code>?type=video&name=play</code>, <code>?type=video&name=pause</code>, etc.).
+  Players across all platforms (web, iOS, Android, Android TV, Roku, Amazon Fire TV, XBox, and Apple TV) should fire and send the below events to the collector. These are based on the HTML5 media events. The event type should be <code>type=video</code> and the event name should be passed in via the <code>name</code> query paramter (e.g. <code>?type=video&name=firstplay</code>, <code>?type=video&name=play</code>, <code>?type=video&name=pause</code>, etc.).
 </section>
 
 <table class="is-internal">
@@ -85,7 +85,7 @@ Analytics usage and engagement data stems from specific events that are tracked 
 </table>
 
 <section class="text-2 contain is-internal margin-bottom-medium padding-top-large">
-See below for the full list of properties that should be sent as query parameters for trigged video playback events.
+See below for the full list of properties that should be sent as query parameters for triggered video playback events.
 </section>
 
 <table class="is-internal">
@@ -172,7 +172,8 @@ See below for the full list of properties that should be sent as query parameter
         <strong class="is-block text--navy">platform</strong>
         <span class="is-block text--transparent text-3">string</span>
       </td>
-      <td>Can be one of the following: <code>iphone</code>, <code>ipad</code>, <code>appletv</code>, <code>roku</code>, <code>android</code>, or <code>web</code></td>
+      <td>Can be one of the following: <code>iphone</code>, <code>ipad</code>, <code>appletv</code>, <code>roku</code>, <code>android</code>, <code>android_tv</code>, <code>amazon_fire_tv</code>, <code>web</code>, <code>xbox_one</code>
+      </td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
@@ -193,8 +194,9 @@ See below for the full list of properties that should be sent as query parameter
         <strong class="is-block text--navy">device</strong>
         <span class="is-block text--transparent text-3">string</span>
       </td>
-      <td><code>iphone</code>, <code>ipad</code>, <code>appletv</code>, <code>roku</code>, <code>android</code>,<code>html5</code>, <code>flash</code></td>
-    </td>
+      <td><code>iphone</code>, <code>ipad</code>, <code>appletv</code>, <code>roku</code>, <code>android</code>, <code>android_tv</code>, <code>amazon_fire_tv</code>, <code>html5</code>, <code>flash</code>, <code>xbox_one</code>
+      </td>      
+    </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
         <strong class="is-block text--navy">current_src</strong>
@@ -270,7 +272,7 @@ See below for the full list of properties that should be sent as query parameter
 
 <section class="text-2 contain margin-bottom-medium is-internal">
 <span class="block margin-top-xlarge margin-bottom-medium text--navy" style="font-weight: bold;">Platform Events</span>  
-  Platforms (web, iOS, Android, Roku, and Apple TV) should fire events around usage and key engagement events. The event name should be passed in via the <code>name</code> query paramter (e.g. <code>?type=platform&name=install</code>, <code>?type=platform&name=view</code>, <code>?type=platform&name=conversion</code>, etc.).
+  Platforms (web, iOS, Android, Android TV, Roku, Amazon Fire TV, XBox, and Apple TV) should fire events around usage and key engagement events. The event name should be passed in via the <code>name</code> query paramter (e.g. <code>?type=platform&name=install</code>, <code>?type=platform&name=view</code>, <code>?type=platform&name=conversion</code>, etc.).
 </section>
 
 
@@ -303,7 +305,7 @@ See below for the full list of properties that should be sent as query parameter
 </table>
 
 <section class="text-2 contain is-internal margin-bottom-medium padding-top-large">
-See below for the full list of properties that should be sent as query parameters for trigged platform usage events.
+See below for the full list of properties that should be sent as query parameters for triggered platform usage events.
 </section>
 
 <table class="is-internal">
@@ -383,7 +385,7 @@ See below for the full list of properties that should be sent as query parameter
         <strong class="is-block text--navy">platform</strong>
         <span class="is-block text--transparent text-3">string</span>
       </td>
-      <td><code>iphone</code>, <code>ipad</code>, <code>appletv</code>, <code>roku</code>, <code>android</code>, <code>web</code></td>
+      <td><code>iphone</code>, <code>ipad</code>, <code>appletv</code>, <code>roku</code>, <code>android</code>, <code>android_tv</code>, <code>amazon_fire_tv</code>, <code>web</code>, <code>xbox_one</code></td>
     </td>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
