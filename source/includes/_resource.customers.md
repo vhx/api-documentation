@@ -748,8 +748,9 @@ vhx.customers.removeProduct('https://api.vhx.tv/customers/1', {
   </tbody>
 </table>
 
+<h3 class="text-2 head-4 text--navy text--bold margin-top-large margin-bottom-medium" id="customer-watching">Retrieve Watching List</h3>
 
-<h3 class="text-2 head-4 text--navy text--bold margin-top-large margin-bottom-medium" id="customer-remove-product">Retrieve Watchlist Items</h3>
+> <h5 class="head-5 text--white margin-bottom-medium">Retrieve Watching List</h5>
 
 > <h5 class="head-5 text--white margin-bottom-medium">Retrieve Watchlist Items</h5>
 
