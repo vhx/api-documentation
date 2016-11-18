@@ -747,3 +747,254 @@ vhx.customers.removeProduct('https://api.vhx.tv/customers/1', {
     </tr>
   </tbody>
 </table>
+
+
+<h3 class="text-2 head-4 text--navy text--bold margin-top-large margin-bottom-medium" id="customer-remove-product">Retrieve Watchlist Items</h3>
+
+> <h5 class="head-5 text--white margin-bottom-medium">Retrieve Watchlist Items</h5>
+
+> Definition
+
+```shell
+GET /customers/:id/watchlist
+```
+
+```ruby
+// Not yet available for the Ruby client.
+```
+
+```node
+// Not yet available for the Node client.
+```
+
+```javascript
+// Not available for client-side requests.
+```
+
+```php
+<?php$watchlist = \VHX\Watchlist::items();
+```
+
+> Example Request
+
+```shell
+$ curl -X GET "https://api.vhx.tv/customers/1/watchlist" \
+  -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
+```
+
+```ruby
+// Not yet available for the Ruby client.
+```
+
+```node
+// Not yet available for the Node client.
+```
+
+```javascript
+// Not available for client-side requests.
+```
+
+
+```php
+<?php\VHX\Watchlist::items(array(
+  "customer" => "https://api.vhx.tv/customers/1"
+));
+```
+
+<section class="text-2 contain margin-bottom-medium">
+  <p>Retrieves watchlist items for a given customer.</p>
+</section>
+
+<table>
+  <thead>
+    <tr class="text-2">
+      <th class="padding-medium nowrap">Arguments</th>
+      <th class="padding-medium" width="100%">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">customer</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--yellow text-3">REQUIRED</span>
+      </td>
+      <td>The <code>href</code> of the customer.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h3 class="text-2 head-4 text--navy text--bold margin-top-large margin-bottom-medium" id="customer-remove-product">Add Item to Watchlist</h3>
+
+> <h5 class="head-5 text--white margin-bottom-medium">Add Item to Watchlist</h5>
+
+> Definition
+
+```shell
+PUT /customers/:id/watchlist
+```
+
+```ruby
+// Not yet available for the Ruby client.
+```
+
+```node
+// Not yet available for the Node client.
+```
+
+```javascript
+// Not available for client-side requests.
+```
+
+```php
+<?php\VHX\Watchlist::addItem();
+```
+
+> Example Request
+
+```shell
+$ curl -X PUT "https://api.vhx.tv/customers/1/watchlist" \
+  -d video="http://api.vhx.tv/videos/1" \
+  -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
+```
+
+```ruby
+// Not yet available for the Ruby client.
+```
+
+```node
+// Not yet available for the Node client.
+```
+
+```javascript
+// Not available for client-side requests.
+```
+
+
+```php
+<?php\VHX\Watchlist::items(array(
+  "customer" => "https://api.vhx.tv/customers/1",
+  "video" => "https://api.vhx.tv/videos/1"
+));
+```
+
+<section class="text-2 contain margin-bottom-medium">
+  <p>Adds an item (a video) to a customer's watchlist.</p>
+</section>
+
+<table>
+  <thead>
+    <tr class="text-2">
+      <th class="padding-medium nowrap">Arguments</th>
+      <th class="padding-medium" width="100%">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">customer</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--yellow text-3">REQUIRED</span>
+      </td>
+      <td>The <code>href</code> of the customer.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">video</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--yellow text-3">REQUIRED</span>
+      </td>
+      <td>The <code>href</code> of the video to be added.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h3 class="text-2 head-4 text--navy text--bold margin-top-large margin-bottom-medium" id="customer-remove-product">Remove Item from Watchlist</h3>
+
+> <h5 class="head-5 text--white margin-bottom-medium">Remove Item from Watchlist</h5>
+
+> Definition
+
+```shell
+DELETE /customers/:id/watchlist
+```
+
+```ruby
+// Not yet available for the Ruby client.
+```
+
+```node
+// Not yet available for the Node client.
+```
+
+```javascript
+// Not available for client-side requests.
+```
+
+```php
+<?php\VHX\Watchlist::removeItem();
+```
+
+> Example Request
+
+```shell
+$ curl -X DELETE "https://api.vhx.tv/customers/1/watchlist" \
+  -d video="http://api.vhx.tv/videos/1" \
+  -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
+```
+
+```ruby
+// Not yet available for the Ruby client.
+```
+
+```node
+// Not yet available for the Node client.
+```
+
+```javascript
+// Not available for client-side requests.
+```
+
+
+```php
+<?php\VHX\Watchlist::removeItem(array(
+  "customer" => "https://api.vhx.tv/customers/1",
+  "video" => "https://api.vhx.tv/videos/1"
+));
+```
+
+<section class="text-2 contain margin-bottom-medium">
+  <p>Removes an item (a video) from a customer's watchlist.</p>
+</section>
+
+<table>
+  <thead>
+    <tr class="text-2">
+      <th class="padding-medium nowrap">Arguments</th>
+      <th class="padding-medium" width="100%">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">customer</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--yellow text-3">REQUIRED</span>
+      </td>
+      <td>The <code>href</code> of the customer.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">video</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--yellow text-3">REQUIRED</span>
+      </td>
+      <td>The <code>href</code> of the video to be removed.</td>
+    </tr>
+  </tbody>
+</table>
