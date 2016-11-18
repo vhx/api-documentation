@@ -752,6 +752,96 @@ vhx.customers.removeProduct('https://api.vhx.tv/customers/1', {
 
 > <h5 class="head-5 text--white margin-bottom-medium">Retrieve Watching List</h5>
 
+> Definition
+
+```shell
+GET /customers/:id/watching
+```
+
+```ruby
+// Not yet available for the Ruby client.
+```
+
+```node
+vhx.customers.watching();
+```
+
+```javascript
+vhx.customers.watching();
+```
+
+```php
+<?php$customer = \VHX\Customers::watching();
+```
+
+> Example Request
+
+```shell
+$ curl -X GET "https://api.vhx.tv/customers/1/watching" \
+  -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
+```
+
+```ruby
+// Not yet available for the Ruby client.
+```
+
+```node
+vhx.customers.watching("https://api.vhx.tv/customers/1", function(err, watching) {
+  // asynchronously called
+});
+```
+
+```javascript
+vhxjs.customers.watching("https://api.vhx.tv/customers/1", function(err, watching) {
+  // asynchronously called
+});
+```
+
+```php
+<?php$watching = \VHX\Customers::watching("https://api.vhx.tv/customers/1");
+```
+
+> Example Response
+
+```json
+{
+  "_links": {
+    "self":  { "href": "https://api.vhx.tv/customers/1" }
+  },
+  "_embedded": {},
+  "id": 1,
+  "name": "First Last",
+  "email": "customer@email.com",
+  "created_at": "2014-02-25T20:19:30Z",
+  "updated_at": "2014-02-25T20:19:30Z"
+}
+```
+<section class="text-2 contain margin-bottom-medium">
+  <p>Retrieves the videos currently in progress for a customer.</p>
+</section>
+
+<table>
+  <thead>
+    <tr class="text-2">
+      <th class="padding-medium nowrap">Arguments</th>
+      <th class="padding-medium" width="100%">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">href</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--yellow text-3">REQUIRED</span>
+      </td>
+      <td>The <code>href</code> of the customer being retrieved.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 class="text-2 head-4 text--navy text--bold margin-top-large margin-bottom-medium" id="customer-retrieve-watchlist">Retrieve Watchlist Items</h3>
+
 > <h5 class="head-5 text--white margin-bottom-medium">Retrieve Watchlist Items</h5>
 
 > Definition
@@ -856,7 +946,7 @@ $ curl -X GET "https://api.vhx.tv/customers/1/watchlist" \
 </table>
 
 
-<h3 class="text-2 head-4 text--navy text--bold margin-top-large margin-bottom-medium" id="customer-remove-product">Add Item to Watchlist</h3>
+<h3 class="text-2 head-4 text--navy text--bold margin-top-large margin-bottom-medium" id="customer-add-item-watchlist">Add Item to Watchlist</h3>
 
 > <h5 class="head-5 text--white margin-bottom-medium">Add Item to Watchlist</h5>
 
@@ -943,7 +1033,7 @@ $ curl -X PUT "https://api.vhx.tv/customers/1/watchlist" \
 </table>
 
 
-<h3 class="text-2 head-4 text--navy text--bold margin-top-large margin-bottom-medium" id="customer-remove-product">Remove Item from Watchlist</h3>
+<h3 class="text-2 head-4 text--navy text--bold margin-top-large margin-bottom-medium" id="customer-remove-item-watchlist">Remove Item from Watchlist</h3>
 
 > <h5 class="head-5 text--white margin-bottom-medium">Remove Item from Watchlist</h5>
 
