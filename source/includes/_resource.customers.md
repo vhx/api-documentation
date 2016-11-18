@@ -801,6 +801,35 @@ $ curl -X GET "https://api.vhx.tv/customers/1/watchlist" \
 ));
 ```
 
+> Example Response
+
+```json
+{
+  "_links": {
+    "self": {
+      "href": "http://api.crystal.dev/customers/1/watchlist?page=1&per_page=50"
+    },
+    "first": {
+      "href": "http://api.crystal.dev/customers/1/watchlist"
+    },
+    "prev": {
+      "href": null
+    },
+    "next": {
+      "href": null
+    },
+    "last": {
+      "href": "http://api.crystal.dev/customers/1/watchlist"
+    }
+  },
+  "count": 0,
+  "total": 0,
+  "_embedded": {
+    "items": {}
+  }
+}
+```
+
 <section class="text-2 contain margin-bottom-medium">
   <p>Retrieves watchlist items for a given customer.</p>
 </section>
