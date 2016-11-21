@@ -304,7 +304,10 @@ vhxjs.customers.all({
   "count": 100,
   "total": 500,
   "_embedded": {
-    "customers": []
+    "customers": [
+      { customer object }
+      { ... }
+    ]
   }
 }
 ```
@@ -759,19 +762,19 @@ GET /customers/:id/watching
 ```
 
 ```ruby
-// Not yet available for the Ruby client.
+# Not yet available for the Ruby client.
 ```
 
 ```node
-vhx.customers.watching();
+// Not yet available for the Node client.
 ```
 
 ```javascript
-vhx.customers.watching();
+// Not yet available for the Javascript client.
 ```
 
 ```php
-<?php$customer = \VHX\Customers::watching();
+<?php$customer = \VHX\Watching::items();
 ```
 
 > Example Request
@@ -782,23 +785,19 @@ $ curl -X GET "https://api.vhx.tv/customers/1/watching" \
 ```
 
 ```ruby
-// Not yet available for the Ruby client.
+# Not yet available for the Ruby client.
 ```
 
 ```node
-vhx.customers.watching("https://api.vhx.tv/customers/1", function(err, watching) {
-  // asynchronously called
-});
+// Not yet available for the Node client.
 ```
 
 ```javascript
-vhxjs.customers.watching("https://api.vhx.tv/customers/1", function(err, watching) {
-  // asynchronously called
-});
+// Not yet available for the Javascript client.
 ```
 
 ```php
-<?php$watching = \VHX\Customers::watching("https://api.vhx.tv/customers/1");
+<?php$watching = \VHX\Watching::items("https://api.vhx.tv/customers/1");
 ```
 
 > Example Response
@@ -806,14 +805,30 @@ vhxjs.customers.watching("https://api.vhx.tv/customers/1", function(err, watchin
 ```json
 {
   "_links": {
-    "self":  { "href": "https://api.vhx.tv/customers/1" }
+    "self": {
+      "href": "http://api.crystal.dev/customers/1/watching?page=1&per_page=50"
+    },
+    "first": {
+      "href": "http://api.crystal.dev/customers/1/watching"
+    },
+    "prev": {
+      "href": null
+    },
+    "next": {
+      "href": null
+    },
+    "last": {
+      "href": "http://api.crystal.dev/customers/1/watching"
+    }
   },
-  "_embedded": {},
-  "id": 1,
-  "name": "First Last",
-  "email": "customer@email.com",
-  "created_at": "2014-02-25T20:19:30Z",
-  "updated_at": "2014-02-25T20:19:30Z"
+  "count": 0,
+  "total": 0,
+  "_embedded": {
+    "items": {
+      { video object }
+      { ... }
+    }
+  }
 }
 ```
 <section class="text-2 contain margin-bottom-medium">
@@ -851,7 +866,7 @@ GET /customers/:id/watchlist
 ```
 
 ```ruby
-// Not yet available for the Ruby client.
+# Not yet available for the Ruby client.
 ```
 
 ```node
@@ -874,7 +889,7 @@ $ curl -X GET "https://api.vhx.tv/customers/1/watchlist" \
 ```
 
 ```ruby
-// Not yet available for the Ruby client.
+# Not yet available for the Ruby client.
 ```
 
 ```node
@@ -916,7 +931,10 @@ $ curl -X GET "https://api.vhx.tv/customers/1/watchlist" \
   "count": 0,
   "total": 0,
   "_embedded": {
-    "items": {}
+    "items": [
+      { video object }
+      { ... }
+    ]
   }
 }
 ```
@@ -957,7 +975,7 @@ PUT /customers/:id/watchlist
 ```
 
 ```ruby
-// Not yet available for the Ruby client.
+# Not yet available for the Ruby client.
 ```
 
 ```node
@@ -981,7 +999,7 @@ $ curl -X PUT "https://api.vhx.tv/customers/1/watchlist" \
 ```
 
 ```ruby
-// Not yet available for the Ruby client.
+# Not yet available for the Ruby client.
 ```
 
 ```node
@@ -994,7 +1012,7 @@ $ curl -X PUT "https://api.vhx.tv/customers/1/watchlist" \
 
 
 ```php
-<?php\VHX\Watchlist::items(array(
+<?php\VHX\Watchlist::addItem(array(
   "customer" => "https://api.vhx.tv/customers/1",
   "video" => "https://api.vhx.tv/videos/1"
 ));
@@ -1044,7 +1062,7 @@ DELETE /customers/:id/watchlist
 ```
 
 ```ruby
-// Not yet available for the Ruby client.
+# Not yet available for the Ruby client.
 ```
 
 ```node
@@ -1068,7 +1086,7 @@ $ curl -X DELETE "https://api.vhx.tv/customers/1/watchlist" \
 ```
 
 ```ruby
-// Not yet available for the Ruby client.
+# Not yet available for the Ruby client.
 ```
 
 ```node
