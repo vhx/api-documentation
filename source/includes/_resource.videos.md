@@ -301,7 +301,7 @@ vhxjs.videos.retrieve("https://api.vhx.tv/videos/1", function(err, video) {
 
 <section class="text-2 contain">
   <p>Retrieves an existing video.</p>
-  <p class="is-internal">Videos that are associated with a product that has advertising enabled will include an <code>advertising</code> property in the response with the relevant data for the Ad provider and tag url. If advertising keywords have been setup they will be returned in the <code>metadata</code> property.</p>
+  <p class="is-internal">Videos that are associated with a product that have advertising enabled will include an <code>advertising</code> property in the response. The <code>advertising</code> object contains relevant data for the Ad provider and tag url. In addition, if advertising keywords have been setup they will be returned in the <code>metadata</code> property.</p>
 </section>
 
 <table>
