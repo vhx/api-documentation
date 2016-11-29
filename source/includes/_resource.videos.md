@@ -131,6 +131,16 @@ vhx.videos.create({
   "tracks": {
     "subtitles": []
   },
+  "advertising": {
+    "_links": {
+      "tag": { "href": "https://static.vhx.tv/vmap.xml" }
+    },
+    "client": "vmap",
+    "provider": "dfp"
+  },
+  "metadata": {
+    "advertising_keywords": []
+  },
   "files_count": 0,
   "created_at": "2014-02-25T20:19:30Z",
   "updated_at": "2014-02-25T20:19:30Z"
@@ -278,6 +288,16 @@ vhxjs.videos.retrieve("https://api.vhx.tv/videos/1", function(err, video) {
         "kind": "subtitles"
       }
     ]
+  },
+  "advertising": {
+    "_links": {
+      "tag": { "href": "https://static.vhx.tv/vmap.xml" }
+    },
+    "client": "vmap",
+    "provider": "dfp"
+  },
+  "metadata": {
+    "advertising_keywords": []
   },
   "files_count": 5,
   "created_at": "2014-02-25T20:19:30Z",
