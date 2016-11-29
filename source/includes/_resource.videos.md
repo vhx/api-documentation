@@ -291,6 +291,10 @@ vhxjs.videos.retrieve("https://api.vhx.tv/videos/1", function(err, video) {
     "provider": "dfp"
   },
   "metadata": {
+    "series_name": "Series Name",
+    "season_name": "Season 1",
+    "season_number": 1,
+    "episode_number": 5,
     "advertising_keywords": []
   },
   "files_count": 5,
@@ -301,6 +305,9 @@ vhxjs.videos.retrieve("https://api.vhx.tv/videos/1", function(err, video) {
 
 <section class="text-2 contain">
   <p>Retrieves an existing video.</p>
+
+  <p>Videos that are associated with a collection will have relevant metadata automatically applied in the <code>metadata</code> property. This includes the following fields: <code>series_name</code>, <code>season_name</code>, <code>season_number</code>, <code>episode_number</code>, and <code>movie_name</code></p>
+
   <p class="is-internal">Videos that are associated with a product that have advertising enabled will include an <code>advertising</code> property in the response. The <code>advertising</code> object contains relevant data for the Ad provider and tag url. In addition, if advertising keywords have been setup they will be returned in the <code>metadata</code> property.</p>
 </section>
 
