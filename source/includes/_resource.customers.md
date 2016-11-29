@@ -185,7 +185,9 @@ vhxjs.customers.retrieve("https://api.vhx.tv/customers/1", function(err, custome
 ```json
 {
   "_links": {
-    "self":  { "href": "https://api.vhx.tv/customers/1" }
+    "self":  { "href": "https://api.vhx.tv/customers/1" },
+    "watchlist": { "href": "https://api.vhx.tv/customers/1/watchlist" },
+    "watching": { "href": "https://api.vhx.tv/customers/1/watching" }
   },
   "_embedded": {},
   "id": 1,
@@ -806,10 +808,10 @@ $ curl -X GET "https://api.vhx.tv/customers/1/watching" \
 {
   "_links": {
     "self": {
-      "href": "http://api.crystal.dev/customers/1/watching?page=1&per_page=50"
+      "href": "https://api.vhx.tv/customers/1/watching?page=1&per_page=50"
     },
     "first": {
-      "href": "http://api.crystal.dev/customers/1/watching"
+      "href": "https://api.vhx.tv/customers/1/watching"
     },
     "prev": {
       "href": null
@@ -818,7 +820,7 @@ $ curl -X GET "https://api.vhx.tv/customers/1/watching" \
       "href": null
     },
     "last": {
-      "href": "http://api.crystal.dev/customers/1/watching"
+      "href": "https://api.vhx.tv/customers/1/watching"
     }
   },
   "count": 0,
@@ -913,10 +915,10 @@ $ curl -X GET "https://api.vhx.tv/customers/1/watchlist" \
 {
   "_links": {
     "self": {
-      "href": "http://api.crystal.dev/customers/1/watchlist?page=1&per_page=50"
+      "href": "https://api.vhx.tv/customers/1/watchlist?page=1&per_page=50"
     },
     "first": {
-      "href": "http://api.crystal.dev/customers/1/watchlist"
+      "href": "https://api.vhx.tv/customers/1/watchlist"
     },
     "prev": {
       "href": null
@@ -925,7 +927,7 @@ $ curl -X GET "https://api.vhx.tv/customers/1/watchlist" \
       "href": null
     },
     "last": {
-      "href": "http://api.crystal.dev/customers/1/watchlist"
+      "href": "https://api.vhx.tv/customers/1/watchlist"
     }
   },
   "count": 0,
