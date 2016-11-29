@@ -131,6 +131,10 @@ vhx.videos.create({
   "tracks": {
     "subtitles": []
   },
+  "advertising": {},
+  "metadata": {
+    "advertising_keywords": []
+  },
   "files_count": 0,
   "created_at": "2014-02-25T20:19:30Z",
   "updated_at": "2014-02-25T20:19:30Z"
@@ -279,6 +283,20 @@ vhxjs.videos.retrieve("https://api.vhx.tv/videos/1", function(err, video) {
       }
     ]
   },
+  "advertising": {
+    "_links": {
+      "tag": { "href": "https://static.vhx.tv/vmap.xml" }
+    },
+    "client": "vmap",
+    "provider": "dfp"
+  },
+  "metadata": {
+    "series_name": "Series Name",
+    "season_name": "Season 1",
+    "season_number": 1,
+    "episode_number": 5,
+    "advertising_keywords": []
+  },
   "files_count": 5,
   "created_at": "2014-02-25T20:19:30Z",
   "updated_at": "2014-02-25T20:19:30Z"
@@ -309,6 +327,12 @@ vhxjs.videos.retrieve("https://api.vhx.tv/videos/1", function(err, video) {
   </tbody>
 </table>
 
+<section class="text-2 contain">
+  <strong class="block margin-top-large">Response</strong>
+  <p>Videos that are associated with a collection will have relevant metadata automatically applied in the <code>metadata</code> property. This includes the following fields: <code>series_name</code>, <code>season_name</code>, <code>season_number</code>, <code>episode_number</code>, and <code>movie_name</code></p>
+
+  <p class="is-internal">Videos that are associated with a product that have advertising enabled will include an <code>advertising</code> property in the response. The <code>advertising</code> object contains relevant data for the Ad provider and tag url. In addition, if advertising keywords have been setup they will be returned in the <code>metadata</code> property.</p>
+</section>
 
 <h3 class="text-2 head-4 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="videos-list">List all Videos</h3>
 
