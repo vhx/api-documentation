@@ -791,14 +791,16 @@ header {
 .is-internal,
 .jsinternal,
 .plaintextinternal,
-[data-unique="analytics-create"] {
+[data-unique="analytics-create"],
+[data-unique="authentication-oauth"] {
   display: none !important;
 }
 .show-internal {
   .is-internal,
   .jsinternal,
   .plaintextinternal,
-  [data-unique="analytics-create"] {
+  [data-unique="analytics-create"],
+  [data-unique="authentication-oauth"] {
     display: block !important;
   }
 }
