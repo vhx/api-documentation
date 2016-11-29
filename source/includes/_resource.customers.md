@@ -835,6 +835,7 @@ $ curl -X GET "https://api.vhx.tv/customers/1/watching" \
 ```
 <section class="text-2 contain margin-bottom-medium">
   <p>Retrieves the videos currently in progress for a customer.</p>
+  <p class="is-internal text-2">For applications that are integrated via OAuth2 access tokens with our user authentication system can use the alias <code>https://api.vhx.tv/me/watching</code> when making cURL requests.</p>
 </section>
 
 <table>
@@ -943,6 +944,7 @@ $ curl -X GET "https://api.vhx.tv/customers/1/watchlist" \
 
 <section class="text-2 contain margin-bottom-medium">
   <p>Retrieves watchlist items for a given customer.</p>
+  <p class="is-internal text-2">For applications that are integrated via OAuth2 access tokens with our user authentication system can use the alias <code>https://api.vhx.tv/me/watchlist</code> when making cURL requests.</p>
 </section>
 
 <table>
@@ -1022,6 +1024,7 @@ $ curl -X PUT "https://api.vhx.tv/customers/1/watchlist" \
 
 <section class="text-2 contain margin-bottom-medium">
   <p>Adds an item (a video) to a customer's watchlist.</p>
+  <p class="is-internal text-2">For applications that are integrated via OAuth2 access tokens with our user authentication system can use the alias <code>https://api.vhx.tv/me/watchlist</code> when making cURL requests.</p>
 </section>
 
 <table>
@@ -1109,6 +1112,7 @@ $ curl -X DELETE "https://api.vhx.tv/customers/1/watchlist" \
 
 <section class="text-2 contain margin-bottom-medium">
   <p>Removes an item (a video) from a customer's watchlist.</p>
+  <p class="is-internal text-2">For applications that are integrated via OAuth2 access tokens with our user authentication system can use the alias <code>https://api.vhx.tv/me/watchlist</code> when making cURL requests.</p>
 </section>
 
 <table>
