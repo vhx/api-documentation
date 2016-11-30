@@ -109,7 +109,7 @@ vhxjs.browse.all({
 ```
 
 <section class="text-2 contain margin-bottom-medium">
-  <p>Retrieves a set of item rows for collections (and categories) in your account catered toward building a easy to browse consumer facing interface. You must specify a product (i.e. a subscription product) parameter to scope the browse retrieval to it.</p>
+  <p>Retrieves a paginated list of browse items (rows). Each row contains metadata and links to further fetch the items to be displayed. This is meant to be done in an asynchronous manner. A subscription product parameter is required to scope the retrieval.</p>
 </section>
 
 <table>
