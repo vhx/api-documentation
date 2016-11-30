@@ -40,51 +40,28 @@ var vhxjs = new vhx('YOUR_API_KEY');
   <p>When making API calls on behalf of a customer, the <code>X-Customer</code> header with the customer <code>href</code> should be sent as part of the request. This let's the API respond with relevant information for that particular customer (like continue watching, resuming, etc).
 </section>
 
-
 <h3 class="is-internal text-2 head-4 text--navy text--bold is-api margin-top-xlarge margin-bottom-medium" id="authentication-oauth">OAuth</h3>
 
-> <h5 class="is-internal head-5 text--white is-internal">OAuth — Access/Refresh Token Flow</h5>
+> <h5 class="is-internal head-5 text--white is-internal">OAuth</h5>
 
 > <span class="is-internal">Example Access Token Request</span>
 
 ```plaintextinternal
-$ curl -X POST "https://api.vhx.tv/oauth/token" \
-  -d client_id=YOUR_CLIENT_ID \
-  -d client_secret=YOUR_CLIENT_SECRET \
-  -d grant_type=PASSWORD \
-  -d username=YOUR_VHX_EMAIL \
-  -d password=YOUR_VHX_PASSWORD
+curl -X POST "https://api.vhx.tv/oauth/token"
+  -d client_id={client_id} \
+  -d client_secret={client_secret} \
+  -d grant_type="client_credentials" \
+  -d scope="read"
 ```
 
 > <span class="is-internal">Example Response</span>
 
-```json
+```jsoninternal
 {
   "access_token": "YOUR_ACCESS_TOKEN",
   "token_type": "bearer",
   "expires_in": 7200,
-  "refresh_token": "YOUR_REFRESH_TOKEN",
-  "scope": "public"
-}
-```
-
-> <span class="is-internal">Example Refresh Token Request</span>
-
-```plaintextinternal
-$ curl -X POST "https://api.vhx.tv/oauth/token" \
-  -d grant_type=refresh_token \
-  -d refresh_token=YOUR_REFRESH_TOKEN
-```
-
-> <span class="is-internal">Example Response</span>
-
-```json
-{
-  "access_token": "YOUR_NEW_ACCESS_TOKEN",
-  "token_type": "bearer",
-  "expires_in": 7200,
-  "refresh_token": "YOUR_NEW_REFRESH_TOKEN",
-  "scope": "public"
+  "scope": "read"
 }
 ```
 
@@ -96,26 +73,80 @@ $ curl -X GET "https://api.vhx.tv/collections/:id" \
 ```
 
 <section class="is-internal text-2 contain">
-  <p>For registered applications an alternative way to access the VHX API is via OAuth access tokens. You can email api@vhx.tv to register an application. There are 3 different authentication flows when using OAuth Authentication depending on your purpose:</p>
-
-  <div>
-    <h4><strong>Access &amp; Refresh Token Flow</strong></h4>
-    <p>API requests can be authenticated via an OAuth2 access token. The initial access token can be retrieved via the <code>/ouath/token</code> endpoint. You can then make subsequent API requests by passing the <code>access_token</code> in your request's Authorization header.</p>
-
-    <p>OAuth2 Access tokens expire after 2 hours. To continue making API requests, you can refresh your access token by requesting a new one (from the same endpoint) using the provided <code>refresh_token</code> in the previous response.</p>
-  </div>
+  <p>For registered applications an alternative way to access the VHX API is via OAuth access tokens. You can email api@vhx.tv to register an application.
+  <p>Once your application is created, you will receive your client credentails, which includes your <code>client_id</code> and <code>client_secret</code> which can be used to make API requests.</p>
 </section>
 
-<h3 class="is-internal"></h3>
+<h3 class="is-internal text-2 head-4 text--navy text--bold is-api margin-top-xlarge margin-bottom-medium" id="authentication-oauth-user">OAuth with Pairing Codes</h3>
+
+> <h5 class="is-internal head-5 text--white is-internal">OAuth with Pairing Codes</h5>
+
+> <span class="is-internal">Example Fetch Code Request</span>
+
+```plaintextinternal
+curl -X POST "https://api.vhx.tv/oauth/codes"
+     -d client_id={client_id}
+     -d client_secret={client_secret}
+```
+
+> <span class="is-internal">Example Response</span>
+
+```jsoninternal
+{
+  "code": "YOUR_PAIRING_CODE"
+}
+```
+
+> <span class="is-internal">Example Polling Request</span>
+
+```plaintextinternal
+curl -G "https://api.vhx.tv/oauth/codes/{code}" \
+     -d client_id={your_client_id} \
+     -d client_secret={your_client_secret}
+```
+
+> <span class="is-internal">Example Response</span>
+
+```jsoninternal
+{
+  "access_token": "YOUR_ACCESS_TOKEN",
+  "token_type": "bearer",
+  "expires_in": 7200,
+  "refresh_token": "YOUR_REFRESH_TOKEN",
+  "scope": "read"
+}
+```
+
+> <span class="is-internal">Example Refresh Token Request</span>
+
+```plaintextinternal
+$ curl -X POST "https://api.vhx.tv/oauth/token" \
+  -d grant_type=refresh_token \
+  -d refresh_token={your_refresh_token}
+```
+> <span class="is-internal">Example Response</span>
+
+```jsoninternal
+{
+  "access_token": "YOUR_NEW_ACCESS_TOKEN",
+  "token_type": "bearer",
+  "expires_in": 7200,
+  "refresh_token": "YOUR_NEW_REFRESH_TOKEN",
+  "scope": "public"
+}
+```
 
 <section class="is-internal text-2 contain">
-  <div>
-    <h4><strong>TV Pairing Code Flow</strong></h4>
-    <p>Token All requests to the VHX API require that the application be registered. Please email api@vhx.tv to register an application.
-  </div>
+  <p>To make requests on behalf of a user for accessing content available to them, you will need to authorize the user via application <strong>Pairing Codes</strong>.</p>
 
-  <div>
-    <h4><strong>Device Token Flow</strong></h4>
-    <p>Token All requests to the VHX API require that the application be registered. Please email api@vhx.tv to register an application.
-  </div>
+  <h4><strong>1. Fetch the code</strong></h4>
+  <p>Applications should request a code from our API, display it on the screen for the customer, and then direct them to <code>https://{subdomain}.vhx.tv/activate</code> to enter the code.</p>
+
+  <h4><strong>2. Poll for user activation</strong></h4>
+  <p>Upon displaying the code to the customer, you should begin polling <code>/oauth/codes/{code}</code> for the code at a ~2.5 second interval with a max of 500 retries.</p>
+  <p>This will return a <code>404</code> until the customer correctly pairs it with their account. At that point a <code>200</code> will be returned with an <code>access_token</code>, <code>refresh_token</code>, and <code>expiry</code> information. This information should be saved in your device's registry and is what deems the device as being connected/linked to a logged in customer.</p>
+  <p>You can than make requests on behalf of the customer using the Authorization Bearer header.</p>
+
+  <h4><strong>3. Refresh Tokens</strong></h4>
+  <p>Access tokens for a user expire after 2 hours. To continue making API requests you can refresh your access token by requesting a new one (from the <code>/oauth/token</code> endpoint) using the provided <code>refresh_token</code> in the previous response.</p>
 </section>

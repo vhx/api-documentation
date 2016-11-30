@@ -791,6 +791,7 @@ header {
 .is-internal,
 .jsinternal,
 .plaintextinternal,
+.jsoninternal,
 [data-unique="analytics-create"],
 [data-unique="authentication-oauth"] {
   display: none !important;
@@ -798,6 +799,7 @@ header {
 .show-internal {
   .is-internal,
   .jsinternal,
+  .jsoninternal,
   .plaintextinternal,
   [data-unique="analytics-create"],
   [data-unique="authentication-oauth"] {
