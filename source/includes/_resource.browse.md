@@ -1,10 +1,6 @@
 <!-- ___PRODUCTS____________________________ -->
 <h2 class="head-3 margin-top-xlarge padding-top-xlarge border-top margin-bottom-medium" id="browse">Browse</h2>
 
-<section class="text-2 contain">
-  <p></p>
-</section>
-
 <h3 class="text-2 head-4 text--navy text--bold margin-top-large margin-bottom-medium" id="browse-all">List all Browse items</h3>
 
 > <h5 class="head-5 text--white margin-bottom-medium">List all Browse items</h5>
