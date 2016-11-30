@@ -74,10 +74,10 @@ $ curl -X GET "https://api.vhx.tv/collections/:id" \
 
 <section class="is-internal text-2 contain">
   <p>For registered applications an alternative way to access the VHX API is via OAuth access tokens. You can email api@vhx.tv to register an application.
-  <p>Once your application is created, you will receive your client credentails, which includes your <code>client_id</code> and <code>client_secret</code> which can be used to make API requests.</p>
+  <p>Once your application is created, you will receive your client credentials, which includes your <code>client_id</code> and <code>client_secret</code> which can be used to make API requests.</p>
 </section>
 
-<h3 class="is-internal text-2 head-4 text--navy text--bold is-api margin-top-xlarge margin-bottom-medium" id="authentication-oauth-user">OAuth with Pairing Codes</h3>
+<h3 class="is-internal text-2 head-4 text--navy text--bold is-api margin-top-xlarge margin-bottom-medium" id="authentication-oauth-customer">OAuth with Pairing Codes</h3>
 
 > <h5 class="is-internal head-5 text--white">OAuth with Pairing Codes</h5>
 
@@ -138,16 +138,16 @@ $ curl -X POST "https://api.vhx.tv/oauth/token" \
 ```
 
 <section class="is-internal text-2 contain">
-  <p>To make requests on behalf of a user for accessing content available to them, you will need to authorize the user via application <strong>Pairing Codes</strong>.</p>
+  <p>To make requests on behalf of a customer for accessing content available to them, you will need to authorize the customer via application <strong>Pairing Codes</strong>.</p>
 
   <h4><strong>1. Fetch the code</strong></h4>
   <p>Applications should request a code from our API, display it on the screen for the customer, and then direct them to <code>https://{subdomain}.vhx.tv/activate</code> to enter the code.</p>
 
-  <h4><strong>2. Poll for user activation</strong></h4>
+  <h4><strong>2. Poll for customer activation</strong></h4>
   <p>Upon displaying the code to the customer, you should begin polling <code>/oauth/codes/{code}</code> for the code at a ~2.5 second interval with a max of 500 retries.</p>
   <p>This will return a <code>404</code> until the customer correctly pairs it with their account. At that point a <code>200</code> will be returned with an <code>access_token</code>, <code>refresh_token</code>, and <code>expiry</code> information. This information should be saved in your device's registry and is what deems the device as being connected/linked to a logged in customer.</p>
   <p>You can than make requests on behalf of the customer using the Authorization Bearer header.</p>
 
   <h4><strong>3. Refresh Tokens</strong></h4>
-  <p>Access tokens for a user expire after 2 hours. To continue making API requests you can refresh your access token by requesting a new one (from the <code>/oauth/token</code> endpoint) using the provided <code>refresh_token</code> in the previous response.</p>
+  <p>Access tokens for a customer expire after 2 hours. To continue making API requests you can refresh your access token by requesting a new one (from the <code>/oauth/token</code> endpoint) using the provided <code>refresh_token</code> in the previous response.</p>
 </section>
