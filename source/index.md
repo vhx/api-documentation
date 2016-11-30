@@ -20,6 +20,7 @@ includes:
   - resource.customers
   - resource.videos
   - resource.collections
+  - resource.browse
   - resource.authorizations
   - resource.analytics
 
