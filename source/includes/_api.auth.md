@@ -79,7 +79,7 @@ $ curl -X GET "https://api.vhx.tv/collections/:id" \
 
 <h3 class="is-internal text-2 head-4 text--navy text--bold is-api margin-top-xlarge margin-bottom-medium" id="authentication-oauth-user">OAuth with Pairing Codes</h3>
 
-> <h5 class="is-internal head-5 text--white is-internal">OAuth with Pairing Codes</h5>
+> <h5 class="is-internal head-5 text--white">OAuth with Pairing Codes</h5>
 
 > <span class="is-internal">Example Fetch Code Request</span>
 

@@ -797,7 +797,8 @@ header {
 .plaintextinternal,
 .jsoninternal,
 [data-unique="analytics-create"],
-[data-unique="authentication-oauth"] {
+[data-unique="authentication-oauth"],
+[data-unique="authentication-oauth-user"] {
   display: none !important;
 }
 .show-internal {
@@ -806,7 +807,8 @@ header {
   .jsoninternal,
   .plaintextinternal,
   [data-unique="analytics-create"],
-  [data-unique="authentication-oauth"] {
+  [data-unique="authentication-oauth"],
+  [data-unique="authentication-oauth-user"] {
     display: block !important;
   }
 }
