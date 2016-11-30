@@ -93,7 +93,8 @@ curl -X POST "https://api.vhx.tv/oauth/codes"
 
 ```jsoninternal
 {
-  "code": "YOUR_PAIRING_CODE"
+  "code": "DDCD",
+  "expires_in": 1800
 }
 ```
 
