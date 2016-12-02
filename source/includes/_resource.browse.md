@@ -24,7 +24,7 @@ vhxjs.browse.all();
 ```
 
 ```php
- // Not available for the PHP client
+<?php\VHX\Browse::all();
 ```
 
 > Example Request
@@ -52,7 +52,9 @@ vhxjs.browse.all({
 ```
 
 ```php
-// Not yet available for the PHP client.
+<?php\VHX\Browse::all(array(
+  'product' => 'https://api.vhx.tv/products/1'
+));
 ```
 
 > Example Response
