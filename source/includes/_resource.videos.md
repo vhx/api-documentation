@@ -585,7 +585,7 @@ id="collections-update">Update a Video</h3>
 > Definition
 
 ```shell
-POST /videos/:id
+PUT /videos/:id
 ```
 
 ```ruby
@@ -607,7 +607,7 @@ vhx.videos.update();
 > Example Request
 
 ```shell
-$ curl -X POST "https://api.vhx.tv/videos/1" \
+$ curl -X PUT "https://api.vhx.tv/videos/1" \
   -H "Content-Type: application/json" \
   -d '{"description":"My video description.", "metadata": {"director": "Brad Pitt", "writers": ["Foo Bar", "Bar Foo"], "release_year": 2017}}' \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
