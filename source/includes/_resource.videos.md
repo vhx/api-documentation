@@ -68,9 +68,8 @@ vhx.videos.create();
 
 ```shell
 $ curl -X POST "https://api.vhx.tv/videos" \
-  -d title="My Video" \
-  -d description="My video description." \
-  -d source_url=s3:://YOUR_BUCKET_NAME/FILE.mp4 \
+  -H "Content-Type: application/json" \
+  -d '{"title":"My Video","description":"My video description.", "source_url":"s3:://YOUR_BUCKET_NAME/FILE.mp4", "metadata": {"director": "Brad Pitt", "writers": ["Foo Bar", "Bar Foo"], "release_year": 2017}}' \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
@@ -78,7 +77,12 @@ $ curl -X POST "https://api.vhx.tv/videos" \
 video = Vhx::Video.create({
   title: 'My Video',
   description: 'My video description.',
-  source_url: 's3:://YOUR_BUCKET_NAME/FILE.mp4'
+  source_url: 's3:://YOUR_BUCKET_NAME/FILE.mp4',
+  metadata: { 
+    director: 'Brad Pitt',
+    writers: ['Foo Bar', 'Bar Foo'],
+    release_year: 2017
+  }
 })
 ```
 
@@ -86,7 +90,12 @@ video = Vhx::Video.create({
 vhx.videos.create({
   title: 'My Video',
   description: 'My video description.',
-  source_url: 's3:://YOUR_BUCKET_NAME/FILE.mp4'
+  source_url: 's3:://YOUR_BUCKET_NAME/FILE.mp4',
+  metadata: { 
+    director: 'Brad Pitt',
+    writers: ['Foo Bar', 'Bar Foo'],
+    release_year: 2017
+  }
 }, function(err, video) {
    // asynchronously called
 });
@@ -133,6 +142,9 @@ vhx.videos.create({
   },
   "advertising": {},
   "metadata": {
+    "director": "Brad Pitt",
+    "writers": ["Foo Bar", "Bar Foo"],
+    "release_year": 2017,
     "advertising_keywords": []
   },
   "files_count": 0,
@@ -175,6 +187,19 @@ vhx.videos.create({
         <span class="text--transparent text-3">optional string, default is null</span>
       </td>
       <td>A description for the video.</p></td>
+    </tr>
+  
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">metadata</strong>
+        <span class="text--transparent text-3">object of key value pairs</span>
+      </td>
+      <td>A set of key/value pairs that you can attach to a video object. It can be useful for
+storing additional information about the video in a structured format. Metadata keys must be
+strings. Metadata values can be strings, integers, or arrays. There are a few reserved keys that
+are auto-generated, which cannot be updated. These reserved keys are:
+<code>advertising_keywords</code>, <code>series_name</code>, <code>season_name</code>, <code>season_number</code>,
+<code>episode_number</code>, and <code>movie_name</code></p></td>
     </tr>
   </tbody>
 </table>
@@ -291,6 +316,9 @@ vhxjs.videos.retrieve("https://api.vhx.tv/videos/1", function(err, video) {
     "provider": "dfp"
   },
   "metadata": {
+    "director": "Brad Pitt",
+    "writers": ["Foo Bar", "Bar Foo"],
+    "release_year": 2017,
     "series_name": "Series Name",
     "season_name": "Season 1",
     "season_number": 1,
@@ -548,3 +576,156 @@ vhx.videos.files({
   <p>If building a customer-based application, <code>Authorizations</code> must be used so our player can properly authenticate and record analytics for the viewing customer.</p>
   <p>The returned source href has a TTL / expiration, so it is advised that the files API call happens just prior to a stream action.</p>
 </section>
+
+<h3 class="text-2 head-4 text--navy text--bold is-api margin-top-large margin-bottom-medium"
+id="collections-update">Update a Video</h3>
+
+> <h5 class="head-5 text--white margin-bottom-medium">Update a Video</h5>
+
+> Definition
+
+```shell
+POST /videos/:id
+```
+
+```ruby
+Vhx::Video.update()
+```
+
+```node
+vhx.videos.update();
+```
+
+```javascript
+// Not available for client-side requests.
+```
+
+```php
+<?php\VHX\Videos::update();
+```
+
+> Example Request
+
+```shell
+$ curl -X POST "https://api.vhx.tv/videos/1" \
+  -H "Content-Type: application/json" \
+  -d '{"description":"My video description.", "metadata": {"director": "Brad Pitt", "writers": ["Foo Bar", "Bar Foo"], "release_year": 2017}}' \
+  -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
+```
+
+```ruby
+video = Vhx::Video.retrieve("https://api.vhx.tv/videos/1").update({
+  description: 'A new description',
+  metadata: { 
+    director: 'Brad Pitt',
+    writers: ['Foo Bar', 'Bar Foo'],
+    release_year: 2017
+  }
+})
+```
+
+```node
+vhx.videos.update("https://api.vhx.tv/videos/1", {
+  description: 'A new description',
+  metadata: { 
+    director: 'Brad Pitt',
+    writers: ['Foo Bar', 'Bar Foo'],
+    release_year: 2017
+  }
+}, function(err, video) {
+  // asynchronously called
+});
+```
+
+```javascript
+// Not available for client-side requests.
+```
+
+```php
+<?php$video = \VHX\Videos::update("https://api.vhx.tv/videos/1", array(
+  'name' => 'A new description'
+));
+```
+
+> Example Response
+
+```json
+{
+  "_links": {
+    "self":  { "href": "https://api.vhx.tv/videos/1" },
+    "files": { "href": "https://api.vhx.tv/videos/1/files" }
+  },
+  "_embedded": {
+    "files": []
+  },
+  "id": 1,
+  "title": "My Video",
+  "description": "My video description.",
+  "status": "processing",
+  "duration": {
+    "seconds": 7200,
+    "formatted": "02:00:00"
+  },
+  "thumbnail": {
+    "small": "https://cdn.vhx.tv/assets/thumbnails/default-small.png",
+    "medium": "https://cdn.vhx.tv/assets/thumbnails/default-medium.png",
+    "large": "https://cdn.vhx.tv/assets/thumbnails/default-large.png",
+    "source": "https://cdn.vhx.tv/assets/thumbnails/original.jpg"
+  },
+  "tracks": {
+    "subtitles": []
+  },
+  "advertising": {},
+  "metadata": {
+    "director": "Brad Pitt",
+    "writers": ["Foo Bar", "Bar Foo"],
+    "release_year": 2017,
+    "advertising_keywords": []
+  },
+  "files_count": 0,
+  "created_at": "2014-02-25T20:19:30Z",
+  "updated_at": "2014-02-25T20:19:30Z"
+}
+```
+
+<section class="text-2 contain">
+  <p>No fields are required when updating a video.</p>
+</section>
+
+<table>
+  <thead>
+    <tr class="text-2">
+      <th class="padding-medium nowrap">Arguments</th>
+      <th class="padding-medium" width="100%">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">title</strong>
+        <span class="text--transparent text-3">string optional</span>
+      </td>
+      <td>A title for the video.</p></td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">description</strong>
+        <span class="text--transparent text-3">string optional</span>
+      </td>
+      <td>A description for the video.</p></td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">metadata</strong>
+        <span class="text--transparent text-3">object of key value pairs</span>
+      </td>
+      <td>A set of key/value pairs that you can attach to a video object. It can be useful for
+storing additional information about the video in a structured format. Metadata keys must be
+strings. Metadata values can be strings, integers, or arrays. There are a few reserved keys that
+are auto-generated, which cannot be updated. These reserved keys are:
+<code>advertising_keywords</code>, <code>series_name</code>, <code>season_name</code>, <code>season_number</code>,
+<code>episode_number</code>, and <code>movie_name</code></p></td>
+    </tr>
+  </tbody>
+</table>
