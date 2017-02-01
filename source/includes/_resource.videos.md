@@ -193,8 +193,8 @@ vhx.videos.create({
       </td>
       <td>A description for the video.</p></td>
     </tr>
-  
-    <tr class="text-2 border-bottom border--light-gray">
+
+    <tr class="is-internal text-2 border-bottom border--light-gray">
       <td>
         <strong class="is-block text--navy">metadata</strong>
         <span class="text--transparent text-3">object of key value pairs</span>
@@ -720,7 +720,7 @@ vhx.videos.update("https://api.vhx.tv/videos/1", {
       </td>
       <td>A description for the video.</p></td>
     </tr>
-    <tr class="text-2 border-bottom border--light-gray">
+    <tr class="is-internal text-2 border-bottom border--light-gray">
       <td>
         <strong class="is-block text--navy">metadata</strong>
         <span class="text--transparent text-3">object of key value pairs</span>

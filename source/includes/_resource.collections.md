@@ -203,7 +203,7 @@ vhx.collections.create({
       </td>
       <td>A publicly accessible image URL. If you prefer you can upload images directly to a collection in the VHX Publisher Admin.</td>
     </tr>    
-    <tr class="text-2 border-bottom border--light-gray">
+    <tr class="is-internal text-2 border-bottom border--light-gray">
       <td>
         <strong class="is-block text--navy">metadata</strong>
         <span class="text--transparent text-3">optional object</span>
@@ -623,7 +623,7 @@ vhx.collections.update("https://api.vhx.tv/collections/1", {
       </td>
       <td>A publicly accessible image URL. If you prefer you can upload images directly to a collection in the VHX Publisher Admin.</td>
     </tr>
-    <tr class="text-2 border-bottom border--light-gray">
+    <tr class="is-internal text-2 border-bottom border--light-gray">
       <td>
         <strong class="is-block text--navy">metadata</strong>
         <span class="text--transparent text-3">optional object</span>
