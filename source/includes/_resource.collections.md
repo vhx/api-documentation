@@ -508,8 +508,7 @@ vhx.collections.update();
 ```shell
 $ curl -X PUT "https://api.vhx.tv/collections/1" \
   -H "Content-Type: application/json" \
-  -d '{"description": "A new description",
-  "metadata": {"producer": "Christoper Nolan", "director": "Brad Pitt", "writers": ["Foo Bar", "Bar Foo"], "release_year": 2017}}' \
+  -d '{"description": "A new description", "metadata": {"producer": "Christoper Nolan", "director": "Brad Pitt", "writers": ["Foo Bar", "Bar Foo"], "release_year": 2017}}' \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
