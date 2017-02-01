@@ -78,7 +78,7 @@ video = Vhx::Video.create({
   title: 'My Video',
   description: 'My video description.',
   source_url: 's3:://YOUR_BUCKET_NAME/FILE.mp4',
-  metadata: { 
+  metadata: {
     director: 'Brad Pitt',
     writers: ['Foo Bar', 'Bar Foo'],
     release_year: 2017
@@ -91,7 +91,7 @@ vhx.videos.create({
   title: 'My Video',
   description: 'My video description.',
   source_url: 's3:://YOUR_BUCKET_NAME/FILE.mp4',
-  metadata: { 
+  metadata: {
     director: 'Brad Pitt',
     writers: ['Foo Bar', 'Bar Foo'],
     release_year: 2017
@@ -614,17 +614,15 @@ vhx.videos.update();
 ```shell
 $ curl -X POST "https://api.vhx.tv/videos/1" \
   -H "Content-Type: application/json" \
-  -d '{"description":"My video description.", "metadata": {"director": "Brad Pitt", "writers": ["Foo Bar", "Bar Foo"], "release_year": 2017}}' \
+  -d '{"description":"My video description.", "metadata": {"producer": "Christopher Nolan" }' \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
 ```ruby
 video = Vhx::Video.retrieve("https://api.vhx.tv/videos/1").update({
   description: 'A new description',
-  metadata: { 
-    director: 'Brad Pitt',
-    writers: ['Foo Bar', 'Bar Foo'],
-    release_year: 2017
+  metadata: {
+    producer: 'Christoper Nolan'
   }
 })
 ```
@@ -632,10 +630,8 @@ video = Vhx::Video.retrieve("https://api.vhx.tv/videos/1").update({
 ```node
 vhx.videos.update("https://api.vhx.tv/videos/1", {
   description: 'A new description',
-  metadata: { 
-    director: 'Brad Pitt',
-    writers: ['Foo Bar', 'Bar Foo'],
-    release_year: 2017
+  metadata: {
+    producer: 'Christoper Nolan'
   }
 }, function(err, video) {
   // asynchronously called
@@ -648,7 +644,10 @@ vhx.videos.update("https://api.vhx.tv/videos/1", {
 
 ```php
 <?php$video = \VHX\Videos::update("https://api.vhx.tv/videos/1", array(
-  'name' => 'A new description'
+  'name' => 'A new description',
+  'metadata' => array(
+    'producer' => 'Christoper Nolan'
+  )
 ));
 ```
 
@@ -683,6 +682,7 @@ vhx.videos.update("https://api.vhx.tv/videos/1", {
   "advertising": {},
   "metadata": {
     "director": "Brad Pitt",
+    "producer": "Christoper Nolan",
     "writers": ["Foo Bar", "Bar Foo"],
     "release_year": 2017,
     "advertising_keywords": []
