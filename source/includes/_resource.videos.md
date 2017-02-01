@@ -109,7 +109,12 @@ vhx.videos.create({
 <?php$video = \VHX\Videos::create(array(
   'title' => 'My Video',
   'description' => 'My video description.',
-  'source_url' => 's3:://YOUR_BUCKET_NAME/FILE.mp4'
+  'source_url' => 's3:://YOUR_BUCKET_NAME/FILE.mp4',
+  'metadata' => array(
+    'director' => 'Brad Pitt',
+    'writers' => ['Foo Bar', 'Bar Foo'],
+    'release_year' => 2017
+  )
 ));
 ```
 > Example Response

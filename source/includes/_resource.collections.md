@@ -109,7 +109,12 @@ vhx.collections.create({
 ```php
 <?php$collection = \VHX\Collections::create(array(
   'name' => 'Collection Name',
-  'type' => 'series'
+  'type' => 'series',
+  'metadata' => array(
+    'director' => 'Brad Pitt',
+    'writers' => ['Foo Bar', 'Bar Foo'],
+    'release_year' => 2017
+  )
 ));
 ```
 
