@@ -614,7 +614,7 @@ vhx.videos.update();
 ```shell
 $ curl -X POST "https://api.vhx.tv/videos/1" \
   -H "Content-Type: application/json" \
-  -d '{"description":"My video description.", "metadata": {"producer": "Christopher Nolan" }' \
+  -d '{"description":"My video description.", "metadata": {"producer": "Christoper Nolan", "director": "Brad Pitt", "writers": ["Foo Bar", "Bar Foo"], "release_year": 2017}}' \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
@@ -622,6 +622,9 @@ $ curl -X POST "https://api.vhx.tv/videos/1" \
 video = Vhx::Video.retrieve("https://api.vhx.tv/videos/1").update({
   description: 'A new description',
   metadata: {
+    director: 'Brad Pitt',
+    writers: ['Foo Bar', 'Bar Foo'],
+    release_year: 2017
     producer: 'Christoper Nolan'
   }
 })
@@ -631,6 +634,9 @@ video = Vhx::Video.retrieve("https://api.vhx.tv/videos/1").update({
 vhx.videos.update("https://api.vhx.tv/videos/1", {
   description: 'A new description',
   metadata: {
+    director: 'Brad Pitt',
+    writers: ['Foo Bar', 'Bar Foo'],
+    release_year: 2017
     producer: 'Christoper Nolan'
   }
 }, function(err, video) {
@@ -646,6 +652,9 @@ vhx.videos.update("https://api.vhx.tv/videos/1", {
 <?php$video = \VHX\Videos::update("https://api.vhx.tv/videos/1", array(
   'name' => 'A new description',
   'metadata' => array(
+    'director' => 'Brad Pitt',
+    'writers' => ['Foo Bar', 'Bar Foo'],
+    'release_year' => 2017,
     'producer' => 'Christoper Nolan'
   )
 ));

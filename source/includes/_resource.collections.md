@@ -506,9 +506,10 @@ vhx.collections.update();
 > Example Request
 
 ```shell
-$ curl -X POST "https://api.vhx.tv/collections/1" \
+$ curl -X PUT "https://api.vhx.tv/collections/1" \
   -H "Content-Type: application/json" \
-  -d '{"description": "A new description", "metadata": {"producer": "Christoper Nolan" }}' \
+  -d '{"description": "A new description",
+  "metadata": {"producer": "Christoper Nolan", "director": "Brad Pitt", "writers": ["Foo Bar", "Bar Foo"], "release_year": 2017}}' \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
@@ -516,6 +517,9 @@ $ curl -X POST "https://api.vhx.tv/collections/1" \
 collection = Vhx::Collection.retrieve("https://api.vhx.tv/collections/1").update({
   description: 'A new description',
   metadata: {
+    director: 'Brad Pitt',
+    writers: ['Foo Bar', 'Bar Foo'],
+    release_year: 2017
     producer: 'Christoper Nolan'
   }
 })
@@ -525,6 +529,9 @@ collection = Vhx::Collection.retrieve("https://api.vhx.tv/collections/1").update
 vhx.collections.update("https://api.vhx.tv/collections/1", {
   description: 'A new description',
   metadata: {
+    director: 'Brad Pitt',
+    writers: ['Foo Bar', 'Bar Foo'],
+    release_year: 2017
     producer: 'Christoper Nolan'
   }
 }, function(err, collection) {
@@ -540,6 +547,9 @@ vhx.collections.update("https://api.vhx.tv/collections/1", {
 <?php$collection = \VHX\Collections::update("https://api.vhx.tv/collections/1", array(
   'name' => 'A new description',
   'metadata' => array(
+    'director' => 'Brad Pitt',
+    'writers' => ['Foo Bar', 'Bar Foo'],
+    'release_year' => 2017,
     'producer' => 'Christoper Nolan'
   )
 ));
