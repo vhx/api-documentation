@@ -71,15 +71,20 @@ vhx.collections.create();
 
 ```shell
 $ curl -X POST "https://api.vhx.tv/collections" \
-  -d name="Collection Name" \
-  -d type="series" \
+  -H "Content-Type: application/json" \
+  -d '{"name": "Collection Name", "type": "series", "metadata": {"director": "Brad Pitt", "writers": ["Foo Bar", "Bar Foo"], "release_year": 2017}}' \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
 ```ruby
 collection = Vhx::Collection.create({
   name: 'Collection Name',
-  type: 'series'
+  type: 'series',
+  metadata: { 
+    director: 'Brad Pitt',
+    writers: ['Foo Bar', 'Bar Foo'],
+    release_year: 2017
+  }
 })
 ```
 
@@ -87,6 +92,11 @@ collection = Vhx::Collection.create({
 vhx.collections.create({
   name: 'Collection Name',
   type: 'series',
+  metadata: { 
+    director: 'Brad Pitt',
+    writers: ['Foo Bar', 'Bar Foo'],
+    release_year: 2017
+  }
 }, function(err, collection) {
   // asynchronously called
 });
@@ -130,6 +140,11 @@ vhx.collections.create({
     "medium": "https://cdn.vhx.tv/assets/thumbnails/default-medium.png",
     "large": "https://cdn.vhx.tv/assets/thumbnails/default-large.png",
     "source": "https://cdn.vhx.tv/assets/thumbnails/original.jpg"
+  },
+  "metadata": {
+    "director": "Brad Pitt",
+    "writers": ["Foo Bar", "Bar Foo"],
+    "release_year": 2017
   },
   "type": "series",
   "seasons_count": 0,
@@ -183,6 +198,16 @@ vhx.collections.create({
       </td>
       <td>A publicly accessible image URL. If you prefer you can upload images directly to a collection in the VHX Publisher Admin.</td>
     </tr>    
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">metadata</strong>
+        <span class="text--transparent text-3">optional object</span>
+      </td>
+      <td>A set of key/value pairs that you can attach to a collection object. It can be useful for
+storing additional information about the collection in a structured format. Metadata keys must be
+strings. Metadata values can be strings, integers, or arrays. There are a few reserved keys that
+are auto-generated, which cannot be updated. These reserved keys are: <code>season_number</code></td>
+    </tr>
   </tbody>
 </table>
 
@@ -257,6 +282,11 @@ vhxjs.collections.retrieve("https://api.vhx.tv/collections/1", function(err, col
     "medium": "https://cdn.vhx.tv/assets/thumbnails/default-medium.png",
     "large": "https://cdn.vhx.tv/assets/thumbnails/default-large.png",
     "source": "https://cdn.vhx.tv/assets/thumbnails/original.jpg"
+  },
+  "metadata": {
+    "director": "Brad Pitt",
+    "writers": ["Foo Bar", "Bar Foo"],
+    "release_year": 2017
   },
   "type": "category",
   "items_count": 10,
@@ -449,7 +479,7 @@ vhxjs.collections.all({
 > Definition
 
 ```shell
-POST /collections/:id
+PUT /collections/:id
 ```
 
 ```ruby
@@ -471,20 +501,31 @@ vhx.collections.update();
 > Example Request
 
 ```shell
-$ curl -X POST "https://api.vhx.tv/collections/1" \
-  -d description="A new description" \
+$ curl -X PUT "https://api.vhx.tv/collections/1" \
+  -H "Content-Type: application/json" \
+  -d '{"description": "A new description", "metadata": {"director": "Brad Pitt", "writers": ["Foo Bar", "Bar Foo"], "release_year": 2017}}' \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
 ```ruby
 collection = Vhx::Collection.retrieve("https://api.vhx.tv/collections/1").update({
-  description: 'A new description'
+  description: 'A new description',
+  metadata: { 
+    director: 'Brad Pitt',
+    writers: ['Foo Bar', 'Bar Foo'],
+    release_year: 2017
+  }
 })
 ```
 
 ```node
 vhx.collections.update("https://api.vhx.tv/collections/1", {
-  description: 'A new description'
+  description: 'A new description',
+  metadata: { 
+    director: 'Brad Pitt',
+    writers: ['Foo Bar', 'Bar Foo'],
+    release_year: 2017
+  }
 }, function(err, collection) {
   // asynchronously called
 });
@@ -527,6 +568,11 @@ vhx.collections.update("https://api.vhx.tv/collections/1", {
     "medium": "https://cdn.vhx.tv/assets/thumbnails/default-medium.png",
     "large": "https://cdn.vhx.tv/assets/thumbnails/default-large.png",
     "source": "https://cdn.vhx.tv/assets/thumbnails/original.jpg"
+  },
+  "metadata": {
+    "director": "Brad Pitt",
+    "writers": ["Foo Bar", "Bar Foo"],
+    "release_year": 2017
   },
   "type": "series",
   "seasons_count": 0,
@@ -571,6 +617,16 @@ vhx.collections.update("https://api.vhx.tv/collections/1", {
         <span class="text--transparent text-3">optional</span>
       </td>
       <td>A publicly accessible image URL. If you prefer you can upload images directly to a collection in the VHX Publisher Admin.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">metadata</strong>
+        <span class="text--transparent text-3">optional object</span>
+      </td>
+      <td>A set of key/value pairs that you can attach to a collection object. It can be useful for
+storing additional information about the collection in a structured format. Metadata keys must be
+strings. Metadata values can be strings, integers, or arrays. There are a few reserved keys that
+are auto-generated, which cannot be updated. These reserved keys are: <code>season_number</code></td>
     </tr>
   </tbody>
 </table>
