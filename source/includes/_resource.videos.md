@@ -583,7 +583,7 @@ vhx.videos.files({
 </section>
 
 <h3 class="text-2 head-4 text--navy text--bold is-api margin-top-large margin-bottom-medium"
-id="collections-update">Update a Video</h3>
+id="videos-update">Update a Video</h3>
 
 > <h5 class="head-5 text--white margin-bottom-medium">Update a Video</h5>
 
