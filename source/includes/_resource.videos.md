@@ -78,7 +78,7 @@ video = Vhx::Video.create({
   title: 'My Video',
   description: 'My video description.',
   source_url: 's3:://YOUR_BUCKET_NAME/FILE.mp4',
-  metadata: { 
+  metadata: {
     director: 'Brad Pitt',
     writers: ['Foo Bar', 'Bar Foo'],
     release_year: 2017
@@ -91,7 +91,7 @@ vhx.videos.create({
   title: 'My Video',
   description: 'My video description.',
   source_url: 's3:://YOUR_BUCKET_NAME/FILE.mp4',
-  metadata: { 
+  metadata: {
     director: 'Brad Pitt',
     writers: ['Foo Bar', 'Bar Foo'],
     release_year: 2017
@@ -109,7 +109,12 @@ vhx.videos.create({
 <?php$video = \VHX\Videos::create(array(
   'title' => 'My Video',
   'description' => 'My video description.',
-  'source_url' => 's3:://YOUR_BUCKET_NAME/FILE.mp4'
+  'source_url' => 's3:://YOUR_BUCKET_NAME/FILE.mp4',
+  'metadata' => array(
+    'director' => 'Brad Pitt',
+    'writers' => ['Foo Bar', 'Bar Foo'],
+    'release_year' => 2017
+  )
 ));
 ```
 > Example Response
@@ -188,8 +193,8 @@ vhx.videos.create({
       </td>
       <td>A description for the video.</p></td>
     </tr>
-  
-    <tr class="text-2 border-bottom border--light-gray">
+
+    <tr class="is-internal text-2 border-bottom border--light-gray">
       <td>
         <strong class="is-block text--navy">metadata</strong>
         <span class="text--transparent text-3">object of key value pairs</span>
@@ -578,7 +583,7 @@ vhx.videos.files({
 </section>
 
 <h3 class="text-2 head-4 text--navy text--bold is-api margin-top-large margin-bottom-medium"
-id="collections-update">Update a Video</h3>
+id="videos-update">Update a Video</h3>
 
 > <h5 class="head-5 text--white margin-bottom-medium">Update a Video</h5>
 
@@ -609,17 +614,18 @@ vhx.videos.update();
 ```shell
 $ curl -X PUT "https://api.vhx.tv/videos/1" \
   -H "Content-Type: application/json" \
-  -d '{"description":"My video description.", "metadata": {"director": "Brad Pitt", "writers": ["Foo Bar", "Bar Foo"], "release_year": 2017}}' \
+  -d '{"description":"My video description.", "metadata": {"producer": "Christoper Nolan", "director": "Brad Pitt", "writers": ["Foo Bar", "Bar Foo"], "release_year": 2017}}' \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
 ```ruby
 video = Vhx::Video.retrieve("https://api.vhx.tv/videos/1").update({
   description: 'A new description',
-  metadata: { 
+  metadata: {
     director: 'Brad Pitt',
     writers: ['Foo Bar', 'Bar Foo'],
     release_year: 2017
+    producer: 'Christoper Nolan'
   }
 })
 ```
@@ -627,10 +633,11 @@ video = Vhx::Video.retrieve("https://api.vhx.tv/videos/1").update({
 ```node
 vhx.videos.update("https://api.vhx.tv/videos/1", {
   description: 'A new description',
-  metadata: { 
+  metadata: {
     director: 'Brad Pitt',
     writers: ['Foo Bar', 'Bar Foo'],
     release_year: 2017
+    producer: 'Christoper Nolan'
   }
 }, function(err, video) {
   // asynchronously called
@@ -643,7 +650,13 @@ vhx.videos.update("https://api.vhx.tv/videos/1", {
 
 ```php
 <?php$video = \VHX\Videos::update("https://api.vhx.tv/videos/1", array(
-  'name' => 'A new description'
+  'name' => 'A new description',
+  'metadata' => array(
+    'director' => 'Brad Pitt',
+    'writers' => ['Foo Bar', 'Bar Foo'],
+    'release_year' => 2017,
+    'producer' => 'Christoper Nolan'
+  )
 ));
 ```
 
@@ -678,6 +691,7 @@ vhx.videos.update("https://api.vhx.tv/videos/1", {
   "advertising": {},
   "metadata": {
     "director": "Brad Pitt",
+    "producer": "Christoper Nolan",
     "writers": ["Foo Bar", "Bar Foo"],
     "release_year": 2017,
     "advertising_keywords": []
@@ -715,7 +729,7 @@ vhx.videos.update("https://api.vhx.tv/videos/1", {
       </td>
       <td>A description for the video.</p></td>
     </tr>
-    <tr class="text-2 border-bottom border--light-gray">
+    <tr class="is-internal text-2 border-bottom border--light-gray">
       <td>
         <strong class="is-block text--navy">metadata</strong>
         <span class="text--transparent text-3">object of key value pairs</span>

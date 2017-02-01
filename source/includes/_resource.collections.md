@@ -80,7 +80,7 @@ $ curl -X POST "https://api.vhx.tv/collections" \
 collection = Vhx::Collection.create({
   name: 'Collection Name',
   type: 'series',
-  metadata: { 
+  metadata: {
     director: 'Brad Pitt',
     writers: ['Foo Bar', 'Bar Foo'],
     release_year: 2017
@@ -92,7 +92,7 @@ collection = Vhx::Collection.create({
 vhx.collections.create({
   name: 'Collection Name',
   type: 'series',
-  metadata: { 
+  metadata: {
     director: 'Brad Pitt',
     writers: ['Foo Bar', 'Bar Foo'],
     release_year: 2017
@@ -109,7 +109,12 @@ vhx.collections.create({
 ```php
 <?php$collection = \VHX\Collections::create(array(
   'name' => 'Collection Name',
-  'type' => 'series'
+  'type' => 'series',
+  'metadata' => array(
+    'director' => 'Brad Pitt',
+    'writers' => ['Foo Bar', 'Bar Foo'],
+    'release_year' => 2017
+  )
 ));
 ```
 
@@ -198,7 +203,7 @@ vhx.collections.create({
       </td>
       <td>A publicly accessible image URL. If you prefer you can upload images directly to a collection in the VHX Publisher Admin.</td>
     </tr>    
-    <tr class="text-2 border-bottom border--light-gray">
+    <tr class="is-internal text-2 border-bottom border--light-gray">
       <td>
         <strong class="is-block text--navy">metadata</strong>
         <span class="text--transparent text-3">optional object</span>
@@ -503,17 +508,18 @@ vhx.collections.update();
 ```shell
 $ curl -X PUT "https://api.vhx.tv/collections/1" \
   -H "Content-Type: application/json" \
-  -d '{"description": "A new description", "metadata": {"director": "Brad Pitt", "writers": ["Foo Bar", "Bar Foo"], "release_year": 2017}}' \
+  -d '{"description": "A new description", "metadata": {"producer": "Christoper Nolan", "director": "Brad Pitt", "writers": ["Foo Bar", "Bar Foo"], "release_year": 2017}}' \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
 ```ruby
 collection = Vhx::Collection.retrieve("https://api.vhx.tv/collections/1").update({
   description: 'A new description',
-  metadata: { 
+  metadata: {
     director: 'Brad Pitt',
     writers: ['Foo Bar', 'Bar Foo'],
     release_year: 2017
+    producer: 'Christoper Nolan'
   }
 })
 ```
@@ -521,10 +527,11 @@ collection = Vhx::Collection.retrieve("https://api.vhx.tv/collections/1").update
 ```node
 vhx.collections.update("https://api.vhx.tv/collections/1", {
   description: 'A new description',
-  metadata: { 
+  metadata: {
     director: 'Brad Pitt',
     writers: ['Foo Bar', 'Bar Foo'],
     release_year: 2017
+    producer: 'Christoper Nolan'
   }
 }, function(err, collection) {
   // asynchronously called
@@ -537,7 +544,13 @@ vhx.collections.update("https://api.vhx.tv/collections/1", {
 
 ```php
 <?php$collection = \VHX\Collections::update("https://api.vhx.tv/collections/1", array(
-  'name' => 'A new description'
+  'name' => 'A new description',
+  'metadata' => array(
+    'director' => 'Brad Pitt',
+    'writers' => ['Foo Bar', 'Bar Foo'],
+    'release_year' => 2017,
+    'producer' => 'Christoper Nolan'
+  )
 ));
 ```
 
@@ -571,6 +584,7 @@ vhx.collections.update("https://api.vhx.tv/collections/1", {
   },
   "metadata": {
     "director": "Brad Pitt",
+    "producer": "Christoper Nolan",
     "writers": ["Foo Bar", "Bar Foo"],
     "release_year": 2017
   },
@@ -618,7 +632,7 @@ vhx.collections.update("https://api.vhx.tv/collections/1", {
       </td>
       <td>A publicly accessible image URL. If you prefer you can upload images directly to a collection in the VHX Publisher Admin.</td>
     </tr>
-    <tr class="text-2 border-bottom border--light-gray">
+    <tr class="is-internal text-2 border-bottom border--light-gray">
       <td>
         <strong class="is-block text--navy">metadata</strong>
         <span class="text--transparent text-3">optional object</span>
