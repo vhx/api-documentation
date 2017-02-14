@@ -72,7 +72,8 @@ vhx.collections.create();
 ```shell
 $ curl -X POST "https://api.vhx.tv/collections" \
   -H "Content-Type: application/json" \
-  -d '{"name": "Collection Name", "type": "series", "metadata": {"director": "Brad Pitt", "writers": ["Foo Bar", "Bar Foo"], "release_year": 2017}}' \
+  -d '{"name": "Collection Name", "type": "series", "metadata": {"director": "Brad Pitt", "writers":
+["Foo Bar", "Bar Foo"], "release_year": 2017, "custom_icon": "image_url:https://vhx.imgix.net/site/assets/1231.jpg"}}' \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
@@ -83,7 +84,8 @@ collection = Vhx::Collection.create({
   metadata: {
     director: 'Brad Pitt',
     writers: ['Foo Bar', 'Bar Foo'],
-    release_year: 2017
+    release_year: 2017,
+    custom_icon: "image_url:https://vhx.imgix.net/site/assets/1231.jpg",
   }
 })
 ```
@@ -95,7 +97,8 @@ vhx.collections.create({
   metadata: {
     director: 'Brad Pitt',
     writers: ['Foo Bar', 'Bar Foo'],
-    release_year: 2017
+    release_year: 2017,
+    custom_icon: "image_url:https://vhx.imgix.net/site/assets/1231.jpg"
   }
 }, function(err, collection) {
   // asynchronously called
@@ -113,7 +116,8 @@ vhx.collections.create({
   'metadata' => array(
     'director' => 'Brad Pitt',
     'writers' => ['Foo Bar', 'Bar Foo'],
-    'release_year' => 2017
+    'release_year' => 2017,
+    'custom_icon' => 'image_url:https://vhx.imgix.net/site/assets/1231.jpg'
   )
 ));
 ```
@@ -149,7 +153,13 @@ vhx.collections.create({
   "metadata": {
     "director": "Brad Pitt",
     "writers": ["Foo Bar", "Bar Foo"],
-    "release_year": 2017
+    "release_year": 2017,
+    "custom_icon": {
+      "small": "https://vhx.imgix.net/site/assets/1231.jpg?fit=clip&h=135&w=240",
+      "medium": "https://vhx.imgix.net/site/assets/1231.jpg?fit=clip&h=360&w=640",
+      "large": "https://vhx.imgix.net/site/assets/1231.jpg?fit=clip&h=720&w=1280",
+      "source": "https://vhx.imgix.net/site/assets/1231.jpg"
+    },
   },
   "type": "series",
   "seasons_count": 0,
@@ -210,7 +220,8 @@ vhx.collections.create({
       </td>
       <td>A set of key/value pairs that you can attach to a collection object. It can be useful for
 storing additional information about the collection in a structured format. Metadata keys must be
-strings. Metadata values can be strings, integers, or arrays. There are a few reserved keys that
+strings. Metadata values can be strings, integers, arrays, or images. An image metadata value
+must must be a url of an image (< 3MB) prefixed with the text <code>image_url:</code>. There are a few reserved keys that
 are auto-generated, which cannot be updated. These reserved keys are: <code>season_number</code></td>
     </tr>
   </tbody>
@@ -291,7 +302,13 @@ vhxjs.collections.retrieve("https://api.vhx.tv/collections/1", function(err, col
   "metadata": {
     "director": "Brad Pitt",
     "writers": ["Foo Bar", "Bar Foo"],
-    "release_year": 2017
+    "release_year": 2017,
+    "custom_icon": {
+      "small": "https://vhx.imgix.net/site/assets/1231.jpg?fit=clip&h=135&w=240",
+      "medium": "https://vhx.imgix.net/site/assets/1231.jpg?fit=clip&h=360&w=640",
+      "large": "https://vhx.imgix.net/site/assets/1231.jpg?fit=clip&h=720&w=1280",
+      "source": "https://vhx.imgix.net/site/assets/1231.jpg"
+    },
   },
   "type": "category",
   "items_count": 10,
@@ -508,7 +525,8 @@ vhx.collections.update();
 ```shell
 $ curl -X PUT "https://api.vhx.tv/collections/1" \
   -H "Content-Type: application/json" \
-  -d '{"description": "A new description", "metadata": {"producer": "Christoper Nolan", "director": "Brad Pitt", "writers": ["Foo Bar", "Bar Foo"], "release_year": 2017}}' \
+  -d '{"description": "A new description", "metadata": {"producer": "Christoper Nolan", "director":
+"Brad Pitt", "writers": ["Foo Bar", "Bar Foo"], "release_year": 2017, "custom_icon": "image_url:https://vhx.imgix.net/site/assets/1231.jpg"}}' \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
@@ -519,7 +537,8 @@ collection = Vhx::Collection.retrieve("https://api.vhx.tv/collections/1").update
     director: 'Brad Pitt',
     writers: ['Foo Bar', 'Bar Foo'],
     release_year: 2017
-    producer: 'Christoper Nolan'
+    producer: 'Christoper Nolan',
+    custom_icon: "image_url:https://vhx.imgix.net/site/assets/1231.jpg",
   }
 })
 ```
@@ -531,7 +550,8 @@ vhx.collections.update("https://api.vhx.tv/collections/1", {
     director: 'Brad Pitt',
     writers: ['Foo Bar', 'Bar Foo'],
     release_year: 2017
-    producer: 'Christoper Nolan'
+    producer: 'Christoper Nolan',
+    custom_icon: "image_url:https://vhx.imgix.net/site/assets/1231.jpg"
   }
 }, function(err, collection) {
   // asynchronously called
@@ -549,7 +569,8 @@ vhx.collections.update("https://api.vhx.tv/collections/1", {
     'director' => 'Brad Pitt',
     'writers' => ['Foo Bar', 'Bar Foo'],
     'release_year' => 2017,
-    'producer' => 'Christoper Nolan'
+    'producer' => 'Christoper Nolan',
+    'custom_icon' => 'image_url:https://vhx.imgix.net/site/assets/1231.jpg'
   )
 ));
 ```
@@ -586,7 +607,13 @@ vhx.collections.update("https://api.vhx.tv/collections/1", {
     "director": "Brad Pitt",
     "producer": "Christoper Nolan",
     "writers": ["Foo Bar", "Bar Foo"],
-    "release_year": 2017
+    "release_year": 2017,
+    "custom_icon": {
+      "small": "https://vhx.imgix.net/site/assets/1231.jpg?fit=clip&h=135&w=240",
+      "medium": "https://vhx.imgix.net/site/assets/1231.jpg?fit=clip&h=360&w=640",
+      "large": "https://vhx.imgix.net/site/assets/1231.jpg?fit=clip&h=720&w=1280",
+      "source": "https://vhx.imgix.net/site/assets/1231.jpg"
+    },
   },
   "type": "series",
   "seasons_count": 0,
@@ -639,7 +666,8 @@ vhx.collections.update("https://api.vhx.tv/collections/1", {
       </td>
       <td>A set of key/value pairs that you can attach to a collection object. It can be useful for
 storing additional information about the collection in a structured format. Metadata keys must be
-strings. Metadata values can be strings, integers, or arrays. There are a few reserved keys that
+strings. Metadata values can be strings, integers, arrays, or images. An image metadata value
+must must be a url of an image (< 3MB) prefixed with the text <code>image_url:</code>. There are a few reserved keys that
 are auto-generated, which cannot be updated. These reserved keys are: <code>season_number</code></td>
     </tr>
   </tbody>
