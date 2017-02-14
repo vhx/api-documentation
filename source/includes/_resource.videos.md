@@ -210,13 +210,19 @@ vhx.videos.create({
         <strong class="is-block text--navy">metadata</strong>
         <span class="text--transparent text-3">object of key value pairs</span>
       </td>
-      <td>A set of key/value pairs that you can attach to a video object. It can be useful for
-storing additional information about the video in a structured format. Metadata keys must be
-strings. Metadata values can be strings, integers, arrays, or images. An image metadata value
-must must be a url of an image (< 3MB) prefixed with the text <code>image_url:</code>. There are a few reserved keys that
-are auto-generated, which cannot be updated. These reserved keys are:
-<code>advertising_keywords</code>, <code>series_name</code>, <code>season_name</code>, <code>season_number</code>,
-<code>episode_number</code>, and <code>movie_name</code></p></td>
+      <td>
+      A set of key/value pairs that you can attach to a video object. It can be useful for
+      storing additional information about the video in a structured format. <br><br>
+
+      Metadata keys must be strings. There are a few reserved keys that
+      are auto-generated, which cannot be updated. These reserved keys are:
+      <code>advertising_keywords</code>, <code>series_name</code>, 
+      <code>season_name</code>, <code>season_number</code>,
+      <code>episode_number</code>, and <code>movie_name</code><br><br>
+
+      Metadata values can be strings, integers, arrays, or images. An image metadata value must 
+      must be a url of an image (< 3MB) prefixed with the text <code>image_url:</code>. 
+      </td>
     </tr>
   </tbody>
 </table>
@@ -760,14 +766,19 @@ vhx.videos.update("https://api.vhx.tv/videos/1", {
         <strong class="is-block text--navy">metadata</strong>
         <span class="text--transparent text-3">object of key value pairs</span>
       </td>
-      <td>A set of key/value pairs that you can attach to a video object. It can be useful for
-storing additional information about the video in a structured format. Metadata keys must be
-strings. Metadata values can be strings, integers, arrays, or images. An image metadata value
-must must be a url of an image (< 3MB) prefixed with the text <code>image_url:</code>.
+      <td>
+      A set of key/value pairs that you can attach to a video object. It can be useful for
+      storing additional information about the video in a structured format. <br><br>
 
-There are a few reserved keys that are auto-generated, which cannot be updated. These reserved keys are:
-<code>advertising_keywords</code>, <code>series_name</code>, <code>season_name</code>, <code>season_number</code>,
-<code>episode_number</code>, and <code>movie_name</code></p></td>
+      Metadata keys must be strings. There are a few reserved keys that
+      are auto-generated, which cannot be updated. These reserved keys are:
+      <code>advertising_keywords</code>, <code>series_name</code>, 
+      <code>season_name</code>, <code>season_number</code>,
+      <code>episode_number</code>, and <code>movie_name</code><br><br>
+
+      Metadata values can be strings, integers, arrays, or images. An image metadata value must 
+      must be a url of an image (< 3MB) prefixed with the text <code>image_url:</code>. 
+      </td>
     </tr>
   </tbody>
 </table>

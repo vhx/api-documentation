@@ -218,11 +218,16 @@ vhx.collections.create({
         <strong class="is-block text--navy">metadata</strong>
         <span class="text--transparent text-3">optional object</span>
       </td>
-      <td>A set of key/value pairs that you can attach to a collection object. It can be useful for
-storing additional information about the collection in a structured format. Metadata keys must be
-strings. Metadata values can be strings, integers, arrays, or images. An image metadata value
-must must be a url of an image (< 3MB) prefixed with the text <code>image_url:</code>. There are a few reserved keys that
-are auto-generated, which cannot be updated. These reserved keys are: <code>season_number</code></td>
+      <td>
+      A set of key/value pairs that you can attach to a collection object. It can be useful for
+      storing additional information about the collection in a structured format.<br><br>
+
+      Metadata keys must be strings. There are a few reserved keys that are auto-generated, which cannot
+      be updated. For collections, the following key is reserved: <code>season_number</code><br><br>
+
+      Metadata values can be strings, integers, arrays, or images. An image metadata value
+      must must be a url of an image (< 3MB) prefixed with the text <code>image_url:</code>. 
+      </td>
     </tr>
   </tbody>
 </table>
@@ -664,11 +669,16 @@ vhx.collections.update("https://api.vhx.tv/collections/1", {
         <strong class="is-block text--navy">metadata</strong>
         <span class="text--transparent text-3">optional object</span>
       </td>
-      <td>A set of key/value pairs that you can attach to a collection object. It can be useful for
-storing additional information about the collection in a structured format. Metadata keys must be
-strings. Metadata values can be strings, integers, arrays, or images. An image metadata value
-must must be a url of an image (< 3MB) prefixed with the text <code>image_url:</code>. There are a few reserved keys that
-are auto-generated, which cannot be updated. These reserved keys are: <code>season_number</code></td>
+      <td>
+      A set of key/value pairs that you can attach to a collection object. It can be useful for
+      storing additional information about the collection in a structured format.<br><br>
+
+      Metadata keys must be strings. There are a few reserved keys that are auto-generated, which cannot
+      be updated. For collections, the following key is reserved: <code>season_number</code><br><br>
+
+      Metadata values can be strings, integers, arrays, or images. An image metadata value
+      must must be a url of an image (< 3MB) prefixed with the text <code>image_url:</code>. 
+      </td>
     </tr>
   </tbody>
 </table>
