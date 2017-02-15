@@ -69,7 +69,9 @@ vhx.videos.create();
 ```shell
 $ curl -X POST "https://api.vhx.tv/videos" \
   -H "Content-Type: application/json" \
-  -d '{"title":"My Video","description":"My video description.", "source_url":"s3:://YOUR_BUCKET_NAME/FILE.mp4", "metadata": {"director": "Brad Pitt", "writers": ["Foo Bar", "Bar Foo"], "release_year": 2017}}' \
+  -d '{"title":"My Video","description":"My video description.",
+"source_url":"s3:://YOUR_BUCKET_NAME/FILE.mp4", "metadata": {"director": "Brad Pitt", "writers":
+["Foo Bar", "Bar Foo"], "release_year": 2017, "custom_icon": "image_url:https://vhx.imgix.net/site/assets/1231.jpg"}}' \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
@@ -81,7 +83,8 @@ video = Vhx::Video.create({
   metadata: {
     director: 'Brad Pitt',
     writers: ['Foo Bar', 'Bar Foo'],
-    release_year: 2017
+    release_year: 2017,
+    custom_icon: "image_url:https://vhx.imgix.net/site/assets/1231.jpg",
   }
 })
 ```
@@ -94,7 +97,8 @@ vhx.videos.create({
   metadata: {
     director: 'Brad Pitt',
     writers: ['Foo Bar', 'Bar Foo'],
-    release_year: 2017
+    release_year: 2017,
+    custom_icon: "image_url:https://vhx.imgix.net/site/assets/1231.jpg"
   }
 }, function(err, video) {
    // asynchronously called
@@ -113,7 +117,8 @@ vhx.videos.create({
   'metadata' => array(
     'director' => 'Brad Pitt',
     'writers' => ['Foo Bar', 'Bar Foo'],
-    'release_year' => 2017
+    'release_year' => 2017,
+    'custom_icon' => 'image_url:https://vhx.imgix.net/site/assets/1231.jpg'
   )
 ));
 ```
@@ -150,6 +155,12 @@ vhx.videos.create({
     "director": "Brad Pitt",
     "writers": ["Foo Bar", "Bar Foo"],
     "release_year": 2017,
+    "custom_icon": {
+      "small": "https://vhx.imgix.net/site/assets/1231.jpg?fit=clip&h=135&w=240",
+      "medium": "https://vhx.imgix.net/site/assets/1231.jpg?fit=clip&h=360&w=640",
+      "large": "https://vhx.imgix.net/site/assets/1231.jpg?fit=clip&h=720&w=1280",
+      "source": "https://vhx.imgix.net/site/assets/1231.jpg"
+    },
     "advertising_keywords": []
   },
   "files_count": 0,
@@ -199,12 +210,19 @@ vhx.videos.create({
         <strong class="is-block text--navy">metadata</strong>
         <span class="text--transparent text-3">object of key value pairs</span>
       </td>
-      <td>A set of key/value pairs that you can attach to a video object. It can be useful for
-storing additional information about the video in a structured format. Metadata keys must be
-strings. Metadata values can be strings, integers, or arrays. There are a few reserved keys that
-are auto-generated, which cannot be updated. These reserved keys are:
-<code>advertising_keywords</code>, <code>series_name</code>, <code>season_name</code>, <code>season_number</code>,
-<code>episode_number</code>, and <code>movie_name</code></p></td>
+      <td>
+      A set of key/value pairs that you can attach to a video object. It can be useful for
+      storing additional information about the video in a structured format. <br><br>
+
+      Metadata keys must be strings. There are a few reserved keys that
+      are auto-generated, which cannot be updated. These reserved keys are:
+      <code>advertising_keywords</code>, <code>series_name</code>, 
+      <code>season_name</code>, <code>season_number</code>,
+      <code>episode_number</code>, and <code>movie_name</code><br><br>
+
+      Metadata values can be strings, integers, arrays, or images. An image metadata value must 
+      must be a url of an image, hosted on vhx, prefixed with the text <code>image_url:</code>. 
+      </td>
     </tr>
   </tbody>
 </table>
@@ -328,6 +346,12 @@ vhxjs.videos.retrieve("https://api.vhx.tv/videos/1", function(err, video) {
     "season_name": "Season 1",
     "season_number": 1,
     "episode_number": 5,
+    "custom_icon": {
+      "small": "https://vhx.imgix.net/site/assets/1231.jpg?fit=clip&h=135&w=240",
+      "medium": "https://vhx.imgix.net/site/assets/1231.jpg?fit=clip&h=360&w=640",
+      "large": "https://vhx.imgix.net/site/assets/1231.jpg?fit=clip&h=720&w=1280",
+      "source": "https://vhx.imgix.net/site/assets/1231.jpg"
+    },
     "advertising_keywords": []
   },
   "files_count": 5,
@@ -614,7 +638,7 @@ vhx.videos.update();
 ```shell
 $ curl -X PUT "https://api.vhx.tv/videos/1" \
   -H "Content-Type: application/json" \
-  -d '{"description":"My video description.", "metadata": {"producer": "Christoper Nolan", "director": "Brad Pitt", "writers": ["Foo Bar", "Bar Foo"], "release_year": 2017}}' \
+  -d '{"description":"My video description.", "metadata": {"producer": "Christoper Nolan", "director": "Brad Pitt", "writers": ["Foo Bar", "Bar Foo"], "release_year": 2017, "custom_icon": "image_url:https://vhx.imgix.net/site/assets/1231.jpg"}}' \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
@@ -624,8 +648,9 @@ video = Vhx::Video.retrieve("https://api.vhx.tv/videos/1").update({
   metadata: {
     director: 'Brad Pitt',
     writers: ['Foo Bar', 'Bar Foo'],
-    release_year: 2017
-    producer: 'Christoper Nolan'
+    release_year: 2017,
+    producer: 'Christoper Nolan',
+    custom_icon: "image_url:https://vhx.imgix.net/site/assets/1231.jpg",
   }
 })
 ```
@@ -636,8 +661,9 @@ vhx.videos.update("https://api.vhx.tv/videos/1", {
   metadata: {
     director: 'Brad Pitt',
     writers: ['Foo Bar', 'Bar Foo'],
-    release_year: 2017
-    producer: 'Christoper Nolan'
+    release_year: 2017,
+    producer: 'Christoper Nolan',
+    custom_icon: "image_url:https://vhx.imgix.net/site/assets/1231.jpg"
   }
 }, function(err, video) {
   // asynchronously called
@@ -694,6 +720,12 @@ vhx.videos.update("https://api.vhx.tv/videos/1", {
     "producer": "Christoper Nolan",
     "writers": ["Foo Bar", "Bar Foo"],
     "release_year": 2017,
+    "custom_icon": {
+      "small": "https://vhx.imgix.net/site/assets/1231.jpg?fit=clip&h=135&w=240",
+      "medium": "https://vhx.imgix.net/site/assets/1231.jpg?fit=clip&h=360&w=640",
+      "large": "https://vhx.imgix.net/site/assets/1231.jpg?fit=clip&h=720&w=1280",
+      "source": "https://vhx.imgix.net/site/assets/1231.jpg"
+    },
     "advertising_keywords": []
   },
   "files_count": 0,
@@ -734,12 +766,19 @@ vhx.videos.update("https://api.vhx.tv/videos/1", {
         <strong class="is-block text--navy">metadata</strong>
         <span class="text--transparent text-3">object of key value pairs</span>
       </td>
-      <td>A set of key/value pairs that you can attach to a video object. It can be useful for
-storing additional information about the video in a structured format. Metadata keys must be
-strings. Metadata values can be strings, integers, or arrays. There are a few reserved keys that
-are auto-generated, which cannot be updated. These reserved keys are:
-<code>advertising_keywords</code>, <code>series_name</code>, <code>season_name</code>, <code>season_number</code>,
-<code>episode_number</code>, and <code>movie_name</code></p></td>
+      <td>
+      A set of key/value pairs that you can attach to a video object. It can be useful for
+      storing additional information about the video in a structured format. <br><br>
+
+      Metadata keys must be strings. There are a few reserved keys that
+      are auto-generated, which cannot be updated. These reserved keys are:
+      <code>advertising_keywords</code>, <code>series_name</code>, 
+      <code>season_name</code>, <code>season_number</code>,
+      <code>episode_number</code>, and <code>movie_name</code><br><br>
+
+      Metadata values can be strings, integers, arrays, or images. An image metadata value must 
+      must be a url of an image, hosted on vhx, prefixed with the text <code>image_url:</code>. 
+      </td>
     </tr>
   </tbody>
 </table>
