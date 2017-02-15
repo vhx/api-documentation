@@ -226,7 +226,7 @@ vhx.collections.create({
       be updated. For collections, the following key is reserved: <code>season_number</code><br><br>
 
       Metadata values can be strings, integers, arrays, or images. An image metadata value
-      must must be a url of an image (< 3MB) prefixed with the text <code>image_url:</code>. 
+      must must be a url of an image, hosted on vhx, prefixed with the text <code>image_url:</code>. 
       </td>
     </tr>
   </tbody>
@@ -677,7 +677,7 @@ vhx.collections.update("https://api.vhx.tv/collections/1", {
       be updated. For collections, the following key is reserved: <code>season_number</code><br><br>
 
       Metadata values can be strings, integers, arrays, or images. An image metadata value
-      must must be a url of an image (< 3MB) prefixed with the text <code>image_url:</code>. 
+      must must be a url of an image, hosted on vhx, prefixed with the text <code>image_url:</code>. 
       </td>
     </tr>
   </tbody>

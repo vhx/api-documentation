@@ -221,7 +221,7 @@ vhx.videos.create({
       <code>episode_number</code>, and <code>movie_name</code><br><br>
 
       Metadata values can be strings, integers, arrays, or images. An image metadata value must 
-      must be a url of an image (< 3MB) prefixed with the text <code>image_url:</code>. 
+      must be a url of an image, hosted on vhx, prefixed with the text <code>image_url:</code>. 
       </td>
     </tr>
   </tbody>
@@ -777,7 +777,7 @@ vhx.videos.update("https://api.vhx.tv/videos/1", {
       <code>episode_number</code>, and <code>movie_name</code><br><br>
 
       Metadata values can be strings, integers, arrays, or images. An image metadata value must 
-      must be a url of an image (< 3MB) prefixed with the text <code>image_url:</code>. 
+      must be a url of an image, hosted on vhx, prefixed with the text <code>image_url:</code>. 
       </td>
     </tr>
   </tbody>
