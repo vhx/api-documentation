@@ -124,6 +124,14 @@ vhx.customers.create({
       </td>
       <td>The <code>href</code> of the product you'd like to give the customer access to.</td>
     </tr>
+    <tr class="text-2 border-bottom border--light-gray is-internal">
+      <td class="nowrap">
+        <strong class="is-block text--navy">billing</strong>
+        <span class="is-block text--transparent text-3">object</span>
+        <span class="text--yellow text-3">optional</span>
+      </td>
+      <td>VHX supports back-end verification for In-App Purchases with billing data for the Apple, Google, and Roku platforms. See <a href="/integrations#iap">In-App Purchases</a> for more details.</td>
+    </tr>
   </tbody>
 </table>
 
@@ -223,6 +231,104 @@ vhxjs.customers.retrieve("https://api.vhx.tv/customers/1", function(err, custome
         <strong class="is-block text--navy">product</strong>
         <span class="is-block text--transparent text-3">string</span>
         <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>The <code>href</code> of a product.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 class="text-2 head-4 text--navy text--bold margin-top-large margin-bottom-medium is-internal" id="customer-find-by-billing">Retrieve with In-App Purchase data</h3>
+
+> <h5 class="head-5 text--white margin-bottom-medium is-internal">Retrieve with In-App Purchase data</h5>
+
+> Definition
+
+```shell
+POST /customers/find_by_billing
+```
+
+```ruby
+```
+
+```node
+```
+
+```javascript
+```
+
+```php
+```
+
+> Example Request
+
+```shell
+$ curl -X POST "https://api.vhx.tv/customers/find_by_billing" \
+  -d billing[provider]="apple" \
+  -d billing[receipt]="{receipt}" \
+  -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
+```
+
+```ruby
+```
+
+```node
+```
+
+```javascript
+```
+
+```php
+```
+
+> Example Response
+
+```json
+{
+  "_links": {
+    "self":  { "href": "https://api.vhx.tv/customers/1" },
+    "watchlist": { "href": "https://api.vhx.tv/customers/1/watchlist" },
+    "watching": { "href": "https://api.vhx.tv/customers/1/watching" }
+  },
+  "_embedded": {
+      "oauth": {
+        "access_token": "3e0b2925500c3cc87b3c8ab47c93041f16e167ee5b949855e41fef7a3eb87ee3",
+        "token_type": "bearer",
+        "expires_in": 7200
+      }
+  },
+  "id": 1,
+  "name": "First Last",
+  "email": "customer@email.com",
+  "created_at": "2014-02-25T20:19:30Z",
+  "updated_at": "2014-02-25T20:19:30Z"
+}
+```
+<section class="text-2 contain margin-bottom-medium is-internal">
+  <p>Retrieves an existing customer with <a href="/integrations#iap">In-App Purchase</a> data.</p>
+</section>
+
+<table class="is-internal">
+  <thead>
+    <tr class="text-2">
+      <th class="padding-medium nowrap">Arguments</th>
+      <th class="padding-medium" width="100%">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">billing</strong>
+        <span class="is-block text--transparent text-3">object</span>
+        <span class="text--yellow text-3">REQUIRED</span>
+      </td>
+      <td>The billing provider and receipt for the In-App Purchase.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">product</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--yellow text-3">REQUIRED</span>
       </td>
       <td>The <code>href</code> of a product.</td>
     </tr>
