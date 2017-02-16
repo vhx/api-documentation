@@ -128,9 +128,9 @@ vhx.customers.create({
       <td class="nowrap">
         <strong class="is-block text--navy">billing</strong>
         <span class="is-block text--transparent text-3">object</span>
-        <span class="text--yellow text-3">optional</span>
+        <span class="text--transparent text-3">optional</span>
       </td>
-      <td>VHX supports back-end verification for In-App Purchases with billing data for the Apple, Google, and Roku platforms. See <a href="/integrations#iap">In-App Purchases</a> for more details.</td>
+      <td>Billing parameters for <a href="/integrations#iap">In-App Purchases</a> for the Apple, Google, and Roku platforms.</td>
     </tr>
   </tbody>
 </table>
