@@ -237,9 +237,9 @@ vhxjs.customers.retrieve("https://api.vhx.tv/customers/1", function(err, custome
   </tbody>
 </table>
 
-<h3 class="text-2 head-4 text--navy text--bold margin-top-large margin-bottom-medium is-internal" id="customer-find-by-billing">Retrieve with In-App Purchase data</h3>
+<h3 class="text-2 head-4 text--navy text--bold margin-top-large margin-bottom-medium is-internal" id="customer-find-by-billing">Retrieve with In-App Purchase billing data</h3>
 
-> <h5 class="head-5 text--white margin-bottom-medium is-internal">Retrieve with In-App Purchase data</h5>
+> <h5 class="head-5 text--white margin-bottom-medium is-internal">Retrieve with In-App Purchase billing data</h5>
 
 > Definition
 
