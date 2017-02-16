@@ -304,7 +304,7 @@ $ curl -X POST "https://api.vhx.tv/customers/find_by_billing" \
 }
 ```
 <section class="text-2 contain margin-bottom-medium is-internal">
-  <p>Retrieves an existing customer with <a href="/integrations#iap">In-App Purchase</a> data.</p>
+  <p>Retrieves an existing customer with <a href="/integrations#iap">In-App Purchase</a> billing data.</p>
 </section>
 
 <table class="is-internal">
