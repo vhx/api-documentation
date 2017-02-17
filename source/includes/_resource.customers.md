@@ -264,7 +264,7 @@ POST /customers/find_by_billing
 ```shell
 $ curl -X POST "https://api.vhx.tv/customers/find_by_billing" \
   -d billing[provider]="apple" \
-  -d billing[receipt]="{receipt}" \
+  -d billing[receipt]="MIIcVgYJKoZIhv..." \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
