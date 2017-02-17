@@ -130,7 +130,7 @@ vhx.customers.create({
         <span class="is-block text--transparent text-3">object</span>
         <span class="text--transparent text-3">optional</span>
       </td>
-      <td>Billing parameters for <a href="/integrations#iap">In-App Purchases</a> for the Apple, Google, and Roku platforms.</td>
+      <td>Billing parameters for <a href="/in-app-purchases">In-App Purchases</a> for the Apple, Google, and Roku platforms.</td>
     </tr>
   </tbody>
 </table>
