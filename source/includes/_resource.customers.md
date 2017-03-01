@@ -38,22 +38,25 @@ $ curl -X POST "https://api.vhx.tv/customers" \
   -d name="First Last" \
   -d email="customer@email.com" \
   -d product="https://api.vhx.tv/products/1" \
+  -d plan="standard" \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
 ```ruby
 customer = Vhx::Customer.create({
   name: 'First Last',
-  email: 'customer@email.com'
-  product: 'https://api.vhx.tv/products/1'
+  email: 'customer@email.com',
+  product: 'https://api.vhx.tv/products/1',
+  plan: 'standard'
 })
 ```
 
 ```node
 vhx.customers.create({
   name: 'First Last',
-  email: 'customer@email.com'
-  product: 'https://api.vhx.tv/products/1'
+  email: 'customer@email.com',
+  product: 'https://api.vhx.tv/products/1',
+  plan: 'standard'
 }, function(err, customer) {
   // asynchronously called
 });
@@ -67,7 +70,8 @@ vhx.customers.create({
 <?php$customer = \VHX\Customers::create(array(
   'name' => 'First Last',
   'email' => 'customer@email.com',
-  'product' => 'https://api.vhx.tv/products/1'
+  'product' => 'https://api.vhx.tv/products/1',
+  'plan' => 'standard'
 ));
 ```
 
@@ -83,7 +87,8 @@ vhx.customers.create({
   "name": "First Last",
   "email": "customer@email.com",
   "created_at": "2014-02-25T20:19:30Z",
-  "updated_at": "2014-02-25T20:19:30Z"
+  "updated_at": "2014-02-25T20:19:30Z",
+  "plan": "standard"
 }
 ```
 
@@ -131,6 +136,16 @@ vhx.customers.create({
         <span class="text--transparent text-3">optional</span>
       </td>
       <td>Billing parameters for <a href="/in-app-purchases">In-App Purchases</a> for the Apple, Google, and Roku platforms.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td class="nowrap">
+        <strong class="is-block text--navy">plan</strong>
+        <span class="is-block text--transparent text-3">string</span>
+      </td>
+      <td>
+      The tier of content the customer will be able to access. Values can be one of
+      the following strings: `"free"`, `"standard"`. 
+      See <a href="#videos-update">Update Video</a>for more detail on the types of plans</td>
     </tr>
   </tbody>
 </table>
@@ -202,7 +217,8 @@ vhxjs.customers.retrieve("https://api.vhx.tv/customers/1", function(err, custome
   "name": "First Last",
   "email": "customer@email.com",
   "created_at": "2014-02-25T20:19:30Z",
-  "updated_at": "2014-02-25T20:19:30Z"
+  "updated_at": "2014-02-25T20:19:30Z",
+  "plan": "standard"
 }
 ```
 <section class="text-2 contain margin-bottom-medium">

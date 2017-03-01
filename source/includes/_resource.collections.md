@@ -73,7 +73,8 @@ vhx.collections.create();
 $ curl -X POST "https://api.vhx.tv/collections" \
   -H "Content-Type: application/json" \
   -d '{"name": "Collection Name", "type": "series", "metadata": {"director": "Brad Pitt", "writers":
-["Foo Bar", "Bar Foo"], "release_year": 2017, "custom_icon": "image_url:https://vhx.imgix.net/site/assets/1231.jpg"}}' \
+["Foo Bar", "Bar Foo"], "release_year": 2017, "custom_icon":
+"image_url:https://vhx.imgix.net/site/assets/1231.jpg"}, "plans": ["public", "free", "standard"]}' \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
@@ -86,7 +87,8 @@ collection = Vhx::Collection.create({
     writers: ['Foo Bar', 'Bar Foo'],
     release_year: 2017,
     custom_icon: "image_url:https://vhx.imgix.net/site/assets/1231.jpg",
-  }
+  },
+  plans: ["public", "free", "standard"]
 })
 ```
 
@@ -99,7 +101,8 @@ vhx.collections.create({
     writers: ['Foo Bar', 'Bar Foo'],
     release_year: 2017,
     custom_icon: "image_url:https://vhx.imgix.net/site/assets/1231.jpg"
-  }
+  },
+  plans: ["public", "free", "standard"]
 }, function(err, collection) {
   // asynchronously called
 });
@@ -118,7 +121,8 @@ vhx.collections.create({
     'writers' => ['Foo Bar', 'Bar Foo'],
     'release_year' => 2017,
     'custom_icon' => 'image_url:https://vhx.imgix.net/site/assets/1231.jpg'
-  )
+  ),
+  'plans' => ['public', 'free', 'standard']
 ));
 ```
 
@@ -161,6 +165,7 @@ vhx.collections.create({
       "source": "https://vhx.imgix.net/site/assets/1231.jpg"
     },
   },
+  "plans": ["public", "free", "standard"],
   "type": "series",
   "seasons_count": 0,
   "items_count": 0,
@@ -227,6 +232,24 @@ vhx.collections.create({
 
       Metadata values can be strings, integers, arrays, or images. An image metadata value
       must must be a url of an image, hosted on vhx, prefixed with the text <code>image_url:</code>. 
+      </td>
+    </tr>
+    <tr class="is-internal text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">plans</strong>
+        <span class="text--transparent text-3">array of strings</span>
+      </td>
+      <td>
+      An array of plan types that you can use to set video availability. 
+      Values can be one or more of the following strings: `"public"`, `"free"`, `"standard"`.<br><br>
+
+      The `"public"` plan makes the video object available for free, without registration to any public
+      visitor to your site.<br><br>
+      
+      The `"free"` plan makes the video object available for free, but requires user email
+      registration<br><br>
+
+      The `"standard"` plan makes the video object available to paying subscribers.
       </td>
     </tr>
   </tbody>
@@ -315,6 +338,7 @@ vhxjs.collections.retrieve("https://api.vhx.tv/collections/1", function(err, col
       "source": "https://vhx.imgix.net/site/assets/1231.jpg"
     },
   },
+  "plans": ["public", "free", "standard"],
   "type": "category",
   "items_count": 10,
   "created_at": "2014-02-25T20:19:30Z",
@@ -531,7 +555,8 @@ vhx.collections.update();
 $ curl -X PUT "https://api.vhx.tv/collections/1" \
   -H "Content-Type: application/json" \
   -d '{"description": "A new description", "metadata": {"producer": "Christoper Nolan", "director":
-"Brad Pitt", "writers": ["Foo Bar", "Bar Foo"], "release_year": 2017, "custom_icon": "image_url:https://vhx.imgix.net/site/assets/1231.jpg"}}' \
+"Brad Pitt", "writers": ["Foo Bar", "Bar Foo"], "release_year": 2017, "custom_icon":
+"image_url:https://vhx.imgix.net/site/assets/1231.jpg"}, "plans": ["public", "free", "standard"] }' \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
@@ -544,7 +569,8 @@ collection = Vhx::Collection.retrieve("https://api.vhx.tv/collections/1").update
     release_year: 2017
     producer: 'Christoper Nolan',
     custom_icon: "image_url:https://vhx.imgix.net/site/assets/1231.jpg",
-  }
+  },
+  plans: ["public", "free", "standard"]
 })
 ```
 
@@ -557,7 +583,8 @@ vhx.collections.update("https://api.vhx.tv/collections/1", {
     release_year: 2017
     producer: 'Christoper Nolan',
     custom_icon: "image_url:https://vhx.imgix.net/site/assets/1231.jpg"
-  }
+  },
+  plans: ["public", "free", "standard"]
 }, function(err, collection) {
   // asynchronously called
 });
@@ -577,6 +604,7 @@ vhx.collections.update("https://api.vhx.tv/collections/1", {
     'producer' => 'Christoper Nolan',
     'custom_icon' => 'image_url:https://vhx.imgix.net/site/assets/1231.jpg'
   )
+  'plans' => ['public', 'free', 'standard'],
 ));
 ```
 
@@ -620,6 +648,7 @@ vhx.collections.update("https://api.vhx.tv/collections/1", {
       "source": "https://vhx.imgix.net/site/assets/1231.jpg"
     },
   },
+  "plans": ["public", "free", "standard"],
   "type": "series",
   "seasons_count": 0,
   "items_count": 0,
@@ -678,6 +707,24 @@ vhx.collections.update("https://api.vhx.tv/collections/1", {
 
       Metadata values can be strings, integers, arrays, or images. An image metadata value
       must must be a url of an image, hosted on vhx, prefixed with the text <code>image_url:</code>. 
+      </td>
+    </tr>
+    <tr class="is-internal text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">plans</strong>
+        <span class="text--transparent text-3">array of strings</span>
+      </td>
+      <td>
+      An array of plan types that you can use to set video availability. 
+      Values can be one or more of the following strings: `"public"`, `"free"`, `"standard"`.<br><br>
+
+      The `"public"` plan makes the video object available for free, without registration to any public
+      visitor to your site.<br><br>
+      
+      The `"free"` plan makes the video object available for free, but requires user email
+      registration<br><br>
+
+      The `"standard"` plan makes the video object available to paying subscribers.
       </td>
     </tr>
   </tbody>

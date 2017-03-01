@@ -71,7 +71,8 @@ $ curl -X POST "https://api.vhx.tv/videos" \
   -H "Content-Type: application/json" \
   -d '{"title":"My Video","description":"My video description.",
 "source_url":"s3:://YOUR_BUCKET_NAME/FILE.mp4", "metadata": {"director": "Brad Pitt", "writers":
-["Foo Bar", "Bar Foo"], "release_year": 2017, "custom_icon": "image_url:https://vhx.imgix.net/site/assets/1231.jpg"}}' \
+["Foo Bar", "Bar Foo"], "release_year": 2017, "custom_icon":
+"image_url:https://vhx.imgix.net/site/assets/1231.jpg"}, "plans": ["public", "free", "standard"]}' \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
@@ -85,7 +86,8 @@ video = Vhx::Video.create({
     writers: ['Foo Bar', 'Bar Foo'],
     release_year: 2017,
     custom_icon: "image_url:https://vhx.imgix.net/site/assets/1231.jpg",
-  }
+  },
+  plans: ['public', 'free', 'standard']
 })
 ```
 
@@ -99,7 +101,8 @@ vhx.videos.create({
     writers: ['Foo Bar', 'Bar Foo'],
     release_year: 2017,
     custom_icon: "image_url:https://vhx.imgix.net/site/assets/1231.jpg"
-  }
+  },
+  plans: ['public', 'free', 'standard']
 }, function(err, video) {
    // asynchronously called
 });
@@ -119,7 +122,8 @@ vhx.videos.create({
     'writers' => ['Foo Bar', 'Bar Foo'],
     'release_year' => 2017,
     'custom_icon' => 'image_url:https://vhx.imgix.net/site/assets/1231.jpg'
-  )
+  ),
+  'plans' => ['public', 'free', 'standard']
 ));
 ```
 > Example Response
@@ -163,6 +167,7 @@ vhx.videos.create({
     },
     "advertising_keywords": []
   },
+  "plans": ["public", "free", "standard"],
   "files_count": 0,
   "created_at": "2014-02-25T20:19:30Z",
   "updated_at": "2014-02-25T20:19:30Z"
@@ -222,6 +227,25 @@ vhx.videos.create({
 
       Metadata values can be strings, integers, arrays, or images. An image metadata value must 
       must be a url of an image, hosted on vhx, prefixed with the text <code>image_url:</code>. 
+      </td>
+    </tr>
+
+    <tr class="is-internal text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">plans</strong>
+        <span class="text--transparent text-3">array of strings</span>
+      </td>
+      <td>
+      An array of plan types that you can use to set video availability. 
+      Values can be one or more of the following strings: `"public"`, `"free"`, `"standard"`.<br><br>
+
+      The `"public"` plan makes the video object available for free, without registration to any public
+      visitor to your site.<br><br>
+      
+      The `"free"` plan makes the video object available for free, but requires user email
+      registration<br><br>
+
+      The `"standard"` plan makes the video object available to paying subscribers.
       </td>
     </tr>
   </tbody>
@@ -354,6 +378,7 @@ vhxjs.videos.retrieve("https://api.vhx.tv/videos/1", function(err, video) {
     },
     "advertising_keywords": []
   },
+  "plans": ["public", "free", "standard"],
   "files_count": 5,
   "created_at": "2014-02-25T20:19:30Z",
   "updated_at": "2014-02-25T20:19:30Z"
@@ -638,7 +663,9 @@ vhx.videos.update();
 ```shell
 $ curl -X PUT "https://api.vhx.tv/videos/1" \
   -H "Content-Type: application/json" \
-  -d '{"description":"My video description.", "metadata": {"producer": "Christoper Nolan", "director": "Brad Pitt", "writers": ["Foo Bar", "Bar Foo"], "release_year": 2017, "custom_icon": "image_url:https://vhx.imgix.net/site/assets/1231.jpg"}}' \
+  -d '{"description":"My video description.", "metadata": {"producer": "Christoper Nolan",
+"director": "Brad Pitt", "writers": ["Foo Bar", "Bar Foo"], "release_year": 2017, "custom_icon":
+"image_url:https://vhx.imgix.net/site/assets/1231.jpg"}, "plans": ["public", "free", "standard"]}' \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
@@ -651,7 +678,8 @@ video = Vhx::Video.retrieve("https://api.vhx.tv/videos/1").update({
     release_year: 2017,
     producer: 'Christoper Nolan',
     custom_icon: "image_url:https://vhx.imgix.net/site/assets/1231.jpg",
-  }
+  },
+  plans: ["public", "free", "standard"],
 })
 ```
 
@@ -664,7 +692,8 @@ vhx.videos.update("https://api.vhx.tv/videos/1", {
     release_year: 2017,
     producer: 'Christoper Nolan',
     custom_icon: "image_url:https://vhx.imgix.net/site/assets/1231.jpg"
-  }
+  },
+  plans: ["public", "free", "standard"],
 }, function(err, video) {
   // asynchronously called
 });
@@ -682,7 +711,8 @@ vhx.videos.update("https://api.vhx.tv/videos/1", {
     'writers' => ['Foo Bar', 'Bar Foo'],
     'release_year' => 2017,
     'producer' => 'Christoper Nolan'
-  )
+  ),
+  'plans' => ['public', 'free', 'standard']
 ));
 ```
 
@@ -728,6 +758,7 @@ vhx.videos.update("https://api.vhx.tv/videos/1", {
     },
     "advertising_keywords": []
   },
+  "plans": ["public", "free", "standard"],
   "files_count": 0,
   "created_at": "2014-02-25T20:19:30Z",
   "updated_at": "2014-02-25T20:19:30Z"
@@ -778,6 +809,24 @@ vhx.videos.update("https://api.vhx.tv/videos/1", {
 
       Metadata values can be strings, integers, arrays, or images. An image metadata value must 
       must be a url of an image, hosted on vhx, prefixed with the text <code>image_url:</code>. 
+      </td>
+    </tr>
+    <tr class="is-internal text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">plans</strong>
+        <span class="text--transparent text-3">array of strings</span>
+      </td>
+      <td>
+      An array of plan types that you can use to set video availability. 
+      Values can be one or more of the following strings: `"public"`, `"free"`, `"standard"`.<br><br>
+
+      The `"public"` plan makes the video object available for free, without registration to any public
+      visitor to your site.<br><br>
+      
+      The `"free"` plan makes the video object available for free, but requires user email
+      registration<br><br>
+
+      The `"standard"` plan makes the video object available to paying subscribers.
       </td>
     </tr>
   </tbody>
