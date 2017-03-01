@@ -240,16 +240,17 @@ vhx.collections.create({
         <span class="text--transparent text-3">array of strings</span>
       </td>
       <td>
-      An array of plan types that you can use to set video availability. 
-      Values can be one or more of the following strings: `"public"`, `"free"`, `"standard"`.<br><br>
+      An array of plan types that you can use to set collection availability. 
+      Values can be one or more of the following strings: <code>public</code>, <code>free</code>,
+      <code>standard</code>.<br><br>
 
-      The `"public"` plan makes the video object available for free, without registration to any public
-      visitor to your site.<br><br>
+      The <code>public</code> plan makes the collection object available for free, without registration 
+      to any public visitor to your site.<br><br>
       
-      The `"free"` plan makes the video object available for free, but requires user email
+      The <code>free</code> plan makes the collection object available for free, but requires user email
       registration<br><br>
 
-      The `"standard"` plan makes the video object available to paying subscribers.
+      The <code>standard</code> plan makes the collection object available to paying subscribers.
       </td>
     </tr>
   </tbody>
@@ -715,16 +716,17 @@ vhx.collections.update("https://api.vhx.tv/collections/1", {
         <span class="text--transparent text-3">array of strings</span>
       </td>
       <td>
-      An array of plan types that you can use to set video availability. 
-      Values can be one or more of the following strings: `"public"`, `"free"`, `"standard"`.<br><br>
+      An array of plan types that you can use to set collection availability. 
+      Values can be one or more of the following strings: <code>public</code>, <code>free</code>,
+      <code>standard</code>.<br><br>
 
-      The `"public"` plan makes the video object available for free, without registration to any public
-      visitor to your site.<br><br>
+      The <code>public</code> plan makes the collection object available for free, without registration 
+      to any public visitor to your site.<br><br>
       
-      The `"free"` plan makes the video object available for free, but requires user email
+      The <code>free</code> plan makes the collection object available for free, but requires user email
       registration<br><br>
 
-      The `"standard"` plan makes the video object available to paying subscribers.
+      The <code>standard</code> plan makes the collection object available to paying subscribers.
       </td>
     </tr>
   </tbody>

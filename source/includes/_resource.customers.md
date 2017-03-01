@@ -144,7 +144,7 @@ vhx.customers.create({
       </td>
       <td>
       The tier of content the customer will be able to access. Values can be one of
-      the following strings: `"free"`, `"standard"`. 
+      the following strings: `free`, `standard`. 
       See <a href="#videos-update">Update Video</a>for more detail on the types of plans</td>
     </tr>
   </tbody>
