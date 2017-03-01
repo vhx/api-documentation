@@ -244,8 +244,8 @@ vhx.collections.create({
       Values can be one or more of the following strings: <code>public</code>, <code>free</code>,
       <code>standard</code>.<br><br>
 
-      The <code>public</code> plan makes the collection object available for free, without registration 
-      to any public visitor to your site.<br><br>
+      The <code>public</code> plan makes the collection object available without email 
+      registration or paid subscription.<br><br>
       
       The <code>free</code> plan makes the collection object available for free, but requires user email
       registration<br><br>
@@ -720,8 +720,8 @@ vhx.collections.update("https://api.vhx.tv/collections/1", {
       Values can be one or more of the following strings: <code>public</code>, <code>free</code>,
       <code>standard</code>.<br><br>
 
-      The <code>public</code> plan makes the collection object available for free, without registration 
-      to any public visitor to your site.<br><br>
+      The <code>public</code> plan makes the collection object available without email 
+      registration or paid subscription.<br><br>
       
       The <code>free</code> plan makes the collection object available for free, but requires user email
       registration<br><br>

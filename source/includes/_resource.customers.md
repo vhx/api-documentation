@@ -141,10 +141,10 @@ vhx.customers.create({
       <td class="nowrap">
         <strong class="is-block text--navy">plan</strong>
         <span class="is-block text--transparent text-3">string</span>
-        <span class="text--transparent text-3">optional</span>
+        <span class="text--transparent text-3">optional, default is "standard"</span>
       </td>
       <td>
-      The tier of content the customer will be able to access. Values can be one of
+      The customer's plan determines content accessibility. Values can be one of
       the following strings: `free`, `standard`. 
       See <a href="#videos-update">Update Video</a> for more detail on the types of plans</td>
     </tr>
