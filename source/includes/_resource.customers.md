@@ -743,7 +743,7 @@ vhx.customers.removeProduct('https://api.vhx.tv/customers/1', {
 ```
 
 <section class="text-2 contain margin-bottom-medium">
-  <p>Removes a product to an existing customer. By removing a product, the customer will no longer have access to its contents.</p>
+  <p>Removes a product from an existing customer. By removing a product, the customer will no longer have access to its contents.</p>
 </section>
 
 <table>
