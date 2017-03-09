@@ -867,44 +867,97 @@ $ curl -X PUT "https://api.vhx.tv/collections/1/items" \
 
 > Example Response
 
-```json
-{
-  "_links":{
-    "self":{
-      "href": "http://api.vhx.tv/collections/1"
-    },
-    "items":{
-      "href": "http://api.vhx.tv/collections/1/items"
-    },
-    "collection_page":{
-      "href": "http://mynetwork.com/collection-name-1"
-    }
-  },
-  "_embedded":{
-    "trailer":null
-  },
-  "id": 1,
-  "name": "Collection name",
-  "description": "Collection description",
-  "slug":"collection-name",
-  "thumbnail":{
-    "small": "https://cdn.vhx.tv/assets/thumbnails/default-small.png",
-    "medium": "https://cdn.vhx.tv/assets/thumbnails/default-medium.png",
-    "large": "https://cdn.vhx.tv/assets/thumbnails/default-large.png",
-    "source": "https://cdn.vhx.tv/assets/thumbnails/original.jpg"
-  },
-  "type": "series",
-  "videos_count": 1,
-  "items_count": 1,
-  "files_count": 0,
-  "created_at": "2017-03-06T22:13:48Z",
-  "updated_at": "2017-03-09T17:08:53Z",
-  "metadata":{ }
-}
+```http
+head 204
 ```
 
 <section class="text-2 contain margin-bottom-medium">
   <p>Adds an item to an existing collection.</p>
+</section>
+
+<table>
+  <thead>
+    <tr class="text-2">
+      <th class="padding-medium nowrap">Arguments</th>
+      <th class="padding-medium" width="100%">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr class="text-2 border-bottom border--light-gray">
+      <tr class="text-2 border-bottom border--light-gray">
+        <td>
+          <strong class="is-block text--navy">video_id</strong>
+          <span class="is-block text--transparent text-3">integer</span>
+          <span class="text--yellow text-3">REQUIRED</span>
+        </td>
+        <td>The id of the item being added.</td>
+      </tr>
+    </tr>
+  </tbody>
+</table>
+
+
+<h3 class="text-2 head-4 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="collection-items-delete">Delete an Item</h3>
+
+> <h5 class="head-5 text--white margin-bottom-medium">Delete an Item</h5>
+
+> Definition
+
+```shell
+DELETE /collections/:id/items
+```
+
+```ruby
+# Not yet available for the Ruby client.
+```
+
+```node
+// Not yet available for the Node client.
+```
+
+```javascript
+// Not available for client-side requests.
+```
+
+```php
+/* Not yet available for the PHP client */
+```
+
+> Example Request
+
+```shell
+$ curl -X DELETE "https://api.vhx.tv/collections/1/items" \
+  -H "Content-Type: application/json" \
+  -d '{"video_id": "2"}' \
+  -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
+```
+
+
+```ruby
+# Not yet available for the Ruby client.
+```
+
+```node
+// Not yet available for the Node client.
+```
+
+```javascript
+// Not available for client-side requests.
+```
+
+```php
+/* Not yet available for the PHP client */
+```
+
+> Example Response
+
+```http
+head 204
+```
+
+<section class="text-2 contain margin-bottom-medium">
+  <p>Deletes an item from an existing Collection.</p>
 </section>
 
 <table>
