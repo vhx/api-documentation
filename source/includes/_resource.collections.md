@@ -843,8 +843,7 @@ PUT /collections/:id/items
 
 ```shell
 $ curl -X PUT "https://api.vhx.tv/collections/1/items" \
-  -H "Content-Type: application/json" \
-  -d '{"video_id": "2"}' \
+  -d video_id=2 \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
@@ -928,8 +927,7 @@ DELETE /collections/:id/items
 
 ```shell
 $ curl -X DELETE "https://api.vhx.tv/collections/1/items" \
-  -H "Content-Type: application/json" \
-  -d '{"video_id": "2"}' \
+  -d video_id=2 \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
