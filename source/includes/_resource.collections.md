@@ -212,7 +212,7 @@ vhx.collections.create({
         <span class="text--transparent text-3">optional</span>
       </td>
       <td>A publicly accessible image URL. If you prefer you can upload images directly to a collection in the VHX Publisher Admin.</td>
-    </tr>    
+    </tr>
     <tr class="is-internal text-2 border-bottom border--light-gray">
       <td>
         <strong class="is-block text--navy">metadata</strong>
@@ -226,7 +226,7 @@ vhx.collections.create({
       be updated. For collections, the following key is reserved: <code>season_number</code><br><br>
 
       Metadata values can be strings, integers, arrays, or images. An image metadata value
-      must must be a url of an image, hosted on vhx, prefixed with the text <code>image_url:</code>. 
+      must must be a url of an image, hosted on vhx, prefixed with the text <code>image_url:</code>.
       </td>
     </tr>
   </tbody>
@@ -677,7 +677,7 @@ vhx.collections.update("https://api.vhx.tv/collections/1", {
       be updated. For collections, the following key is reserved: <code>season_number</code><br><br>
 
       Metadata values can be strings, integers, arrays, or images. An image metadata value
-      must must be a url of an image, hosted on vhx, prefixed with the text <code>image_url:</code>. 
+      must must be a url of an image, hosted on vhx, prefixed with the text <code>image_url:</code>.
       </td>
     </tr>
   </tbody>
@@ -809,6 +809,122 @@ vhxjs.collections.items({
         <span class="text--transparent text-3">optional, default is 50</span>
       </td>
       <td>The page size of the paginated result.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 class="text-2 head-4 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="collection-items-add">Add an Item</h3>
+
+> <h5 class="head-5 text--white margin-bottom-medium">Add an Item</h5>
+
+> Definition
+
+```shell
+PUT /collections/:id/items
+```
+
+```ruby
+# Not yet available for the Ruby client.
+```
+
+```node
+// Not yet available for the Node client.
+```
+
+```javascript
+// Not available for client-side requests.
+```
+
+```php
+/* Not yet available for the PHP client */
+```
+
+> Example Request
+
+```shell
+$ curl -X PUT "https://api.vhx.tv/collections/1/items" \
+  -H "Content-Type: application/json" \
+  -d '{"video_id": "2"}' \
+  -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
+```
+
+
+```ruby
+# Not yet available for the Ruby client.
+```
+
+```node
+// Not yet available for the Node client.
+```
+
+```javascript
+// Not available for client-side requests.
+```
+
+```php
+/* Not yet available for the PHP client */
+```
+
+> Example Response
+
+```json
+{
+  "_links":{
+    "self":{
+      "href": "http://api.vhx.tv/collections/1"
+    },
+    "items":{
+      "href": "http://api.vhx.tv/collections/1/items"
+    },
+    "collection_page":{
+      "href": "http://mynetwork.com/collection-name-1"
+    }
+  },
+  "_embedded":{
+    "trailer":null
+  },
+  "id": 1,
+  "name": "Collection name",
+  "description": "Collection description",
+  "slug":"collection-name",
+  "thumbnail":{
+    "small": "https://cdn.vhx.tv/assets/thumbnails/default-small.png",
+    "medium": "https://cdn.vhx.tv/assets/thumbnails/default-medium.png",
+    "large": "https://cdn.vhx.tv/assets/thumbnails/default-large.png",
+    "source": "https://cdn.vhx.tv/assets/thumbnails/original.jpg"
+  },
+  "type": "series",
+  "videos_count": 1,
+  "items_count": 1,
+  "files_count": 0,
+  "created_at": "2017-03-06T22:13:48Z",
+  "updated_at": "2017-03-09T17:08:53Z",
+  "metadata":{ }
+}
+```
+
+<section class="text-2 contain margin-bottom-medium">
+  <p>Adds an item to an existing collection.</p>
+</section>
+
+<table>
+  <thead>
+    <tr class="text-2">
+      <th class="padding-medium nowrap">Arguments</th>
+      <th class="padding-medium" width="100%">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr class="text-2 border-bottom border--light-gray">
+      <tr class="text-2 border-bottom border--light-gray">
+        <td>
+          <strong class="is-block text--navy">video_id</strong>
+          <span class="is-block text--transparent text-3">integer</span>
+          <span class="text--yellow text-3">REQUIRED</span>
+        </td>
+        <td>The id of the item being added.</td>
+      </tr>
     </tr>
   </tbody>
 </table>
