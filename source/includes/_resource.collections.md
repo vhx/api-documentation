@@ -867,7 +867,7 @@ $ curl -X PUT "https://api.vhx.tv/collections/1/items" \
 > Example Response
 
 ```http
-head 204
+HEAD 204
 ```
 
 <section class="text-2 contain margin-bottom-medium">
@@ -951,7 +951,7 @@ $ curl -X DELETE "https://api.vhx.tv/collections/1/items" \
 > Example Response
 
 ```http
-head 204
+HEAD 204
 ```
 
 <section class="text-2 contain margin-bottom-medium">
