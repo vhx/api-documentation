@@ -410,18 +410,21 @@ vhxjs.collections.all();
 ```shell
 $ curl -X GET -G "https://api.vhx.tv/collections" \
   -d product=https://api.vhx.tv/products/1 \
+  -d plan=standard
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
 ```ruby
 collections = Vhx::Collection.all({
-  product: 'https://api.vhx.tv/products/1'
+  product: 'https://api.vhx.tv/products/1',
+  plan: 'standard'
 })
 ```
 
 ```node
 vhx.collections.all({
-  product: 'https://api.vhx.tv/products/1'
+  product: 'https://api.vhx.tv/products/1',
+  plan: 'standard'
 }, function(err, collections) {
   // asynchronously called
 });
@@ -429,7 +432,8 @@ vhx.collections.all({
 
 ```javascript
 vhxjs.collections.all({
-  product: 'https://api.vhx.tv/products/1'
+  product: 'https://api.vhx.tv/products/1',
+  plan: 'standard'
 }, function(err, collections) {
   // asynchronously called
 });
@@ -437,7 +441,8 @@ vhxjs.collections.all({
 
 ```php
 <?php$collections = \VHX\Collections::all(array(
-  'product' => 'https://api.vhx.tv/products/1'
+  'product' => 'https://api.vhx.tv/products/1',
+  'plan' => 'standard'
 ));
 ```
 
@@ -446,11 +451,11 @@ vhxjs.collections.all({
 ```json
 {
   "_links": {
-    "self":  { "href": "https://api.vhx.tv/collections?page=1&product=:href" },
-    "first": { "href": "https://api.vhx.tv/collections?product=:href" },
+    "self":  { "href": "https://api.vhx.tv/collections?page=1&product=:href&plan=standard" },
+    "first": { "href": "https://api.vhx.tv/collections?product=:href&plan=standard" },
     "prev":  { "href": null },
-    "next":  { "href": "https://api.vhx.tv/collections?page=2&product=:href" },
-    "last":  { "href": "https://api.vhx.tv/collections?page=5&product=:href" }
+    "next":  { "href": "https://api.vhx.tv/collections?page=2&product=:href&plan=standard" },
+    "last":  { "href": "https://api.vhx.tv/collections?page=5&product=:href&plan=standard" }
   },
   "count": 100,
   "total": 500,
@@ -496,6 +501,14 @@ vhxjs.collections.all({
         <span class="text--transparent text-3">optional</span>
       </td>
       <td>The query to search and filter the paginated results.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">plan</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>The plan(s) to filter the paginated results. The value can be an array or comma separated string.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td>

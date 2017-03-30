@@ -447,18 +447,21 @@ vhxjs.videos.all();
 ```shell
 $ curl -X GET -G "https://api.vhx.tv/videos" \
   -d query="term" \
+  -d plan="standard" \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
 ```ruby
 video = Vhx::Video.all({
-  query: 'term'
+  query: 'term',
+  plan: 'standard'
 })
 ```
 
 ```node
 vhx.videos.all({
-  query: 'term'
+  query: 'term',
+  plan: 'standard'
 }, function(err, videos) {
    // asynchronously called
 });
@@ -466,7 +469,8 @@ vhx.videos.all({
 
 ```javascript
 vhxjs.videos.all({
-  query: 'term'
+  query: 'term',
+  plan: 'standard'
 }, function(err, videos) {
    // asynchronously called
 });
@@ -474,7 +478,8 @@ vhxjs.videos.all({
 
 ```php
 <?php$videos = \VHX\Videos::all(array(
-  'query' => 'term'
+  'query' => 'term',
+  'plan' => 'standard'
 ));
 ```
 
@@ -483,11 +488,11 @@ vhxjs.videos.all({
 ```json
 {
   "_links": {
-    "self":  { "href": "https://api.vhx.tv/videos?page=1&query=term" },
-    "first": { "href": "https://api.vhx.tv/videos?query=term" },
+    "self":  { "href": "https://api.vhx.tv/videos?page=1&query=term&plan=standard" },
+    "first": { "href": "https://api.vhx.tv/videos?query=term&plan=standard" },
     "prev":  { "href": null },
-    "next":  { "href": "https://api.vhx.tv/videos?page=2&query=term" },
-    "last":  { "href": "https://api.vhx.tv/videos?page=5&query=term" }
+    "next":  { "href": "https://api.vhx.tv/videos?page=2&query=term&plan=standard" },
+    "last":  { "href": "https://api.vhx.tv/videos?page=5&query=term&plan=standard" }
   },
   "count": 100,
   "total": 500,
@@ -517,6 +522,15 @@ vhxjs.videos.all({
         <span class="text--transparent text-3">optional</span>
       </td>
       <td>The query to search and filter the paginated results.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">plan</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>The plan(s) to filter the paginated results. The value can be an array or comma separated
+string. </td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
