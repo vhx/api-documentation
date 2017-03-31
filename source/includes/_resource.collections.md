@@ -73,7 +73,8 @@ vhx.collections.create();
 $ curl -X POST "https://api.vhx.tv/collections" \
   -H "Content-Type: application/json" \
   -d '{"name": "Collection Name", "type": "series", "metadata": {"director": "Brad Pitt", "writers":
-["Foo Bar", "Bar Foo"], "release_year": 2017, "custom_icon": "image_url:https://vhx.imgix.net/site/assets/1231.jpg"}}' \
+["Foo Bar", "Bar Foo"], "release_year": 2017, "custom_icon":
+"image_url:https://vhx.imgix.net/site/assets/1231.jpg"}, "plans": ["public", "free", "standard"]}' \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
@@ -86,7 +87,8 @@ collection = Vhx::Collection.create({
     writers: ['Foo Bar', 'Bar Foo'],
     release_year: 2017,
     custom_icon: "image_url:https://vhx.imgix.net/site/assets/1231.jpg",
-  }
+  },
+  plans: ["public", "free", "standard"]
 })
 ```
 
@@ -99,7 +101,8 @@ vhx.collections.create({
     writers: ['Foo Bar', 'Bar Foo'],
     release_year: 2017,
     custom_icon: "image_url:https://vhx.imgix.net/site/assets/1231.jpg"
-  }
+  },
+  plans: ["public", "free", "standard"]
 }, function(err, collection) {
   // asynchronously called
 });
@@ -118,7 +121,8 @@ vhx.collections.create({
     'writers' => ['Foo Bar', 'Bar Foo'],
     'release_year' => 2017,
     'custom_icon' => 'image_url:https://vhx.imgix.net/site/assets/1231.jpg'
-  )
+  ),
+  'plans' => ['public', 'free', 'standard']
 ));
 ```
 
@@ -161,6 +165,7 @@ vhx.collections.create({
       "source": "https://vhx.imgix.net/site/assets/1231.jpg"
     },
   },
+  "plans": ["public", "free", "standard"],
   "type": "series",
   "seasons_count": 0,
   "items_count": 0,
@@ -227,6 +232,25 @@ vhx.collections.create({
 
       Metadata values can be strings, integers, arrays, or images. An image metadata value
       must must be a url of an image, hosted on vhx, prefixed with the text <code>image_url:</code>.
+      </td>
+    </tr>
+    <tr class="is-internal text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">plans</strong>
+        <span class="text--transparent text-3">array of strings</span>
+      </td>
+      <td>
+      An array of plan types that you can use to set collection availability. 
+      Values can be one or more of the following strings: <code>public</code>, <code>free</code>,
+      <code>standard</code>.<br><br>
+
+      The <code>public</code> plan makes the collection object available without email 
+      registration or paid subscription.<br><br>
+      
+      The <code>free</code> plan makes the collection object available for free, but requires user email
+      registration<br><br>
+
+      The <code>standard</code> plan makes the collection object available to paying subscribers.
       </td>
     </tr>
   </tbody>
@@ -315,6 +339,7 @@ vhxjs.collections.retrieve("https://api.vhx.tv/collections/1", function(err, col
       "source": "https://vhx.imgix.net/site/assets/1231.jpg"
     },
   },
+  "plans": ["public", "free", "standard"],
   "type": "category",
   "items_count": 10,
   "created_at": "2014-02-25T20:19:30Z",
@@ -385,18 +410,21 @@ vhxjs.collections.all();
 ```shell
 $ curl -X GET -G "https://api.vhx.tv/collections" \
   -d product=https://api.vhx.tv/products/1 \
+  -d plan=standard
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
 ```ruby
 collections = Vhx::Collection.all({
-  product: 'https://api.vhx.tv/products/1'
+  product: 'https://api.vhx.tv/products/1',
+  plan: 'standard'
 })
 ```
 
 ```node
 vhx.collections.all({
-  product: 'https://api.vhx.tv/products/1'
+  product: 'https://api.vhx.tv/products/1',
+  plan: 'standard'
 }, function(err, collections) {
   // asynchronously called
 });
@@ -404,7 +432,8 @@ vhx.collections.all({
 
 ```javascript
 vhxjs.collections.all({
-  product: 'https://api.vhx.tv/products/1'
+  product: 'https://api.vhx.tv/products/1',
+  plan: 'standard'
 }, function(err, collections) {
   // asynchronously called
 });
@@ -412,7 +441,8 @@ vhxjs.collections.all({
 
 ```php
 <?php$collections = \VHX\Collections::all(array(
-  'product' => 'https://api.vhx.tv/products/1'
+  'product' => 'https://api.vhx.tv/products/1',
+  'plan' => 'standard'
 ));
 ```
 
@@ -421,11 +451,11 @@ vhxjs.collections.all({
 ```json
 {
   "_links": {
-    "self":  { "href": "https://api.vhx.tv/collections?page=1&product=:href" },
-    "first": { "href": "https://api.vhx.tv/collections?product=:href" },
+    "self":  { "href": "https://api.vhx.tv/collections?page=1&product=:href&plan=standard" },
+    "first": { "href": "https://api.vhx.tv/collections?product=:href&plan=standard" },
     "prev":  { "href": null },
-    "next":  { "href": "https://api.vhx.tv/collections?page=2&product=:href" },
-    "last":  { "href": "https://api.vhx.tv/collections?page=5&product=:href" }
+    "next":  { "href": "https://api.vhx.tv/collections?page=2&product=:href&plan=standard" },
+    "last":  { "href": "https://api.vhx.tv/collections?page=5&product=:href&plan=standard" }
   },
   "count": 100,
   "total": 500,
@@ -471,6 +501,14 @@ vhxjs.collections.all({
         <span class="text--transparent text-3">optional</span>
       </td>
       <td>The query to search and filter the paginated results.</td>
+    </tr>
+    <tr class="is-internal text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">plan</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>The plan(s) to filter the paginated results. The value can be an array or comma separated string.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
@@ -531,7 +569,8 @@ vhx.collections.update();
 $ curl -X PUT "https://api.vhx.tv/collections/1" \
   -H "Content-Type: application/json" \
   -d '{"description": "A new description", "metadata": {"producer": "Christoper Nolan", "director":
-"Brad Pitt", "writers": ["Foo Bar", "Bar Foo"], "release_year": 2017, "custom_icon": "image_url:https://vhx.imgix.net/site/assets/1231.jpg"}}' \
+"Brad Pitt", "writers": ["Foo Bar", "Bar Foo"], "release_year": 2017, "custom_icon":
+"image_url:https://vhx.imgix.net/site/assets/1231.jpg"}, "plans": ["public", "free", "standard"] }' \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
@@ -544,7 +583,8 @@ collection = Vhx::Collection.retrieve("https://api.vhx.tv/collections/1").update
     release_year: 2017
     producer: 'Christoper Nolan',
     custom_icon: "image_url:https://vhx.imgix.net/site/assets/1231.jpg",
-  }
+  },
+  plans: ["public", "free", "standard"]
 })
 ```
 
@@ -557,7 +597,8 @@ vhx.collections.update("https://api.vhx.tv/collections/1", {
     release_year: 2017
     producer: 'Christoper Nolan',
     custom_icon: "image_url:https://vhx.imgix.net/site/assets/1231.jpg"
-  }
+  },
+  plans: ["public", "free", "standard"]
 }, function(err, collection) {
   // asynchronously called
 });
@@ -577,6 +618,7 @@ vhx.collections.update("https://api.vhx.tv/collections/1", {
     'producer' => 'Christoper Nolan',
     'custom_icon' => 'image_url:https://vhx.imgix.net/site/assets/1231.jpg'
   )
+  'plans' => ['public', 'free', 'standard'],
 ));
 ```
 
@@ -620,6 +662,7 @@ vhx.collections.update("https://api.vhx.tv/collections/1", {
       "source": "https://vhx.imgix.net/site/assets/1231.jpg"
     },
   },
+  "plans": ["public", "free", "standard"],
   "type": "series",
   "seasons_count": 0,
   "items_count": 0,
@@ -678,6 +721,25 @@ vhx.collections.update("https://api.vhx.tv/collections/1", {
 
       Metadata values can be strings, integers, arrays, or images. An image metadata value
       must must be a url of an image, hosted on vhx, prefixed with the text <code>image_url:</code>.
+      </td>
+    </tr>
+    <tr class="is-internal text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">plans</strong>
+        <span class="text--transparent text-3">array of strings</span>
+      </td>
+      <td>
+      An array of plan types that you can use to set collection availability. 
+      Values can be one or more of the following strings: <code>public</code>, <code>free</code>,
+      <code>standard</code>.<br><br>
+
+      The <code>public</code> plan makes the collection object available without email 
+      registration or paid subscription.<br><br>
+      
+      The <code>free</code> plan makes the collection object available for free, but requires user email
+      registration<br><br>
+
+      The <code>standard</code> plan makes the collection object available to paying subscribers.
       </td>
     </tr>
   </tbody>
