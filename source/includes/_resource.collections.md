@@ -502,7 +502,7 @@ vhxjs.collections.all({
       </td>
       <td>The query to search and filter the paginated results.</td>
     </tr>
-    <tr class="text-2 border-bottom border--light-gray">
+    <tr class="is-internal text-2 border-bottom border--light-gray">
       <td>
         <strong class="is-block text--navy">plan</strong>
         <span class="is-block text--transparent text-3">string</span>

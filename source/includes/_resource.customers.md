@@ -137,7 +137,7 @@ vhx.customers.create({
       </td>
       <td>Billing parameters for <a href="/in-app-purchases">In-App Purchases</a> for the Apple, Google, and Roku platforms.</td>
     </tr>
-    <tr class="text-2 border-bottom border--light-gray">
+    <tr class="is-internal text-2 border-bottom border--light-gray">
       <td class="nowrap">
         <strong class="is-block text--navy">plan</strong>
         <span class="is-block text--transparent text-3">string</span>
@@ -145,7 +145,7 @@ vhx.customers.create({
       </td>
       <td>
       The customer's plan determines content accessibility. Values can be one of
-      the following strings: `free`, `standard`. 
+      the following strings: <code>free</code>, <code>standard</code>. 
       See <a href="#videos-update">Update Video</a> for more detail on the types of plans</td>
     </tr>
   </tbody>
