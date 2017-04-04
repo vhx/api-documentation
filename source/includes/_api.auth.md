@@ -46,7 +46,7 @@ var vhxjs = new vhx('YOUR_API_KEY');
       <code>VHX-Customer</code>: should be set with the logged in customer <code>href</code> on all requests. This let's the API respond with relevant information for that particular customer (things like continue watching, analytics, etc). Without this, requests will be tied to the <code>API Key</code> creator which can lead to unintentional behavior (rate limiting, inaccurate analytics, etc).
     </li>
     <li>
-      <code>VHX-Client-IP</code>: should be set when making a back-end API request on the behalf of a customer. Our API will respect this IP address over the request/server IP address for the purposes of geo-blocking content, analytics, etc.
+      <code>VHX-Client-IP</code>: should be set with the IP address of your end-user when making a back-end API request on the behalf of a customer. Our API will respect this IP address over the request/server IP address for the purposes of geo-blocking content, analytics, etc.
     </li>
   </ul>
 </section>
