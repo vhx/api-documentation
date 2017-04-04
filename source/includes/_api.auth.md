@@ -36,8 +36,19 @@ var vhxjs = new vhx('YOUR_API_KEY');
 
 <section class="text-2 contain">
   <p>API applications can be created in the <a href="https://www.vhx.tv/admin/platforms" target="_blank">VHX admin</a> or by emailing <a href="mailto:api@vhx.tv">api@vhx.tv</a>.</p>
+
   <p>Once your application is created, you will receive an <code>API Key</code>. All resources require authentication with this <code>API Key</code> over <a href="https://en.wikipedia.org/wiki/Basic_access_authentication" target="_blank">HTTP Basic Auth</a>. Your <code>API Key</code> acts as the basic auth username. You do not need to provide a password (but do notice the trailing <code>:</code>).</p>
-  <p>When making API calls on behalf of a customer, the <code>X-Customer</code> header with the customer <code>href</code> should be sent as part of the request. This let's the API respond with relevant information for that particular customer (like continue watching, resuming, etc).
+
+  <p>When making API calls on behalf of a customer, there are two (manually set) request headers that you should be aware of:</p>
+
+  <ul>
+    <li>
+      <code>VHX-Customer</code>: should be set with the logged in customer <code>href</code> on all requests. This let's the API respond with relevant information for that particular customer (things like continue watching, analytics, etc). Without this, requests will be tied to the <code>API Key</code> creator which can lead to unintentional behavior (rate limiting, inaccurate analytics, etc).
+    </li>
+    <li>
+      <code>VHX-Client-IP</code>: should be set when making a back-end API request on the behalf of a customer. Our API will respect this IP address over the request/server IP address for the purposes of geo-blocking content, analytics, etc.
+    </li>
+  </ul>
 </section>
 
 <h3 class="is-internal text-2 head-4 text--navy text--bold is-api margin-top-xlarge margin-bottom-medium" id="authentication-oauth">OAuth</h3>
