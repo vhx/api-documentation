@@ -221,12 +221,12 @@ vhx.videos.create({
 
       Metadata keys must be strings. There are a few reserved keys that
       are auto-generated, which cannot be updated. These reserved keys are:
-      <code>advertising_keywords</code>, <code>series_name</code>, 
+      <code>advertising_keywords</code>, <code>series_name</code>,
       <code>season_name</code>, <code>season_number</code>,
       <code>episode_number</code>, and <code>movie_name</code><br><br>
 
-      Metadata values can be strings, integers, arrays, or images. An image metadata value must 
-      must be a url of an image, hosted on vhx, prefixed with the text <code>image_url:</code>. 
+      Metadata values can be strings, integers, arrays, or images. An image metadata value must
+      must be a url of an image, hosted on vhx, prefixed with the text <code>image_url:</code>.
       </td>
     </tr>
 
@@ -236,13 +236,13 @@ vhx.videos.create({
         <span class="text--transparent text-3">array of strings</span>
       </td>
       <td>
-      An array of plan types that you can use to set video availability. 
+      An array of plan types that you can use to set video availability.
       Values can be one or more of the following strings: <code>public</code>, <code>free</code>,
       <code>standard</code>.<br><br>
 
-      The <code>public</code> plan makes the video object available without email 
+      The <code>public</code> plan makes the video object available without email
       registration or paid subscription.<br><br>
-      
+
       The <code>free</code> plan makes the video object available for free, but requires user email
       registration<br><br>
 
@@ -361,7 +361,11 @@ vhxjs.videos.retrieve("https://api.vhx.tv/videos/1", function(err, video) {
       "tag": { "href": "https://static.vhx.tv/vmap.xml" }
     },
     "client": "vmap",
-    "provider": "dfp"
+    "provider": "dfp",
+    "custom_params": {
+      "foo": ["some", "value"],
+      "bar": ["other", "thing"]
+    }
   },
   "metadata": {
     "director": "Brad Pitt",
@@ -818,12 +822,12 @@ vhx.videos.update("https://api.vhx.tv/videos/1", {
 
       Metadata keys must be strings. There are a few reserved keys that
       are auto-generated, which cannot be updated. These reserved keys are:
-      <code>advertising_keywords</code>, <code>series_name</code>, 
+      <code>advertising_keywords</code>, <code>series_name</code>,
       <code>season_name</code>, <code>season_number</code>,
       <code>episode_number</code>, and <code>movie_name</code><br><br>
 
-      Metadata values can be strings, integers, arrays, or images. An image metadata value must 
-      must be a url of an image, hosted on vhx, prefixed with the text <code>image_url:</code>. 
+      Metadata values can be strings, integers, arrays, or images. An image metadata value must
+      must be a url of an image, hosted on vhx, prefixed with the text <code>image_url:</code>.
       </td>
     </tr>
     <tr class="is-internal text-2 border-bottom border--light-gray">
@@ -832,13 +836,13 @@ vhx.videos.update("https://api.vhx.tv/videos/1", {
         <span class="text--transparent text-3">array of strings</span>
       </td>
       <td>
-      An array of plan types that you can use to set video availability. 
+      An array of plan types that you can use to set video availability.
       Values can be one or more of the following strings: <code>public</code>, <code>free</code>,
       <code>standard</code>.<br><br>
 
-      The <code>public</code> plan makes the video object available without email 
+      The <code>public</code> plan makes the video object available without email
       registration or paid subscription.<br><br>
-      
+
       The <code>free</code> plan makes the video object available for free, but requires user email
       registration<br><br>
 
