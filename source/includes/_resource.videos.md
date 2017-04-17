@@ -168,6 +168,8 @@ vhx.videos.create({
     "advertising_keywords": []
   },
   "plans": ["public", "free", "standard"],
+  "plays_count": 1340,
+  "finishes_count": 1204,
   "files_count": 0,
   "created_at": "2014-02-25T20:19:30Z",
   "updated_at": "2014-02-25T20:19:30Z"
@@ -385,6 +387,8 @@ vhxjs.videos.retrieve("https://api.vhx.tv/videos/1", function(err, video) {
   },
   "plans": ["public", "free", "standard"],
   "files_count": 5,
+  "plays_count": 1340,
+  "finishes_count": 1204,
   "created_at": "2014-02-25T20:19:30Z",
   "updated_at": "2014-02-25T20:19:30Z"
 }
@@ -779,6 +783,8 @@ vhx.videos.update("https://api.vhx.tv/videos/1", {
   },
   "plans": ["public", "free", "standard"],
   "files_count": 0,
+  "plays_count": 1340,
+  "finishes_count": 1204,
   "created_at": "2014-02-25T20:19:30Z",
   "updated_at": "2014-02-25T20:19:30Z"
 }
