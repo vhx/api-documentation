@@ -268,7 +268,7 @@ vhx.videos.create({
         <strong class="is-block text--navy">time_available</strong>
         <span class="text--transparent text-3">optional string, default is null</span>
       </td>
-      <td>ISO8601 timestamp for scheduling the video to be available in the future.</p></td>
+      <td>ISO8601 timestamp for scheduling the video to be available in the future. </br><code>YYYY-MM-DDTHH:MM:SSZ</code></p></td>
     </tr>
 
     <tr class="is-internal text-2 border-bottom border--light-gray">
@@ -276,7 +276,7 @@ vhx.videos.create({
         <strong class="is-block text--navy">time_unavailable</strong>
         <span class="text--transparent text-3">optional string, default is null</span>
       </td>
-      <td>ISO8601 timestamp for scheduling the video to be unavailable in the future.</p></td>
+      <td>ISO8601 timestamp for scheduling the video to be unavailable in the future. </br><code>YYYY-MM-DDTHH:MM:SSZ</code></p></td>
     </tr>
   </tbody>
 </table>
@@ -900,7 +900,7 @@ vhx.videos.update("https://api.vhx.tv/videos/1", {
         <strong class="is-block text--navy">time_available</strong>
         <span class="text--transparent text-3">string optional</span>
       </td>
-      <td>ISO8601 timestamp for scheduling the video to be available in the future.</p></td>
+      <td>ISO8601 timestamp for scheduling the video to be available in the future. </br><code>YYYY-MM-DDTHH:MM:SSZ</code></p></td>
     </tr>
 
     <tr class="is-internal text-2 border-bottom border--light-gray">
@@ -908,7 +908,7 @@ vhx.videos.update("https://api.vhx.tv/videos/1", {
         <strong class="is-block text--navy">time_unavailable</strong>
         <span class="text--transparent text-3">string optional</span>
       </td>
-      <td>ISO8601 timestamp for scheduling the video to be unavailable in the future.</p></td>
+      <td>ISO8601 timestamp for scheduling the video to be unavailable in the future. </br><code>YYYY-MM-DDTHH:MM:SSZ</code></p></td>
     </tr>
   </tbody>
 </table>
