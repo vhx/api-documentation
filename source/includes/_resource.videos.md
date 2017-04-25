@@ -72,7 +72,8 @@ $ curl -X POST "https://api.vhx.tv/videos" \
   -d '{"title":"My Video","description":"My video description.",
 "source_url":"s3:://YOUR_BUCKET_NAME/FILE.mp4", "metadata": {"director": "Brad Pitt", "writers":
 ["Foo Bar", "Bar Foo"], "release_year": 2017, "custom_icon":
-"image_url:https://vhx.imgix.net/site/assets/1231.jpg"}, "plans": ["public", "free", "standard"]}' \
+"image_url:https://vhx.imgix.net/site/assets/1231.jpg"}, "plans": ["public", "free", "standard"],
+"time_available": "2014-03-01T00:00:00Z", "time_unavailable": "2014-04-01T00:00:00Z"}' \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
@@ -87,7 +88,9 @@ video = Vhx::Video.create({
     release_year: 2017,
     custom_icon: "image_url:https://vhx.imgix.net/site/assets/1231.jpg",
   },
-  plans: ['public', 'free', 'standard']
+  plans: ['public', 'free', 'standard'],
+  time_available: '2014-03-01T00:00:00Z',
+  time_unavailable: '2014-04-01T00:00:00Z'
 })
 ```
 
@@ -102,7 +105,9 @@ vhx.videos.create({
     release_year: 2017,
     custom_icon: "image_url:https://vhx.imgix.net/site/assets/1231.jpg"
   },
-  plans: ['public', 'free', 'standard']
+  plans: ['public', 'free', 'standard'],
+  time_available: '2014-03-01T00:00:00Z',
+  time_unavailable: '2014-04-01T00:00:00Z',
 }, function(err, video) {
    // asynchronously called
 });
@@ -123,7 +128,9 @@ vhx.videos.create({
     'release_year' => 2017,
     'custom_icon' => 'image_url:https://vhx.imgix.net/site/assets/1231.jpg'
   ),
-  'plans' => ['public', 'free', 'standard']
+  'plans' => ['public', 'free', 'standard'],
+  'time_available' => '2014-03-01T00:00:00Z',
+  'time_unavailable' => '2014-03-01T00:00:00Z'
 ));
 ```
 > Example Response
@@ -168,6 +175,8 @@ vhx.videos.create({
     "advertising_keywords": []
   },
   "plans": ["public", "free", "standard"],
+  "time_available": "2014-03-01T00:00:00Z",
+  "time_unavailable": "2014-04-01T00:00:00Z",
   "plays_count": 1340,
   "finishes_count": 1204,
   "files_count": 0,
@@ -197,6 +206,7 @@ vhx.videos.create({
       </td>
       <td>A title for the video.</p></td>
     </tr>
+
     <tr class="text-2 border-bottom border--light-gray">
       <td>
         <strong class="is-block text--navy">source_url</strong>
@@ -204,6 +214,7 @@ vhx.videos.create({
       </td>
       <td>An accessible master video file per our compression settings. To grant us permission to download the video source_url from your S3 bucket, see our <a href="https://gist.github.com/ksheurs/d57e4d1857c7ef9465fb" target="_blank">S3 policy</a>.</p></td>
     </tr>
+
     <tr class="text-2 border-bottom border--light-gray">
       <td>
         <strong class="is-block text--navy">description</strong>
@@ -250,6 +261,22 @@ vhx.videos.create({
 
       The <code>standard</code> plan makes the video object available to paying subscribers.
       </td>
+    </tr>
+
+    <tr class="is-internal text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">time_available</strong>
+        <span class="text--transparent text-3">optional string, default is null</span>
+      </td>
+      <td>ISO8601 timestamp for scheduling the video to be available in the future. </br><code>YYYY-MM-DDTHH:MM:SSZ</code></p></td>
+    </tr>
+
+    <tr class="is-internal text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">time_unavailable</strong>
+        <span class="text--transparent text-3">optional string, default is null</span>
+      </td>
+      <td>ISO8601 timestamp for scheduling the video to be unavailable in the future. </br><code>YYYY-MM-DDTHH:MM:SSZ</code></p></td>
     </tr>
   </tbody>
 </table>
@@ -386,6 +413,8 @@ vhxjs.videos.retrieve("https://api.vhx.tv/videos/1", function(err, video) {
     "advertising_keywords": []
   },
   "plans": ["public", "free", "standard"],
+  "time_available": "2014-03-01T00:00:00Z",
+  "time_unavailable": "2014-04-01T00:00:00Z",
   "files_count": 5,
   "plays_count": 1340,
   "finishes_count": 1204,
@@ -688,7 +717,8 @@ $ curl -X PUT "https://api.vhx.tv/videos/1" \
   -H "Content-Type: application/json" \
   -d '{"description":"My video description.", "metadata": {"producer": "Christoper Nolan",
 "director": "Brad Pitt", "writers": ["Foo Bar", "Bar Foo"], "release_year": 2017, "custom_icon":
-"image_url:https://vhx.imgix.net/site/assets/1231.jpg"}, "plans": ["public", "free", "standard"]}' \
+"image_url:https://vhx.imgix.net/site/assets/1231.jpg"}, "plans": ["public", "free", "standard"],
+"time_available": "2014-03-01T00:00:00Z", "time_unavailable": "2014-04-01T00:00:00Z"}' \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
@@ -703,6 +733,8 @@ video = Vhx::Video.retrieve("https://api.vhx.tv/videos/1").update({
     custom_icon: "image_url:https://vhx.imgix.net/site/assets/1231.jpg",
   },
   plans: ["public", "free", "standard"],
+  time_available: '2014-03-01T00:00:00Z',
+  time_unavailable: '2014-04-01T00:00:00Z',
 })
 ```
 
@@ -717,6 +749,8 @@ vhx.videos.update("https://api.vhx.tv/videos/1", {
     custom_icon: "image_url:https://vhx.imgix.net/site/assets/1231.jpg"
   },
   plans: ["public", "free", "standard"],
+  time_available: '2014-03-01T00:00:00Z',
+  time_unavailable: '2014-04-01T00:00:00Z',
 }, function(err, video) {
   // asynchronously called
 });
@@ -735,7 +769,9 @@ vhx.videos.update("https://api.vhx.tv/videos/1", {
     'release_year' => 2017,
     'producer' => 'Christoper Nolan'
   ),
-  'plans' => ['public', 'free', 'standard']
+  'plans' => ['public', 'free', 'standard'],
+  'time_available' => '2014-03-01T00:00:00Z',
+  'time_unavailable' => '2014-03-01T00:00:00Z'
 ));
 ```
 
@@ -810,6 +846,7 @@ vhx.videos.update("https://api.vhx.tv/videos/1", {
       </td>
       <td>A title for the video.</p></td>
     </tr>
+
     <tr class="text-2 border-bottom border--light-gray">
       <td>
         <strong class="is-block text--navy">description</strong>
@@ -817,6 +854,7 @@ vhx.videos.update("https://api.vhx.tv/videos/1", {
       </td>
       <td>A description for the video.</p></td>
     </tr>
+
     <tr class="is-internal text-2 border-bottom border--light-gray">
       <td>
         <strong class="is-block text--navy">metadata</strong>
@@ -836,6 +874,7 @@ vhx.videos.update("https://api.vhx.tv/videos/1", {
       must be a url of an image, hosted on vhx, prefixed with the text <code>image_url:</code>.
       </td>
     </tr>
+
     <tr class="is-internal text-2 border-bottom border--light-gray">
       <td>
         <strong class="is-block text--navy">plans</strong>
@@ -854,6 +893,22 @@ vhx.videos.update("https://api.vhx.tv/videos/1", {
 
       The <code>standard</code> plan makes the video object available to paying subscribers.
       </td>
+    </tr>
+
+    <tr class="is-internal text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">time_available</strong>
+        <span class="text--transparent text-3">string optional</span>
+      </td>
+      <td>ISO8601 timestamp for scheduling the video to be available in the future. </br><code>YYYY-MM-DDTHH:MM:SSZ</code></p></td>
+    </tr>
+
+    <tr class="is-internal text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">time_unavailable</strong>
+        <span class="text--transparent text-3">string optional</span>
+      </td>
+      <td>ISO8601 timestamp for scheduling the video to be unavailable in the future. </br><code>YYYY-MM-DDTHH:MM:SSZ</code></p></td>
     </tr>
   </tbody>
 </table>
