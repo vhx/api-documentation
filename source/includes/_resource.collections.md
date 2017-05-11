@@ -950,9 +950,22 @@ HEAD 204
         <td>
           <strong class="is-block text--navy">video_id</strong>
           <span class="is-block text--transparent text-3">integer</span>
-          <span class="text--yellow text-3">REQUIRED</span>
+          <span class="text--yellow text-3">Optional</span>
         </td>
-        <td>The id of the item being added.</td>
+        <td>The id of a video being added.</td>
+      </tr>
+    </tr>
+  </tbody>
+
+  <tbody>
+    <tr class="text-2 border-bottom border--light-gray">
+      <tr class="text-2 border-bottom border--light-gray">
+        <td>
+          <strong class="is-block text--navy">collection_id</strong>
+          <span class="is-block text--transparent text-3">integer</span>
+          <span class="text--yellow text-3">Optional</span>
+        </td>
+        <td>The id of a collection being added.</td>
       </tr>
     </tr>
   </tbody>
@@ -1034,9 +1047,22 @@ HEAD 204
         <td>
           <strong class="is-block text--navy">video_id</strong>
           <span class="is-block text--transparent text-3">integer</span>
-          <span class="text--yellow text-3">REQUIRED</span>
+          <span class="text--yellow text-3">Optional</span>
         </td>
-        <td>The id of the item being added.</td>
+        <td>The id of a video being removed.</td>
+      </tr>
+    </tr>
+  </tbody>
+
+  <tbody>
+    <tr class="text-2 border-bottom border--light-gray">
+      <tr class="text-2 border-bottom border--light-gray">
+        <td>
+          <strong class="is-block text--navy">collection_id</strong>
+          <span class="is-block text--transparent text-3">integer</span>
+          <span class="text--yellow text-3">Optional</span>
+        </td>
+        <td>The id of a collection being removed.</td>
       </tr>
     </tr>
   </tbody>
