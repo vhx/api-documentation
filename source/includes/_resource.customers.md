@@ -145,7 +145,7 @@ vhx.customers.create({
       </td>
       <td>
       The customer's plan determines content accessibility. Values can be one of
-      the following strings: <code>free</code>, <code>standard</code>. 
+      the following strings: <code>free</code>, <code>standard</code>.
       See <a href="#videos-update">Update Video</a> for more detail on the types of plans</td>
     </tr>
   </tbody>
@@ -219,7 +219,8 @@ vhxjs.customers.retrieve("https://api.vhx.tv/customers/1", function(err, custome
   "email": "customer@email.com",
   "created_at": "2014-02-25T20:19:30Z",
   "updated_at": "2014-02-25T20:19:30Z",
-  "plan": "standard"
+  "plan": "standard",
+  "platform": "web"
 }
 ```
 <section class="text-2 contain margin-bottom-medium">
