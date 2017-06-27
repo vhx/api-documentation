@@ -103,7 +103,8 @@ vhxjs.browse.all({
           "large": "https://dr56wvhu2c8zo.cloudfront.net/image-large.jpg",
           "source": "https://dr56wvhu2c8zo.cloudfront.net/image-source.jpg",
           "blurred": "https://dr56wvhu2c8zo.cloudfront.net/image-blurred.jpg",
-        }
+        },
+        "is_featured": false
       }
     ]
   }

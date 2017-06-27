@@ -170,6 +170,7 @@ vhx.collections.create({
   "seasons_count": 0,
   "items_count": 0,
   "files_count": 0,
+  "is_featured": false,
   "created_at": "2015-11-25T01:30:33Z",
   "updated_at": "2015-11-25T01:30:33Z"
 }
@@ -240,13 +241,13 @@ vhx.collections.create({
         <span class="text--transparent text-3">array of strings</span>
       </td>
       <td>
-      An array of plan types that you can use to set collection availability. 
+      An array of plan types that you can use to set collection availability.
       Values can be one or more of the following strings: <code>public</code>, <code>free</code>,
       <code>standard</code>.<br><br>
 
-      The <code>public</code> plan makes the collection object available without email 
+      The <code>public</code> plan makes the collection object available without email
       registration or paid subscription.<br><br>
-      
+
       The <code>free</code> plan makes the collection object available for free, but requires user email
       registration<br><br>
 
@@ -342,6 +343,7 @@ vhxjs.collections.retrieve("https://api.vhx.tv/collections/1", function(err, col
   "plans": ["public", "free", "standard"],
   "type": "category",
   "items_count": 10,
+  "is_featured": false,
   "created_at": "2014-02-25T20:19:30Z",
   "updated_at": "2014-02-25T20:19:30Z"
 }
@@ -667,6 +669,7 @@ vhx.collections.update("https://api.vhx.tv/collections/1", {
   "seasons_count": 0,
   "items_count": 0,
   "files_count": 0,
+  "is_featured": false,
   "created_at": "2015-11-25T01:30:33Z",
   "updated_at": "2015-11-25T01:30:33Z"
 }
@@ -729,13 +732,13 @@ vhx.collections.update("https://api.vhx.tv/collections/1", {
         <span class="text--transparent text-3">array of strings</span>
       </td>
       <td>
-      An array of plan types that you can use to set collection availability. 
+      An array of plan types that you can use to set collection availability.
       Values can be one or more of the following strings: <code>public</code>, <code>free</code>,
       <code>standard</code>.<br><br>
 
-      The <code>public</code> plan makes the collection object available without email 
+      The <code>public</code> plan makes the collection object available without email
       registration or paid subscription.<br><br>
-      
+
       The <code>free</code> plan makes the collection object available for free, but requires user email
       registration<br><br>
 
