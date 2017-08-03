@@ -598,14 +598,6 @@ vhx.customers.update("https://api.vhx.tv/customers/1", {
       </td>
       <td>The customer's full name (first and last).</td>
     </tr>
-    <tr class="text-2 border-bottom border--light-gray">
-      <td class="nowrap">
-        <strong class="is-block text--navy">email</strong>
-        <span class="is-block text--transparent text-3">string</span>
-        <span class="text--transparent text-3">optional</span>
-      </td>
-      <td>The customer's email address.</td>
-    </tr>
   </tbody>
 </table>
 
