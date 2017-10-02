@@ -174,9 +174,9 @@ vhxjs.products.all({
 ```
 
 ```php
-<?php$products = \VHX\Products::all({
+<?php$products = \VHX\Products::all(array(
   'query' => 'term'
-});
+));
 ```
 
 > Example Response
