@@ -121,6 +121,14 @@ vhx.customers.create({
       </td>
       <td>The customer's email address.</td>
     </tr>
+    <tr class="text-2 border-bottom border--light-gray is-internal">
+      <td class="nowrap">
+        <strong class="is-block text--navy">password</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>The customer's login password.</td>
+    </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td class="nowrap">
         <strong class="is-block text--navy">product</strong>
