@@ -705,9 +705,15 @@ h4 {
 
 
 header {
+  .branding {
+    margin-right: 10px;
+  }
+  .developers span {
+    border-left: 1px solid #979797 !important;
+  }
   nav {
       position: absolute;
-      right: 5px;
+      right: 15px;
       top: 0;
     }
     ul {
