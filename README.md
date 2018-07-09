@@ -1,11 +1,11 @@
-# VHX API Documenation
-The VHX API lets developers and media companies looking to build custom, high-quality SVOD services like HBO NOW or Netflix quickly and inexpensively.
+# Vimeo OTT API Documenation
+The Vimeo OTT API lets developers and media companies looking to build custom, high-quality SVOD services like HBO NOW or Netflix quickly and inexpensively.
 
 View the docs at [http://dev.vhx.tv/docs/api](http://dev.vhx.tv/docs/api).
 
 ## Getting Started
 
-*Note:* Applicable for VHX internal use.
+*Note:* Applicable for Vimeo OTT / VHX internal use.
 
 **Initial Setup**
 
