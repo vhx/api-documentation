@@ -11,50 +11,12 @@
 GET /browse
 ```
 
-```ruby
-# Not yet available for the Ruby client.
-```
-
-```node
-// Not yet available for the Node client.
-```
-
-```javascript
-vhxjs.browse.all();
-```
-
-```php
-<?php\VHX\Browse::all();
-```
-
 > Example Request
 
 ```shell
 $ curl -X GET -G "https://api.vhx.tv/browse" \
   -d product="https://api.vhx.tv/products/1" \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
-```
-
-```ruby
-# Not yet available for the Ruby client.
-```
-
-```node
-// Not yet available for the Node client.
-```
-
-```javascript
-vhxjs.browse.all({
-  product: 'https://api.vhx.tv/products/1'
-}, function(err, products) {
-   // asynchronously called
-});
-```
-
-```php
-<?php\VHX\Browse::all(array(
-  'product' => 'https://api.vhx.tv/products/1'
-));
 ```
 
 > Example Response

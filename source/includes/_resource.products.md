@@ -15,47 +15,11 @@
 GET /products/:id
 ```
 
-```ruby
-Vhx::Product.retrieve()
-```
-
-```node
-vhx.products.retrieve();
-```
-
-```javascript
-vhxjs.products.retrieve();
-```
-
-```php
-<?php$product = \VHX\Product::retrieve();
-```
-
 > Example Request
 
 ```shell
 $ curl -X GET "https://api.vhx.tv/products/1" \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
-```
-
-```ruby
-product = Vhx::Product.retrieve("https://api.vhx.tv/products/1")
-```
-
-```node
-vhx.products.retrieve("https://api.vhx.tv/products/1", function(err, product) {
-  // asynchronously called
-});
-```
-
-```javascript
-vhxjs.products.retrieve("https://api.vhx.tv/products/1", function(err, product) {
-  // asynchronously called
-});
-```
-
-```php
-<?php$product = \VHX\Products::retrieve("https://api.vhx.tv/products/1");
 ```
 
 > Example Response
@@ -127,56 +91,12 @@ vhxjs.products.retrieve("https://api.vhx.tv/products/1", function(err, product) 
 GET /products
 ```
 
-```ruby
-Vhx::Product.all()
-```
-
-```node
-vhx.products.all();
-```
-
-```javascript
-vhxjs.products.all();
-```
-
-```php
-<?php$product = \VHX\Products::all();
-```
-
 > Example Request
 
 ```shell
 $ curl -X GET -G "https://api.vhx.tv/products" \
   -d query="term" \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
-```
-
-```ruby
-Vhx::Product.all({
-  query: 'term'
-})
-```
-
-```node
-vhx.products.all({
-  query: 'term'
-}, function(err, products) {
-   // asynchronously called
-});
-```
-
-```javascript
-vhxjs.products.all({
-  query: 'term'
-}, function(err, products) {
-   // asynchronously called
-});
-```
-
-```php
-<?php$products = \VHX\Products::all(array(
-  'query' => 'term'
-));
 ```
 
 > Example Response

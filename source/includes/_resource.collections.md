@@ -51,22 +51,6 @@
 POST /collections
 ```
 
-```ruby
-Vhx::Collection.create()
-```
-
-```node
-vhx.collections.create();
-```
-
-```javascript
-// Not available for client-side requests.
-```
-
-```php
-<?php\VHX\Collections::create();
-```
-
 > Example Request
 
 ```shell
@@ -76,54 +60,6 @@ $ curl -X POST "https://api.vhx.tv/collections" \
 ["Foo Bar", "Bar Foo"], "release_year": 2017, "custom_icon":
 "image_url:https://vhx.imgix.net/site/assets/1231.jpg"}, "plans": ["public", "free", "standard"]}' \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
-```
-
-```ruby
-collection = Vhx::Collection.create({
-  name: 'Collection Name',
-  type: 'series',
-  metadata: {
-    director: 'Brad Pitt',
-    writers: ['Foo Bar', 'Bar Foo'],
-    release_year: 2017,
-    custom_icon: "image_url:https://vhx.imgix.net/site/assets/1231.jpg",
-  },
-  plans: ["public", "free", "standard"]
-})
-```
-
-```node
-vhx.collections.create({
-  name: 'Collection Name',
-  type: 'series',
-  metadata: {
-    director: 'Brad Pitt',
-    writers: ['Foo Bar', 'Bar Foo'],
-    release_year: 2017,
-    custom_icon: "image_url:https://vhx.imgix.net/site/assets/1231.jpg"
-  },
-  plans: ["public", "free", "standard"]
-}, function(err, collection) {
-  // asynchronously called
-});
-```
-
-```javascript
-// Not available for client-side requests.
-```
-
-```php
-<?php$collection = \VHX\Collections::create(array(
-  'name' => 'Collection Name',
-  'type' => 'series',
-  'metadata' => array(
-    'director' => 'Brad Pitt',
-    'writers' => ['Foo Bar', 'Bar Foo'],
-    'release_year' => 2017,
-    'custom_icon' => 'image_url:https://vhx.imgix.net/site/assets/1231.jpg'
-  ),
-  'plans' => ['public', 'free', 'standard']
-));
 ```
 
 > Example Response
@@ -267,48 +203,11 @@ vhx.collections.create({
 GET /collections/:id
 ```
 
-```ruby
-Vhx::Collection.retrieve()
-```
-
-```node
-vhx.collections.retrieve();
-```
-
-```javascript
-vhxjs.collections.retrieve();
-```
-
-```php
-<?php\VHX\Collections::retrieve();
-```
-
 > Example Request
 
 ```shell
 $ curl -X GET "https://api.vhx.tv/collections/1" \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
-```
-
-```ruby
-collection = Vhx::Collection.retrieve("https://api.vhx.tv/collections/1")
-```
-
-```node
-vhx.collections.retrieve("https://api.vhx.tv/collections/1",
- function(err, collection) {
-  // asynchronously called
- });
-```
-
-```javascript
-vhxjs.collections.retrieve("https://api.vhx.tv/collections/1", function(err, collection) {
-  // asynchronously called
-});
-```
-
-```php
-<?php$collection = \VHX\Collections::retrieve("https://api.vhx.tv/collections/1");
 ```
 
 > Example Response
@@ -391,22 +290,6 @@ vhxjs.collections.retrieve("https://api.vhx.tv/collections/1", function(err, col
 GET /collections
 ```
 
-```ruby
-Vhx::Collection.all()
-```
-
-```node
-vhx.collections.all();
-```
-
-```javascript
-vhxjs.collections.all();
-```
-
-```php
-<?php\VHX\Collections::all();
-```
-
 > Example Request
 
 ```shell
@@ -414,38 +297,6 @@ $ curl -X GET -G "https://api.vhx.tv/collections" \
   -d product=https://api.vhx.tv/products/1 \
   -d plan=standard
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
-```
-
-```ruby
-collections = Vhx::Collection.all({
-  product: 'https://api.vhx.tv/products/1',
-  plan: 'standard'
-})
-```
-
-```node
-vhx.collections.all({
-  product: 'https://api.vhx.tv/products/1',
-  plan: 'standard'
-}, function(err, collections) {
-  // asynchronously called
-});
-```
-
-```javascript
-vhxjs.collections.all({
-  product: 'https://api.vhx.tv/products/1',
-  plan: 'standard'
-}, function(err, collections) {
-  // asynchronously called
-});
-```
-
-```php
-<?php$collections = \VHX\Collections::all(array(
-  'product' => 'https://api.vhx.tv/products/1',
-  'plan' => 'standard'
-));
 ```
 
 > Example Response
@@ -549,22 +400,6 @@ vhxjs.collections.all({
 PUT /collections/:id
 ```
 
-```ruby
-Vhx::Collection.update()
-```
-
-```node
-vhx.collections.update();
-```
-
-```javascript
-// Not available for client-side requests.
-```
-
-```php
-<?php\VHX\Collections::update();
-```
-
 > Example Request
 
 ```shell
@@ -574,54 +409,6 @@ $ curl -X PUT "https://api.vhx.tv/collections/1" \
 "Brad Pitt", "writers": ["Foo Bar", "Bar Foo"], "release_year": 2017, "custom_icon":
 "image_url:https://vhx.imgix.net/site/assets/1231.jpg"}, "plans": ["public", "free", "standard"] }' \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
-```
-
-```ruby
-collection = Vhx::Collection.retrieve("https://api.vhx.tv/collections/1").update({
-  description: 'A new description',
-  metadata: {
-    director: 'Brad Pitt',
-    writers: ['Foo Bar', 'Bar Foo'],
-    release_year: 2017
-    producer: 'Christoper Nolan',
-    custom_icon: "image_url:https://vhx.imgix.net/site/assets/1231.jpg",
-  },
-  plans: ["public", "free", "standard"]
-})
-```
-
-```node
-vhx.collections.update("https://api.vhx.tv/collections/1", {
-  description: 'A new description',
-  metadata: {
-    director: 'Brad Pitt',
-    writers: ['Foo Bar', 'Bar Foo'],
-    release_year: 2017
-    producer: 'Christoper Nolan',
-    custom_icon: "image_url:https://vhx.imgix.net/site/assets/1231.jpg"
-  },
-  plans: ["public", "free", "standard"]
-}, function(err, collection) {
-  // asynchronously called
-});
-```
-
-```javascript
-// Not available for client-side requests.
-```
-
-```php
-<?php$collection = \VHX\Collections::update("https://api.vhx.tv/collections/1", array(
-  'name' => 'A new description',
-  'metadata' => array(
-    'director' => 'Brad Pitt',
-    'writers' => ['Foo Bar', 'Bar Foo'],
-    'release_year' => 2017,
-    'producer' => 'Christoper Nolan',
-    'custom_icon' => 'image_url:https://vhx.imgix.net/site/assets/1231.jpg'
-  )
-  'plans' => ['public', 'free', 'standard'],
-));
 ```
 
 > Example Response
@@ -758,57 +545,11 @@ vhx.collections.update("https://api.vhx.tv/collections/1", {
 GET /collections/:id/items
 ```
 
-```ruby
-Vhx::Collection.items()
-```
-
-```node
-vhx.collections.items();
-```
-
-```javascript
-vhxjs.collections.items();
-```
-
-```php
-<?php \VHX\Collections::items();
-```
-
 > Example Request
 
 ```shell
 $ curl -X GET -G "https://api.vhx.tv/collections/1/items?page=1" \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
-```
-
-```ruby
-collection = Vhx::Collection.retrieve("https://api.vhx.tv/collections/1")
-collection.items({ page: 1 })
-```
-
-```node
-vhx.collections.items({
-  collection: 'https://api.vhx.tv/collections/1',
-  page: 1
-}, function(err, items) {
-  // asynchronously called
-});
-```
-
-```javascript
-vhxjs.collections.items({
-  collection: 'https://api.vhx.tv/collections/1',
-  page: 1
-}, function(err, items) {
-  // asynchronously called
-});
-```
-
-```php
-<?php$collections = \VHX\Collections::items(array(
-  'collection' => 'https://api.vhx.tv/collections/1'
-  'page' => 1
-));
 ```
 
 > Example Response
@@ -888,45 +629,12 @@ vhxjs.collections.items({
 PUT /collections/:id/items
 ```
 
-```ruby
-# Not yet available for the Ruby client.
-```
-
-```node
-// Not yet available for the Node client.
-```
-
-```javascript
-// Not available for client-side requests.
-```
-
-```php
-/* Not yet available for the PHP client */
-```
-
 > Example Request
 
 ```shell
 $ curl -X PUT "https://api.vhx.tv/collections/1/items" \
   -d video_id=2 \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
-```
-
-
-```ruby
-# Not yet available for the Ruby client.
-```
-
-```node
-// Not yet available for the Node client.
-```
-
-```javascript
-// Not available for client-side requests.
-```
-
-```php
-/* Not yet available for the PHP client */
 ```
 
 > Example Response
@@ -985,45 +693,12 @@ HEAD 204
 DELETE /collections/:id/items
 ```
 
-```ruby
-# Not yet available for the Ruby client.
-```
-
-```node
-// Not yet available for the Node client.
-```
-
-```javascript
-// Not available for client-side requests.
-```
-
-```php
-/* Not yet available for the PHP client */
-```
-
 > Example Request
 
 ```shell
 $ curl -X DELETE "https://api.vhx.tv/collections/1/items" \
   -d video_id=2 \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
-```
-
-
-```ruby
-# Not yet available for the Ruby client.
-```
-
-```node
-// Not yet available for the Node client.
-```
-
-```javascript
-// Not available for client-side requests.
-```
-
-```php
-/* Not yet available for the PHP client */
 ```
 
 > Example Response

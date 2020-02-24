@@ -8,7 +8,7 @@ https://api.vhx.tv
 ```
 <section class="text-2 contain">
   <p>The Vimeo OTT API (previously referenced as "VHX API") provides a simple and secure <a href="http://en.wikipedia.org/wiki/Representational_State_Transfer" target="_blank">REST</a> interface to Vimeo OTT. Registered applications can manage products, customers, videos, collections, authorizations, and analytics.</p>
-  <p>We provide light-weight client libraries to easily interface with our resources. These are currently available in Node.js, Ruby, and PHP. Python and Go client libraries will be added soon.</p>
+  <p>We provide light-weight client libraries to easily interface with our resources. These are currently available in Node.js, Ruby, and PHP.</p>
   <p>All API access is over <a href="http://en.wikipedia.org/wiki/HTTP_Secure">HTTPS</a> and all data is sent and received as <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a>. Blank fields are included as <code>null</code> and timestamps are in ISO 8601 format <code>YYYY-MM-DDTHH:MM:SSZ</code>. Only the UTF-8 character encoding is supported for both requests and responses.</p>
   <p>We support <a href="https://en.wikipedia.org/wiki/JSONP" target="_blank">JSONP</a> (use <code>?callback=</code>) and <a href="http://en.wikipedia.org/wiki/Cross-origin_resource_sharing" target="_blank">Cross Origin Resource Sharing</a> (CORS) for AJAX requests.</p>
 
