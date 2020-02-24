@@ -2,7 +2,7 @@
 <h2 class="is-api head-3 margin-top-large margin-bottom-medium" id="collections">Collections</h2>
 
 <section class="text-2 contain">
-  <p>A collection is the way to organize and add metadata around your videos. There are 6 types of collections:</p>
+  <p>A collection is the way to organize and add metadata around your videos. There are 5 types of collections:</p>
 </section>
 
 <table>
@@ -14,10 +14,6 @@
   </thead>
 
   <tbody>
-    <tr class="text-2 border-bottom border--light-gray">
-      <td><strong>section</strong></td>
-      <td>A high level grouping of categories. "Genres" is an example.</td>
-    </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td><strong>category</strong></td>
       <td>A way to group other primary collections (series, movies, and playlists). An example of this is "Drama" or "Comedy".</td>
@@ -131,7 +127,7 @@ $ curl -X POST "https://api.vhx.tv/collections" \
         <span class="is-block text--transparent text-3">string</span>
         <span class="text--yellow text-3">REQUIRED</span>
       </td>
-      <td>The type of collection: <code>section</code>, <code>category</code>, <code>series</code>, <code>season</code>, <code>movie</code>, or <code>playlist</code>.</td>
+      <td>The type of collection: <code>category</code>, <code>series</code>, <code>season</code>, <code>movie</code>, or <code>playlist</code>.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
