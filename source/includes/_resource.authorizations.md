@@ -16,22 +16,6 @@
 POST /authorizations
 ```
 
-```ruby
-Vhx::Authorizaton.create()
-```
-
-```node
-vhx.authorizations.create();
-```
-
-```javascript
-// Not available for client-side requests.
-```
-
-```php
-<?php\VHX\Authorizations::create();
-```
-
 > Example Request
 
 ```shell
@@ -40,34 +24,6 @@ $ curl -X POST "https://api.vhx.tv/authorizations" \
   -d video=https://api.vhx.tv/videos/1 \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
-
-```ruby
-authorization = Vhx::Authorization.create({
-  customer: 'https://api.vhx.tv/customers/1',
-  video: 'https://api.vhx.tv/videos/1'
-})
-```
-
-```node
-vhx.authorizations.create({
-  customer: 'https://api.vhx.tv/customers/1',
-  video: 'https://api.vhx.tv/videos/1'
-}, function(err, authorization) {
-  // asynchronously called
-});
-```
-
-```javascript
-// Not available for client-side requests.
-```
-
-```php
-<?php$authorization = \VHX\Authorizations::create(array(
-  'customer' => 'https://api.vhx.tv/customers/1',
-  'video' => 'https://api.vhx.tv/videos/1'
-));
-```
-
 
 > Example Response
 

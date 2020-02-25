@@ -15,22 +15,6 @@
 POST /customers
 ```
 
-```ruby
-Vhx::Customer.create()
-```
-
-```node
-vhx.customers.create();
-```
-
-```javascript
-// Not available for client-side requests.
-```
-
-```php
-<?php$customer = \VHX\Customers::create();
-```
-
 > Example Request
 
 ```shell
@@ -40,39 +24,6 @@ $ curl -X POST "https://api.vhx.tv/customers" \
   -d product="https://api.vhx.tv/products/1" \
   -d plan="standard" \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
-```
-
-```ruby
-customer = Vhx::Customer.create({
-  name: 'First Last',
-  email: 'customer@email.com',
-  product: 'https://api.vhx.tv/products/1',
-  plan: 'standard'
-})
-```
-
-```node
-vhx.customers.create({
-  name: 'First Last',
-  email: 'customer@email.com',
-  product: 'https://api.vhx.tv/products/1',
-  plan: 'standard'
-}, function(err, customer) {
-  // asynchronously called
-});
-```
-
-```javascript
-// Not available for client-side requests.
-```
-
-```php
-<?php$customer = \VHX\Customers::create(array(
-  'name' => 'First Last',
-  'email' => 'customer@email.com',
-  'product' => 'https://api.vhx.tv/products/1',
-  'plan' => 'standard'
-));
 ```
 
 > Example Response
@@ -169,47 +120,11 @@ vhx.customers.create({
 GET /customers/:id
 ```
 
-```ruby
-Vhx::Customer.retrieve()
-```
-
-```node
-vhx.customers.retrieve();
-```
-
-```javascript
-vhxjs.customers.retrieve();
-```
-
-```php
-<?php$customer = \VHX\Customers::retrieve();
-```
-
 > Example Request
 
 ```shell
 $ curl -X GET "https://api.vhx.tv/customers/1" \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
-```
-
-```ruby
-customer = Vhx::Customer.retrieve("https://api.vhx.tv/customers/1")
-```
-
-```node
-vhx.customers.retrieve("https://api.vhx.tv/customers/1", function(err, customer) {
-  // asynchronously called
-});
-```
-
-```javascript
-vhxjs.customers.retrieve("https://api.vhx.tv/customers/1", function(err, customer) {
-  // asynchronously called
-});
-```
-
-```php
-<?php$customer = \VHX\Customers::retrieve("https://api.vhx.tv/customers/1");
 ```
 
 > Example Response
@@ -231,6 +146,7 @@ vhxjs.customers.retrieve("https://api.vhx.tv/customers/1", function(err, custome
   "platform": "web"
 }
 ```
+
 <section class="text-2 contain margin-bottom-medium">
   <p>Retrieves an existing customer. You can optionally specify a product parameter to scope the customer retrieval to it (ie. "Is this customer subscribed to this product?").</p>
 </section>
@@ -263,104 +179,6 @@ vhxjs.customers.retrieve("https://api.vhx.tv/customers/1", function(err, custome
   </tbody>
 </table>
 
-<h3 class="text-2 head-4 text--navy text--bold margin-top-large margin-bottom-medium is-internal" id="customer-find-by-billing">Retrieve with In-App Purchase billing data</h3>
-
-> <h5 class="head-5 text--white margin-bottom-medium is-internal">Retrieve with In-App Purchase billing data</h5>
-
-> Definition
-
-```shell
-POST /customers/find_by_billing
-```
-
-```ruby
-```
-
-```node
-```
-
-```javascript
-```
-
-```php
-```
-
-> Example Request
-
-```shell
-$ curl -X POST "https://api.vhx.tv/customers/find_by_billing" \
-  -d billing[provider]="apple" \
-  -d billing[receipt]="MIIcVgYJKoZIhv..." \
-  -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
-```
-
-```ruby
-```
-
-```node
-```
-
-```javascript
-```
-
-```php
-```
-
-> Example Response
-
-```json
-{
-  "_links": {
-    "self":  { "href": "https://api.vhx.tv/customers/1" },
-    "watchlist": { "href": "https://api.vhx.tv/customers/1/watchlist" },
-    "watching": { "href": "https://api.vhx.tv/customers/1/watching" }
-  },
-  "_embedded": {
-      "oauth": {
-        "access_token": "3e0b2925500c3cc87b3c8ab47c93041f16e167ee5b949855e41fef7a3eb87ee3",
-        "token_type": "bearer",
-        "expires_in": 7200
-      }
-  },
-  "id": 1,
-  "name": "First Last",
-  "email": "customer@email.com",
-  "created_at": "2014-02-25T20:19:30Z",
-  "updated_at": "2014-02-25T20:19:30Z"
-}
-```
-<section class="text-2 contain margin-bottom-medium is-internal">
-  <p>Retrieves an existing customer with <a href="/in-app-purchases">In-App Purchase</a> billing data.</p>
-</section>
-
-<table class="is-internal">
-  <thead>
-    <tr class="text-2">
-      <th class="padding-medium nowrap">Arguments</th>
-      <th class="padding-medium" width="100%">Description</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr class="text-2 border-bottom border--light-gray">
-      <td>
-        <strong class="is-block text--navy">billing</strong>
-        <span class="is-block text--transparent text-3">object</span>
-        <span class="text--yellow text-3">REQUIRED</span>
-      </td>
-      <td>The billing provider and receipt for the In-App Purchase.</td>
-    </tr>
-    <tr class="text-2 border-bottom border--light-gray">
-      <td>
-        <strong class="is-block text--navy">product</strong>
-        <span class="is-block text--transparent text-3">string</span>
-        <span class="text--yellow text-3">REQUIRED</span>
-      </td>
-      <td>The <code>href</code> of a product.</td>
-    </tr>
-  </tbody>
-</table>
-
 <h3 class="text-2 head-4 text--navy text--bold margin-top-large margin-bottom-medium" id="customer-list">List all Customers</h3>
 
 > <h5 class="head-5 text--white margin-bottom-medium">List all customers</h5>
@@ -372,56 +190,12 @@ $ curl -X POST "https://api.vhx.tv/customers/find_by_billing" \
 GET /customers
 ```
 
-```ruby
-Vhx::Customer.all()
-```
-
-```node
-vhx.customers.all();
-```
-
-```javascript
-vhxjs.customers.all();
-```
-
-```php
-<?php$customer = \VHX\Customers::all();
-```
-
 > Example Request
 
 ```shell
 $ curl -X GET -G "https://api.vhx.tv/customers" \
   -d query="term" \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
-```
-
-```ruby
-Vhx::Customer.all({
-  query: 'term'
-})
-```
-
-```node
-vhx.customers.all({
-  query: 'term'
-}, function(err, collections) {
-   // asynchronously called
-});
-```
-
-```javascript
-vhxjs.customers.all({
-  query: 'term'
-}, function(err, collections) {
-   // asynchronously called
-});
-```
-
-```php
-<?php$customers = \VHX\Customers::all(array(
-  'query' => 'term'
-));
 ```
 
 > Example Response
@@ -521,52 +295,12 @@ vhxjs.customers.all({
 PUT /customers/:id
 ```
 
-```ruby
-Vhx::Customer.update()
-```
-
-```node
-vhx.customers.update();
-```
-
-```javascript
-// Not available for client-side requests.
-```
-
-```php
-<?php$customer = \VHX\Customers::update();
-```
-
 > Example Request
 
 ```shell
 $ curl -X PUT "https://api.vhx.tv/customers/1" \
   -d name="First Last" \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
-```
-
-```ruby
-Vhx::Customer.update("https://api.vhx.tv/customers/1", {
-  name: 'First Last'
-})
-```
-
-```node
-vhx.customers.update("https://api.vhx.tv/customers/1", {
-  name: 'First Last'
-}, function(err, customer) {
-   // asynchronously called
-});
-```
-
-```javascript
-// Not available for client-side requests.
-```
-
-```php
-<?php$customers = \VHX\Customers::update("https://api.vhx.tv/customers/1", array(
-  'name' => 'First Last'
-));
 ```
 
 > Example Response
@@ -619,53 +353,12 @@ vhx.customers.update("https://api.vhx.tv/customers/1", {
 PUT /customers/:id/products
 ```
 
-```ruby
-Vhx::Customer.addProduct()
-```
-
-```node
-vhx.customers.addProduct();
-```
-
-```javascript
-// Not available for client-side requests.
-```
-
-```php
-<?php\VHX\Customers::addProduct();
-```
-
 > Example Request
 
 ```shell
 $ curl -X PUT "https://api.vhx.tv/customers/1/products" \
   -d product=https://api.vhx.tv/products/1 \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
-```
-
-```ruby
-Vhx::Customer.addProduct('https://api.vhx.tv/customers/1', {
-  product: 'https://api.vhx.tv/products/1'
-})
-```
-
-```node
-vhx.customers.addProduct('https://api.vhx.tv/customers/1', {
-  product: 'https://api.vhx.tv/products/1'
-}, function(err, customer) {
-   // asynchronously called
-});
-```
-
-```javascript
-// Not available for client-side requests.
-```
-
-```php
-<?php$customer = \VHX\Customers::addProduct("https://api.vhx.tv/customers/1",
- array(
-  'product' => 'https://api.vhx.tv/products/1'
-));
 ```
 
 <section class="text-2 contain margin-bottom-medium">
@@ -710,54 +403,12 @@ vhx.customers.addProduct('https://api.vhx.tv/customers/1', {
 DELETE /customers/:id/products
 ```
 
-```ruby
-Vhx::Customer.removeProduct()
-```
-
-```node
-vhx.customers.removeProduct();
-```
-
-```javascript
-// Not available for client-side requests.
-```
-
-```php
-<?php$customer = \VHX\Customers::removeProduct();
-```
-
 > Example Request
 
 ```shell
 $ curl -X DELETE "https://api.vhx.tv/customers/1/products" \
   -d product=https://api.vhx.tv/products/1 \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
-```
-
-```ruby
-Vhx::Customer.removeProduct('https://api.vhx.tv/customers/1', {
-  product: 'https://api.vhx.tv/products/1'
-})
-```
-
-```node
-vhx.customers.removeProduct('https://api.vhx.tv/customers/1', {
-  product: 'https://api.vhx.tv/products/1'
-}, function(err, customer) {
-   // asynchronously called
-});
-```
-
-```javascript
-// Not available for client-side requests.
-```
-
-
-```php
-<?php$customer = \VHX\Customers::removeProduct("https://api.vhx.tv/customers/1",
- array(
-  'product' => 'https://api.vhx.tv/products/1'
-));
 ```
 
 <section class="text-2 contain margin-bottom-medium">
@@ -802,43 +453,11 @@ vhx.customers.removeProduct('https://api.vhx.tv/customers/1', {
 GET /customers/:id/watching
 ```
 
-```ruby
-# Not yet available for the Ruby client.
-```
-
-```node
-// Not yet available for the Node client.
-```
-
-```javascript
-// Not yet available for the Javascript client.
-```
-
-```php
-<?php$customer = \VHX\Watching::items();
-```
-
 > Example Request
 
 ```shell
 $ curl -X GET "https://api.vhx.tv/customers/1/watching" \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
-```
-
-```ruby
-# Not yet available for the Ruby client.
-```
-
-```node
-// Not yet available for the Node client.
-```
-
-```javascript
-// Not yet available for the Javascript client.
-```
-
-```php
-<?php$watching = \VHX\Watching::items("https://api.vhx.tv/customers/1");
 ```
 
 > Example Response
@@ -907,46 +526,11 @@ $ curl -X GET "https://api.vhx.tv/customers/1/watching" \
 GET /customers/:id/watchlist
 ```
 
-```ruby
-# Not yet available for the Ruby client.
-```
-
-```node
-// Not yet available for the Node client.
-```
-
-```javascript
-// Not available for client-side requests.
-```
-
-```php
-<?php$watchlist = \VHX\Watchlist::items();
-```
-
 > Example Request
 
 ```shell
 $ curl -X GET "https://api.vhx.tv/customers/1/watchlist" \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
-```
-
-```ruby
-# Not yet available for the Ruby client.
-```
-
-```node
-// Not yet available for the Node client.
-```
-
-```javascript
-// Not available for client-side requests.
-```
-
-
-```php
-<?php\VHX\Watchlist::items(array(
-  "customer" => "https://api.vhx.tv/customers/1"
-));
 ```
 
 > Example Response
@@ -1017,48 +601,12 @@ $ curl -X GET "https://api.vhx.tv/customers/1/watchlist" \
 PUT /customers/:id/watchlist
 ```
 
-```ruby
-# Not yet available for the Ruby client.
-```
-
-```node
-// Not yet available for the Node client.
-```
-
-```javascript
-// Not available for client-side requests.
-```
-
-```php
-<?php\VHX\Watchlist::addItem();
-```
-
 > Example Request
 
 ```shell
 $ curl -X PUT "https://api.vhx.tv/customers/1/watchlist" \
   -d video="http://api.vhx.tv/videos/1" \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
-```
-
-```ruby
-# Not yet available for the Ruby client.
-```
-
-```node
-// Not yet available for the Node client.
-```
-
-```javascript
-// Not available for client-side requests.
-```
-
-
-```php
-<?php\VHX\Watchlist::addItem(array(
-  "customer" => "https://api.vhx.tv/customers/1",
-  "video" => "https://api.vhx.tv/videos/1"
-));
 ```
 
 <section class="text-2 contain margin-bottom-medium">
@@ -1105,48 +653,12 @@ $ curl -X PUT "https://api.vhx.tv/customers/1/watchlist" \
 DELETE /customers/:id/watchlist
 ```
 
-```ruby
-# Not yet available for the Ruby client.
-```
-
-```node
-// Not yet available for the Node client.
-```
-
-```javascript
-// Not available for client-side requests.
-```
-
-```php
-<?php\VHX\Watchlist::removeItem();
-```
-
 > Example Request
 
 ```shell
 $ curl -X DELETE "https://api.vhx.tv/customers/1/watchlist" \
   -d video="http://api.vhx.tv/videos/1" \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
-```
-
-```ruby
-# Not yet available for the Ruby client.
-```
-
-```node
-// Not yet available for the Node client.
-```
-
-```javascript
-// Not available for client-side requests.
-```
-
-
-```php
-<?php\VHX\Watchlist::removeItem(array(
-  "customer" => "https://api.vhx.tv/customers/1",
-  "video" => "https://api.vhx.tv/videos/1"
-));
 ```
 
 <section class="text-2 contain margin-bottom-medium">

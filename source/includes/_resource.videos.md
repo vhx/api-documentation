@@ -35,7 +35,7 @@
 
 <section class="text-2 contain margin-bottom-large">
   <p>A video object has a tracks property. This includes subtitles. A subtitle track is a sidecar WebVTT or SRT file.</p>
-  <p>DRM (Digital Rights Management) is available, per request, for an additional cost. We support Google Widevine, Adobe Access, and OMA.</p>
+  <p>DRM (Digital Rights Management) is available, per request, for an additional cost.</p>
 </section>
 
 <h3 class="text-2 head-4 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="videos-create">Create a Video</h3>
@@ -46,22 +46,6 @@
 
 ```shell
 POST /videos
-```
-
-```ruby
-Vhx::Video.create()
-```
-
-```node
-vhx.videos.create();
-```
-
-```javascript
-// Not available for client-side requests.
-```
-
-```php
-<?php\VHX\Videos::create();
 ```
 
 > Example Request
@@ -77,62 +61,6 @@ $ curl -X POST "https://api.vhx.tv/videos" \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
-```ruby
-video = Vhx::Video.create({
-  title: 'My Video',
-  description: 'My video description.',
-  source_url: 's3:://YOUR_BUCKET_NAME/FILE.mp4',
-  metadata: {
-    director: 'Brad Pitt',
-    writers: ['Foo Bar', 'Bar Foo'],
-    release_year: 2017,
-    custom_icon: "image_url:https://vhx.imgix.net/site/assets/1231.jpg",
-  },
-  plans: ['public', 'free', 'standard'],
-  time_available: '2014-03-01T00:00:00Z',
-  time_unavailable: '2014-04-01T00:00:00Z'
-})
-```
-
-```node
-vhx.videos.create({
-  title: 'My Video',
-  description: 'My video description.',
-  source_url: 's3:://YOUR_BUCKET_NAME/FILE.mp4',
-  metadata: {
-    director: 'Brad Pitt',
-    writers: ['Foo Bar', 'Bar Foo'],
-    release_year: 2017,
-    custom_icon: "image_url:https://vhx.imgix.net/site/assets/1231.jpg"
-  },
-  plans: ['public', 'free', 'standard'],
-  time_available: '2014-03-01T00:00:00Z',
-  time_unavailable: '2014-04-01T00:00:00Z',
-}, function(err, video) {
-   // asynchronously called
-});
-```
-
-```javascript
-// Not available for client-side requests.
-```
-
-```php
-<?php$video = \VHX\Videos::create(array(
-  'title' => 'My Video',
-  'description' => 'My video description.',
-  'source_url' => 's3:://YOUR_BUCKET_NAME/FILE.mp4',
-  'metadata' => array(
-    'director' => 'Brad Pitt',
-    'writers' => ['Foo Bar', 'Bar Foo'],
-    'release_year' => 2017,
-    'custom_icon' => 'image_url:https://vhx.imgix.net/site/assets/1231.jpg'
-  ),
-  'plans' => ['public', 'free', 'standard'],
-  'time_available' => '2014-03-01T00:00:00Z',
-  'time_unavailable' => '2014-03-01T00:00:00Z'
-));
-```
 > Example Response
 
 ```json
@@ -291,46 +219,11 @@ vhx.videos.create({
 GET /videos/:id
 ```
 
-```ruby
-Vhx::Videos.retrieve()
-```
-
-```node
-vhx.videos.retrieve();
-```
-
-```javascript
-vhxjs.videos.retrieve();
-```
-
-```php
-<?php\VHX\Videos::retrieve();
-```
 > Example Request
 
 ```shell
 $ curl -X GET "https://api.vhx.tv/videos/1" \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
-```
-
-```ruby
-video = Vhx::Video.retrieve("https://api.vhx.tv/videos/1")
-```
-
-```node
-vhx.videos.retrieve("https://api.vhx.tv/videos/1", function(err, video) {
-  // asynchronously called
-});
-```
-
-```javascript
-vhxjs.videos.retrieve("https://api.vhx.tv/videos/1", function(err, video) {
-  // asynchronously called
-});
-```
-
-```php
-<?php$video = \VHX\Videos::retrieve("https://api.vhx.tv/videos/1");
 ```
 
 > Example Response
@@ -464,21 +357,6 @@ vhxjs.videos.retrieve("https://api.vhx.tv/videos/1", function(err, video) {
 GET /videos
 ```
 
-```ruby
-Vhx::Video.all()
-```
-
-```node
-vhx.videos.all();
-```
-
-```javascript
-vhxjs.videos.all();
-```
-
-```php
-<?php\VHX\Videos::all();
-```
 > Example Request
 
 ```shell
@@ -486,38 +364,6 @@ $ curl -X GET -G "https://api.vhx.tv/videos" \
   -d query="term" \
   -d plan="standard" \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
-```
-
-```ruby
-video = Vhx::Video.all({
-  query: 'term',
-  plan: 'standard'
-})
-```
-
-```node
-vhx.videos.all({
-  query: 'term',
-  plan: 'standard'
-}, function(err, videos) {
-   // asynchronously called
-});
-```
-
-```javascript
-vhxjs.videos.all({
-  query: 'term',
-  plan: 'standard'
-}, function(err, videos) {
-   // asynchronously called
-});
-```
-
-```php
-<?php$videos = \VHX\Videos::all(array(
-  'query' => 'term',
-  'plan' => 'standard'
-));
 ```
 
 > Example Response
@@ -606,54 +452,11 @@ string. </td>
 GET /videos/:id/files
 ```
 
-```ruby
-Vhx::Video.files()
-```
-
-```node
-vhx.videos.files();
-```
-
-```javascript
-// Not available for client-side requests.
-```
-
-```php
-<?php\VHX\Videos::files();
-```
-
 > Example Request
 
 ```shell
 $ curl -X GET "https://api.vhx.tv/videos/1/files?quality=adaptive&format=m3u8" \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
-```
-
-```ruby
-video = Vhx::Video.retrieve("https://api.vhx.tv/videos/1")
-video.files({ quality: 'adaptive', format: 'm3u8' })
-```
-
-```node
-vhx.videos.files({
-  video: 'https://api.vhx.tv/video/1'
-  quality: 'adaptive',
-  format: 'm3u8'
-}, function(err, files) {
-   // asynchronously called
-});
-```
-
-```javascript
-// Not available for client-side requests.
-```
-
-```php
-<?php$files = \VHX\Videos::files(array(
-  'video' => 'https://api.vhx.tv/videos/1'
-  'quality' => 'adaptive',
-  'format' => 'm3u8'
-));
 ```
 
 > Example Response
@@ -694,22 +497,6 @@ id="videos-update">Update a Video</h3>
 PUT /videos/:id
 ```
 
-```ruby
-Vhx::Video.update()
-```
-
-```node
-vhx.videos.update();
-```
-
-```javascript
-// Not available for client-side requests.
-```
-
-```php
-<?php\VHX\Videos::update();
-```
-
 > Example Request
 
 ```shell
@@ -720,59 +507,6 @@ $ curl -X PUT "https://api.vhx.tv/videos/1" \
 "image_url:https://vhx.imgix.net/site/assets/1231.jpg"}, "plans": ["public", "free", "standard"],
 "time_available": "2014-03-01T00:00:00Z", "time_unavailable": "2014-04-01T00:00:00Z"}' \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
-```
-
-```ruby
-video = Vhx::Video.retrieve("https://api.vhx.tv/videos/1").update({
-  description: 'A new description',
-  metadata: {
-    director: 'Brad Pitt',
-    writers: ['Foo Bar', 'Bar Foo'],
-    release_year: 2017,
-    producer: 'Christoper Nolan',
-    custom_icon: "image_url:https://vhx.imgix.net/site/assets/1231.jpg",
-  },
-  plans: ["public", "free", "standard"],
-  time_available: '2014-03-01T00:00:00Z',
-  time_unavailable: '2014-04-01T00:00:00Z',
-})
-```
-
-```node
-vhx.videos.update("https://api.vhx.tv/videos/1", {
-  description: 'A new description',
-  metadata: {
-    director: 'Brad Pitt',
-    writers: ['Foo Bar', 'Bar Foo'],
-    release_year: 2017,
-    producer: 'Christoper Nolan',
-    custom_icon: "image_url:https://vhx.imgix.net/site/assets/1231.jpg"
-  },
-  plans: ["public", "free", "standard"],
-  time_available: '2014-03-01T00:00:00Z',
-  time_unavailable: '2014-04-01T00:00:00Z',
-}, function(err, video) {
-  // asynchronously called
-});
-```
-
-```javascript
-// Not available for client-side requests.
-```
-
-```php
-<?php$video = \VHX\Videos::update("https://api.vhx.tv/videos/1", array(
-  'name' => 'A new description',
-  'metadata' => array(
-    'director' => 'Brad Pitt',
-    'writers' => ['Foo Bar', 'Bar Foo'],
-    'release_year' => 2017,
-    'producer' => 'Christoper Nolan'
-  ),
-  'plans' => ['public', 'free', 'standard'],
-  'time_available' => '2014-03-01T00:00:00Z',
-  'time_unavailable' => '2014-03-01T00:00:00Z'
-));
 ```
 
 > Example Response

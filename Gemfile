@@ -5,7 +5,6 @@ gem 'middleman', '~>3.3.10'
 gem 'middleman-gh-pages', '~> 0.0.3'
 gem 'middleman-syntax', '~> 2.0.0'
 gem 'middleman-autoprefixer', '~> 2.4.4'
-gem 'rouge', :git => 'git://github.com/vhx/rouge.git', :branch => "v1.11.1-vhx"
 gem 'redcarpet', '~> 3.3.2'
 
 gem 'rake', '~> 10.4.2'
