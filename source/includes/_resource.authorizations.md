@@ -3,7 +3,7 @@
 
 <section class="text-2 contain">
   <p>An authorization grants playback access for a given customer and video.</p>
-  <p>The response includes an expiring token that is used to authenticate the VHX player on the customers behalf. This enables a customer-to-video playback session which feeds into video analytics.</p>
+  <p>The response includes an expiring token that is used to authenticate the Vimeo OTT player on the customers behalf. This enables a customer-to-video playback session which feeds into video analytics.</p>
 </section>
 
 <h3 class="text-2 head-4 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="authorizations-create">Create an Authorization</h3>
@@ -20,8 +20,8 @@ POST /authorizations
 
 ```shell
 $ curl -X POST "https://api.vhx.tv/authorizations" \
-  -d customer=https://api.vhx.tv/customers/1 \
-  -d video=https://api.vhx.tv/videos/1 \
+  -d customer="https://api.vhx.tv/customers/1" \
+  -d video="https://api.vhx.tv/videos/1" \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 

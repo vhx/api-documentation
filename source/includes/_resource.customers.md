@@ -90,14 +90,6 @@ $ curl -X POST "https://api.vhx.tv/customers" \
     </tr>
     <tr class="text-2 border-bottom border--light-gray is-internal">
       <td class="nowrap">
-        <strong class="is-block text--navy">billing</strong>
-        <span class="is-block text--transparent text-3">object</span>
-        <span class="text--transparent text-3">optional</span>
-      </td>
-      <td>Billing parameters for <a href="/in-app-purchases">In-App Purchases</a> for the Apple, Google, and Roku platforms.</td>
-    </tr>
-    <tr class="text-2 border-bottom border--light-gray is-internal">
-      <td class="nowrap">
         <strong class="is-block text--navy">plan</strong>
         <span class="is-block text--transparent text-3">string</span>
         <span class="text--transparent text-3">optional, default is "standard"</span>
@@ -357,7 +349,7 @@ PUT /customers/:id/products
 
 ```shell
 $ curl -X PUT "https://api.vhx.tv/customers/1/products" \
-  -d product=https://api.vhx.tv/products/1 \
+  -d product="https://api.vhx.tv/products/1" \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
@@ -407,7 +399,7 @@ DELETE /customers/:id/products
 
 ```shell
 $ curl -X DELETE "https://api.vhx.tv/customers/1/products" \
-  -d product=https://api.vhx.tv/products/1 \
+  -d product="https://api.vhx.tv/products/1" \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
@@ -457,6 +449,7 @@ GET /customers/:id/watching
 
 ```shell
 $ curl -X GET "https://api.vhx.tv/customers/1/watching" \
+  -H "VHX-Customer: https://api.vhx.tv/customers/1"
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
@@ -493,7 +486,6 @@ $ curl -X GET "https://api.vhx.tv/customers/1/watching" \
 ```
 <section class="text-2 contain margin-bottom-medium">
   <p>Retrieves the videos currently in progress for a customer.</p>
-  <p class="is-internal text-2">For applications that are integrated via OAuth2 access tokens with our user authentication system can use the alias <code>https://api.vhx.tv/me/watching</code> when making cURL requests.</p>
 </section>
 
 <table>
@@ -511,7 +503,7 @@ $ curl -X GET "https://api.vhx.tv/customers/1/watching" \
         <span class="is-block text--transparent text-3">string</span>
         <span class="text--yellow text-3">REQUIRED</span>
       </td>
-      <td>The <code>href</code> of the customer being retrieved.</td>
+      <td>The <code>href</code> of the customer being retrieved. This needs to be provided in the request url and the <code>VHX-Customer</code> header.</td>
     </tr>
   </tbody>
 </table>
@@ -567,7 +559,6 @@ $ curl -X GET "https://api.vhx.tv/customers/1/watchlist" \
 
 <section class="text-2 contain margin-bottom-medium">
   <p>Retrieves watchlist items for a given customer.</p>
-  <p class="is-internal text-2">For applications that are integrated via OAuth2 access tokens with our user authentication system can use the alias <code>https://api.vhx.tv/me/watchlist</code> when making cURL requests.</p>
 </section>
 
 <table>
@@ -611,7 +602,6 @@ $ curl -X PUT "https://api.vhx.tv/customers/1/watchlist" \
 
 <section class="text-2 contain margin-bottom-medium">
   <p>Adds an item (a video) to a customer's watchlist.</p>
-  <p class="is-internal text-2">For applications that are integrated via OAuth2 access tokens with our user authentication system can use the alias <code>https://api.vhx.tv/me/watchlist</code> when making cURL requests.</p>
 </section>
 
 <table>
@@ -663,7 +653,6 @@ $ curl -X DELETE "https://api.vhx.tv/customers/1/watchlist" \
 
 <section class="text-2 contain margin-bottom-medium">
   <p>Removes an item (a video) from a customer's watchlist.</p>
-  <p class="is-internal text-2">For applications that are integrated via OAuth2 access tokens with our user authentication system can use the alias <code>https://api.vhx.tv/me/watchlist</code> when making cURL requests.</p>
 </section>
 
 <table>

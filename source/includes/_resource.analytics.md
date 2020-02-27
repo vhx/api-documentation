@@ -2,7 +2,7 @@
 <h2 class="head-3 margin-top-xlarge padding-top-xlarge border-top margin-bottom-medium" id="analytics">Analytics</h2>
 
 <section class="text-2 contain">
-  <p>Analytics give you access to data around your videos, customers, traffic, and platform income. You can gain insights on what your customers are watching, how many people are visiting your channel, the number of units you are selling, how many customers are subscribing and unsubscribing, and more via reports that can be easily retrieved from the VHX API.</p>
+  <p>Analytics give you access to data around your videos, customers, traffic, and platform income. You can gain insights on what your customers are watching, how many people are visiting your channel, the number of units you are selling, how many customers are subscribing and unsubscribing, and more via reports that can be easily retrieved from the Vimeo OTT API.</p>
 </section>
 
 <h3 class="text-2 head-4 text--navy text--bold is-api padding-top-large margin-top-xlarge margin-bottom-medium" id="analytics-by-video">Retrieve a Report</h3>
@@ -57,29 +57,68 @@ GET /analytics
 
   <tbody>
     <tr class="text-2 border-bottom border--light-gray">
-      <td><strong>traffic</strong></td>
-      <td>Web traffic to your VHX site across various devices and browsers. This report is for web traffic only. It includes mobile browsers but does not include Branded App activity.</td>
+      <td>
+        <strong>traffic</strong>
+        <span class="is-block text--transparent text-3">Aggregate report</span>
+      </td>
+      <td>Web traffic to your Vimeo OTT site across various devices and browsers. This report is for web traffic only. It includes mobile browsers but does not include Branded App activity.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
-      <td><strong>income_statement</strong></td>
+      <td>
+        <strong>income_statement</strong>
+        <span class="is-block text--transparent text-3">Aggregate report</span>
+      </td>
       <td>Income statements are a summary of your revenue and expenses for payout periods. Income statements are generated in monthly intervals for your account.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
-      <td><strong>units</strong></td>
+      <td>
+        <strong>units</strong>
+        <span class="is-block text--transparent text-3">Both report types</span>
+      </td>
       <td>Units are the amount of TVOD (transactional video on demand) products you have sold or have been redeemed (gifts or coupons) per given period of time. Units represent products that have been bought or rented.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
-      <td><strong>subscribers</strong></td>
+      <td>
+        <strong>subscribers</strong>
+        <span class="is-block text--transparent text-3">Both report types</span>
+      </td>
       <td>Subscribers are the number of customers that are subscribed to your SVOD (subscription on demand) product per given period of time.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
-      <td><strong>churn</strong></td>
+      <td>
+        <strong>churn</strong>
+        <span class="is-block text--transparent text-3">Both report types</span>
+      </td>
       <td>Churn gives you data around how many customers have unsubscribed (either pausing or cancelling their subscription) per given time period and their reasons (if provided) for doing so.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
-      <td><strong>video</strong></td>
-      <td>Video reports give you insights on how many plays and finishes can be attributed to customers. Sub-reports include retrieving data by platform (<code>video.platforms</code>), country (<code>video.geography</code>) or by subtitles (<code>video.subtitles</code>).</td>
-    </tr>    
+      <td>
+        <strong>video</strong>
+        <span class="is-block text--transparent text-3">Both report types</span>
+      </td>
+      <td>Video reports give you insights on how many plays and finishes can be attributed to customers. The data can be filtered by using the below sub-reports.
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong>video.platforms</strong>
+        <span class="is-block text--transparent text-3">Aggregate report</span>
+      </td>
+      <td>Video platform returns play data segmented by platform.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong>video.geography</strong>
+        <span class="is-block text--transparent text-3">Both report types</span>
+      </td>
+      <td>Video geography returns play data segmented by country.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong>video.subtitles</strong>
+        <span class="is-block text--transparent text-3">Both report types</span>
+      </td>
+      <td>Video subtitles returns play data segmented by subtitles.</td>
+    </tr>
   </tbody>
 </table>
 
@@ -112,7 +151,7 @@ GET /analytics
         <span class="is-block text--transparent text-3">string</span>
         <span class="text--transparent text-3">optional, defaults is null</span>
       </td>
-      <td>Presence of the <code>by</code> parameter implies a request for a <strong>Time Series</strong> report. If no <code>by</code> parameter is supplied an <strong>Aggregate Report</strong> will be returned. Acceptable values include <code>hour</code>, <code>day</code>, <code>week</code>, <code>month</code> or <code>year</code>.</td>
+      <td>Presence of the <code>by</code> parameter implies a request for a <strong>Time Series</strong> report. If no <code>by</code> parameter is supplied, an <strong>Aggregate Report</strong> will be returned. Acceptable values include <code>hour</code>, <code>day</code>, <code>week</code>, <code>month</code> or <code>year</code>.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td class="nowrap">
