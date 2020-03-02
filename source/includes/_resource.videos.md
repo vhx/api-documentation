@@ -134,7 +134,6 @@ $ curl -X POST "https://api.vhx.tv/videos" \
       </td>
       <td>A title for the video.</p></td>
     </tr>
-
     <tr class="text-2 border-bottom border--light-gray">
       <td>
         <strong class="is-block text--navy">source_url</strong>
@@ -142,7 +141,6 @@ $ curl -X POST "https://api.vhx.tv/videos" \
       </td>
       <td>An accessible master video file per our compression settings. To grant us permission to download the video source_url from your S3 bucket, see our <a href="https://gist.github.com/ksheurs/d57e4d1857c7ef9465fb" target="_blank">S3 policy</a>.</p></td>
     </tr>
-
     <tr class="text-2 border-bottom border--light-gray">
       <td>
         <strong class="is-block text--navy">description</strong>
@@ -150,7 +148,6 @@ $ curl -X POST "https://api.vhx.tv/videos" \
       </td>
       <td>A description for the video.</p></td>
     </tr>
-
     <tr class="is-internal text-2 border-bottom border--light-gray">
       <td>
         <strong class="is-block text--navy">metadata</strong>
@@ -158,19 +155,18 @@ $ curl -X POST "https://api.vhx.tv/videos" \
       </td>
       <td>
       A set of key/value pairs that you can attach to a video object. It can be useful for
-      storing additional information about the video in a structured format. <br><br>
-
+      storing additional information about the video in a structured format.
+      <br><br>
       Metadata keys must be strings. There are a few reserved keys that
       are auto-generated, which cannot be updated. These reserved keys are:
       <code>advertising_keywords</code>, <code>series_name</code>,
       <code>season_name</code>, <code>season_number</code>,
-      <code>episode_number</code>, and <code>movie_name</code><br><br>
-
+      <code>episode_number</code>, and <code>movie_name</code>
+      <br><br>
       Metadata values can be strings, integers, arrays, or images. An image metadata value must
       must be a url of an image, hosted on vhx, prefixed with the text <code>image_url:</code>.
       </td>
     </tr>
-
     <tr class="is-internal text-2 border-bottom border--light-gray">
       <td>
         <strong class="is-block text--navy">plans</strong>
@@ -179,18 +175,17 @@ $ curl -X POST "https://api.vhx.tv/videos" \
       <td>
       An array of plan types that you can use to set video availability.
       Values can be one or more of the following strings: <code>public</code>, <code>free</code>,
-      <code>standard</code>.<br><br>
-
+      <code>standard</code>.
+      <br><br>
       The <code>public</code> plan makes the video object available without email
-      registration or paid subscription.<br><br>
-
+      registration or paid subscription.
+      <br><br>
       The <code>free</code> plan makes the video object available for free, but requires user email
-      registration<br><br>
-
+      registration
+      <br><br>
       The <code>standard</code> plan makes the video object available to paying subscribers.
       </td>
     </tr>
-
     <tr class="is-internal text-2 border-bottom border--light-gray">
       <td>
         <strong class="is-block text--navy">time_available</strong>
@@ -198,7 +193,6 @@ $ curl -X POST "https://api.vhx.tv/videos" \
       </td>
       <td>ISO8601 timestamp for scheduling the video to be available in the future. </br><code>YYYY-MM-DDTHH:MM:SSZ</code></p></td>
     </tr>
-
     <tr class="is-internal text-2 border-bottom border--light-gray">
       <td>
         <strong class="is-block text--navy">time_unavailable</strong>
@@ -561,7 +555,7 @@ $ curl -X PUT "https://api.vhx.tv/videos/1" \
 ```
 
 <section class="text-2 contain">
-  <p>No fields are required when updating a video.</p>
+  <p>No fields are required when updating a video. While you can use this endpoint to provide a source_url for a video that does not have one yet, updating an existing one is not supported at this time.</p>
 </section>
 
 <table>
@@ -580,7 +574,6 @@ $ curl -X PUT "https://api.vhx.tv/videos/1" \
       </td>
       <td>A title for the video.</p></td>
     </tr>
-
     <tr class="text-2 border-bottom border--light-gray">
       <td>
         <strong class="is-block text--navy">description</strong>
@@ -588,7 +581,6 @@ $ curl -X PUT "https://api.vhx.tv/videos/1" \
       </td>
       <td>A description for the video.</p></td>
     </tr>
-
     <tr class="is-internal text-2 border-bottom border--light-gray">
       <td>
         <strong class="is-block text--navy">metadata</strong>
@@ -596,19 +588,18 @@ $ curl -X PUT "https://api.vhx.tv/videos/1" \
       </td>
       <td>
       A set of key/value pairs that you can attach to a video object. It can be useful for
-      storing additional information about the video in a structured format. <br><br>
-
+      storing additional information about the video in a structured format.
+      <br><br>
       Metadata keys must be strings. There are a few reserved keys that
       are auto-generated, which cannot be updated. These reserved keys are:
       <code>advertising_keywords</code>, <code>series_name</code>,
       <code>season_name</code>, <code>season_number</code>,
-      <code>episode_number</code>, and <code>movie_name</code><br><br>
-
+      <code>episode_number</code>, and <code>movie_name</code>
+      <br><br>
       Metadata values can be strings, integers, arrays, or images. An image metadata value must
       must be a url of an image, hosted on vhx, prefixed with the text <code>image_url:</code>.
       </td>
     </tr>
-
     <tr class="is-internal text-2 border-bottom border--light-gray">
       <td>
         <strong class="is-block text--navy">plans</strong>
@@ -617,18 +608,17 @@ $ curl -X PUT "https://api.vhx.tv/videos/1" \
       <td>
       An array of plan types that you can use to set video availability.
       Values can be one or more of the following strings: <code>public</code>, <code>free</code>,
-      <code>standard</code>.<br><br>
-
+      <code>standard</code>.
+      <br><br>
       The <code>public</code> plan makes the video object available without email
-      registration or paid subscription.<br><br>
-
+      registration or paid subscription.
+      <br><br>
       The <code>free</code> plan makes the video object available for free, but requires user email
-      registration<br><br>
-
+      registration
+      <br><br>
       The <code>standard</code> plan makes the video object available to paying subscribers.
       </td>
     </tr>
-
     <tr class="is-internal text-2 border-bottom border--light-gray">
       <td>
         <strong class="is-block text--navy">time_available</strong>
@@ -636,7 +626,6 @@ $ curl -X PUT "https://api.vhx.tv/videos/1" \
       </td>
       <td>ISO8601 timestamp for scheduling the video to be available in the future. </br><code>YYYY-MM-DDTHH:MM:SSZ</code></p></td>
     </tr>
-
     <tr class="is-internal text-2 border-bottom border--light-gray">
       <td>
         <strong class="is-block text--navy">time_unavailable</strong>

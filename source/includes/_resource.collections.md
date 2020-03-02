@@ -149,7 +149,7 @@ $ curl -X POST "https://api.vhx.tv/collections" \
         <strong class="is-block text--navy">thumbnail_url</strong>
         <span class="text--transparent text-3">optional</span>
       </td>
-      <td>A publicly accessible image URL. If you prefer you can upload images directly to a collection in the VHX Publisher Admin.</td>
+      <td>A publicly accessible image URL. If you prefer, you can upload images directly to a collection in the Vimeo OTT Publisher Admin.</td>
     </tr>
     <tr class="is-internal text-2 border-bottom border--light-gray">
       <td>
@@ -158,11 +158,11 @@ $ curl -X POST "https://api.vhx.tv/collections" \
       </td>
       <td>
       A set of key/value pairs that you can attach to a collection object. It can be useful for
-      storing additional information about the collection in a structured format.<br><br>
-
+      storing additional information about the collection in a structured format.
+      <br><br>
       Metadata keys must be strings. There are a few reserved keys that are auto-generated, which cannot
-      be updated. For collections, the following key is reserved: <code>season_number</code><br><br>
-
+      be updated. For collections, the following key is reserved: <code>season_number</code>
+      <br><br>
       Metadata values can be strings, integers, arrays, or images. An image metadata value
       must must be a url of an image, hosted on vhx, prefixed with the text <code>image_url:</code>.
       </td>
@@ -175,14 +175,14 @@ $ curl -X POST "https://api.vhx.tv/collections" \
       <td>
       An array of plan types that you can use to set collection availability.
       Values can be one or more of the following strings: <code>public</code>, <code>free</code>,
-      <code>standard</code>.<br><br>
-
+      <code>standard</code>.
+      <br><br>
       The <code>public</code> plan makes the collection object available without email
-      registration or paid subscription.<br><br>
-
+      registration or paid subscription.
+      <br><br>
       The <code>free</code> plan makes the collection object available for free, but requires user email
-      registration<br><br>
-
+      registration
+      <br><br>
       The <code>standard</code> plan makes the collection object available to paying subscribers.
       </td>
     </tr>
@@ -290,8 +290,8 @@ GET /collections
 
 ```shell
 $ curl -X GET -G "https://api.vhx.tv/collections" \
-  -d product=https://api.vhx.tv/products/1 \
-  -d plan=standard
+  -d product="https://api.vhx.tv/products/1" \
+  -d plan="standard" \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
@@ -459,7 +459,7 @@ $ curl -X PUT "https://api.vhx.tv/collections/1" \
 ```
 
 <section class="text-2 contain">
-  <p>No fields are required when updating a collection, however; you cannot update a collection's type once it has already been created.</p>
+  <p>No fields are required when updating a collection. Please note a collection's type cannot be updated once it has already been created.</p>
 </section>
 
 <table>
@@ -491,7 +491,7 @@ $ curl -X PUT "https://api.vhx.tv/collections/1" \
         <strong class="is-block text--navy">thumbnail_url</strong>
         <span class="text--transparent text-3">optional</span>
       </td>
-      <td>A publicly accessible image URL. If you prefer you can upload images directly to a collection in the VHX Publisher Admin.</td>
+      <td>A publicly accessible image URL. If you prefer you can upload images directly to a collection in the Vimeo OTT Publisher Admin.</td>
     </tr>
     <tr class="is-internal text-2 border-bottom border--light-gray">
       <td>
@@ -500,11 +500,11 @@ $ curl -X PUT "https://api.vhx.tv/collections/1" \
       </td>
       <td>
       A set of key/value pairs that you can attach to a collection object. It can be useful for
-      storing additional information about the collection in a structured format.<br><br>
-
+      storing additional information about the collection in a structured format.
+      <br><br>
       Metadata keys must be strings. There are a few reserved keys that are auto-generated, which cannot
-      be updated. For collections, the following key is reserved: <code>season_number</code><br><br>
-
+      be updated. For collections, the following key is reserved: <code>season_number</code>
+      <br><br>
       Metadata values can be strings, integers, arrays, or images. An image metadata value
       must must be a url of an image, hosted on vhx, prefixed with the text <code>image_url:</code>.
       </td>
@@ -517,14 +517,14 @@ $ curl -X PUT "https://api.vhx.tv/collections/1" \
       <td>
       An array of plan types that you can use to set collection availability.
       Values can be one or more of the following strings: <code>public</code>, <code>free</code>,
-      <code>standard</code>.<br><br>
-
+      <code>standard</code>.
+      <br><br>
       The <code>public</code> plan makes the collection object available without email
-      registration or paid subscription.<br><br>
-
+      registration or paid subscription.
+      <br><br>
       The <code>free</code> plan makes the collection object available for free, but requires user email
-      registration<br><br>
-
+      registration
+      <br><br>
       The <code>standard</code> plan makes the collection object available to paying subscribers.
       </td>
     </tr>
