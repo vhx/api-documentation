@@ -1,11 +1,11 @@
 FROM ubuntu:trusty
 
-RUN apt-get update
-RUN apt-get install -y \
+RUN apt-get update && apt-get install -y \
     build-essential \
     git \
     ruby \
-    ruby-dev
+    ruby-dev \
+  && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
