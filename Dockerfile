@@ -1,7 +1,11 @@
 FROM ubuntu:trusty
 
 RUN apt-get update
-RUN apt-get install -yq ruby ruby-dev build-essential git
+RUN apt-get install -yq \
+    build-essential \
+    git \
+    ruby \
+    ruby-dev
 
 WORKDIR /app
 
