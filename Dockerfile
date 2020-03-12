@@ -7,8 +7,7 @@ WORKDIR /app
 
 RUN gem install bundler -v "< 2"
 
-COPY Gemfile Gemfile
-COPY Gemfile.lock Gemfile.lock
+COPY Gemfile Gemfile.lock ./
 RUN bundle install
 
 COPY . ./
