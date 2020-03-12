@@ -7,11 +7,11 @@ WORKDIR /app
 
 RUN gem install bundler -v "< 2"
 
-ADD Gemfile Gemfile
-ADD Gemfile.lock Gemfile.lock
+COPY Gemfile Gemfile
+COPY Gemfile.lock Gemfile.lock
 RUN bundle install
 
-ADD . ./
+COPY . ./
 
 EXPOSE 4567
 
