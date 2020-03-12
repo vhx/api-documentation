@@ -3,12 +3,16 @@ FROM ubuntu:trusty
 RUN apt-get update
 RUN apt-get install -yq ruby ruby-dev build-essential git
 
+WORKDIR /app
+
 RUN gem install bundler -v "< 2"
 
-ADD Gemfile /app/Gemfile
-ADD Gemfile.lock /app/Gemfile.lock
-RUN cd /app; bundle install
-ADD . /app
+ADD Gemfile Gemfile
+ADD Gemfile.lock Gemfile.lock
+RUN bundle install
+
+ADD . ./
+
 EXPOSE 4567
-WORKDIR /app
+
 CMD ["bundle", "exec", "middleman", "server"]
