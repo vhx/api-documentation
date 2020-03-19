@@ -3,7 +3,7 @@
 
 <section class="text-2 contain">
   <p>An authorization grants playback access for a given customer and video.</p>
-  <p>The response includes an expiring token that is used to authenticate the Vimeo OTT player on the customers behalf. This enables a customer-to-video playback session which feeds into video analytics.</p>
+  <p>The response includes an embeddable iframe with an expiring token that is used to authenticate the Vimeo OTT player on the customers behalf. This enables a customer-to-video playback session which feeds into video analytics and can be controlled with the <a href="/player">Player API</a>.</p>
 </section>
 
 <h3 class="text-2 head-4 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="authorizations-create">Create an Authorization</h3>
