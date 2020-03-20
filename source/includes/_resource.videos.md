@@ -754,7 +754,7 @@ $ curl -X PUT "https://api.vhx.tv/videos/1" \
         <span class="text--transparent text-3">optional string</span>
       </td>
       <td>
-        Genres that you would consider this video. This can be helpful for viewer's exploring your library. Use comma's to separate multiple genres you would like associated with the video.
+        The genres that should be associated with this video. This can be helpful for viewer's exploring your library. Use comma's to separate multiple genres you would like associated with the video.
         <br><br>
         Accepted genres values include:
         <br><br>
@@ -791,7 +791,7 @@ $ curl -X PUT "https://api.vhx.tv/videos/1" \
       <td>
         Use this to store information about the release dates of the video. Each element of the array requires two keys: <code>date</code> and <code>location</code>.
         <br><br>
-        The date value must be formatted as <code>YYYY-MM-DD</code>. The location value should be a two letter country code. If a location value is not provided, the date will be considered the release date for everywhere.
+        The date value must be formatted as <code>YYYY-MM-DD</code>. The location value should be a two letter country code. If a location value is not provided, the date will be considered the release date everywhere.
       </td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
@@ -806,7 +806,7 @@ $ curl -X PUT "https://api.vhx.tv/videos/1" \
         <br><br>
         <code>G</code>, <code>PG</code>, <code>PG-13</code>, <code>R</code>, <code>NC-17</code>, <code>U</code>, <code>UR</code>, <code>12A</code>, <code>12</code>, <code>15</code>, <code>18</code>, <code>R18</code>, <code>TV-Y</code>, <code>TV-Y7</code>, <code>TV-G</code>, <code>TV-PG</code>, <code>TV-14</code>, <code>TV-MA</code>.
         <br><br>
-        The location value should be a two letter country code. If a location value is not provided, the rating will be considered the rating for everywhere.
+        The location value should be a two letter country code. If a location value is not provided, the rating will be considered the rating everywhere.
       </td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
@@ -817,11 +817,11 @@ $ curl -X PUT "https://api.vhx.tv/videos/1" \
       <td>
         Use this to store information about the advisories of the video. Each element of the array requires two keys: <code>advisory</code> and <code>location</code>.
         <br><br>
-        Accepted rating values include:
+        Accepted advisory values include:
         <br><br>
         <code>D</code> for suggestive dialogue, <code>L</code> for coarse language, <code>S</code> for sexual content, <code>V</code> for violence, and <code>FV</code> for fantasy violence.
         <br><br>
-        The location value should be a two letter country code. If a location value is not provided, the advisory will be considered the advisory for everywhere.
+        The location value should be a two letter country code. If a location value is not provided, the advisory will be considered the advisory everywhere.
       </td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
@@ -839,7 +839,7 @@ $ curl -X PUT "https://api.vhx.tv/videos/1" \
         <span class="text--transparent text-3">optional string</span>
       </td>
       <td>
-        An internal identifier for your video in the system.
+        An internal identifier for the video in our system.
       </td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
@@ -850,7 +850,7 @@ $ curl -X PUT "https://api.vhx.tv/videos/1" \
       <td>
         Classify the type of content for the video.
         <br><br>
-        Accepted media_type values include: <code>movie</code>, <code>episode</code>, <code>live_sporting_event</code>, or <code>other</code>.
+        Accepted values include: <code>movie</code>, <code>episode</code>, <code>live_sporting_event</code>, or <code>other</code>.
       </td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
@@ -861,7 +861,7 @@ $ curl -X PUT "https://api.vhx.tv/videos/1" \
       <td>
         Classify the type of movie for a video that has a <code>media_type</code> of <code>movie</code>.
         <br><br>
-        Accepted movie_type values include: <code>feature</code>, <code>short_film</code>, or <code>tv_movie</code>.
+        Accepted values include: <code>feature</code>, <code>short_film</code>, or <code>tv_movie</code>.
       </td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
@@ -872,7 +872,7 @@ $ curl -X PUT "https://api.vhx.tv/videos/1" \
       <td>
         Classify the version of movie for a video that has a <code>media_type</code> of <code>movie</code>.
         <br><br>
-        Accepted movie_version values include: <code>standard</code>, <code>unrated</code>, <code>rated</code>, <code>uncut</code>, <code>directors_cut</code>, <code>extended</code>, <code>remastered</code>, <code>special_edition</code>, <code>alternate_ending</code>, <code>alternate_cut</code>, <code>editing_for_tv</code>.
+        Accepted values include: <code>standard</code>, <code>unrated</code>, <code>rated</code>, <code>uncut</code>, <code>directors_cut</code>, <code>extended</code>, <code>remastered</code>, <code>special_edition</code>, <code>alternate_ending</code>, <code>alternate_cut</code>, <code>editing_for_tv</code>.
       </td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
@@ -883,7 +883,7 @@ $ curl -X PUT "https://api.vhx.tv/videos/1" \
       <td>
         Use this to store information about the production studio that produced the video. Each element of the array requires two keys: <code>name</code> and <code>country</code>.
         <br><br>
-        The country value should be a two letter country code. If a country value is not provided, the production_studio will be considered the production_studio for everywhere.
+        The country value should be a two letter country code. If a country value is not provided, the production studio used everywhere.
       </td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
@@ -903,7 +903,7 @@ $ curl -X PUT "https://api.vhx.tv/videos/1" \
         <span class="text--transparent text-3">optional integer</span>
       </td>
       <td>
-        The number episode for videos with the <code>episode</code> type for <code>media_type</code>.
+        The number episode for a video with a <code>media_type</code> of <code>episode</code>.
       </td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
