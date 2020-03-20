@@ -153,19 +153,6 @@ $ curl -X POST "https://api.vhx.tv/collections" \
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
-        <strong class="is-block text--navy">metadata</strong>
-        <span class="text--transparent text-3">optional object</span>
-      </td>
-      <td>
-        A set of key/value pairs that you can attach to a collection object. It can be useful for storing additional information about the collection in a structured format.
-        <br><br>
-        Metadata keys must be strings. There are a few reserved keys that are auto-generated, which cannot be updated. For collections, the following key is reserved: <code>season_number</code>
-        <br><br>
-        Metadata values can be strings, integers, arrays, or images.
-      </td>
-    </tr>
-    <tr class="text-2 border-bottom border--light-gray">
-      <td>
         <strong class="is-block text--navy">plans</strong>
         <span class="text--transparent text-3">array of strings</span>
       </td>
@@ -258,6 +245,19 @@ $ curl -X POST "https://api.vhx.tv/collections" \
       </td>
       <td>
         Set to <code>true</code> along with <code>is_featured</code> to make your featured carousel auto-scroll through the associated content. This is only available for <code>category</code> type collections.
+      </td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">metadata</strong>
+        <span class="text--transparent text-3">optional object</span>
+      </td>
+      <td>
+        A set of key/value pairs that you can attach to a collection object. It can be useful for storing additional information about the collection in a structured format.
+        <br><br>
+        Metadata keys must be strings. There are a few reserved keys that are auto-generated, which cannot be updated. For collections, the following key is reserved: <code>season_number</code>
+        <br><br>
+        Metadata values can be strings, integers, arrays, or images. An image metadata value must be a url of an image, prefixed with the text <code>image_url:</code>.
       </td>
     </tr>
   </tbody>
@@ -448,7 +448,7 @@ $ curl -X GET -G "https://api.vhx.tv/collections" \
         <span class="text--transparent text-3">optional</span>
       </td>
       <td>
-        Set this to <code>true</code> to only return active collections. Set to <code>false</code> to only return inactive collections.
+        Set this to <code>true</code> to only return active collections. An active collection is a collection with a plan value that has been set. Set to <code>false</code> to only return inactive collections or those without a plan.
       </td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
@@ -599,22 +599,6 @@ $ curl -X PUT "https://api.vhx.tv/collections/1" \
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
-        <strong class="is-block text--navy">metadata</strong>
-        <span class="text--transparent text-3">optional object</span>
-      </td>
-      <td>
-      A set of key/value pairs that you can attach to a collection object. It can be useful for
-      storing additional information about the collection in a structured format.
-      <br><br>
-      Metadata keys must be strings. There are a few reserved keys that are auto-generated, which cannot
-      be updated. For collections, the following key is reserved: <code>season_number</code>
-      <br><br>
-      Metadata values can be strings, integers, arrays, or images. An image metadata value
-      must must be a url of an image, hosted on vhx, prefixed with the text <code>image_url:</code>.
-      </td>
-    </tr>
-    <tr class="text-2 border-bottom border--light-gray">
-      <td>
         <strong class="is-block text--navy">plans</strong>
         <span class="text--transparent text-3">array of strings</span>
       </td>
@@ -669,7 +653,7 @@ $ curl -X PUT "https://api.vhx.tv/collections/1" \
         <span class="text--transparent text-3">optional</span>
       </td>
       <td>
-        Tags that you want associated in the system with your video. These can be used to help find your collection.
+        Tags that you want associated in the system with the collection.
       </td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
@@ -679,7 +663,7 @@ $ curl -X PUT "https://api.vhx.tv/collections/1" \
         <span class="text--transparent text-3">optional</span>
       </td>
       <td>
-        An internal identifier for your collection in our system.
+        An internal identifier for the collection in our system.
       </td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
@@ -710,6 +694,22 @@ $ curl -X PUT "https://api.vhx.tv/collections/1" \
       </td>
       <td>
         Set to <code>true</code> along with <code>is_featured</code> to make your featured carousel auto-scroll through the associated content. This is only available for <code>category</code> type collections.
+      </td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">metadata</strong>
+        <span class="text--transparent text-3">optional object</span>
+      </td>
+      <td>
+      A set of key/value pairs that you can attach to a collection object. It can be useful for
+      storing additional information about the collection in a structured format.
+      <br><br>
+      Metadata keys must be strings. There are a few reserved keys that are auto-generated, which cannot
+      be updated. For collections, the following key is reserved: <code>season_number</code>
+      <br><br>
+      Metadata values can be strings, integers, arrays, or images. An image metadata value
+      must must be a url of an image, prefixed with the text <code>image_url:</code>.
       </td>
     </tr>
   </tbody>
