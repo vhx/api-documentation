@@ -170,7 +170,7 @@ $ curl -X POST "https://api.vhx.tv/videos" \
         <span class="text--transparent text-3">optional string, default is video title</span>
       </td>
       <td>
-        The final part of the url of the video, ie the <code>/video_title</code> where you want your video found on your Vimeo OTT site.
+        The final part of the url of the video, ie the <code>/video_title</code> where the video can be found on your Vimeo OTT site.
       </td>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
@@ -646,6 +646,13 @@ $ curl -X PUT "https://api.vhx.tv/videos/1" \
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
+        <strong class="is-block text--navy">short_description</strong>
+        <span class="text--transparent text-3">optional string, default is null</span>
+      </td>
+      <td>A shorter description for the video.</p></td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
         <strong class="is-block text--navy">thumbnail_url</strong>
         <span class="text--transparent text-3">optional string, default is null</span>
       </td>
@@ -655,18 +662,11 @@ $ curl -X PUT "https://api.vhx.tv/videos/1" \
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
-        <strong class="is-block text--navy">short_description</strong>
-        <span class="text--transparent text-3">optional string, default is null</span>
-      </td>
-      <td>A shorter description for the video.</p></td>
-    </tr>
-    <tr class="text-2 border-bottom border--light-gray">
-      <td>
         <strong class="is-block text--navy">url</strong>
         <span class="text--transparent text-3">optional string, default is video title</span>
       </td>
       <td>
-        The final part of the url of the video, ie the <code>/video_title</code> where you want your video found on your Vimeo OTT site.
+        The final part of the url of the video, ie the <code>/video_title</code> where the video can be found on your Vimeo OTT site.
       </td>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
@@ -745,7 +745,7 @@ $ curl -X PUT "https://api.vhx.tv/videos/1" \
         <span class="text--transparent text-3">optional string</span>
       </td>
       <td>
-        Tags that you want associated in the system with your video. These can be used to help find your video. Use comma's to separate multiple tags you would like associated with the video.
+        Tags that you want associated in the system with the video. Use comma's to separate multiple tags you would like associated with the video.
       </td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
@@ -754,9 +754,9 @@ $ curl -X PUT "https://api.vhx.tv/videos/1" \
         <span class="text--transparent text-3">optional string</span>
       </td>
       <td>
-        The genres that should be associated with this video. This can be helpful for viewer's exploring your library. Use comma's to separate multiple genres you would like associated with the video.
+        The genres that should be associated with this video. Use comma's to separate multiple genres you would like associated with the video.
         <br><br>
-        Accepted genres values include:
+        Accepted values include:
         <br><br>
         <code>action</code>, <code>adventure</code>, <code>animation</code>, <code>anime</code>, <code>biography</code>, <code>bollywood</code>, <code>classics</code>, <code>comedy</code>, <code>crime</code>, <code>documentary</code>, <code>drama</code>, <code>educational</code>, <code>fantasy</code>, <code>game_show</code>, <code>history</code>, <code>holiday</code>, <code>horror</code>, <code>independent</code>, <code>kids_and_family</code>, <code>lgbt</code>, <code>music</code>, <code>musical</code>, <code>mystery</code>, <code>news</code>, <code>novelas</code>, <code>reality</code>, <code>romance</code>, <code>sci_fi</code>, <code>short_films</code>, <code>special_interest</code>, <code>sports</code>, <code>talk_show</code>, <code>teens</code>, <code>thriller</code>, <code>travel</code>, <code>war</code>, <code>western.</code>
       </td>
@@ -819,7 +819,7 @@ $ curl -X PUT "https://api.vhx.tv/videos/1" \
         <br><br>
         Accepted advisory values include:
         <br><br>
-        <code>D</code> for suggestive dialogue, <code>L</code> for coarse language, <code>S</code> for sexual content, <code>V</code> for violence, and <code>FV</code> for fantasy violence.
+        <code>D</code> for suggestive dialogue, <code>L</code> for coarse language, <code>S</code> for sexual content, <code>V</code> for violence, or <code>FV</code> for fantasy violence.
         <br><br>
         The location value should be a two letter country code. If a location value is not provided, the advisory will be considered the advisory everywhere.
       </td>
@@ -830,7 +830,7 @@ $ curl -X PUT "https://api.vhx.tv/videos/1" \
         <span class="text--transparent text-3">optional string</span>
       </td>
       <td>
-        Used to exprese the whether the video is <code>licensed</code> or <code>original</code> content.
+        Used to exprese whether the video is <code>licensed</code> or <code>original</code> content.
       </td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
@@ -872,7 +872,9 @@ $ curl -X PUT "https://api.vhx.tv/videos/1" \
       <td>
         Classify the version of movie for a video that has a <code>media_type</code> of <code>movie</code>.
         <br><br>
-        Accepted values include: <code>standard</code>, <code>unrated</code>, <code>rated</code>, <code>uncut</code>, <code>directors_cut</code>, <code>extended</code>, <code>remastered</code>, <code>special_edition</code>, <code>alternate_ending</code>, <code>alternate_cut</code>, <code>editing_for_tv</code>.
+        Accepted values include:
+        <br><br>
+        <code>standard</code>, <code>unrated</code>, <code>rated</code>, <code>uncut</code>, <code>directors_cut</code>, <code>extended</code>, <code>remastered</code>, <code>special_edition</code>, <code>alternate_ending</code>, <code>alternate_cut</code>, <code>editing_for_tv</code>.
       </td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
@@ -894,7 +896,9 @@ $ curl -X PUT "https://api.vhx.tv/videos/1" \
       <td>
         Adds the sport associated with a video that has a <code>media_type</code> of <code>live_sporting_event</code>.
         <br><br>
-        Accepted sports_type values include: <code>afl</code>, <code>australian_football_leage</code>, <code>bundesliga</code>, <code>cfl</code>, <code>epl</code>, <code>formula_1</code>, <code>ipl</code>, <code>la_liga</code>, <code>mll</code>, <code>minor_league_baseball</code>, <code>mlb</code>, <code>mls</code>, <code>nascar</code>, <code>nll</code>, <code>national_league</code>, <code>national_womens_soccer_league</code>, <code>nba</code>, <code>ncaa</code>, <code>nhl</code>, <code>nrl</code>, <code>premiere_league</code>, <code>super_league</code>, <code>uefa</code>, <code>wnba</code>.
+        Accepted values include:
+        <br><br>
+        <code>afl</code>, <code>australian_football_leage</code>, <code>bundesliga</code>, <code>cfl</code>, <code>epl</code>, <code>formula_1</code>, <code>ipl</code>, <code>la_liga</code>, <code>mll</code>, <code>minor_league_baseball</code>, <code>mlb</code>, <code>mls</code>, <code>nascar</code>, <code>nll</code>, <code>national_league</code>, <code>national_womens_soccer_league</code>, <code>nba</code>, <code>ncaa</code>, <code>nhl</code>, <code>nrl</code>, <code>premiere_league</code>, <code>super_league</code>, <code>uefa</code>, <code>wnba</code>.
       </td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
