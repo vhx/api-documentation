@@ -87,10 +87,9 @@ $ curl -X POST "https://api.vhx.tv/customers" \
         <span class="text--transparent text-3">optional, default is "standard"</span>
       </td>
       <td>
-        The customer's plan determines content accessibility. Values can be one of
-        the following strings: <code>free</code>, <code>standard</code>.
+        The customer's plan determines content accessibility. Values can be one of the following strings: <code>free</code>, <code>standard</code>.
         <br><br>
-        This should be set depending on your product type. Use <code>free</code> if you are using a registration type subscription, otherwise you should use <code>standard</code>.
+        This should be set depending on your product type. Use <code>free</code> if you are using subscription that is free with registration. In any other case, you should use <code>standard</code>.
       </td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
@@ -418,7 +417,7 @@ $ curl -X PUT "https://api.vhx.tv/customers/1/products" \
         The customer's plan determines content accessibility. Values can be one of
         the following strings: <code>free</code>, <code>standard</code>.
         <br><br>
-        This should be set depending on your product type. Use <code>free</code> if you are using a registration type subscription, otherwise you should use <code>standard</code>.
+        This should be set depending on your product type. Use <code>free</code> if you are using subscription that is free with registration. In any other case, you should use <code>standard</code>.
       </td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
