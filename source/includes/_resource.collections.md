@@ -174,7 +174,7 @@ $ curl -X POST "https://api.vhx.tv/collections" \
         <span class="text--transparent text-3">optional</span>
       </td>
       <td>
-        The collection's short description.
+        The collections short description.
       </td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
@@ -224,7 +224,7 @@ $ curl -X POST "https://api.vhx.tv/collections" \
         <span class="text--transparent text-3">optional</span>
       </td>
       <td>
-        Pass in an array that includes any extra's href that you would like associated with the collection you create.
+        Pass in an array that includes any extra href that you would like associated with the collection you create.
       </td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
@@ -587,7 +587,7 @@ $ curl -X PUT "https://api.vhx.tv/collections/1" \
         <span class="text--transparent text-3">optional</span>
       </td>
       <td>
-        The final part of the url of the collection, ie the <code>/collection_name</code> where you want your collection found on your Vimeo OTT site.
+        The final part of the url of the collection, ie the <code>/collection_name</code> where you want the collection found on your Vimeo OTT site.
       </td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
@@ -623,7 +623,7 @@ $ curl -X PUT "https://api.vhx.tv/collections/1" \
         <span class="text--transparent text-3">optional</span>
       </td>
       <td>
-        The collection's short description.
+        The collections short description.
       </td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
@@ -653,7 +653,7 @@ $ curl -X PUT "https://api.vhx.tv/collections/1" \
         <span class="text--transparent text-3">optional</span>
       </td>
       <td>
-        Tags that you want associated in the system with the collection.
+        Tags that you want associated in the system with the collection. Use comma's to separate multiple tags you would like associated with the collection.
       </td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
@@ -663,7 +663,7 @@ $ curl -X PUT "https://api.vhx.tv/collections/1" \
         <span class="text--transparent text-3">optional</span>
       </td>
       <td>
-        An internal identifier for the collection in our system.
+        An internal identifier for the collection in the system.
       </td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
