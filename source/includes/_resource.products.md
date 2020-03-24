@@ -141,6 +141,16 @@ $ curl -X GET -G "https://api.vhx.tv/products" \
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
+        <strong class="is-block text--navy">active</strong>
+        <span class="is-block text--transparent text-3">boolean</span>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>
+        Set to <code>true</code> to only returns products that are actively available to customers.
+      </td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
         <strong class="is-block text--navy">sort</strong>
         <span class="is-block text--transparent text-3">string</span>
         <span class="text--transparent text-3">optional</span>
