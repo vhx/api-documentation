@@ -151,39 +151,113 @@ $ curl -X POST "https://api.vhx.tv/collections" \
       </td>
       <td>A publicly accessible image URL. If you prefer, you can upload images directly to a collection in the Vimeo OTT Publisher Admin.</td>
     </tr>
-    <tr class="is-internal text-2 border-bottom border--light-gray">
-      <td>
-        <strong class="is-block text--navy">metadata</strong>
-        <span class="text--transparent text-3">optional object</span>
-      </td>
-      <td>
-      A set of key/value pairs that you can attach to a collection object. It can be useful for
-      storing additional information about the collection in a structured format.
-      <br><br>
-      Metadata keys must be strings. There are a few reserved keys that are auto-generated, which cannot
-      be updated. For collections, the following key is reserved: <code>season_number</code>
-      <br><br>
-      Metadata values can be strings, integers, arrays, or images. An image metadata value
-      must must be a url of an image, hosted on vhx, prefixed with the text <code>image_url:</code>.
-      </td>
-    </tr>
-    <tr class="is-internal text-2 border-bottom border--light-gray">
+    <tr class="text-2 border-bottom border--light-gray">
       <td>
         <strong class="is-block text--navy">plans</strong>
         <span class="text--transparent text-3">array of strings</span>
       </td>
       <td>
-      An array of plan types that you can use to set collection availability.
-      Values can be one or more of the following strings: <code>public</code>, <code>free</code>,
-      <code>standard</code>.
-      <br><br>
-      The <code>public</code> plan makes the collection object available without email
-      registration or paid subscription.
-      <br><br>
-      The <code>free</code> plan makes the collection object available for free, but requires user email
-      registration
-      <br><br>
-      The <code>standard</code> plan makes the collection object available to paying subscribers.
+        An array of plan types that you can use to set collection availability.
+        Values can be one or more of the following strings: <code>public</code>, <code>free</code>, <code>standard</code>.
+        <br><br>
+        The <code>public</code> plan makes the collection object available without email registration or paid subscription.
+        <br><br>
+        The <code>free</code> plan makes the collection object available for free, but requires user email registration
+        <br><br>
+        The <code>standard</code> plan makes the collection object available to paying subscribers.
+      </td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">short_description</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>
+        The collections short description.
+      </td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">collection_ids</strong>
+        <span class="is-block text--transparent text-3">array of hrefs</span>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>
+        Providing an array of collection hrefs to this endpoint will associate those collections with the newly created collection. This is most useful for adding other collections to a <code>category</code> being created in the call.
+      </td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">series_id</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>
+        When creating a <code>season</code> type collection, you can include this to indicate the <code>series</code> this should be associated with in our system.
+      </td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">season_number</strong>
+        <span class="is-block text--transparent text-3">integer</span>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>
+        For <code>season</code> type collections only. You can use this to tell our system what season number this should be for the associated <code>series</code>.
+      </td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">video_ids</strong>
+        <span class="is-block text--transparent text-3">array of hrefs</span>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>
+        Pass in an array that includes any video href that you would like associated with the collection you create.
+      </td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">file_ids</strong>
+        <span class="is-block text--transparent text-3">array of hrefs</span>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>
+        Pass in an array that includes any extra href that you would like associated with the collection you create.
+      </td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">is_featured</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>
+        Set to <code>true</code> to make this the featured category for your site. This is only available for <code>category</code> type collections.
+      </td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">is_automatic</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>
+        Set to <code>true</code> along with <code>is_featured</code> to make your featured carousel auto-scroll through the associated content. This is only available for <code>category</code> type collections.
+      </td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">metadata</strong>
+        <span class="text--transparent text-3">optional object</span>
+      </td>
+      <td>
+        A set of key/value pairs that you can attach to a collection object. It can be useful for storing additional information about the collection in a structured format.
+        <br><br>
+        Metadata keys must be strings. There are a few reserved keys that are auto-generated, which cannot be updated. For collections, the following key is reserved: <code>season_number</code>
+        <br><br>
+        Metadata values can be strings, integers, arrays, or images. An image metadata value must be a url of an image, prefixed with the text <code>image_url:</code>.
       </td>
     </tr>
   </tbody>
@@ -369,6 +443,26 @@ $ curl -X GET -G "https://api.vhx.tv/collections" \
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
+        <strong class="is-block text--navy">active</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>
+        Set this to <code>true</code> to only return active collections. An active collection is a collection with a plan value that has been set. Set to <code>false</code> to only return inactive collections or those without a plan.
+      </td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">plan</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>
+        Filter to only show collections that are in the plan type specified. Options include <code>public</code>, <code>free</code>, or <code>standard</code>.
+      </td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
         <strong class="is-block text--navy">page</strong>
         <span class="is-block text--transparent text-3">integer</span>
         <span class="text--transparent text-3">optional, default is 1</span>
@@ -488,28 +582,22 @@ $ curl -X PUT "https://api.vhx.tv/collections/1" \
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
+        <strong class="is-block text--navy">slug</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>
+        The final part of the url of the collection, ie the <code>/collection_name</code> where you want the collection found on your Vimeo OTT site.
+      </td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
         <strong class="is-block text--navy">thumbnail_url</strong>
         <span class="text--transparent text-3">optional</span>
       </td>
       <td>A publicly accessible image URL. If you prefer you can upload images directly to a collection in the Vimeo OTT Publisher Admin.</td>
     </tr>
-    <tr class="is-internal text-2 border-bottom border--light-gray">
-      <td>
-        <strong class="is-block text--navy">metadata</strong>
-        <span class="text--transparent text-3">optional object</span>
-      </td>
-      <td>
-      A set of key/value pairs that you can attach to a collection object. It can be useful for
-      storing additional information about the collection in a structured format.
-      <br><br>
-      Metadata keys must be strings. There are a few reserved keys that are auto-generated, which cannot
-      be updated. For collections, the following key is reserved: <code>season_number</code>
-      <br><br>
-      Metadata values can be strings, integers, arrays, or images. An image metadata value
-      must must be a url of an image, hosted on vhx, prefixed with the text <code>image_url:</code>.
-      </td>
-    </tr>
-    <tr class="is-internal text-2 border-bottom border--light-gray">
+    <tr class="text-2 border-bottom border--light-gray">
       <td>
         <strong class="is-block text--navy">plans</strong>
         <span class="text--transparent text-3">array of strings</span>
@@ -526,6 +614,102 @@ $ curl -X PUT "https://api.vhx.tv/collections/1" \
       registration
       <br><br>
       The <code>standard</code> plan makes the collection object available to paying subscribers.
+      </td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">short_description</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>
+        The collections short description.
+      </td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">geo_available</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>
+        Comma seperated list of country codes for the countries this collection should be available in.
+      </td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">geo_unavailable</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>
+        Comma seperated list of country codes for the countries this collection should not be available in.
+      </td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">tags</strong>
+        <span class="is-block text--transparent text-3">array of strings</span>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>
+        Tags that you want associated in the system with the collection. Use comma's to separate multiple tags you would like associated with the collection.
+      </td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">media_id</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>
+        An internal identifier for the collection in the system.
+      </td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">season_number</strong>
+        <span class="is-block text--transparent text-3">integer</span>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>
+        For <code>season</code> type collections only. You can use this to tell our system what season number this should be for the associated <code>series</code>.
+      </td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">is_featured</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>
+        Set to <code>true</code> to make this the featured category for your site. This is only available for <code>category</code> type collections.
+      </td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">is_automatic</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>
+        Set to <code>true</code> along with <code>is_featured</code> to make your featured carousel auto-scroll through the associated content. This is only available for <code>category</code> type collections.
+      </td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">metadata</strong>
+        <span class="text--transparent text-3">optional object</span>
+      </td>
+      <td>
+      A set of key/value pairs that you can attach to a collection object. It can be useful for
+      storing additional information about the collection in a structured format.
+      <br><br>
+      Metadata keys must be strings. There are a few reserved keys that are auto-generated, which cannot
+      be updated. For collections, the following key is reserved: <code>season_number</code>
+      <br><br>
+      Metadata values can be strings, integers, arrays, or images. An image metadata value
+      must must be a url of an image, prefixed with the text <code>image_url:</code>.
       </td>
     </tr>
   </tbody>
@@ -588,6 +772,26 @@ $ curl -X GET -G "https://api.vhx.tv/collections/1/items?page=1" \
           <span class="text--yellow text-3">REQUIRED</span>
         </td>
         <td>The id of collection being retrieved.</td>
+      </tr>
+      <tr class="text-2 border-bottom border--light-gray">
+        <td>
+          <strong class="is-block text--navy">query</strong>
+          <span class="is-block text--transparent text-3">string</span>
+          <span class="text--transparent text-3">optional</span>
+        </td>
+        <td>
+          The query to search and filter the paginated results based on item name or title.
+        </td>
+      </tr>
+      <tr class="text-2 border-bottom border--light-gray">
+        <td>
+          <strong class="is-block text--navy">type</strong>
+          <span class="is-block text--transparent text-3">string</span>
+          <span class="text--transparent text-3">optional</span>
+        </td>
+        <td>
+          Filter to results to only include items of a certain type. Options include <code>videos</code>, <code>extras</code>, or <code>seasons</code>.
+        </td>
       </tr>
       <tr class="text-2 border-bottom border--light-gray">
         <td>
@@ -676,6 +880,19 @@ HEAD 204
       </tr>
     </tr>
   </tbody>
+
+  <tbody>
+    <tr class="text-2 border-bottom border--light-gray">
+      <tr class="text-2 border-bottom border--light-gray">
+        <td>
+          <strong class="is-block text--navy">file_id</strong>
+          <span class="is-block text--transparent text-3">integer</span>
+          <span class="text--yellow text-3">Optional</span>
+        </td>
+        <td>The id of an extra being added.</td>
+      </tr>
+    </tr>
+  </tbody>
 </table>
 
 
@@ -737,6 +954,19 @@ HEAD 204
           <span class="text--yellow text-3">Optional</span>
         </td>
         <td>The id of a collection being removed.</td>
+      </tr>
+    </tr>
+  </tbody>
+
+  <tbody>
+    <tr class="text-2 border-bottom border--light-gray">
+      <tr class="text-2 border-bottom border--light-gray">
+        <td>
+          <strong class="is-block text--navy">file_id</strong>
+          <span class="is-block text--transparent text-3">integer</span>
+          <span class="text--yellow text-3">Optional</span>
+        </td>
+        <td>The id of an extra being added.</td>
       </tr>
     </tr>
   </tbody>
