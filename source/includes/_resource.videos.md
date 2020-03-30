@@ -139,7 +139,7 @@ $ curl -X POST "https://api.vhx.tv/videos" \
         <strong class="is-block text--navy">source_url</strong>
         <span class="text--transparent text-3">optional string, default is null</span>
       </td>
-      <td>An accessible master video file per our compression settings. To grant us permission to download the video source_url from your S3 bucket, see our <a href="https://gist.github.com/ksheurs/d57e4d1857c7ef9465fb" target="_blank">S3 policy</a>.</p></td>
+      <td>An accessible master video file per our compression settings.</p></td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
