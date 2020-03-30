@@ -46,11 +46,12 @@
   };
 
   // Hack to make already open sections to start opened,
-  // instead of displaying an ugly animation
+  // instead of displaying an ugly animation.
+  // Change the number in the selector to move the "Resources" header.
   function animate() {
     setTimeout(function() {
       toc.setOption('showEffectSpeed', 180);
-      $('#tocify-header5').before('<h5 class="margin-top-medium padding-medium head-5 text--gray">Resources</h5>');
+      $('#tocify-header4').before('<h5 class="margin-top-medium padding-medium head-5 text--gray">Resources</h5>');
     }, 50);
   }
 
