@@ -164,6 +164,8 @@ $ curl -X GET "https://api.vhx.tv/customers/1" \
 }
 ```
 
+> <div class="highlight shell text"><p>the _embedded object contains a browse_url that can be used to authenticate a customer session.</p></div>
+
 <section class="text-2 contain margin-bottom-medium">
   <p>Retrieves an existing customer. You can optionally specify a product parameter to scope the customer retrieval to it (ie. "Is this customer subscribed to this product?").</p>
 </section>
