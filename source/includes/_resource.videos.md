@@ -170,7 +170,7 @@ $ curl -X POST "https://api.vhx.tv/videos" \
         <span class="text--transparent text-3">optional string, default is video title</span>
       </td>
       <td>
-        The final part of the url of the video, ie the <code>/video_title</code> where the video can be found on your Vimeo OTT site.
+        The final part of the url of the video, ie the <code>video_title</code> in https://yoursite.com/video_title.
       </td>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
@@ -666,7 +666,7 @@ $ curl -X PUT "https://api.vhx.tv/videos/1" \
         <span class="text--transparent text-3">optional string, default is video title</span>
       </td>
       <td>
-        The final part of the url of the video, ie the <code>/video_title</code> where the video can be found on your Vimeo OTT site.
+        The final part of the url of the video, ie the <code>video_title</code> in https://yoursite.com/video_title.
       </td>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
