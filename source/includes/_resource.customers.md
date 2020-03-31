@@ -72,14 +72,6 @@ $ curl -X POST "https://api.vhx.tv/customers" \
       </td>
       <td>The customer's email address.</td>
     </tr>
-    <tr class="text-2 border-bottom border--light-gray is-internal">
-      <td class="nowrap">
-        <strong class="is-block text--navy">password</strong>
-        <span class="is-block text--transparent text-3">string</span>
-        <span class="text--transparent text-3">optional</span>
-      </td>
-      <td>The customer's login password.</td>
-    </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td class="nowrap">
         <strong class="is-block text--navy">product</strong>
@@ -88,16 +80,49 @@ $ curl -X POST "https://api.vhx.tv/customers" \
       </td>
       <td>The <code>href</code> of the product you'd like to give the customer access to.</td>
     </tr>
-    <tr class="text-2 border-bottom border--light-gray is-internal">
+    <tr class="text-2 border-bottom border--light-gray">
       <td class="nowrap">
         <strong class="is-block text--navy">plan</strong>
         <span class="is-block text--transparent text-3">string</span>
         <span class="text--transparent text-3">optional, default is "standard"</span>
       </td>
       <td>
-      The customer's plan determines content accessibility. Values can be one of
-      the following strings: <code>free</code>, <code>standard</code>.
-      See <a href="#videos-update">Update Video</a> for more detail on the types of plans</td>
+        The customer's plan determines content accessibility. Values can be one of the following strings: <code>free</code>, <code>standard</code>.
+        <br><br>
+        This should be set depending on your product type. Use <code>free</code> if you are using subscription that is free with registration. In any other case, you should use <code>standard</code>.
+      </td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td class="nowrap">
+        <strong class="is-block text--navy">expires_in</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>
+        This parameter is used for letting our system know when a user should lose access. This can not be updated so we do not recommend using this for managing renewals as it could lead to service interruptions for your customers.
+        <br><br>
+        Valid formats are a number followed by a unit of time. For example, <code>3-months</code>, <code>1-years</code>, <code>5-weeks</code>, <code>7-days</code>.
+      </td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td class="nowrap">
+        <strong class="is-block text--navy">send_email</strong>
+        <span class="is-block text--transparent text-3">integer</span>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>
+        Set this to <code>1</code> if you would like our system to send the customer an email notifying them that they now have access to the product.
+      </td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td class="nowrap">
+        <strong class="is-block text--navy">is_rental</strong>
+        <span class="is-block text--transparent text-3">integer</span>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>
+        Set this to <code>1</code> to indicate this customer only has rental access to this product. Pass in an <code>expires_in</code> param to set an expiration time as well.
+      </td>
     </tr>
   </tbody>
 </table>
@@ -138,6 +163,8 @@ $ curl -X GET "https://api.vhx.tv/customers/1" \
   "platform": "web"
 }
 ```
+
+> <div class="highlight shell text"><p>the _embedded object contains a browse_url that can be used to authenticate a customer session.</p></div>
 
 <section class="text-2 contain margin-bottom-medium">
   <p>Retrieves an existing customer. You can optionally specify a product parameter to scope the customer retrieval to it (ie. "Is this customer subscribed to this product?").</p>
@@ -382,6 +409,28 @@ $ curl -X PUT "https://api.vhx.tv/customers/1/products" \
       </td>
       <td>The <code>href</code> of the product.</td>
     </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td class="nowrap">
+        <strong class="is-block text--navy">plan</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--transparent text-3">optional, default is "standard"</span>
+      </td>
+      <td>
+        The customer's plan determines content accessibility. Values can be one of
+        the following strings: <code>free</code>, <code>standard</code>.
+        <br><br>
+        This should be set depending on your product type. Use <code>free</code> if you are using subscription that is free with registration. In any other case, you should use <code>standard</code>.
+      </td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td class="nowrap">
+        <strong class="is-block text--navy">is_rental</strong>
+        <span class="is-block text--transparent text-3">integer</span>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>
+        Set this to <code>1</code> to indicate this customer only has rental access to this product.
+      </td>
   </tbody>
 </table>
 
@@ -432,6 +481,16 @@ $ curl -X DELETE "https://api.vhx.tv/customers/1/products" \
       </td>
       <td>The <code>href</code> of the product.</td>
     </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td class="nowrap">
+        <strong class="is-block text--navy">plan</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--transparent text-3">optional, default is "standard"</span>
+      </td>
+      <td>
+        This is only needed if a customer has both <code>standard</code> and <code>free</code> access. Pass in whichever you would like to remove first. If you want to remove both, do one before the other.
+      </td>
+    </tr>
   </tbody>
 </table>
 
@@ -449,7 +508,7 @@ GET /customers/:id/watching
 
 ```shell
 $ curl -X GET "https://api.vhx.tv/customers/1/watching" \
-  -H "VHX-Customer: https://api.vhx.tv/customers/1"
+  -H "VHX-Customer: https://api.vhx.tv/customers/1" \
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 ```
 
@@ -503,7 +562,7 @@ $ curl -X GET "https://api.vhx.tv/customers/1/watching" \
         <span class="is-block text--transparent text-3">string</span>
         <span class="text--yellow text-3">REQUIRED</span>
       </td>
-      <td>The <code>href</code> of the customer being retrieved. This needs to be provided in the request url and the <code>VHX-Customer</code> header.</td>
+      <td>The <code>href</code> of the customer being retrieved must be passed in via the <code>VHX-Customer</code> header.</td>
     </tr>
   </tbody>
 </table>
@@ -577,6 +636,42 @@ $ curl -X GET "https://api.vhx.tv/customers/1/watchlist" \
         <span class="text--yellow text-3">REQUIRED</span>
       </td>
       <td>The <code>href</code> of the customer.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">page</strong>
+        <span class="is-block text--transparent text-3">integer</span>
+        <span class="text--transparent text-3">optional, default is 1</span>
+      </td>
+      <td>The page number of the paginated result.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">per_page</strong>
+        <span class="is-block text--transparent text-3">integer</span>
+        <span class="text--transparent text-3">optional, default is 50</span>
+      </td>
+      <td>The page size of the paginated result.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">show_all</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>
+        Set to <code>true</code> if you want collections returned in the results.
+      </td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">source_id</strong>
+        <span class="is-block text--transparent text-3">integer</span>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>
+        The ID of any collection or video if you want to return only that item specifically.
+      </td>
     </tr>
   </tbody>
 </table>
