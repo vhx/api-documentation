@@ -587,7 +587,7 @@ $ curl -X PUT "https://api.vhx.tv/collections/1" \
         <span class="text--transparent text-3">optional</span>
       </td>
       <td>
-        The final part of the url of the collection, ie the <code>/collection_name</code> where you want the collection found on your Vimeo OTT site.
+        The final part of the url of the collection, ie the <code>/collection_name</code> where you want the collection found on your Vimeo OTT site, ie the <code>collection_name</code> in https://yoursite.com/collection_name.
       </td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
