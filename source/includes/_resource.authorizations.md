@@ -1,5 +1,5 @@
 <!-- ___COLLECTIONS____________________________ -->
-<h2 class="is-api head-3 margin-top-large margin-bottom-medium" id="authorizations">Authorizations</h2>
+<h2 class="is-api head-3 margin-top-xlarge padding-top-xlarge border-top margin-bottom-medium" id="authorizations">Authorizations</h2>
 
 <section class="text-2 contain">
   <p>An authorization grants playback access for a given customer and video.</p>

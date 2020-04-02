@@ -14,6 +14,7 @@ includes:
   - resource.products
   - resource.customers
   - resource.videos
+  - resource.comments
   - resource.collections
   - resource.browse
   - resource.authorizations
