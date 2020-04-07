@@ -1,5 +1,5 @@
 <!-- ___COLLECTIONS____________________________ -->
-<h2 class="is-api head-3 margin-top-large margin-bottom-medium" id="collections">Collections</h2>
+<h2 class="is-api head-3 margin-top-xlarge padding-top-xlarge border-top margin-bottom-medium" id="collections">Collections</h2>
 
 <section class="text-2 contain">
   <p>A collection is the way to organize and add metadata around your videos. There are 5 types of collections:</p>
