@@ -54,7 +54,7 @@ POST /videos
 $ curl -X POST "https://api.vhx.tv/videos" \
   -H "Content-Type: application/json" \
   -d '{"title":"My Video","description":"My video description.",
-"source_url":"s3:://YOUR_BUCKET_NAME/FILE.mp4", "metadata": {"director": "Brad Pitt", "writers":
+"source_url":"https://s3.amazonaws.com/YOUR_BUCKET_NAME/FILE.mp4", "metadata": {"director": "Brad Pitt", "writers":
 ["Foo Bar", "Bar Foo"], "release_year": 2017, "custom_icon":
 "image_url:https://vhx.imgix.net/site/assets/1231.jpg"}, "plans": ["public", "free", "standard"],
 "time_available": "2014-03-01T00:00:00Z", "time_unavailable": "2014-04-01T00:00:00Z"}' \
