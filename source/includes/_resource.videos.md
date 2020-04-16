@@ -940,3 +940,56 @@ $ curl -X PUT "https://api.vhx.tv/videos/1" \
     </tr>
   </tbody>
 </table>
+
+<h3 class="text-2 head-4 text--navy text--bold is-api margin-top-large margin-bottom-medium"
+id="videos-delete">Delete a Video</h3>
+
+> <h5 class="head-5 text--white margin-bottom-medium">Delete a Video</h5>
+
+> Definition
+
+```shell
+DELETE /videos/:id
+```
+
+> Example Request
+
+```shell
+$ curl -X DELETE "https://api.vhx.tv/videos/1" \
+  -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
+```
+
+> Example Response
+
+```http
+HEAD 204
+```
+
+<section class="text-2 contain">
+  <p>
+    This endpoint sends a request to delete a video. This process happens asynchronously in our system so you may not see the video be removed from your account right away. In the event that there is a problem deleting the video, the Vimeo OTT account owner will be notified.
+  </p>
+  <p>
+    <strong>Please note that this is a destructive action and once the request is sent there will be no way to recover the deleted video.</strong>
+  </p>
+</section>
+
+<table>
+  <thead>
+    <tr class="text-2">
+      <th class="padding-medium nowrap">Arguments</th>
+      <th class="padding-medium" width="100%">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">href</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--yellow text-3">REQUIRED</span>
+      </td>
+      <td>The <code>href</code> of the video being deleted.</td>
+    </tr>
+  </tbody>
+</table>
