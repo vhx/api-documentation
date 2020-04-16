@@ -967,7 +967,7 @@ HEAD 204
 
 <section class="text-2 contain">
   <p>
-    This endpoint sends a request to delete a video. This process happens asynchronously in our system so you may not see the video be removed from your account right away. In the even that the is a problem deleting the video, the Vimeo OTT account owner will be notified.
+    This endpoint sends a request to delete a video. This process happens asynchronously in our system so you may not see the video be removed from your account right away. In the event that there is a problem deleting the video, the Vimeo OTT account owner will be notified.
   </p>
   <p>
     <strong>Please note that this is a destructive action and once the request is sent there will be no way to recover the deleted video.</strong>
