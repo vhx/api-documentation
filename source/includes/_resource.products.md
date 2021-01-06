@@ -9,7 +9,7 @@
 
 > <h5 class="head-5 text--white margin-bottom-medium">Retrieve a product</h5>
 
-> Definiton
+> Definition
 
 ```shell
 GET /products/:id
@@ -84,7 +84,7 @@ $ curl -X GET "https://api.vhx.tv/products/1" \
 
 > <h5 class="head-5 text--white margin-bottom-medium">List all products</h5>
 
-> Definiton
+> Definition
 
 
 ```shell

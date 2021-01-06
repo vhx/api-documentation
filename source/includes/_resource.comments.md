@@ -5,7 +5,7 @@
 
 > <h5 class="head-5 text--white margin-bottom-medium">Create a Comment</h5>
 
-> Definiton
+> Definition
 
 ```shell
 POST /comments
@@ -102,7 +102,7 @@ $ curl -X POST "https://api.vhx.tv/comments" \
 
 > <h5 class="head-5 text--white margin-bottom-medium">Retrieve a Comment</h5>
 
-> Definiton
+> Definition
 
 ```shell
 GET /comments/:id
@@ -167,7 +167,7 @@ $ curl -X GET "https://api.vhx.tv/comments/1" \
 
 > <h5 class="head-5 text--white margin-bottom-medium">List all Comments</h5>
 
-> Definiton
+> Definition
 
 ```shell
 GET /comments
@@ -229,7 +229,7 @@ $ curl -X GET -G "https://api.vhx.tv/comments" \
 
 > <h5 class="head-5 text--white margin-bottom-medium">Report a Comment</h5>
 
-> Definiton
+> Definition
 
 ```shell
 POST /comments/:id/report
