@@ -175,3 +175,53 @@ $ curl -X GET -G "https://api.vhx.tv/products" \
     </tr>
   </tbody>
 </table>
+
+<h3 class="text-2 head-4 text--navy text--bold margin-top-large margin-bottom-medium" id="product-prices-list">List Prices for a Product</h3>
+> <h5 class="head-5 text--white margin-bottom-medium">List prices for a product</h5>
+
+> Definition
+
+```shell
+GET /products/:id/prices
+```
+
+> Example Request
+
+```shell
+$ curl -X GET "https://api.vhx.tv/products/1/prices" \
+  -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
+```
+
+> Example Response
+
+```json
+{
+  "USD": {
+    "monthly": {
+      "price": 2999,
+      "formatted": "$29.99"
+    },
+    "yearly": {
+      "price": 20000,
+      "formatted": "$200"
+    }
+  },
+  "SEK": {
+    "monthly": {
+      "id": 205697,
+      "price": 25103,
+      "formatted": "251.03 kr"
+    },
+    "yearly": {
+      "id": 46604,
+      "price": 957764,
+      "formatted": "9,577.64 kr"
+    }
+  }
+}
+```
+
+<section class="text-2 contain">
+  <p>Lists the prices for a product in all accepted currencies.</p>
+  <p>Prices for subscription products will include <code>yearly</code> and <code>monthly</code> attributes for each currency. Prices for non-subscription products will have <code>purchase</code> and <code>rental</code> attributes instead.</p>
+</section>
