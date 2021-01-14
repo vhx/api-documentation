@@ -42,7 +42,7 @@
 
 > <h5 class="head-5 text--white margin-bottom-medium">Create a Video</h5>
 
-> Definiton
+> Definition
 
 ```shell
 POST /videos
@@ -269,7 +269,7 @@ $ curl -X POST "https://api.vhx.tv/videos" \
 
 > <h5 class="head-5 text--white margin-bottom-medium">Retrieve a Video</h5>
 
-> Definiton
+> Definition
 
 ```shell
 GET /videos/:id
@@ -407,7 +407,7 @@ $ curl -X GET "https://api.vhx.tv/videos/1" \
 
 > <h5 class="head-5 text--white margin-bottom-medium">List all Videos</h5>
 
-> Definiton
+> Definition
 
 ```shell
 GET /videos
@@ -503,7 +503,7 @@ $ curl -X GET -G "https://api.vhx.tv/videos" \
 
 > <h5 class="head-5 text--white margin-bottom-medium">List all Files</h5>
 
-> Definiton
+> Definition
 
 ```shell
 GET /videos/:id/files
