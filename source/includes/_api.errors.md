@@ -48,6 +48,14 @@
       <td>Not Acceptable</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
+      <td class="text--navy">422</td>
+      <td>Unprocessable Entity</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td class="text--navy">429</td>
+      <td>Too Many Requests (rate limit violation)</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
       <td class="text--navy">500...505</td>
       <td>Internal Server Error or Unavailable</td>
     </tr>
