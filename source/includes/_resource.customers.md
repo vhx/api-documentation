@@ -44,7 +44,12 @@ $ curl -X POST "https://api.vhx.tv/customers" \
 ```
 
 <section class="text-2 contain margin-bottom-medium">
-  A customer can be created (or added) for a given product. For a subscription customer, you are billed per customer / per month. Please <a href="https://www.vhx.tv/pricing" target="_blank">see our pricing</a> for more details.
+  <p>
+    A customer can be created (or added) for a given product. For a subscription customer, you are billed per customer / per month. Please <a href="https://www.vhx.tv/pricing" target="_blank">see our pricing</a> for more details.
+  </p>
+  <p>
+    <strong>This endpoint enforces a rate limit of 5 requests per second.</strong>
+  </p>
 </section>
 
 <table>
