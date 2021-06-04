@@ -715,6 +715,54 @@ $ curl -X PUT "https://api.vhx.tv/collections/1" \
   </tbody>
 </table>
 
+<h3 class="text-2 head-4 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="collections-update">Update a Collection's Position</h3>
+
+> <h5 class="head-5 text--white margin-bottom-medium">Update a Collection's Position</h5>
+
+> Definition
+
+```shell
+PUT /collections/:id/update_position
+```
+
+> Example Request
+
+```shell
+$ curl -X PUT "https://api.vhx.tv/collections/1/update_position" \
+  -H "Content-Type: application/json" \
+  -d '{"position": 3 }' \
+  -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
+```
+
+> Example Response
+
+```json
+{}
+```
+
+<section class="text-2 contain">
+  <p>A successful position update will return a 200 status code and an empty JSON object.</p>
+</section>
+
+<table>
+  <thead>
+    <tr class="text-2">
+      <th class="padding-medium nowrap">Arguments</th>
+      <th class="padding-medium" width="100%">Description</th>
+    </tr>
+  </thead>
+
+<tbody>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">position</strong>
+        <span class="is-block text--transparent text-3">integer</span>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>The desired position of the collection. If it is not a valid position value, the API will return a 400 status code.</td>
+    </tr>
+</table>
+
 <h3 class="text-2 head-4 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="collection-items-list">List all Items</h3>
 
 > <h5 class="head-5 text--white margin-bottom-medium">List all Items</h5>
