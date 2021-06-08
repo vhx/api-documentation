@@ -307,12 +307,13 @@ $ curl -X GET "https://api.vhx.tv/collections/1" \
       "medium": "https://vhx.imgix.net/site/assets/1231.jpg?fit=clip&h=360&w=640",
       "large": "https://vhx.imgix.net/site/assets/1231.jpg?fit=clip&h=720&w=1280",
       "source": "https://vhx.imgix.net/site/assets/1231.jpg"
-    },
+    }
   },
   "plans": ["public", "free", "standard"],
   "type": "category",
   "items_count": 10,
   "is_featured": false,
+  "position": 2,
   "created_at": "2014-02-25T20:19:30Z",
   "updated_at": "2014-02-25T20:19:30Z"
 }
@@ -539,7 +540,7 @@ $ curl -X PUT "https://api.vhx.tv/collections/1" \
       "medium": "https://vhx.imgix.net/site/assets/1231.jpg?fit=clip&h=360&w=640",
       "large": "https://vhx.imgix.net/site/assets/1231.jpg?fit=clip&h=720&w=1280",
       "source": "https://vhx.imgix.net/site/assets/1231.jpg"
-    },
+    }
   },
   "plans": ["public", "free", "standard"],
   "type": "series",
@@ -547,6 +548,7 @@ $ curl -X PUT "https://api.vhx.tv/collections/1" \
   "items_count": 0,
   "files_count": 0,
   "is_featured": false,
+  "position": 2,
   "created_at": "2015-11-25T01:30:33Z",
   "updated_at": "2015-11-25T01:30:33Z"
 }
@@ -713,6 +715,55 @@ $ curl -X PUT "https://api.vhx.tv/collections/1" \
       </td>
     </tr>
   </tbody>
+</table>
+
+<h3 class="text-2 head-4 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="collection-position-update">Update a Collection's Position</h3>
+
+> <h5 class="head-5 text--white margin-bottom-medium">Update a Collection's Position</h5>
+
+> Definition
+
+```shell
+PUT /collections/:id/update_position
+```
+
+> Example Request
+
+```shell
+$ curl -X PUT "https://api.vhx.tv/collections/1/update_position" \
+  -H "Content-Type: application/json" \
+  -d '{"position": 3}' \
+  -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
+```
+
+> Example Response
+
+```json
+{}
+```
+
+<section class="text-2 contain">
+  <p>The order of the categories returned from the Browse endpoint is determined by the <code>position</code> value of each category. The <code>position</code> of any collection, including categories, can be changed using this endpoint.</p>
+  <p>On success, the API will respond with a 200 status code and an empty JSON object.</p>
+</section>
+
+<table>
+  <thead>
+    <tr class="text-2">
+      <th class="padding-medium nowrap">Arguments</th>
+      <th class="padding-medium" width="100%">Description</th>
+    </tr>
+  </thead>
+
+<tbody>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">position</strong>
+        <span class="is-block text--transparent text-3">integer</span>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>The desired position of the collection. If it is not a valid position value, the API will return a 400 status code.</td>
+    </tr>
 </table>
 
 <h3 class="text-2 head-4 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="collection-items-list">List all Items</h3>
@@ -895,6 +946,141 @@ HEAD 204
   </tbody>
 </table>
 
+<h3 class="text-2 head-4 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="collection-item-position-update">Update the Position of an Item</h3>
+
+> <h5 class="head-5 text--white margin-bottom-medium">Update the Position of an Item</h5>
+
+> Definition
+
+```shell
+PUT /collections/:collection_id/items/:item_id
+```
+
+> Example Request
+
+```shell
+$ curl -X PUT "https://api.vhx.tv/collections/1/items/32" \
+  -d '{"position": 3}' \
+  -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
+```
+
+> Example Response
+
+```json
+{
+  "_links": {
+    "self":  { "href": "https://api.vhx.tv/videos/1" },
+    "files": { "href": "https://api.vhx.tv/videos/1/files" }
+  },
+  "_embedded": {
+    "files": [
+      {
+        "_links": {
+          "self":  { "href": "https://api.vhx.tv/videos/1/files?quality=adaptive&format=m3u8" }
+        },
+        "quality": "adaptive",
+        "format": "m3u8",
+        "method": "hls",
+        "size": {
+          "bytes": 1073741824,
+          "formatted": "1 GB"
+        },
+        "mime_type": "application/x-mpegURL"
+      }
+    ]
+  },
+  "id": 1,
+  "title": "My Video",
+  "description": "My video description.",
+  "status": "uploaded",
+  "duration": {
+    "seconds": 7200,
+    "formatted": "02:00:00"
+  },
+  "thumbnail": {
+    "small": "https://cdn.vhx.tv/assets/thumbnails/default-small.png",
+    "medium": "https://cdn.vhx.tv/assets/thumbnails/default-medium.png",
+    "large": "https://cdn.vhx.tv/assets/thumbnails/default-large.png",
+    "source": "https://cdn.vhx.tv/assets/thumbnails/original.jpg"
+  },
+  "tracks": {
+    "subtitles": [
+      {
+        "_links": {
+            "srt": { "href": "https://cdn.vhx.tv/file.srt" },
+            "vtt": { "href": "https://cdn.vhx.tv/file.vtt" }
+        },
+        "label": "English",
+        "srclang": "en",
+        "kind": "subtitles"
+      }
+    ]
+  },
+  "advertising": {
+    "_links": {
+      "tag": { "href": "https://static.vhx.tv/vmap.xml" }
+    },
+    "client": "vmap",
+    "provider": "dfp",
+    "custom_params": {
+      "foo": ["some", "value"],
+      "bar": ["other", "thing"]
+    }
+  },
+  "metadata": {
+    "director": "Brad Pitt",
+    "writers": ["Foo Bar", "Bar Foo"],
+    "release_year": 2017,
+    "series_name": "Series Name",
+    "season_name": "Season 1",
+    "season_number": 1,
+    "episode_number": 5,
+    "custom_icon": {
+      "small": "https://vhx.imgix.net/site/assets/1231.jpg?fit=clip&h=135&w=240",
+      "medium": "https://vhx.imgix.net/site/assets/1231.jpg?fit=clip&h=360&w=640",
+      "large": "https://vhx.imgix.net/site/assets/1231.jpg?fit=clip&h=720&w=1280",
+      "source": "https://vhx.imgix.net/site/assets/1231.jpg"
+    },
+    "advertising_keywords": []
+  },
+  "plans": ["public", "free", "standard"],
+  "time_available": "2014-03-01T00:00:00Z",
+  "time_unavailable": "2014-04-01T00:00:00Z",
+  "files_count": 5,
+  "finishes_count": 1204,
+  "created_at": "2014-02-25T20:19:30Z",
+  "updated_at": "2014-02-25T20:19:30Z",
+  "item_id": 32,
+  "position": 3
+}
+```
+
+<section class="text-2 contain margin-bottom-medium">
+  <p>Updates the position of an item in a collection. The <code>:item_id</code> refers to the <code>item_id</code> value present in the response from the List all Items endpoint.</p>
+  <p>The structure of response depends on the type of the item. The example response demonstrates with a video.</p>
+</section>
+
+<table>
+  <thead>
+    <tr class="text-2">
+      <th class="padding-medium nowrap">Arguments</th>
+      <th class="padding-medium" width="100%">Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr class="text-2 border-bottom border--light-gray">
+      <tr class="text-2 border-bottom border--light-gray">
+        <td>
+          <strong class="is-block text--navy">position</strong>
+          <span class="is-block text--transparent text-3">integer</span>
+          <span class="text--transparent text-3">optional</span>
+        </td>
+        <td>The desired position of the item in the collection.</td>
+      </tr>
+    </tr>
+  </tbody>
+</table>
 
 <h3 class="text-2 head-4 text--navy text--bold is-api margin-top-large margin-bottom-medium" id="collection-items-delete">Delete an Item</h3>
 
