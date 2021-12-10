@@ -291,6 +291,16 @@ $ curl -X GET -G "https://api.vhx.tv/customers" \
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
+        <strong class="is-block text--navy">status</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>
+        The status should be set to <code>all</code> when using the query search param in order to get all customers otherwise the default is <code>enabled</code>. Options are <code>all</code>, <code>enabled</code>, <code>disabled</code>, <code>cancelled</code>, <code>refunded</code>, <code>expired</code>, or <code>paused</code>
+      </td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
         <strong class="is-block text--navy">page</strong>
         <span class="is-block text--transparent text-3">integer</span>
         <span class="text--transparent text-3">optional, default is 1</span>
