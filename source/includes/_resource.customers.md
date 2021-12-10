@@ -279,7 +279,7 @@ $ curl -X GET -G "https://api.vhx.tv/customers" \
         <span class="is-block text--transparent text-3">string</span>
         <span class="text--transparent text-3">optional</span>
       </td>
-      <td>The query to search and filter the paginated results.</td>
+      <td>The query to search and filter the paginated results. By default filters for customers with status of <code>enabled</code> (subscribed). The status query param should be explicitly set in order to include customers that are not <code>enabled</code>. See status below.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
@@ -296,7 +296,7 @@ $ curl -X GET -G "https://api.vhx.tv/customers" \
         <span class="text--transparent text-3">optional</span>
       </td>
       <td>
-        The status should be set to <code>all</code> when using the query search param in order to get all customers otherwise the default is <code>enabled</code>. Options are <code>all</code>, <code>enabled</code>, <code>disabled</code>, <code>cancelled</code>, <code>refunded</code>, <code>expired</code>, or <code>paused</code>
+        The status indicates the subscription status of the customer. Options are <code>enabled</code>, <code>disabled</code>, <code>cancelled</code>, <code>refunded</code>, <code>expired</code>, <code>paused</code>, or <code>all</code> (includes all statuses).
       </td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
