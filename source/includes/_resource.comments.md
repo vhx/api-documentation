@@ -200,7 +200,7 @@ $ curl -X GET -G "https://api.vhx.tv/comments" \
 ```
 
 <section class="text-2 contain">
-  <p>Retrieves all comments for a given video.</p>
+  <p>Retrieves all comments for the site, newest first. When the video param is provided, retrieves comments for that video.</p>
 </section>
 
 <table>
@@ -215,12 +215,38 @@ $ curl -X GET -G "https://api.vhx.tv/comments" \
     <tr class="text-2 border-bottom border--light-gray">
       <td>
         <strong class="is-block text--navy">video</strong>
-        <span class="text--yellow text-3">REQUIRED</span>
+        <span class="text--yellow text-3">optional</span>
         <span class="text--transparent text-3">href</span>
       </td>
       <td>
         The <code>href</code> of a video.
       </td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">flagged</strong>
+        <span class="text--yellow text-3">optional</span>
+        <span class="text--transparent text-3">boolean</span>
+      </td>
+      <td>
+        When set to true, returns only comments that have been reported.
+      </td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">page</strong>
+        <span class="is-block text--transparent text-3">integer</span>
+        <span class="text--transparent text-3">optional, default is 1</span>
+      </td>
+      <td>The page number of the paginated result.</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">per_page</strong>
+        <span class="is-block text--transparent text-3">integer</span>
+        <span class="text--transparent text-3">optional, default is 25</span>
+      </td>
+      <td>The page size of the paginated result.</td>
     </tr>
   </tbody>
 </table>
