@@ -215,7 +215,7 @@ $ curl -X GET -G "https://api.vhx.tv/comments" \
     <tr class="text-2 border-bottom border--light-gray">
       <td>
         <strong class="is-block text--navy">video</strong>
-        <span class="text--yellow text-3">optional</span>
+        <span class="text--transparent text-3">optional</span>
         <span class="text--transparent text-3">href</span>
       </td>
       <td>
@@ -225,26 +225,26 @@ $ curl -X GET -G "https://api.vhx.tv/comments" \
     <tr class="text-2 border-bottom border--light-gray">
       <td>
         <strong class="is-block text--navy">flagged</strong>
-        <span class="text--yellow text-3">optional</span>
+        <span class="text--transparent text-3">optional</span>
         <span class="text--transparent text-3">boolean</span>
       </td>
       <td>
-        When set to true, returns only comments that have been reported.
+        When set to true, returns only comments that have been reported. Accepted values are <code>true</code> and <code>false</code>.
       </td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
         <strong class="is-block text--navy">page</strong>
-        <span class="is-block text--transparent text-3">integer</span>
-        <span class="text--transparent text-3">optional, default is 1</span>
+        <span class="text--transparent text-3">optional</span>
+        <span class="is-block text--transparent text-3">integer, default is 1</span>
       </td>
       <td>The page number of the paginated result.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td>
         <strong class="is-block text--navy">per_page</strong>
-        <span class="is-block text--transparent text-3">integer</span>
-        <span class="text--transparent text-3">optional, default is 25</span>
+        <span class="text--transparent text-3">optional</span>
+        <span class="is-block text--transparent text-3">integer, default is 25</span>
       </td>
       <td>The page size of the paginated result.</td>
     </tr>
