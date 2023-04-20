@@ -20,4 +20,4 @@ View the docs at [http://dev.vhx.tv/docs/api](http://dev.vhx.tv/docs/api).
 
 ## Build and Release
 
-See the VHX Developer site repository.
+See the VHX Developer site repository: https://github.com/vhx/dev.vhx.tv.
