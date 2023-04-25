@@ -1,9 +1,21 @@
-FROM ruby:2.1.5
+FROM ubuntu:18.04
 
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    nodejs \
-  && rm -rf /var/lib/apt/lists/*
+RUN apt update
+RUN apt install -y git-core curl
+RUN apt install -y autoconf bison patch build-essential rustc libssl1.0-dev libyaml-dev libreadline6-dev zlib1g-dev libgmp-dev libncurses5-dev libffi-dev libgdbm5 libgdbm-dev libdb-dev uuid-dev
+
+# Install ruby-build
+WORKDIR /tmp/ruby-build
+RUN git clone https://github.com/rbenv/ruby-build.git .
+
+RUN ./install.sh
+
+# Install Ruby 2.1.5
+RUN ruby-build 2.1.5 /usr/local
+
+RUN apt install -y nodejs
+
+RUN apt clean
 
 WORKDIR /app
 
