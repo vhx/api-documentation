@@ -7,17 +7,8 @@ View the docs at [http://dev.vhx.tv/docs/api](http://dev.vhx.tv/docs/api).
 
 *Note:* Applicable for Vimeo OTT / VHX internal use.
 
-**Initial Setup**
-
-**1)** Clone the repo  
-**2)** Install all dependencies: `bundle install`<br>
-**3)** Done.
-
-**Starting the server**
-
-**1)** Run `./server`  
-**2)** Go to: http://reference.dev
+Make documentation edits to `build/index.html`. Preview changes by opening `build/index.html` in your web browser.
 
 ## Build and Release
 
-See the VHX Developer site repository: https://github.com/vhx/dev.vhx.tv.
+Copy over the build files into to the developer site repository. See the [VHX Developer site repository](https://github.com/vhx/dev.vhx.tv) for more detail.
