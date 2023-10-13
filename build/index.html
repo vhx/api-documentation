@@ -525,12 +525,44 @@
       <td>The <code>href</code> of the product you&rsquo;d like to give the customer access to.</td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
+      <td class="nowrap">
+        <strong class="is-block text--navy">expires_in</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>
+        This parameter is used for letting our system know when a user should lose access. This can not be updated so we do not recommend using this for managing renewals as it could lead to service interruptions for your customers.
+        <br><br>
+        Valid formats are a number followed by a unit of time. For example, <code>3-months</code>, <code>1-years</code>, <code>5-weeks</code>, <code>7-days</code>.
+      </td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td class="nowrap">
+        <strong class="is-block text--navy">is_rental</strong>
+        <span class="is-block text--transparent text-3">integer</span>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>
+        Set this to <code>1</code> to indicate this customer only has rental access to this product. Pass in an <code>expires_in</code> param to set an expiration time as well.
+      </td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
       <td>
         <strong class="is-block text--navy">name</strong>
         <span class="is-block text--transparent text-3">string</span>
         <span class="text--transparent text-3">optional</span>
       </td>
       <td>The customer&rsquo;s full name (first and last).</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td class="nowrap">
+        <strong class="is-block text--navy">password</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--transparent text-3">optional, default is &ldquo;standard&rdquo;</span>
+      </td>
+      <td>
+        This must be at least eight characters long. Omitting this field will prompt the Customer to set their password the next time they sign in.
+      </td>
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td class="nowrap">
@@ -546,18 +578,6 @@
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td class="nowrap">
-        <strong class="is-block text--navy">expires_in</strong>
-        <span class="is-block text--transparent text-3">string</span>
-        <span class="text--transparent text-3">optional</span>
-      </td>
-      <td>
-        This parameter is used for letting our system know when a user should lose access. This can not be updated so we do not recommend using this for managing renewals as it could lead to service interruptions for your customers.
-        <br><br>
-        Valid formats are a number followed by a unit of time. For example, <code>3-months</code>, <code>1-years</code>, <code>5-weeks</code>, <code>7-days</code>.
-      </td>
-    </tr>
-    <tr class="text-2 border-bottom border--light-gray">
-      <td class="nowrap">
         <strong class="is-block text--navy">send_email</strong>
         <span class="is-block text--transparent text-3">integer</span>
         <span class="text--transparent text-3">optional</span>
@@ -566,16 +586,7 @@
         Set this to <code>1</code> if you would like our system to send the customer an email notifying them that they now have access to the product.
       </td>
     </tr>
-    <tr class="text-2 border-bottom border--light-gray">
-      <td class="nowrap">
-        <strong class="is-block text--navy">is_rental</strong>
-        <span class="is-block text--transparent text-3">integer</span>
-        <span class="text--transparent text-3">optional</span>
-      </td>
-      <td>
-        Set this to <code>1</code> to indicate this customer only has rental access to this product. Pass in an <code>expires_in</code> param to set an expiration time as well.
-      </td>
-    </tr>
+    
   </tbody>
 </table>
 
@@ -820,6 +831,18 @@
         <span class="is-block text--transparent text-3">optional</span>
       </td>
       <td>The customer&rsquo;s full name (first and last).</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td class="nowrap">
+        <strong class="is-block text--navy">plan</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--transparent text-3">optional, default is &ldquo;standard&rdquo;</span>
+      </td>
+      <td>
+        The customer&rsquo;s plan determines content accessibility. Values can be one of the following strings: <code>free</code>, <code>standard</code>.
+        <br><br>
+        This should be set depending on your product type. Use <code>free</code> if you are using subscription that is free with registration. In any other case, you should use <code>standard</code>.
+      </td>
     </tr>
   </tbody>
 </table>
