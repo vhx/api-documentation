@@ -509,14 +509,6 @@
 
   <tbody>
     <tr class="text-2 border-bottom border--light-gray">
-      <td>
-        <strong class="is-block text--navy">name</strong>
-        <span class="is-block text--transparent text-3">string</span>
-        <span class="text--transparent text-3">optional</span>
-      </td>
-      <td>The customer&rsquo;s full name (first and last).</td>
-    </tr>
-    <tr class="text-2 border-bottom border--light-gray">
       <td class="nowrap">
         <strong class="is-block text--navy">email</strong>
         <span class="is-block text--transparent text-3">string</span>
@@ -534,18 +526,6 @@
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td class="nowrap">
-        <strong class="is-block text--navy">plan</strong>
-        <span class="is-block text--transparent text-3">string</span>
-        <span class="text--transparent text-3">optional, default is &ldquo;standard&rdquo;</span>
-      </td>
-      <td>
-        The customer&rsquo;s plan determines content accessibility. Values can be one of the following strings: <code>free</code>, <code>standard</code>.
-        <br><br>
-        This should be set depending on your product type. Use <code>free</code> if you are using subscription that is free with registration. In any other case, you should use <code>standard</code>.
-      </td>
-    </tr>
-    <tr class="text-2 border-bottom border--light-gray">
-      <td class="nowrap">
         <strong class="is-block text--navy">expires_in</strong>
         <span class="is-block text--transparent text-3">string</span>
         <span class="text--transparent text-3">optional</span>
@@ -558,16 +538,6 @@
     </tr>
     <tr class="text-2 border-bottom border--light-gray">
       <td class="nowrap">
-        <strong class="is-block text--navy">send_email</strong>
-        <span class="is-block text--transparent text-3">integer</span>
-        <span class="text--transparent text-3">optional</span>
-      </td>
-      <td>
-        Set this to <code>1</code> if you would like our system to send the customer an email notifying them that they now have access to the product.
-      </td>
-    </tr>
-    <tr class="text-2 border-bottom border--light-gray">
-      <td class="nowrap">
         <strong class="is-block text--navy">is_rental</strong>
         <span class="is-block text--transparent text-3">integer</span>
         <span class="text--transparent text-3">optional</span>
@@ -576,6 +546,47 @@
         Set this to <code>1</code> to indicate this customer only has rental access to this product. Pass in an <code>expires_in</code> param to set an expiration time as well.
       </td>
     </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td>
+        <strong class="is-block text--navy">name</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>The customer&rsquo;s full name (first and last).</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td class="nowrap">
+        <strong class="is-block text--navy">password</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>
+        This must be at least eight characters long. Omitting this field will prompt the customer to set their password the next time they sign in.
+      </td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td class="nowrap">
+        <strong class="is-block text--navy">plan</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--transparent text-3">optional, default is &ldquo;standard&rdquo;</span>
+      </td>
+      <td>
+        The customer&rsquo;s plan determines content accessibility. Values can be one of the following strings: <code>free</code>, <code>standard</code>.
+        <br><br>
+        This should be set depending on your product type. Use <code>free</code> if you are using subscription that is free with registration. In any other case, you should use <code>standard</code>.
+      </td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td class="nowrap">
+        <strong class="is-block text--navy">send_email</strong>
+        <span class="is-block text--transparent text-3">integer</span>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>
+        Set this to <code>1</code> if you would like our system to send the customer an email notifying them that they now have access to the product.
+      </td>
+    </tr>
+    
   </tbody>
 </table>
 
@@ -820,6 +831,16 @@
         <span class="is-block text--transparent text-3">optional</span>
       </td>
       <td>The customer&rsquo;s full name (first and last).</td>
+    </tr>
+    <tr class="text-2 border-bottom border--light-gray">
+      <td class="nowrap">
+        <strong class="is-block text--navy">password</strong>
+        <span class="is-block text--transparent text-3">string</span>
+        <span class="text--transparent text-3">optional</span>
+      </td>
+      <td>
+        This must be at least eight characters long.
+      </td>
     </tr>
   </tbody>
 </table>
