@@ -35,7 +35,7 @@
     <a href="/" class="branding">
      <img src="/img/vimeo-white.svg" alt="Vimeo OTT" width="72" style="position: relative; top: 2px;">
     </a>
-    <a href="http://dev.vhx.tv" class="developers">
+    <a href="https://dev.vhx.tv" class="developers">
       <span class="head-4 head--white border-left padding-horizontal-medium border--white ">Developers</span>
     </a>
   </h1>
@@ -82,9 +82,9 @@
 </code></pre>
 
 <section class="text-2 contain">
-  <p>The Vimeo OTT API (previously referenced as &ldquo;VHX API&rdquo;) provides a simple and secure <a href="http://en.wikipedia.org/wiki/Representational_State_Transfer" target="_blank">REST</a> interface to Vimeo OTT. Registered applications can manage products, customers, videos, collections, authorizations, and analytics.</p>
-  <p>All API access is over <a href="http://en.wikipedia.org/wiki/HTTP_Secure">HTTPS</a> and all data is sent and received as <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a>. Blank fields are included as <code>null</code> and timestamps are in ISO 8601 format <code>YYYY-MM-DDTHH:MM:SSZ</code>. Only the UTF-8 character encoding is supported for both requests and responses.</p>
-  <p>We support <a href="https://en.wikipedia.org/wiki/JSONP" target="_blank">JSONP</a> (use <code>?callback=</code>) and <a href="http://en.wikipedia.org/wiki/Cross-origin_resource_sharing" target="_blank">Cross Origin Resource Sharing</a> (CORS) for AJAX requests.</p>
+  <p>The Vimeo OTT API (previously referenced as &ldquo;VHX API&rdquo;) provides a simple and secure <a href="https://en.wikipedia.org/wiki/Representational_State_Transfer" target="_blank">REST</a> interface to Vimeo OTT. Registered applications can manage products, customers, videos, collections, authorizations, and analytics.</p>
+  <p>All API access is over <a href="https://en.wikipedia.org/wiki/HTTP_Secure">HTTPS</a> and all data is sent and received as <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a>. Blank fields are included as <code>null</code> and timestamps are in ISO 8601 format <code>YYYY-MM-DDTHH:MM:SSZ</code>. Only the UTF-8 character encoding is supported for both requests and responses.</p>
+  <p>We support <a href="https://en.wikipedia.org/wiki/JSONP" target="_blank">JSONP</a> (use <code>?callback=</code>) and <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing" target="_blank">Cross Origin Resource Sharing</a> (CORS) for AJAX requests.</p>
   <p class="padding-top-medium border-top border--gray-light">We&rsquo;re always happy to help! Please submit any questions <a href="https://vimeoott.zendesk.com/hc/en-us/requests/new">here</a>.</p>
 </section>
 
@@ -1174,7 +1174,7 @@
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell"><code><span class="gp">$ </span>curl -X PUT <span class="s2">"https://api.vhx.tv/customers/1/watchlist"</span> <span class="se">\</span>
-  -d <span class="nv">video</span><span class="o">=</span><span class="s2">"http://api.vhx.tv/videos/1"</span> <span class="se">\</span>
+  -d <span class="nv">video</span><span class="o">=</span><span class="s2">"https://api.vhx.tv/videos/1"</span> <span class="se">\</span>
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 </code></pre>
 
@@ -1224,7 +1224,7 @@
 <p>Example Request</p>
 </blockquote>
 <pre class="highlight shell"><code><span class="gp">$ </span>curl -X DELETE <span class="s2">"https://api.vhx.tv/customers/1/watchlist"</span> <span class="se">\</span>
-  -d <span class="nv">video</span><span class="o">=</span><span class="s2">"http://api.vhx.tv/videos/1"</span> <span class="se">\</span>
+  -d <span class="nv">video</span><span class="o">=</span><span class="s2">"https://api.vhx.tv/videos/1"</span> <span class="se">\</span>
   -u o3g_4jLU-rxHpc9rsoh3DHfpsq1L6oyM:
 </code></pre>
 
@@ -2603,13 +2603,13 @@ id="videos-delete">Delete a Video</h3>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"_links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nt">"self"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.vhx.tv/collections/1"</span><span class="w">
+      </span><span class="nt">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.vhx.tv/collections/1"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nt">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.vhx.tv/collections/1/items"</span><span class="w">
+      </span><span class="nt">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.vhx.tv/collections/1/items"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nt">"collection_page"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://mynetwork.com/collection-name-1"</span><span class="w">
+      </span><span class="nt">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://mynetwork.com/collection-name-1"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nt">"_embedded"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -3047,13 +3047,13 @@ id="videos-delete">Delete a Video</h3>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"_links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nt">"self"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.vhx.tv/collections/1"</span><span class="w">
+      </span><span class="nt">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.vhx.tv/collections/1"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nt">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://api.vhx.tv/collections/1/items"</span><span class="w">
+      </span><span class="nt">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.vhx.tv/collections/1/items"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nt">"collection_page"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://mynetwork.com/collection-name-1"</span><span class="w">
+      </span><span class="nt">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://mynetwork.com/collection-name-1"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nt">"_embedded"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
