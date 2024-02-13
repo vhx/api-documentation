@@ -1,7 +1,7 @@
 # Vimeo OTT API Documentation
 The Vimeo OTT API lets developers and media companies looking to build custom, high-quality SVOD services like HBO NOW or Netflix quickly and inexpensively.
 
-View the docs at [http://dev.vhx.tv/docs/api](http://dev.vhx.tv/docs/api).
+View the docs at [https://dev.vhx.tv/docs/api](https://dev.vhx.tv/docs/api).
 
 ## Getting Started
 
