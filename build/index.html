@@ -1630,6 +1630,10 @@
   </span><span class="nt">"files_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
   </span><span class="nt">"plays_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1340</span><span class="p">,</span><span class="w">
   </span><span class="nt">"finishes_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1204</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"live_event_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">null</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"live_video"</span><span class="p">:</span><span class="w"> </span><span class="s2">false</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"live_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">null</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"scheduled_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">null</span><span class="p">,</span><span class="w">
   </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-02-25T20:19:30Z"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-02-25T20:19:30Z"</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -1662,6 +1666,8 @@
 <section class="text-2 contain">
   <strong class="block margin-top-large">Response</strong>
   <p>Videos that are associated with a collection will have relevant metadata automatically applied in the <code>metadata</code> property. This includes the following fields: <code>series_name</code>, <code>season_name</code>, <code>season_number</code>, <code>episode_number</code>, and <code>movie_name</code></p>
+
+  <p>When a video is associated with a Live Event, the <code>live_video</code> property is <code>true</code> and a <code>live_event_id</code> is provided. For scheduled live events, the <code>scheduled_at</code> property specifies the scheduled start time.</p>
 
   <p class="is-internal">Videos that are associated with a product that have advertising enabled will include an <code>advertising</code> property in the response. The <code>advertising</code> object contains relevant data for the Ad provider and tag url. In addition, if advertising keywords have been setup they will be returned in the <code>metadata</code> property.</p>
 </section>
