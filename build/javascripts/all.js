@@ -2390,6 +2390,19 @@ jQuery.fn.highlight = function (words, options) {
     $('#input-search').on('keyup', search);
   }
 
+  function escapeHTML(str) {
+    const map = {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#039;'
+    };
+    return str.replace(/[&<>"'\/]/g, function (char) {
+      return map[char];
+    });
+  }
+
   function search(event) {
     unhighlight();
     searchResults.addClass('visible');
@@ -2398,7 +2411,8 @@ jQuery.fn.highlight = function (words, options) {
     if (event.keyCode === 27) this.value = '';
 
     if (this.value) {
-      var results = index.search(this.value).filter(function(r) {
+      const escapedVal = escapeHTML(this.value);
+      var results = index.search(escapedVal).filter(function(r) {
         return r.score > 0.0001;
       });
 
@@ -2411,7 +2425,7 @@ jQuery.fn.highlight = function (words, options) {
         highlight.call(this);
       } else {
         searchResults.html('<li></li>');
-        $('.search-results li').html('<span class="is-block padding-medium">No Results Found for "' + this.value + '"</span>');
+        $('.search-results li').html('<span class="is-block padding-medium">No Results Found for "' + escapedVal + '"</span>');
       }
     } else {
       unhighlight();
