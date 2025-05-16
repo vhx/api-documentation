@@ -2411,8 +2411,7 @@ jQuery.fn.highlight = function (words, options) {
     if (event.keyCode === 27) this.value = '';
 
     if (this.value) {
-      const escapedVal = escapeHTML(this.value);
-      var results = index.search(escapedVal).filter(function(r) {
+      var results = index.search(this.value).filter(function(r) {
         return r.score > 0.0001;
       });
 
@@ -2425,7 +2424,7 @@ jQuery.fn.highlight = function (words, options) {
         highlight.call(this);
       } else {
         searchResults.html('<li></li>');
-        $('.search-results li').html('<span class="is-block padding-medium">No Results Found for "' + escapedVal + '"</span>');
+        $('.search-results li').html('<span class="is-block padding-medium">No Results Found for "' + escapeHTML(this.value) + '"</span>');
       }
     } else {
       unhighlight();
