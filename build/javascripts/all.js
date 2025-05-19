@@ -2390,6 +2390,19 @@ jQuery.fn.highlight = function (words, options) {
     $('#input-search').on('keyup', search);
   }
 
+  function escapeHTML(str) {
+    const map = {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#039;'
+    };
+    return str.replace(/[&<>"'\/]/g, function (char) {
+      return map[char];
+    });
+  }
+
   function search(event) {
     unhighlight();
     searchResults.addClass('visible');
@@ -2411,7 +2424,7 @@ jQuery.fn.highlight = function (words, options) {
         highlight.call(this);
       } else {
         searchResults.html('<li></li>');
-        $('.search-results li').html('<span class="is-block padding-medium">No Results Found for "' + this.value + '"</span>');
+        $('.search-results li').html('<span class="is-block padding-medium">No Results Found for "' + escapeHTML(this.value) + '"</span>');
       }
     } else {
       unhighlight();
